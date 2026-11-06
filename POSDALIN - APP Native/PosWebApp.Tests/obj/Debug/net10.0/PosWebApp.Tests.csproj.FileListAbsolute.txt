@@ -1,0 +1,752 @@
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\testhost.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\xunit.abstractions.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\testhost.exe
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\xunit.runner.visualstudio.testadapter.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\PosWebApp.Tests.deps.json
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\PosWebApp.Tests.runtimeconfig.json
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\PosWebApp.Tests.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\PosWebApp.Tests.pdb
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\FsCheck.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\FsCheck.Xunit.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\FSharp.Core.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\Microsoft.VisualStudio.CodeCoverage.Shim.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\Microsoft.TestPlatform.CoreUtilities.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\Microsoft.TestPlatform.PlatformAbstractions.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\Microsoft.VisualStudio.TestPlatform.ObjectModel.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\Microsoft.TestPlatform.CommunicationUtilities.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\Microsoft.TestPlatform.CrossPlatEngine.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\Microsoft.TestPlatform.Utilities.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\Microsoft.VisualStudio.TestPlatform.Common.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\Newtonsoft.Json.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\xunit.assert.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\xunit.core.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\xunit.execution.dotnet.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\cs\FSharp.Core.resources.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\de\FSharp.Core.resources.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\es\FSharp.Core.resources.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\fr\FSharp.Core.resources.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\it\FSharp.Core.resources.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\ja\FSharp.Core.resources.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\ko\FSharp.Core.resources.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\pl\FSharp.Core.resources.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\pt-BR\FSharp.Core.resources.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\ru\FSharp.Core.resources.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\tr\FSharp.Core.resources.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\zh-Hans\FSharp.Core.resources.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\zh-Hant\FSharp.Core.resources.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\cs\Microsoft.TestPlatform.CoreUtilities.resources.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\cs\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\de\Microsoft.TestPlatform.CoreUtilities.resources.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\de\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\es\Microsoft.TestPlatform.CoreUtilities.resources.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\es\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\fr\Microsoft.TestPlatform.CoreUtilities.resources.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\fr\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\it\Microsoft.TestPlatform.CoreUtilities.resources.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\it\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\ja\Microsoft.TestPlatform.CoreUtilities.resources.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\ja\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\ko\Microsoft.TestPlatform.CoreUtilities.resources.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\ko\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\pl\Microsoft.TestPlatform.CoreUtilities.resources.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\pl\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\pt-BR\Microsoft.TestPlatform.CoreUtilities.resources.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\pt-BR\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\ru\Microsoft.TestPlatform.CoreUtilities.resources.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\ru\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\tr\Microsoft.TestPlatform.CoreUtilities.resources.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\tr\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\zh-Hans\Microsoft.TestPlatform.CoreUtilities.resources.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\zh-Hans\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\zh-Hant\Microsoft.TestPlatform.CoreUtilities.resources.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\zh-Hant\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\cs\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\cs\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\cs\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\de\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\de\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\de\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\es\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\es\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\es\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\fr\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\fr\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\fr\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\it\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\it\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\it\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\ja\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\ja\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\ja\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\ko\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\ko\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\ko\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\pl\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\pl\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\pl\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\pt-BR\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\pt-BR\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\pt-BR\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\ru\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\ru\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\ru\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\tr\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\tr\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\tr\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\zh-Hans\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\zh-Hans\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\zh-Hans\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\zh-Hant\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\zh-Hant\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\zh-Hant\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\obj\Debug\net10.0\PosWebApp.Tests.csproj.AssemblyReference.cache
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\obj\Debug\net10.0\PosWebApp.Tests.GeneratedMSBuildEditorConfig.editorconfig
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\obj\Debug\net10.0\PosWebApp.Tests.AssemblyInfoInputs.cache
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\obj\Debug\net10.0\PosWebApp.Tests.AssemblyInfo.cs
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\obj\Debug\net10.0\PosWebApp.Tests.csproj.CoreCompileInputs.cache
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\obj\Debug\net10.0\PosWebApp.Tests.sourcelink.json
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\obj\Debug\net10.0\PosWebAp.BF59C3F8.Up2Date
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\obj\Debug\net10.0\PosWebApp.Tests.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\obj\Debug\net10.0\refint\PosWebApp.Tests.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\obj\Debug\net10.0\PosWebApp.Tests.pdb
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\obj\Debug\net10.0\PosWebApp.Tests.genruntimeconfig.cache
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\obj\Debug\net10.0\ref\PosWebApp.Tests.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\.msCoverageSourceRootsMapping_PosWebApp.Tests
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\CoverletSourceRootsMapping_PosWebApp.Tests
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\PosWebApp.deps.json
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\PosWebApp.runtimeconfig.json
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\appsettings.Development.json
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\appsettings.json
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\PosWebApp.staticwebassets.runtime.json
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\PosWebApp.staticwebassets.endpoints.json
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\PosWebApp.exe
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\Polly.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\Polly.Core.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\SixLabors.ImageSharp.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\X.PagedList.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\X.PagedList.Mvc.Core.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\PosWebApp.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\PosWebApp.pdb
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\Castle.Core.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\Moq.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\en-US\PosWebApp.resources.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\km-KH\PosWebApp.resources.dll
+c:\temp\testbuild\.msCoverageSourceRootsMapping_PosWebApp.Tests
+c:\temp\testbuild\CoverletSourceRootsMapping_PosWebApp.Tests
+c:\temp\testbuild\PosWebApp.deps.json
+c:\temp\testbuild\PosWebApp.runtimeconfig.json
+c:\temp\testbuild\appsettings.Development.json
+c:\temp\testbuild\appsettings.json
+c:\temp\testbuild\appsettings.Production.json
+c:\temp\testbuild\PosWebApp.staticwebassets.runtime.json
+c:\temp\testbuild\PosWebApp.staticwebassets.endpoints.json
+c:\temp\testbuild\PosWebApp.exe
+c:\temp\testbuild\testhost.dll
+c:\temp\testbuild\xunit.abstractions.dll
+c:\temp\testbuild\testhost.exe
+c:\temp\testbuild\MvcTestingAppManifest.json
+c:\temp\testbuild\xunit.runner.visualstudio.testadapter.dll
+c:\temp\testbuild\PosWebApp.Tests.deps.json
+c:\temp\testbuild\PosWebApp.Tests.runtimeconfig.json
+c:\temp\testbuild\PosWebApp.Tests.dll
+c:\temp\testbuild\PosWebApp.Tests.pdb
+c:\temp\testbuild\refs\Microsoft.AspNetCore.Antiforgery.dll
+c:\temp\testbuild\refs\Microsoft.AspNetCore.Authentication.Abstractions.dll
+c:\temp\testbuild\refs\Microsoft.AspNetCore.Authentication.BearerToken.dll
+c:\temp\testbuild\refs\Microsoft.AspNetCore.Authentication.Cookies.dll
+c:\temp\testbuild\refs\Microsoft.AspNetCore.Authentication.Core.dll
+c:\temp\testbuild\refs\Microsoft.AspNetCore.Authentication.dll
+c:\temp\testbuild\refs\Microsoft.AspNetCore.Authentication.OAuth.dll
+c:\temp\testbuild\refs\Microsoft.AspNetCore.Authorization.dll
+c:\temp\testbuild\refs\Microsoft.AspNetCore.Authorization.Policy.dll
+c:\temp\testbuild\refs\Microsoft.AspNetCore.Components.Authorization.dll
+c:\temp\testbuild\refs\Microsoft.AspNetCore.Components.dll
+c:\temp\testbuild\refs\Microsoft.AspNetCore.Components.Endpoints.dll
+c:\temp\testbuild\refs\Microsoft.AspNetCore.Components.Forms.dll
+c:\temp\testbuild\refs\Microsoft.AspNetCore.Components.Server.dll
+c:\temp\testbuild\refs\Microsoft.AspNetCore.Components.Web.dll
+c:\temp\testbuild\refs\Microsoft.AspNetCore.Connections.Abstractions.dll
+c:\temp\testbuild\refs\Microsoft.AspNetCore.CookiePolicy.dll
+c:\temp\testbuild\refs\Microsoft.AspNetCore.Cors.dll
+c:\temp\testbuild\refs\Microsoft.AspNetCore.Cryptography.Internal.dll
+c:\temp\testbuild\refs\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+c:\temp\testbuild\refs\Microsoft.AspNetCore.DataProtection.Abstractions.dll
+c:\temp\testbuild\refs\Microsoft.AspNetCore.DataProtection.dll
+c:\temp\testbuild\refs\Microsoft.AspNetCore.DataProtection.Extensions.dll
+c:\temp\testbuild\refs\Microsoft.AspNetCore.Diagnostics.Abstractions.dll
+c:\temp\testbuild\refs\Microsoft.AspNetCore.Diagnostics.dll
+c:\temp\testbuild\refs\Microsoft.AspNetCore.Diagnostics.HealthChecks.dll
+c:\temp\testbuild\refs\Microsoft.AspNetCore.dll
+c:\temp\testbuild\refs\Microsoft.AspNetCore.HostFiltering.dll
+c:\temp\testbuild\refs\Microsoft.AspNetCore.Hosting.Abstractions.dll
+c:\temp\testbuild\refs\Microsoft.AspNetCore.Hosting.dll
+c:\temp\testbuild\refs\Microsoft.AspNetCore.Hosting.Server.Abstractions.dll
+c:\temp\testbuild\refs\Microsoft.AspNetCore.Html.Abstractions.dll
+c:\temp\testbuild\refs\Microsoft.AspNetCore.Http.Abstractions.dll
+c:\temp\testbuild\refs\Microsoft.AspNetCore.Http.Connections.Common.dll
+c:\temp\testbuild\refs\Microsoft.AspNetCore.Http.Connections.dll
+c:\temp\testbuild\refs\Microsoft.AspNetCore.Http.dll
+c:\temp\testbuild\refs\Microsoft.AspNetCore.Http.Extensions.dll
+c:\temp\testbuild\refs\Microsoft.AspNetCore.Http.Features.dll
+c:\temp\testbuild\refs\Microsoft.AspNetCore.Http.Results.dll
+c:\temp\testbuild\refs\Microsoft.AspNetCore.HttpLogging.dll
+c:\temp\testbuild\refs\Microsoft.AspNetCore.HttpOverrides.dll
+c:\temp\testbuild\refs\Microsoft.AspNetCore.HttpsPolicy.dll
+c:\temp\testbuild\refs\Microsoft.AspNetCore.Identity.dll
+c:\temp\testbuild\refs\Microsoft.AspNetCore.Localization.dll
+c:\temp\testbuild\refs\Microsoft.AspNetCore.Localization.Routing.dll
+c:\temp\testbuild\refs\Microsoft.AspNetCore.Metadata.dll
+c:\temp\testbuild\refs\Microsoft.AspNetCore.Mvc.Abstractions.dll
+c:\temp\testbuild\refs\Microsoft.AspNetCore.Mvc.ApiExplorer.dll
+c:\temp\testbuild\refs\Microsoft.AspNetCore.Mvc.Core.dll
+c:\temp\testbuild\refs\Microsoft.AspNetCore.Mvc.Cors.dll
+c:\temp\testbuild\refs\Microsoft.AspNetCore.Mvc.DataAnnotations.dll
+c:\temp\testbuild\refs\Microsoft.AspNetCore.Mvc.dll
+c:\temp\testbuild\refs\Microsoft.AspNetCore.Mvc.Formatters.Json.dll
+c:\temp\testbuild\refs\Microsoft.AspNetCore.Mvc.Formatters.Xml.dll
+c:\temp\testbuild\refs\Microsoft.AspNetCore.Mvc.Localization.dll
+c:\temp\testbuild\refs\Microsoft.AspNetCore.Mvc.Razor.dll
+c:\temp\testbuild\refs\Microsoft.AspNetCore.Mvc.RazorPages.dll
+c:\temp\testbuild\refs\Microsoft.AspNetCore.Mvc.TagHelpers.dll
+c:\temp\testbuild\refs\Microsoft.AspNetCore.Mvc.ViewFeatures.dll
+c:\temp\testbuild\refs\Microsoft.AspNetCore.OutputCaching.dll
+c:\temp\testbuild\refs\Microsoft.AspNetCore.RateLimiting.dll
+c:\temp\testbuild\refs\Microsoft.AspNetCore.Razor.dll
+c:\temp\testbuild\refs\Microsoft.AspNetCore.Razor.Runtime.dll
+c:\temp\testbuild\refs\Microsoft.AspNetCore.RequestDecompression.dll
+c:\temp\testbuild\refs\Microsoft.AspNetCore.ResponseCaching.Abstractions.dll
+c:\temp\testbuild\refs\Microsoft.AspNetCore.ResponseCaching.dll
+c:\temp\testbuild\refs\Microsoft.AspNetCore.ResponseCompression.dll
+c:\temp\testbuild\refs\Microsoft.AspNetCore.Rewrite.dll
+c:\temp\testbuild\refs\Microsoft.AspNetCore.Routing.Abstractions.dll
+c:\temp\testbuild\refs\Microsoft.AspNetCore.Routing.dll
+c:\temp\testbuild\refs\Microsoft.AspNetCore.Server.HttpSys.dll
+c:\temp\testbuild\refs\Microsoft.AspNetCore.Server.IIS.dll
+c:\temp\testbuild\refs\Microsoft.AspNetCore.Server.IISIntegration.dll
+c:\temp\testbuild\refs\Microsoft.AspNetCore.Server.Kestrel.Core.dll
+c:\temp\testbuild\refs\Microsoft.AspNetCore.Server.Kestrel.dll
+c:\temp\testbuild\refs\Microsoft.AspNetCore.Server.Kestrel.Transport.NamedPipes.dll
+c:\temp\testbuild\refs\Microsoft.AspNetCore.Server.Kestrel.Transport.Quic.dll
+c:\temp\testbuild\refs\Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.dll
+c:\temp\testbuild\refs\Microsoft.AspNetCore.Session.dll
+c:\temp\testbuild\refs\Microsoft.AspNetCore.SignalR.Common.dll
+c:\temp\testbuild\refs\Microsoft.AspNetCore.SignalR.Core.dll
+c:\temp\testbuild\refs\Microsoft.AspNetCore.SignalR.dll
+c:\temp\testbuild\refs\Microsoft.AspNetCore.SignalR.Protocols.Json.dll
+c:\temp\testbuild\refs\Microsoft.AspNetCore.StaticAssets.dll
+c:\temp\testbuild\refs\Microsoft.AspNetCore.StaticFiles.dll
+c:\temp\testbuild\refs\Microsoft.AspNetCore.WebSockets.dll
+c:\temp\testbuild\refs\Microsoft.AspNetCore.WebUtilities.dll
+c:\temp\testbuild\refs\Microsoft.CSharp.dll
+c:\temp\testbuild\refs\Microsoft.Extensions.Caching.Abstractions.dll
+c:\temp\testbuild\refs\Microsoft.Extensions.Caching.Memory.dll
+c:\temp\testbuild\refs\Microsoft.Extensions.Configuration.Ini.dll
+c:\temp\testbuild\refs\Microsoft.Extensions.Configuration.KeyPerFile.dll
+c:\temp\testbuild\refs\Microsoft.Extensions.Configuration.Xml.dll
+c:\temp\testbuild\refs\Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions.dll
+c:\temp\testbuild\refs\Microsoft.Extensions.Diagnostics.HealthChecks.dll
+c:\temp\testbuild\refs\Microsoft.Extensions.Features.dll
+c:\temp\testbuild\refs\Microsoft.Extensions.FileProviders.Composite.dll
+c:\temp\testbuild\refs\Microsoft.Extensions.FileProviders.Embedded.dll
+c:\temp\testbuild\refs\Microsoft.Extensions.Http.dll
+c:\temp\testbuild\refs\Microsoft.Extensions.Identity.Core.dll
+c:\temp\testbuild\refs\Microsoft.Extensions.Identity.Stores.dll
+c:\temp\testbuild\refs\Microsoft.Extensions.Localization.Abstractions.dll
+c:\temp\testbuild\refs\Microsoft.Extensions.Localization.dll
+c:\temp\testbuild\refs\Microsoft.Extensions.Logging.TraceSource.dll
+c:\temp\testbuild\refs\Microsoft.Extensions.ObjectPool.dll
+c:\temp\testbuild\refs\Microsoft.Extensions.Options.DataAnnotations.dll
+c:\temp\testbuild\refs\Microsoft.Extensions.Validation.dll
+c:\temp\testbuild\refs\Microsoft.Extensions.WebEncoders.dll
+c:\temp\testbuild\refs\Microsoft.JSInterop.dll
+c:\temp\testbuild\refs\Microsoft.Net.Http.Headers.dll
+c:\temp\testbuild\refs\Microsoft.VisualBasic.Core.dll
+c:\temp\testbuild\refs\Microsoft.VisualBasic.dll
+c:\temp\testbuild\refs\Microsoft.Win32.Primitives.dll
+c:\temp\testbuild\refs\Microsoft.Win32.Registry.dll
+c:\temp\testbuild\refs\mscorlib.dll
+c:\temp\testbuild\refs\netstandard.dll
+c:\temp\testbuild\refs\System.AppContext.dll
+c:\temp\testbuild\refs\System.Buffers.dll
+c:\temp\testbuild\refs\System.Collections.Concurrent.dll
+c:\temp\testbuild\refs\System.Collections.dll
+c:\temp\testbuild\refs\System.Collections.Immutable.dll
+c:\temp\testbuild\refs\System.Collections.NonGeneric.dll
+c:\temp\testbuild\refs\System.Collections.Specialized.dll
+c:\temp\testbuild\refs\System.ComponentModel.Annotations.dll
+c:\temp\testbuild\refs\System.ComponentModel.DataAnnotations.dll
+c:\temp\testbuild\refs\System.ComponentModel.dll
+c:\temp\testbuild\refs\System.ComponentModel.EventBasedAsync.dll
+c:\temp\testbuild\refs\System.ComponentModel.Primitives.dll
+c:\temp\testbuild\refs\System.ComponentModel.TypeConverter.dll
+c:\temp\testbuild\refs\System.Configuration.dll
+c:\temp\testbuild\refs\System.Console.dll
+c:\temp\testbuild\refs\System.Core.dll
+c:\temp\testbuild\refs\System.Data.Common.dll
+c:\temp\testbuild\refs\System.Data.DataSetExtensions.dll
+c:\temp\testbuild\refs\System.Data.dll
+c:\temp\testbuild\refs\System.Diagnostics.Contracts.dll
+c:\temp\testbuild\refs\System.Diagnostics.Debug.dll
+c:\temp\testbuild\refs\System.Diagnostics.DiagnosticSource.dll
+c:\temp\testbuild\refs\System.Diagnostics.FileVersionInfo.dll
+c:\temp\testbuild\refs\System.Diagnostics.Process.dll
+c:\temp\testbuild\refs\System.Diagnostics.StackTrace.dll
+c:\temp\testbuild\refs\System.Diagnostics.TextWriterTraceListener.dll
+c:\temp\testbuild\refs\System.Diagnostics.Tools.dll
+c:\temp\testbuild\refs\System.Diagnostics.TraceSource.dll
+c:\temp\testbuild\refs\System.Diagnostics.Tracing.dll
+c:\temp\testbuild\refs\System.dll
+c:\temp\testbuild\refs\System.Drawing.dll
+c:\temp\testbuild\refs\System.Drawing.Primitives.dll
+c:\temp\testbuild\refs\System.Dynamic.Runtime.dll
+c:\temp\testbuild\refs\System.Formats.Asn1.dll
+c:\temp\testbuild\refs\System.Formats.Cbor.dll
+c:\temp\testbuild\refs\System.Formats.Tar.dll
+c:\temp\testbuild\refs\System.Globalization.Calendars.dll
+c:\temp\testbuild\refs\System.Globalization.dll
+c:\temp\testbuild\refs\System.Globalization.Extensions.dll
+c:\temp\testbuild\refs\System.IO.Compression.Brotli.dll
+c:\temp\testbuild\refs\System.IO.Compression.dll
+c:\temp\testbuild\refs\System.IO.Compression.FileSystem.dll
+c:\temp\testbuild\refs\System.IO.Compression.ZipFile.dll
+c:\temp\testbuild\refs\System.IO.dll
+c:\temp\testbuild\refs\System.IO.FileSystem.AccessControl.dll
+c:\temp\testbuild\refs\System.IO.FileSystem.dll
+c:\temp\testbuild\refs\System.IO.FileSystem.DriveInfo.dll
+c:\temp\testbuild\refs\System.IO.FileSystem.Primitives.dll
+c:\temp\testbuild\refs\System.IO.FileSystem.Watcher.dll
+c:\temp\testbuild\refs\System.IO.IsolatedStorage.dll
+c:\temp\testbuild\refs\System.IO.MemoryMappedFiles.dll
+c:\temp\testbuild\refs\System.IO.Pipelines.dll
+c:\temp\testbuild\refs\System.IO.Pipes.AccessControl.dll
+c:\temp\testbuild\refs\System.IO.Pipes.dll
+c:\temp\testbuild\refs\System.IO.UnmanagedMemoryStream.dll
+c:\temp\testbuild\refs\System.Linq.AsyncEnumerable.dll
+c:\temp\testbuild\refs\System.Linq.dll
+c:\temp\testbuild\refs\System.Linq.Expressions.dll
+c:\temp\testbuild\refs\System.Linq.Parallel.dll
+c:\temp\testbuild\refs\System.Linq.Queryable.dll
+c:\temp\testbuild\refs\System.Memory.dll
+c:\temp\testbuild\refs\System.Net.dll
+c:\temp\testbuild\refs\System.Net.Http.dll
+c:\temp\testbuild\refs\System.Net.Http.Json.dll
+c:\temp\testbuild\refs\System.Net.HttpListener.dll
+c:\temp\testbuild\refs\System.Net.Mail.dll
+c:\temp\testbuild\refs\System.Net.NameResolution.dll
+c:\temp\testbuild\refs\System.Net.NetworkInformation.dll
+c:\temp\testbuild\refs\System.Net.Ping.dll
+c:\temp\testbuild\refs\System.Net.Primitives.dll
+c:\temp\testbuild\refs\System.Net.Quic.dll
+c:\temp\testbuild\refs\System.Net.Requests.dll
+c:\temp\testbuild\refs\System.Net.Security.dll
+c:\temp\testbuild\refs\System.Net.ServerSentEvents.dll
+c:\temp\testbuild\refs\System.Net.ServicePoint.dll
+c:\temp\testbuild\refs\System.Net.Sockets.dll
+c:\temp\testbuild\refs\System.Net.WebClient.dll
+c:\temp\testbuild\refs\System.Net.WebHeaderCollection.dll
+c:\temp\testbuild\refs\System.Net.WebProxy.dll
+c:\temp\testbuild\refs\System.Net.WebSockets.Client.dll
+c:\temp\testbuild\refs\System.Net.WebSockets.dll
+c:\temp\testbuild\refs\System.Numerics.dll
+c:\temp\testbuild\refs\System.Numerics.Vectors.dll
+c:\temp\testbuild\refs\System.ObjectModel.dll
+c:\temp\testbuild\refs\System.Reflection.DispatchProxy.dll
+c:\temp\testbuild\refs\System.Reflection.dll
+c:\temp\testbuild\refs\System.Reflection.Emit.dll
+c:\temp\testbuild\refs\System.Reflection.Emit.ILGeneration.dll
+c:\temp\testbuild\refs\System.Reflection.Emit.Lightweight.dll
+c:\temp\testbuild\refs\System.Reflection.Extensions.dll
+c:\temp\testbuild\refs\System.Reflection.Metadata.dll
+c:\temp\testbuild\refs\System.Reflection.Primitives.dll
+c:\temp\testbuild\refs\System.Reflection.TypeExtensions.dll
+c:\temp\testbuild\refs\System.Resources.Reader.dll
+c:\temp\testbuild\refs\System.Resources.ResourceManager.dll
+c:\temp\testbuild\refs\System.Resources.Writer.dll
+c:\temp\testbuild\refs\System.Runtime.CompilerServices.Unsafe.dll
+c:\temp\testbuild\refs\System.Runtime.CompilerServices.VisualC.dll
+c:\temp\testbuild\refs\System.Runtime.dll
+c:\temp\testbuild\refs\System.Runtime.Extensions.dll
+c:\temp\testbuild\refs\System.Runtime.Handles.dll
+c:\temp\testbuild\refs\System.Runtime.InteropServices.dll
+c:\temp\testbuild\refs\System.Runtime.InteropServices.JavaScript.dll
+c:\temp\testbuild\refs\System.Runtime.InteropServices.RuntimeInformation.dll
+c:\temp\testbuild\refs\System.Runtime.Intrinsics.dll
+c:\temp\testbuild\refs\System.Runtime.Loader.dll
+c:\temp\testbuild\refs\System.Runtime.Numerics.dll
+c:\temp\testbuild\refs\System.Runtime.Serialization.dll
+c:\temp\testbuild\refs\System.Runtime.Serialization.Formatters.dll
+c:\temp\testbuild\refs\System.Runtime.Serialization.Json.dll
+c:\temp\testbuild\refs\System.Runtime.Serialization.Primitives.dll
+c:\temp\testbuild\refs\System.Runtime.Serialization.Xml.dll
+c:\temp\testbuild\refs\System.Security.AccessControl.dll
+c:\temp\testbuild\refs\System.Security.Claims.dll
+c:\temp\testbuild\refs\System.Security.Cryptography.Algorithms.dll
+c:\temp\testbuild\refs\System.Security.Cryptography.Cng.dll
+c:\temp\testbuild\refs\System.Security.Cryptography.Csp.dll
+c:\temp\testbuild\refs\System.Security.Cryptography.dll
+c:\temp\testbuild\refs\System.Security.Cryptography.Encoding.dll
+c:\temp\testbuild\refs\System.Security.Cryptography.OpenSsl.dll
+c:\temp\testbuild\refs\System.Security.Cryptography.Primitives.dll
+c:\temp\testbuild\refs\System.Security.Cryptography.X509Certificates.dll
+c:\temp\testbuild\refs\System.Security.Cryptography.Xml.dll
+c:\temp\testbuild\refs\System.Security.dll
+c:\temp\testbuild\refs\System.Security.Principal.dll
+c:\temp\testbuild\refs\System.Security.Principal.Windows.dll
+c:\temp\testbuild\refs\System.Security.SecureString.dll
+c:\temp\testbuild\refs\System.ServiceModel.Web.dll
+c:\temp\testbuild\refs\System.ServiceProcess.dll
+c:\temp\testbuild\refs\System.Text.Encoding.CodePages.dll
+c:\temp\testbuild\refs\System.Text.Encoding.dll
+c:\temp\testbuild\refs\System.Text.Encoding.Extensions.dll
+c:\temp\testbuild\refs\System.Text.Encodings.Web.dll
+c:\temp\testbuild\refs\System.Text.Json.dll
+c:\temp\testbuild\refs\System.Text.RegularExpressions.dll
+c:\temp\testbuild\refs\System.Threading.AccessControl.dll
+c:\temp\testbuild\refs\System.Threading.Channels.dll
+c:\temp\testbuild\refs\System.Threading.dll
+c:\temp\testbuild\refs\System.Threading.Overlapped.dll
+c:\temp\testbuild\refs\System.Threading.RateLimiting.dll
+c:\temp\testbuild\refs\System.Threading.Tasks.Dataflow.dll
+c:\temp\testbuild\refs\System.Threading.Tasks.dll
+c:\temp\testbuild\refs\System.Threading.Tasks.Extensions.dll
+c:\temp\testbuild\refs\System.Threading.Tasks.Parallel.dll
+c:\temp\testbuild\refs\System.Threading.Thread.dll
+c:\temp\testbuild\refs\System.Threading.ThreadPool.dll
+c:\temp\testbuild\refs\System.Threading.Timer.dll
+c:\temp\testbuild\refs\System.Transactions.dll
+c:\temp\testbuild\refs\System.Transactions.Local.dll
+c:\temp\testbuild\refs\System.ValueTuple.dll
+c:\temp\testbuild\refs\System.Web.dll
+c:\temp\testbuild\refs\System.Web.HttpUtility.dll
+c:\temp\testbuild\refs\System.Windows.dll
+c:\temp\testbuild\refs\System.Xml.dll
+c:\temp\testbuild\refs\System.Xml.Linq.dll
+c:\temp\testbuild\refs\System.Xml.ReaderWriter.dll
+c:\temp\testbuild\refs\System.Xml.Serialization.dll
+c:\temp\testbuild\refs\System.Xml.XDocument.dll
+c:\temp\testbuild\refs\System.Xml.XmlDocument.dll
+c:\temp\testbuild\refs\System.Xml.XmlSerializer.dll
+c:\temp\testbuild\refs\System.Xml.XPath.dll
+c:\temp\testbuild\refs\System.Xml.XPath.XDocument.dll
+c:\temp\testbuild\refs\WindowsBase.dll
+c:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\obj\Debug\net10.0\MvcTestingAppManifest.json
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\appsettings.Production.json
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\MvcTestingAppManifest.json
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\Microsoft.AspNetCore.Antiforgery.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\Microsoft.AspNetCore.Authentication.Abstractions.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\Microsoft.AspNetCore.Authentication.BearerToken.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\Microsoft.AspNetCore.Authentication.Cookies.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\Microsoft.AspNetCore.Authentication.Core.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\Microsoft.AspNetCore.Authentication.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\Microsoft.AspNetCore.Authentication.OAuth.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\Microsoft.AspNetCore.Authorization.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\Microsoft.AspNetCore.Authorization.Policy.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\Microsoft.AspNetCore.Components.Authorization.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\Microsoft.AspNetCore.Components.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\Microsoft.AspNetCore.Components.Endpoints.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\Microsoft.AspNetCore.Components.Forms.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\Microsoft.AspNetCore.Components.Server.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\Microsoft.AspNetCore.Components.Web.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\Microsoft.AspNetCore.Connections.Abstractions.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\Microsoft.AspNetCore.CookiePolicy.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\Microsoft.AspNetCore.Cors.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\Microsoft.AspNetCore.DataProtection.Abstractions.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\Microsoft.AspNetCore.DataProtection.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\Microsoft.AspNetCore.DataProtection.Extensions.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\Microsoft.AspNetCore.Diagnostics.Abstractions.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\Microsoft.AspNetCore.Diagnostics.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\Microsoft.AspNetCore.Diagnostics.HealthChecks.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\Microsoft.AspNetCore.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\Microsoft.AspNetCore.HostFiltering.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\Microsoft.AspNetCore.Hosting.Abstractions.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\Microsoft.AspNetCore.Hosting.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\Microsoft.AspNetCore.Hosting.Server.Abstractions.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\Microsoft.AspNetCore.Html.Abstractions.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\Microsoft.AspNetCore.Http.Abstractions.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\Microsoft.AspNetCore.Http.Connections.Common.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\Microsoft.AspNetCore.Http.Connections.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\Microsoft.AspNetCore.Http.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\Microsoft.AspNetCore.Http.Extensions.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\Microsoft.AspNetCore.Http.Features.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\Microsoft.AspNetCore.Http.Results.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\Microsoft.AspNetCore.HttpLogging.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\Microsoft.AspNetCore.HttpOverrides.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\Microsoft.AspNetCore.HttpsPolicy.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\Microsoft.AspNetCore.Identity.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\Microsoft.AspNetCore.Localization.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\Microsoft.AspNetCore.Localization.Routing.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\Microsoft.AspNetCore.Metadata.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\Microsoft.AspNetCore.Mvc.Abstractions.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\Microsoft.AspNetCore.Mvc.ApiExplorer.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\Microsoft.AspNetCore.Mvc.Core.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\Microsoft.AspNetCore.Mvc.Cors.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\Microsoft.AspNetCore.Mvc.DataAnnotations.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\Microsoft.AspNetCore.Mvc.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\Microsoft.AspNetCore.Mvc.Formatters.Json.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\Microsoft.AspNetCore.Mvc.Formatters.Xml.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\Microsoft.AspNetCore.Mvc.Localization.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\Microsoft.AspNetCore.Mvc.Razor.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\Microsoft.AspNetCore.Mvc.RazorPages.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\Microsoft.AspNetCore.Mvc.TagHelpers.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\Microsoft.AspNetCore.Mvc.ViewFeatures.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\Microsoft.AspNetCore.OutputCaching.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\Microsoft.AspNetCore.RateLimiting.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\Microsoft.AspNetCore.Razor.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\Microsoft.AspNetCore.Razor.Runtime.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\Microsoft.AspNetCore.RequestDecompression.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\Microsoft.AspNetCore.ResponseCaching.Abstractions.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\Microsoft.AspNetCore.ResponseCaching.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\Microsoft.AspNetCore.ResponseCompression.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\Microsoft.AspNetCore.Rewrite.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\Microsoft.AspNetCore.Routing.Abstractions.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\Microsoft.AspNetCore.Routing.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\Microsoft.AspNetCore.Server.HttpSys.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\Microsoft.AspNetCore.Server.IIS.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\Microsoft.AspNetCore.Server.IISIntegration.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\Microsoft.AspNetCore.Server.Kestrel.Core.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\Microsoft.AspNetCore.Server.Kestrel.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\Microsoft.AspNetCore.Server.Kestrel.Transport.NamedPipes.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\Microsoft.AspNetCore.Server.Kestrel.Transport.Quic.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\Microsoft.AspNetCore.Session.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\Microsoft.AspNetCore.SignalR.Common.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\Microsoft.AspNetCore.SignalR.Core.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\Microsoft.AspNetCore.SignalR.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\Microsoft.AspNetCore.SignalR.Protocols.Json.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\Microsoft.AspNetCore.StaticAssets.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\Microsoft.AspNetCore.StaticFiles.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\Microsoft.AspNetCore.WebSockets.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\Microsoft.AspNetCore.WebUtilities.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\Microsoft.CSharp.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\Microsoft.Extensions.Caching.Memory.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\Microsoft.Extensions.Configuration.Ini.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\Microsoft.Extensions.Configuration.KeyPerFile.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\Microsoft.Extensions.Configuration.Xml.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\Microsoft.Extensions.Diagnostics.HealthChecks.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\Microsoft.Extensions.Features.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\Microsoft.Extensions.FileProviders.Composite.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\Microsoft.Extensions.FileProviders.Embedded.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\Microsoft.Extensions.Http.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\Microsoft.Extensions.Identity.Core.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\Microsoft.Extensions.Identity.Stores.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\Microsoft.Extensions.Localization.Abstractions.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\Microsoft.Extensions.Localization.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\Microsoft.Extensions.Logging.TraceSource.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\Microsoft.Extensions.ObjectPool.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\Microsoft.Extensions.Options.DataAnnotations.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\Microsoft.Extensions.Validation.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\Microsoft.Extensions.WebEncoders.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\Microsoft.JSInterop.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\Microsoft.Net.Http.Headers.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\Microsoft.VisualBasic.Core.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\Microsoft.VisualBasic.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\Microsoft.Win32.Primitives.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\Microsoft.Win32.Registry.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\mscorlib.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\netstandard.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.AppContext.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.Buffers.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.Collections.Concurrent.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.Collections.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.Collections.Immutable.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.Collections.NonGeneric.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.Collections.Specialized.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.ComponentModel.Annotations.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.ComponentModel.DataAnnotations.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.ComponentModel.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.ComponentModel.EventBasedAsync.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.ComponentModel.Primitives.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.ComponentModel.TypeConverter.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.Configuration.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.Console.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.Core.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.Data.Common.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.Data.DataSetExtensions.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.Data.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.Diagnostics.Contracts.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.Diagnostics.Debug.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.Diagnostics.DiagnosticSource.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.Diagnostics.FileVersionInfo.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.Diagnostics.Process.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.Diagnostics.StackTrace.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.Diagnostics.TextWriterTraceListener.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.Diagnostics.Tools.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.Diagnostics.TraceSource.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.Diagnostics.Tracing.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.Drawing.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.Drawing.Primitives.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.Dynamic.Runtime.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.Formats.Asn1.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.Formats.Cbor.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.Formats.Tar.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.Globalization.Calendars.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.Globalization.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.Globalization.Extensions.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.IO.Compression.Brotli.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.IO.Compression.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.IO.Compression.FileSystem.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.IO.Compression.ZipFile.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.IO.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.IO.FileSystem.AccessControl.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.IO.FileSystem.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.IO.FileSystem.DriveInfo.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.IO.FileSystem.Primitives.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.IO.FileSystem.Watcher.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.IO.IsolatedStorage.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.IO.MemoryMappedFiles.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.IO.Pipelines.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.IO.Pipes.AccessControl.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.IO.Pipes.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.IO.UnmanagedMemoryStream.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.Linq.AsyncEnumerable.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.Linq.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.Linq.Expressions.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.Linq.Parallel.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.Linq.Queryable.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.Memory.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.Net.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.Net.Http.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.Net.Http.Json.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.Net.HttpListener.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.Net.Mail.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.Net.NameResolution.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.Net.NetworkInformation.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.Net.Ping.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.Net.Primitives.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.Net.Quic.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.Net.Requests.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.Net.Security.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.Net.ServerSentEvents.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.Net.ServicePoint.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.Net.Sockets.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.Net.WebClient.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.Net.WebHeaderCollection.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.Net.WebProxy.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.Net.WebSockets.Client.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.Net.WebSockets.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.Numerics.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.Numerics.Vectors.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.ObjectModel.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.Reflection.DispatchProxy.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.Reflection.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.Reflection.Emit.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.Reflection.Emit.ILGeneration.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.Reflection.Emit.Lightweight.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.Reflection.Extensions.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.Reflection.Metadata.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.Reflection.Primitives.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.Reflection.TypeExtensions.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.Resources.Reader.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.Resources.ResourceManager.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.Resources.Writer.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.Runtime.CompilerServices.Unsafe.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.Runtime.CompilerServices.VisualC.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.Runtime.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.Runtime.Extensions.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.Runtime.Handles.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.Runtime.InteropServices.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.Runtime.InteropServices.JavaScript.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.Runtime.Intrinsics.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.Runtime.Loader.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.Runtime.Numerics.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.Runtime.Serialization.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.Runtime.Serialization.Formatters.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.Runtime.Serialization.Json.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.Runtime.Serialization.Primitives.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.Runtime.Serialization.Xml.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.Security.AccessControl.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.Security.Claims.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.Security.Cryptography.Algorithms.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.Security.Cryptography.Cng.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.Security.Cryptography.Csp.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.Security.Cryptography.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.Security.Cryptography.Encoding.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.Security.Cryptography.OpenSsl.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.Security.Cryptography.Primitives.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.Security.Cryptography.X509Certificates.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.Security.Cryptography.Xml.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.Security.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.Security.Principal.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.Security.Principal.Windows.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.Security.SecureString.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.ServiceModel.Web.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.ServiceProcess.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.Text.Encoding.CodePages.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.Text.Encoding.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.Text.Encoding.Extensions.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.Text.Encodings.Web.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.Text.Json.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.Text.RegularExpressions.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.Threading.AccessControl.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.Threading.Channels.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.Threading.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.Threading.Overlapped.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.Threading.RateLimiting.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.Threading.Tasks.Dataflow.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.Threading.Tasks.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.Threading.Tasks.Extensions.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.Threading.Tasks.Parallel.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.Threading.Thread.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.Threading.ThreadPool.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.Threading.Timer.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.Transactions.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.Transactions.Local.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.ValueTuple.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.Web.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.Web.HttpUtility.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.Windows.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.Xml.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.Xml.Linq.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.Xml.ReaderWriter.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.Xml.Serialization.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.Xml.XDocument.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.Xml.XmlDocument.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.Xml.XmlSerializer.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.Xml.XPath.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.Xml.XPath.XDocument.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\WindowsBase.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\ClosedXML.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\DocumentFormat.OpenXml.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\ExcelNumberFormat.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\Irony.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\Microsoft.AspNetCore.Mvc.Testing.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\Microsoft.AspNetCore.TestHost.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\Microsoft.Extensions.DependencyModel.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\SixLabors.Fonts.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\System.IO.Packaging.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\XLParser.dll
+c:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\Microsoft.Extensions.Configuration.Abstractions.dll
+c:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\Microsoft.Extensions.Configuration.Binder.dll
+c:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\Microsoft.Extensions.Configuration.CommandLine.dll
+c:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\Microsoft.Extensions.Configuration.dll
+c:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\Microsoft.Extensions.Configuration.EnvironmentVariables.dll
+c:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\Microsoft.Extensions.Configuration.FileExtensions.dll
+c:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\Microsoft.Extensions.Configuration.Json.dll
+c:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\Microsoft.Extensions.Configuration.UserSecrets.dll
+c:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+c:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\Microsoft.Extensions.DependencyInjection.dll
+c:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\Microsoft.Extensions.Diagnostics.Abstractions.dll
+c:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\Microsoft.Extensions.Diagnostics.dll
+c:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\Microsoft.Extensions.FileProviders.Abstractions.dll
+c:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\Microsoft.Extensions.FileProviders.Physical.dll
+c:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\Microsoft.Extensions.FileSystemGlobbing.dll
+c:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\Microsoft.Extensions.Hosting.Abstractions.dll
+c:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\Microsoft.Extensions.Hosting.dll
+c:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\Microsoft.Extensions.Logging.Abstractions.dll
+c:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\Microsoft.Extensions.Logging.Configuration.dll
+c:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\Microsoft.Extensions.Logging.Console.dll
+c:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\Microsoft.Extensions.Logging.Debug.dll
+c:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\Microsoft.Extensions.Logging.dll
+c:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\Microsoft.Extensions.Logging.EventLog.dll
+c:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\Microsoft.Extensions.Logging.EventSource.dll
+c:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\Microsoft.Extensions.Options.ConfigurationExtensions.dll
+c:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\Microsoft.Extensions.Options.dll
+c:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\Microsoft.Extensions.Primitives.dll
+c:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\refs\System.Diagnostics.EventLog.dll
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\Web.config

@@ -1,0 +1,277 @@
+@* Receipt partial — rendered to string by ReceiptPrinterService and also used
+   directly in the print stylesheet flow.
+   Requirements: 26.1–26.12, 8.10 *@
+@model PosWebApp.Models.ViewModels.ReceiptViewModel
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Receipt — @Model.InvoiceNo</title>
+    @* Khmer Unicode fonts (Nokora + Battambang) — Requirement 26.11 *@
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Battambang:wght@400;700&family=Nokora:wght@100;300;400;700;900&display=swap" />
+    <style>
+        /* ── Base ─────────────────────────────────────────────────────────── */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Nokora', 'Battambang', Arial, sans-serif;
+            font-size: 12px;
+            color: #000;
+            background: #fff;
+            width: 80mm;           /* 80-mm thermal paper — Req 26.12 */
+            margin: 0 auto;
+            padding: 4mm;
+        }
+
+        .receipt-header {
+            text-align: center;
+            border-bottom: 1px dashed #000;
+            padding-bottom: 6px;
+            margin-bottom: 8px;
+        }
+
+        .receipt-header .business-name {
+            font-family: 'Battambang', 'Nokora', Arial, sans-serif;
+            font-size: 15px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        .receipt-header .address,
+        .receipt-header .phone {
+            font-size: 11px;
+            color: #333;
+        }
+
+        .receipt-meta {
+            font-size: 11px;
+            margin-bottom: 8px;
+        }
+
+        .receipt-meta table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .receipt-meta td {
+            padding: 1px 0;
+            vertical-align: top;
+        }
+
+        .receipt-meta td:first-child {
+            font-weight: 600;
+            width: 42%;
+            color: #444;
+        }
+
+        .items-table {
+            width: 100%;
+            border-collapse: collapse;
+            border-top: 1px solid #000;
+            border-bottom: 1px solid #000;
+            margin-bottom: 6px;
+        }
+
+        .items-table th {
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            padding: 3px 2px;
+            border-bottom: 1px solid #000;
+            text-align: left;
+        }
+
+        .items-table th.text-right,
+        .items-table td.text-right { text-align: right; }
+        .items-table th.text-center,
+        .items-table td.text-center { text-align: center; }
+
+        .items-table td {
+            font-size: 11px;
+            padding: 3px 2px;
+            vertical-align: top;
+        }
+
+        .items-table .item-name {
+            font-family: 'Nokora', 'Battambang', Arial, sans-serif;
+            word-break: break-word;
+        }
+
+        .totals-section {
+            margin-top: 4px;
+            margin-bottom: 8px;
+        }
+
+        .totals-section table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .totals-section td {
+            padding: 2px 2px;
+            font-size: 11px;
+            vertical-align: top;
+        }
+
+        .totals-section td:last-child { text-align: right; }
+
+        .totals-section .grand-total td {
+            font-size: 13px;
+            font-weight: 700;
+            border-top: 1px solid #000;
+            padding-top: 4px;
+        }
+
+        .khr-amount {
+            font-family: 'Battambang', 'Nokora', Arial, sans-serif;
+            font-size: 11px;
+            color: #555;
+        }
+
+        .receipt-footer {
+            text-align: center;
+            border-top: 1px dashed #000;
+            padding-top: 6px;
+            font-size: 10px;
+            color: #555;
+            margin-top: 8px;
+        }
+
+        /* ── Print media — suppress browser chrome, force exact width ──── */
+        @@media print {
+            @@page {
+                size: 80mm auto;
+                margin: 0;
+            }
+
+            body {
+                width: 80mm;
+                margin: 0;
+                padding: 2mm;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    @* ── Header ───────────────────────────────────────────────────────────── *@
+    <div class="receipt-header">
+        <div class="business-name">@Model.BusinessName</div>
+        @if (!string.IsNullOrEmpty(Model.Address))
+        {
+            <div class="address">@Model.Address</div>
+        }
+        @if (!string.IsNullOrEmpty(Model.Phone))
+        {
+            <div class="phone">Tel: @Model.Phone</div>
+        }
+    </div>
+
+    @* ── Sale metadata ────────────────────────────────────────────────────── *@
+    <div class="receipt-meta">
+        <table>
+            <tr>
+                <td>Invoice No.</td>
+                <td>@Model.InvoiceNo</td>
+            </tr>
+            <tr>
+                <td>Sale ID</td>
+                <td>#@Model.SaleID</td>
+            </tr>
+            <tr>
+                <td>Date</td>
+                <td>@Model.CreatedDate.ToString("yyyy-MM-dd")</td>
+            </tr>
+            <tr>
+                <td>Time</td>
+                <td>@Model.CreatedDate.ToString("HH:mm")</td>
+            </tr>
+            <tr>
+                <td>Staff</td>
+                <td>@Model.StaffUserName</td>
+            </tr>
+            @if (!string.IsNullOrEmpty(Model.CustomerName))
+            {
+                <tr>
+                    <td>Customer</td>
+                    <td>@Model.CustomerName</td>
+                </tr>
+            }
+        </table>
+    </div>
+
+    @* ── Line items ───────────────────────────────────────────────────────── *@
+    <table class="items-table" aria-label="Sale line items">
+        <thead>
+            <tr>
+                <th style="width:45%">Item</th>
+                <th class="text-center" style="width:12%">Qty</th>
+                <th class="text-right" style="width:20%">Price</th>
+                <th class="text-right" style="width:23%">Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Items)
+            {
+                <tr>
+                    <td class="item-name">@item.ItemName</td>
+                    <td class="text-center">@item.Quantity</td>
+                    <td class="text-right">
+                        $@item.UnitPrice.ToString("F2")
+                        @if (item.HasDiscount)
+                        {
+                            @* Requirements 28.5, 28.6 — show discount on receipt *@
+                            <br />
+                            <span style="font-size:9px;color:#c00;">-@item.Discount.ToString("F1")%</span>
+                        }
+                    </td>
+                    <td class="text-right">
+                        @if (item.HasDiscount)
+                        {
+                            @* Original price struck through, discounted price shown *@
+                            <span style="text-decoration:line-through;color:#999;font-size:9px;">
+                                $@item.OriginalLineTotal.ToString("F2")
+                            </span>
+                            <br />
+                            <strong>$@item.LineTotal.ToString("F2")</strong>
+                        }
+                        else
+                        {
+                            @($"${item.LineTotal:F2}")
+                        }
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    @* ── Totals ───────────────────────────────────────────────────────────── *@
+    <div class="totals-section">
+        <table>
+            <tr>
+                <td>Subtotal</td>
+                <td>$@Model.Subtotal.ToString("F2")</td>
+            </tr>
+            <tr class="grand-total">
+                <td>GRAND TOTAL</td>
+                <td>
+                    @Model.TotalUsd<br />
+                    <span class="khr-amount">@Model.TotalKhr</span>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    @* ── Footer ───────────────────────────────────────────────────────────── *@
+    <div class="receipt-footer">
+        Thank you for your purchase!<br />
+        <span class="khr-amount">សូមអរគុណសម្រាប់ការទិញរបស់លោក/លោកស្រី!</span>
+    </div>
+
+</body>
+</html>

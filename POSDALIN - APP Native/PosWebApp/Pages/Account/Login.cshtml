@@ -1,0 +1,65 @@
+@page
+@model PosWebApp.Pages.Account.LoginModel
+@{
+    ViewData["Title"] = "Login";
+}
+
+<div class="row justify-content-center">
+    <div class="col-md-4">
+        <div class="card shadow-sm mt-5">
+            <div class="card-body p-4">
+                <h1 class="h4 card-title text-center mb-4">POS Login</h1>
+
+                @* Req 20.9 — validation summary announced as an alert *@
+                <div asp-validation-summary="All"
+                     class="text-danger mb-3"
+                     role="alert"
+                     aria-live="assertive"></div>
+
+                <form method="post" class="needs-validation" novalidate aria-label="Staff login form">
+                    <input type="hidden" name="returnUrl" value="@Model.ReturnUrl" />
+
+                    @* Req 20.9 — label associated via asp-for (renders for="Input_UserName");
+                       aria-describedby links input to its validation message. *@
+                    <div class="mb-3">
+                        <label asp-for="Input.UserName" class="form-label fw-semibold"></label>
+                        <input asp-for="Input.UserName"
+                               class="form-control form-control-lg"
+                               autocomplete="username"
+                               autofocus
+                               aria-describedby="username-error"
+                               aria-required="true" />
+                        <span asp-validation-for="Input.UserName"
+                              id="username-error"
+                              class="text-danger small"
+                              role="alert"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="Input.Password" class="form-label fw-semibold"></label>
+                        <input asp-for="Input.Password"
+                               class="form-control form-control-lg"
+                               autocomplete="current-password"
+                               aria-describedby="password-error"
+                               aria-required="true" />
+                        <span asp-validation-for="Input.Password"
+                              id="password-error"
+                              class="text-danger small"
+                              role="alert"></span>
+                    </div>
+
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-primary btn-lg">
+                            <i class="bi bi-box-arrow-in-right me-1" aria-hidden="true"></i>
+                            Log in
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

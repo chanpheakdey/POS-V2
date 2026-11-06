@@ -1,0 +1,351 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   Requirement 20.11 — relative font units + fluid typography for 200% resize
+   Using rem so browser text-resize settings are respected.
+   clamp() keeps text readable from small to large viewports.
+   ═══════════════════════════════════════════════════════════════════════════ */
+html {
+  font-size: clamp(0.875rem, 1.5vw, 1rem); /* 14px–16px, scales with viewport */
+}
+
+/* Requirement 20.2 — keep Khmer text at a comfortable size on small screens */
+@media (min-width: 48rem) { /* 768px in rem */
+  html {
+    font-size: 1rem; /* 16px — base for all rem calculations */
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   Requirement 20.2 — visible :focus-visible outline for keyboard navigation
+   Applies globally; overrides Bootstrap's default box-shadow-only focus.
+   Uses :focus-visible so mouse clicks do NOT show the outline.
+   ═══════════════════════════════════════════════════════════════════════════ */
+:focus-visible {
+  outline: 0.1875rem solid #0d6efd; /* 3px solid blue — ≥ 3:1 contrast on white */
+  outline-offset: 0.125rem;         /* 2px gap between element and ring */
+  border-radius: 0.125rem;
+}
+
+/* Remove the default box-shadow focus ring and replace with outline above */
+.btn:focus-visible,
+.btn:active:focus-visible,
+.btn-link.nav-link:focus-visible,
+.form-control:focus,
+.form-check-input:focus {
+  box-shadow: none;
+  outline: 0.1875rem solid #0d6efd;
+  outline-offset: 0.125rem;
+}
+
+/* Retain a subtle inner shadow for form controls to aid sighted users */
+.form-control:focus,
+.form-select:focus {
+  box-shadow: 0 0 0 0.0625rem #0d6efd;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+.form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
+  color: var(--bs-secondary-color);
+  text-align: end;
+}
+
+.form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
+  text-align: start;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   Khmer font stack — Req 20.2
+   Applied globally so Khmer Unicode in any element renders with Nokora/Battambang.
+   ═══════════════════════════════════════════════════════════════════════════ */
+body {
+    font-family: 'Nokora', 'Battambang', system-ui, -apple-system, sans-serif;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   Touch-friendly minimum tap targets — Req 14.3 (min 44 × 44 px)
+   ═══════════════════════════════════════════════════════════════════════════ */
+.btn,
+.nav-link,
+.navbar-toggler,
+.dropdown-item {
+    min-height: 44px;
+    min-width: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Nav-link text-only items can be narrower; only enforce height. */
+.navbar-nav .nav-link {
+    min-width: unset;
+    padding-top: 0.625rem;   /* ~10 px — keeps vertical hit area ≥ 44 px */
+    padding-bottom: 0.625rem;
+}
+
+/* Dropdown items inside the language selector */
+.dropdown-item {
+    min-height: 44px;
+    min-width: unset;
+    justify-content: flex-start;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   Skip-navigation link — Req 20.8
+   Visible only on keyboard focus (Bootstrap's .visually-hidden-focusable
+   handles the hide/show; this adds styling when visible).
+   ═══════════════════════════════════════════════════════════════════════════ */
+.skip-nav:focus-visible,
+.skip-nav:focus {
+    position: fixed;
+    top: 0.5rem;
+    left: 0.5rem;
+    z-index: 9999;
+    padding: 0.5rem 1rem;
+    background: #fff;
+    color: #0d6efd;
+    border: 0.125rem solid #0d6efd;
+    border-radius: 0.25rem;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   Item card — _ItemCardPartial.cshtml
+   Req 14.3: responsive 2-column (mobile) → 6-column (desktop) grid;
+   Req 20.1: alt text on images (enforced in markup);
+   Req 20.2: visible focus ring for keyboard navigation (focus-visible).
+   ═══════════════════════════════════════════════════════════════════════════ */
+.item-card {
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.item-card:hover .item-card__inner,
+.item-card:focus-within .item-card__inner {
+    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.15) !important;
+    transform: translateY(-2px);
+}
+
+/* Req 20.2 — show focus ring on the card anchor/button itself, not just the inner card.
+   Use :focus-visible so mouse clicks don't show the outline. */
+.item-card:focus-visible {
+    outline: 0.1875rem solid #0d6efd;
+    outline-offset: 0.125rem;
+    border-radius: 0.5rem;
+}
+
+/* Also handle when the card is wrapped in a <button> trigger element */
+.item-card-trigger:focus-visible .item-card__inner,
+.item-card-trigger:focus-visible {
+    outline: 0.1875rem solid #0d6efd;
+    outline-offset: 0.125rem;
+    border-radius: 0.5rem;
+}
+
+.item-card__inner {
+    border-radius: 0.5rem;
+    overflow: hidden;
+    transition: inherit;
+}
+
+/* Coloured header strip */
+.item-card__color-strip {
+    height: 6px;
+    width: 100%;
+}
+
+/* Image wrapper keeps a 3:2 aspect ratio regardless of source size */
+.item-card__img-wrapper {
+    aspect-ratio: 3 / 2;
+    overflow: hidden;
+    background-color: #f8f9fa;
+}
+
+.item-card__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.item-card__body {
+    background-color: rgba(255, 255, 255, 0.95);
+}
+
+.item-card__name {
+    font-size: clamp(0.75rem, 2vw, 0.875rem); /* Req 14.10 fluid typography */
+    line-height: 1.3;
+}
+
+/* Cart quantity badge within the card */
+.item-card__qty-badge {
+    font-size: 0.7rem;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   Responsive product grid helper class
+   Add class="product-grid" to the row; child elements use col-6 col-sm-4
+   col-md-3 col-lg-2 (Bootstrap classes set per Req 14.7).
+   ═══════════════════════════════════════════════════════════════════════════ */
+.product-grid {
+    --bs-gutter-x: 0.5rem;
+    --bs-gutter-y: 0.5rem;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   Search autocomplete dropdown — search.js / _NavbarPartial
+   Req 10.9 — autocomplete dropdown for the navbar search input
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Ensure the dropdown sits above other content */
+#search-autocomplete-dropdown {
+    max-height: 320px;
+    overflow-y: auto;
+    z-index: 1050; /* above Bootstrap dropdowns */
+}
+
+/* Individual suggestion row */
+.search-suggestion-item {
+    cursor: pointer;
+    transition: background-color 0.1s ease;
+    font-size: 0.875rem;
+    min-height: 44px; /* Req 14.3 — touch-friendly tap target */
+}
+
+.search-suggestion-item:hover,
+.search-suggestion-item.active {
+    background-color: #f0f4ff;
+    outline: 2px solid #0d6efd;
+    outline-offset: -2px;
+}
+
+/* Highlighted matching text inside a suggestion */
+.search-highlight {
+    background-color: #fff3cd;
+    font-weight: 600;
+    border-radius: 2px;
+}
+
+/* Code badge in suggestion */
+.search-suggestion-code {
+    font-size: 0.75rem;
+    white-space: nowrap;
+}
+
+/* Narrow the search form on small screens so it doesn't push nav items */
+#navbar-search-form {
+    min-width: 160px;
+    max-width: 260px;
+    flex: 1 1 160px;
+}
+
+@media (max-width: 575.98px) {
+    #navbar-search-form {
+        max-width: 100%;
+        width: 100%;
+        margin-top: 0.5rem;
+    }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   Requirement 20.6 — colour contrast ≥ 4.5:1 for normal text
+   Bootstrap's default btn-outline-secondary has inadequate contrast on white.
+   Darken the border/text to meet 4.5:1 (uses #495057, ratio ≈ 6.6:1).
+   ═══════════════════════════════════════════════════════════════════════════ */
+.btn-outline-secondary {
+    --bs-btn-color: #343a40;
+    --bs-btn-border-color: #495057;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #495057;
+    --bs-btn-hover-border-color: #343a40;
+}
+
+/* Req 20.6 — text-muted: Bootstrap default (#6c757d) has ~4.6:1 on white which
+   is borderline; anchor it to #5a6472 which is clearly ≥ 4.5:1. */
+.text-muted {
+    color: #5a6472 !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   Requirement 20.7 — do not rely solely on colour; reinforce status badges
+   with icons+text (markup already contains text; this keeps badges readable
+   even for colour-blind users).
+   ═══════════════════════════════════════════════════════════════════════════ */
+.badge.bg-success,
+.badge.bg-danger {
+    font-weight: 600;
+    letter-spacing: 0.025em;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   Requirement 20.11 — text-resize: use rem/em for all sizing so that browser
+   text-zoom at 200% does not clip or overflow content.
+   Container fluid uses max-width with padding to prevent horizontal scroll.
+   ═══════════════════════════════════════════════════════════════════════════ */
+.container-fluid,
+.container {
+    overflow-x: clip; /* prevent horizontal scroll at large zoom levels */
+}
+
+/* Ensure nav items wrap gracefully at 200% zoom */
+.navbar-nav {
+    flex-wrap: wrap;
+}
+
+/* Card body padding in rem so it scales with zoom */
+.card-body {
+    padding: 1rem;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   Requirement 20.12 — Bootstrap modal focus trap is built-in via Bootstrap 5
+   JS. Extra CSS ensures the modal backdrop does not block the focus ring.
+   ═══════════════════════════════════════════════════════════════════════════ */
+.modal-content :focus-visible {
+    outline: 0.1875rem solid #0d6efd;
+    outline-offset: 0.125rem;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   Requirement 20.10 — ARIA live region for the cart badge
+   The region is visually hidden but announced by screen readers when updated.
+   ═══════════════════════════════════════════════════════════════════════════ */
+#cart-badge-live {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   Fluid typography helpers — Requirement 14.10, 20.11
+   clamp(min, preferred, max) so text sizes never go below accessible minimum.
+   ═══════════════════════════════════════════════════════════════════════════ */
+.fs-fluid-sm   { font-size: clamp(0.75rem,  1.8vw, 0.875rem); }
+.fs-fluid-base { font-size: clamp(0.875rem, 2.2vw, 1rem);     }
+.fs-fluid-lg   { font-size: clamp(1rem,     2.5vw, 1.25rem);  }
+.fs-fluid-xl   { font-size: clamp(1.25rem,  3vw,   1.5rem);   }
+
+/* Page headings use fluid typography (Req 20.11) */
+h1, .h1 { font-size: clamp(1.5rem, 4vw, 2rem); }
+h2, .h2 { font-size: clamp(1.25rem, 3vw, 1.75rem); }
+h3, .h3 { font-size: clamp(1.1rem, 2.5vw, 1.5rem); }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   Tab order helpers — Requirement 20.3
+   Ensure interactive elements within card/table rows have logical order by
+   not using negative tabindex on focusable elements.
+   ═══════════════════════════════════════════════════════════════════════════ */
+[tabindex="-1"]:not([aria-hidden="true"]):not(.modal):not(.collapse):not(.fade) {
+    /* Prevent accidentally hiding focusable elements from tab order */
+}

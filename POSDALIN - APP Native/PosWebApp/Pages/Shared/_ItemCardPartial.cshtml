@@ -1,0 +1,78 @@
+@* _ItemCardPartial.cshtml
+   Reusable product/category/group card rendered inside the Bootstrap responsive grid.
+
+   Required model fields:
+     Name            string  — display label (product, category, or group name)
+     ImageUrl        string  — src for the card image
+     Href            string  — navigation target when card is clicked
+     BackgroundColor string  — CSS colour value for the card header strip
+
+   Optional model fields:
+     AltText         string? — override for img alt text (defaults to Name)
+     CartQty         int?    — quantity-in-cart badge (shown when > 0)
+
+   Usage:
+     @await Html.PartialAsync("_ItemCardPartial", new ItemCardViewModel
+     {
+         Name            = item.Name,
+         ImageUrl        = item.ImageUrl,
+         Href            = Url.Page("/Items", new { categoryId = item.Id }),
+         BackgroundColor = item.BackgroundColor,
+         CartQty         = cartQtyForItem,
+     })
+
+   Requirements covered: 14.1, 14.3, 14.7, 20.1, 20.2, 20.8, 22.2
+*@
+
+@using PosWebApp.Models.ViewModels
+
+@model ItemCardViewModel
+
+@{
+    var altText = string.IsNullOrWhiteSpace(Model.AltText) ? Model.Name : Model.AltText;
+    var hasBadge = (Model.CartQty ?? 0) > 0;
+}
+
+@*
+    Requirement 14.3 / 14.7 — column widths produce a 2-column layout on mobile
+    scaling up to 6 columns on large desktop via Bootstrap 5 responsive classes.
+    The outer col-* wrapper is intentionally NOT included here so each call-site
+    can control placement (e.g. wrapping all cards in a row with a foreach loop).
+    See Index.cshtml for the surrounding <div class="row g-2"> / col arrangement.
+*@
+<a href="@Model.Href"
+   class="text-decoration-none item-card d-block h-100"
+   aria-label="@altText">
+
+    <div class="card h-100 border-0 shadow-sm item-card__inner">
+
+        @* Colour-coded header strip (Req 14.x / 3.5) *@
+        <div class="item-card__color-strip" style="background-color: @Model.BackgroundColor;" aria-hidden="true"></div>
+
+        @* Product image with lazy loading — Req 20.1 (alt text), 3.9 (lazy) *@
+        <div class="item-card__img-wrapper position-relative">
+            <img src="@Model.ImageUrl"
+                 alt="@altText"
+                 loading="lazy"
+                 class="card-img-top item-card__img object-fit-cover"
+                 width="300"
+                 height="200"
+                 onerror="this.src='/images/placeholder.png'" />
+
+            @* Cart quantity badge (shown when item is already in cart) *@
+            @if (hasBadge)
+            {
+                <span class="position-absolute top-0 end-0 m-1 badge rounded-pill bg-success item-card__qty-badge"
+                      aria-label="@(Model.CartQty) in cart">
+                    <i class="bi bi-cart-check-fill me-1" aria-hidden="true"></i>@Model.CartQty
+                </span>
+            }
+        </div>
+
+        @* Card label *@
+        <div class="card-body p-2 text-center item-card__body">
+            <p class="card-text fw-semibold mb-0 text-truncate item-card__name">@Model.Name</p>
+        </div>
+
+    </div>
+</a>

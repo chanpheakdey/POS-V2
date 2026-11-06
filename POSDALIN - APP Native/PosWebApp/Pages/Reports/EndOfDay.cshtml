@@ -1,0 +1,285 @@
+@page
+@model PosWebApp.Pages.Reports.EndOfDayModel
+@using PosWebApp.Infrastructure
+@{
+    ViewData["Title"] = "End-of-Day Report";
+}
+
+@*
+    End-of-Day Report page (Manager/Admin only).
+    Requirements: 31.1, 31.2, 31.3, 31.4, 31.5, 31.6, 31.7, 31.8,
+                  31.9, 31.10, 31.11, 31.12, 31.13
+*@
+
+<div class="d-flex align-items-center justify-content-between mb-3 flex-wrap gap-2 no-print">
+    <h1 class="h3 mb-0">
+        <i class="bi bi-calendar2-check me-2" aria-hidden="true"></i>End-of-Day Report
+    </h1>
+</div>
+
+@* ── Date range filter form — Requirement 31.1 ──────────────────────────── *@
+<form method="get" class="card mb-4 no-print" aria-label="Report date range">
+    <div class="card-body">
+        <div class="row g-3 align-items-end">
+            <div class="col-sm-6 col-md-3">
+                <label for="StartDate" class="form-label small fw-semibold">From Date</label>
+                <input type="date"
+                       id="StartDate"
+                       name="StartDate"
+                       class="form-control form-control-sm"
+                       value="@Model.StartDate.ToString("yyyy-MM-dd")"
+                       aria-label="Start date" />
+            </div>
+            <div class="col-sm-6 col-md-3">
+                <label for="EndDate" class="form-label small fw-semibold">To Date</label>
+                <input type="date"
+                       id="EndDate"
+                       name="EndDate"
+                       class="form-control form-control-sm"
+                       value="@Model.EndDate.ToString("yyyy-MM-dd")"
+                       aria-label="End date" />
+            </div>
+            <div class="col-sm-12 col-md-6 d-flex gap-2 flex-wrap">
+                <button type="submit" class="btn btn-primary btn-sm">
+                    <i class="bi bi-bar-chart-line me-1" aria-hidden="true"></i>Generate
+                </button>
+                @if (Model.HasData)
+                {
+                    <a asp-page="/Reports/EndOfDay"
+                       asp-page-handler="ExportExcel"
+                       asp-route-startDate="@Model.StartDate.ToString("yyyy-MM-dd")"
+                       asp-route-endDate="@Model.EndDate.ToString("yyyy-MM-dd")"
+                       class="btn btn-success btn-sm"
+                       aria-label="Export to Excel">
+                        <i class="bi bi-file-earmark-excel me-1" aria-hidden="true"></i>Excel
+                    </a>
+                    <button type="button"
+                            class="btn btn-outline-secondary btn-sm"
+                            onclick="window.print()"
+                            aria-label="Print or save as PDF">
+                        <i class="bi bi-printer me-1" aria-hidden="true"></i>Print / PDF
+                    </button>
+                }
+            </div>
+        </div>
+    </div>
+</form>
+
+@* ── Error state ─────────────────────────────────────────────────────────── *@
+@if (Model.ErrorMessage is not null)
+{
+    <div class="alert alert-danger" role="alert">
+        <i class="bi bi-exclamation-triangle me-2" aria-hidden="true"></i>@Model.ErrorMessage
+    </div>
+}
+
+@* ── Report content ───────────────────────────────────────────────────────── *@
+@if (Model.HasData)
+{
+    @* Print header — visible only when printing (Requirement 31.13) *@
+    <div class="print-only mb-3">
+        <h2 class="h4">End-of-Day Report</h2>
+        <p class="mb-0">
+            Period: @Model.StartDate.ToString("yyyy-MM-dd") to @Model.EndDate.ToString("yyyy-MM-dd")
+        </p>
+        <p class="mb-0 text-muted small">Generated: @DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")</p>
+    </div>
+
+    @* ── Summary cards — Requirements 31.3, 31.4, 31.5, 31.6 ──────────── *@
+    <div class="row g-3 mb-4">
+        <div class="col-6 col-md-3">
+            <div class="card text-center h-100">
+                <div class="card-body">
+                    <div class="display-6 fw-bold text-primary">@Model.TotalSalesCount</div>
+                    <div class="text-muted small mt-1">Total Sales</div>
+                    <div class="text-muted small">(non-voided)</div>
+                </div>
+            </div>
+        </div>
+        <div class="col-6 col-md-3">
+            <div class="card text-center h-100">
+                <div class="card-body">
+                    <div class="display-6 fw-bold text-success">@Model.TotalRevenueUsd</div>
+                    <div class="text-muted small mt-1">@Model.TotalRevenueKhr</div>
+                    <div class="text-muted small">Total Revenue</div>
+                </div>
+            </div>
+        </div>
+        <div class="col-6 col-md-3">
+            <div class="card text-center h-100">
+                <div class="card-body">
+                    <div class="display-6 fw-bold text-danger">@Model.VoidedSalesCount</div>
+                    <div class="text-muted small mt-1">Voided Sales</div>
+                </div>
+            </div>
+        </div>
+        <div class="col-6 col-md-3">
+            <div class="card text-center h-100">
+                <div class="card-body">
+                    <div class="display-6 fw-bold text-secondary">@Model.AllSales.Count</div>
+                    <div class="text-muted small mt-1">Total Transactions</div>
+                    <div class="text-muted small">(incl. voided)</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @* ── Staff breakdown — Requirement 31.7 ─────────────────────────────── *@
+    @if (Model.StaffBreakdown.Any())
+    {
+        <div class="card mb-4">
+            <div class="card-header fw-semibold">
+                <i class="bi bi-people me-1" aria-hidden="true"></i>Breakdown by Staff
+            </div>
+            <div class="card-body p-0">
+                <div class="table-responsive">
+                    <table class="table table-sm table-hover mb-0 align-middle"
+                           aria-label="Sales breakdown by staff">
+                        <thead class="table-light">
+                            <tr>
+                                <th scope="col" class="ps-3">Staff Member</th>
+                                <th scope="col" class="text-end">Sales</th>
+                                <th scope="col" class="text-end">Revenue (USD)</th>
+                                <th scope="col" class="text-end pe-3">Revenue (KHR)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var row in Model.StaffBreakdown)
+                            {
+                                <tr>
+                                    <td class="ps-3 fw-semibold">@row.StaffUserName</td>
+                                    <td class="text-end">@row.SaleCount</td>
+                                    <td class="text-end">@row.RevenueUsd</td>
+                                    <td class="text-end pe-3 text-muted small">@row.RevenueKhr</td>
+                                </tr>
+                            }
+                        </tbody>
+                        <tfoot class="table-secondary fw-semibold">
+                            <tr>
+                                <td class="ps-3">Total</td>
+                                <td class="text-end">@Model.TotalSalesCount</td>
+                                <td class="text-end">@Model.TotalRevenueUsd</td>
+                                <td class="text-end pe-3 text-muted small">@Model.TotalRevenueKhr</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+        </div>
+    }
+
+    @* ── All transactions — Requirements 31.8, 31.9, 31.10 ──────────────── *@
+    <div class="card mb-4">
+        <div class="card-header fw-semibold d-flex justify-content-between">
+            <span>
+                <i class="bi bi-receipt me-1" aria-hidden="true"></i>All Transactions
+            </span>
+            <span class="text-muted small">@Model.AllSales.Count record(s)</span>
+        </div>
+        @if (!Model.AllSales.Any())
+        {
+            <div class="card-body">
+                <p class="text-muted mb-0">No transactions found for this period.</p>
+            </div>
+        }
+        else
+        {
+            <div class="card-body p-0">
+                <div class="table-responsive">
+                    <table class="table table-sm table-hover mb-0 align-middle"
+                           aria-label="All transactions">
+                        <thead class="table-light">
+                            <tr>
+                                <th scope="col" class="ps-3">Sale ID</th>
+                                <th scope="col">Invoice No.</th>
+                                <th scope="col">Date</th>
+                                <th scope="col">Staff</th>
+                                <th scope="col">Customer</th>
+                                <th scope="col" class="text-end">Total (USD)</th>
+                                <th scope="col" class="text-end pe-3">Total (KHR)</th>
+                                <th scope="col" class="text-center">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var sale in Model.AllSales)
+                            {
+                                var (sUsd, sKhr) = CurrencyFormatter.Format(
+                                    sale.Total, Model.ExchangeRate);
+                                <tr class="@(sale.Voided ? "table-danger" : "")">
+                                    <td class="ps-3 text-muted small">#@sale.SaleID</td>
+                                    <td class="fw-semibold small">@sale.InvoiceNo</td>
+                                    <td class="small text-nowrap">
+                                        @sale.CreatedDate.ToString("yyyy-MM-dd")
+                                        <br />
+                                        <span class="text-muted">
+                                            @sale.CreatedDate.ToString("HH:mm")
+                                        </span>
+                                    </td>
+                                    <td class="small">@sale.StaffUserName</td>
+                                    <td class="small">
+                                        @if (!string.IsNullOrEmpty(sale.CustomerName))
+                                        {
+                                            @sale.CustomerName
+                                        }
+                                        else
+                                        {
+                                            <span class="text-muted fst-italic">—</span>
+                                        }
+                                    </td>
+                                    <td class="text-end small fw-semibold">@sUsd</td>
+                                    <td class="text-end pe-3 small text-muted">@sKhr</td>
+                                    <td class="text-center">
+                                        @if (sale.Voided)
+                                        {
+                                            @* Req 20.7 — badge uses both colour AND icon+text, not colour alone *@
+                                            <span class="badge bg-danger"
+                                                  role="status"
+                                                  aria-label="Sale status: Voided">
+                                                <i class="bi bi-slash-circle me-1" aria-hidden="true"></i>VOIDED
+                                            </span>
+                                        }
+                                        else
+                                        {
+                                            <span class="badge bg-success"
+                                                  role="status"
+                                                  aria-label="Sale status: Active">
+                                                <i class="bi bi-check-circle me-1" aria-hidden="true"></i>Active
+                                            </span>
+                                        }
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        }
+    </div>
+}
+
+@section Styles {
+    <style>
+        /* Print-only elements hidden on screen */
+        .print-only { display: none; }
+
+        @@media print {
+            /* Show print header */
+            .print-only { display: block !important; }
+
+            /* Hide interactive chrome */
+            .no-print,
+            .navbar,
+            footer,
+            nav { display: none !important; }
+
+            /* A4 landscape for the report */
+            @@page { size: A4 landscape; margin: 10mm; }
+
+            /* Remove shadows from cards */
+            .card { box-shadow: none !important; border: 1px solid #dee2e6 !important; }
+
+            /* Avoid table rows splitting across pages */
+            tr { break-inside: avoid; }
+        }
+    </style>
+}

@@ -1,0 +1,318 @@
+@page "{id:int}"
+@model PosWebApp.Pages.Sale.SaleDetailModel
+@{
+    ViewData["Title"] = $"Sale #{Model.Detail?.SaleID} — {Model.Detail?.InvoiceNo}";
+    bool isManager = User.IsInRole("Manager") || User.IsInRole("Admin");
+    var detail     = Model.Detail;
+}
+
+@* ──────────────────────────────────────────────────────────────────────────────
+   Sale Detail — Requirements 9.5, 9.6, 28.6, 29.1, 29.2, 29.8, 29.11
+   ────────────────────────────────────────────────────────────────────────── *@
+
+@* ── Page heading with navigation ─────────────────────────────────────────── *@
+<div class="d-flex align-items-center justify-content-between mb-3 flex-wrap gap-2">
+    <div>
+        <a asp-page="/Sale/Index" class="btn btn-outline-secondary btn-sm me-2">
+            <i class="bi bi-arrow-left me-1" aria-hidden="true"></i>Back to History
+        </a>
+        <h1 class="h3 d-inline mb-0">
+            Sale Detail
+            @if (detail.Voided)
+            {
+                @* Voided badge — Requirement 29.1, 20.7 (colour + icon + text) *@
+                <span class="badge bg-danger ms-2 align-middle fs-6"
+                      role="status"
+                      aria-label="This sale has been voided">
+                    <i class="bi bi-slash-circle me-1" aria-hidden="true"></i>VOIDED
+                </span>
+            }
+        </h1>
+    </div>
+    <button type="button"
+            class="btn btn-outline-secondary btn-sm"
+            onclick="window.print()"
+            aria-label="Print sale detail">
+        <i class="bi bi-printer me-1" aria-hidden="true"></i>Print
+    </button>
+    @if (isManager)
+    {
+        @* Reprint button — Manager/Admin only — Requirements 26.6, 26.7 *@
+        <button type="button"
+                class="btn btn-outline-primary btn-sm"
+                onclick="window.print()"
+                aria-label="Reprint receipt for sale @detail?.InvoiceNo">
+            <i class="bi bi-printer-fill me-1" aria-hidden="true"></i>Reprint Receipt
+        </button>
+    }
+</div>
+
+@* Global validation summary *@
+@if (!ViewData.ModelState.IsValid)
+{
+    <div class="alert alert-danger mb-3" role="alert">
+        <i class="bi bi-exclamation-triangle-fill me-2" aria-hidden="true"></i>
+        <div asp-validation-summary="All" class="mb-0"></div>
+    </div>
+}
+
+<div class="row g-4">
+
+    @* ── Left column: sale header ─────────────────────────────────────────── *@
+    <div class="col-md-6">
+        <div class="card h-100">
+            <div class="card-header">
+                <h2 class="h6 mb-0">
+                    <i class="bi bi-receipt me-1" aria-hidden="true"></i>Sale Information
+                </h2>
+            </div>
+            <div class="card-body">
+                <dl class="row mb-0">
+
+                    <dt class="col-5">Sale ID</dt>
+                    <dd class="col-7">#@detail.SaleID</dd>
+
+                    <dt class="col-5">Invoice No.</dt>
+                    <dd class="col-7 fw-semibold">@detail.InvoiceNo</dd>
+
+                    <dt class="col-5">Date</dt>
+                    <dd class="col-7">
+                        @detail.CreatedDate.ToString("yyyy-MM-dd")
+                        <span class="text-muted">@detail.CreatedDate.ToString("HH:mm")</span>
+                    </dd>
+
+                    <dt class="col-5">Payment</dt>
+                    <dd class="col-7">
+                        @if (detail.PaymentMethod == "Cash")
+                        {
+                            <i class="bi bi-cash-coin me-1" aria-hidden="true"></i>
+                        }
+                        else if (detail.PaymentMethod == "Card")
+                        {
+                            <i class="bi bi-credit-card me-1" aria-hidden="true"></i>
+                        }
+                        @detail.PaymentMethod
+                    </dd>
+
+                    <dt class="col-5">Staff</dt>
+                    <dd class="col-7">@detail.StaffUserName</dd>
+
+                    <dt class="col-5">Customer</dt>
+                    <dd class="col-7">
+                        @if (!string.IsNullOrEmpty(detail.CustomerName))
+                        {
+                            @detail.CustomerName
+                        }
+                        else
+                        {
+                            <span class="text-muted fst-italic">—</span>
+                        }
+                    </dd>
+
+                    <dt class="col-5">Total</dt>
+                    <dd class="col-7 fw-bold">
+                        @Model.TotalUsd
+                        <br />
+                        <small class="text-muted fw-normal">@Model.TotalKhr</small>
+                    </dd>
+
+                </dl>
+            </div>
+        </div>
+    </div>
+
+    @* ── Right column: void info (when voided) ─────────────────────────────── *@
+    @if (detail.Voided)
+    {
+        @* Void details section — Requirement 29.1, 29.8 *@
+        <div class="col-md-6">
+            <div class="card h-100 border-danger">
+                <div class="card-header bg-danger text-white">
+                    <h2 class="h6 mb-0">
+                        <i class="bi bi-slash-circle me-1" aria-hidden="true"></i>Void Details
+                    </h2>
+                </div>
+                <div class="card-body">
+                    <dl class="row mb-0">
+
+                        @if (!string.IsNullOrEmpty(detail.VoidedBy))
+                        {
+                            <dt class="col-5">Voided By</dt>
+                            <dd class="col-7">@detail.VoidedBy</dd>
+                        }
+
+                        @if (detail.VoidedDate.HasValue)
+                        {
+                            <dt class="col-5">Voided Date</dt>
+                            <dd class="col-7">
+                                @detail.VoidedDate.Value.ToString("yyyy-MM-dd")
+                                <span class="text-muted">@detail.VoidedDate.Value.ToString("HH:mm")</span>
+                            </dd>
+                        }
+
+                        @if (!string.IsNullOrEmpty(detail.VoidReason))
+                        {
+                            <dt class="col-5">Reason</dt>
+                            <dd class="col-7">@detail.VoidReason</dd>
+                        }
+
+                    </dl>
+                </div>
+            </div>
+        </div>
+    }
+
+</div>@* /row *@
+
+@* ── Line items table ────────────────────────────────────────────────────── *@
+<div class="card mt-4">
+    <div class="card-header">
+        <h2 class="h6 mb-0">
+            <i class="bi bi-bag me-1" aria-hidden="true"></i>
+            Items
+            <span class="badge bg-secondary ms-1">@detail.Items.Count</span>
+        </h2>
+    </div>
+    <div class="card-body p-0">
+        <div class="table-responsive">
+            <table class="table table-sm mb-0 align-middle" aria-label="Sale line items">
+                <thead class="table-light">
+                    <tr>
+                        <th scope="col" class="ps-3">Code</th>
+                        <th scope="col">Item Name</th>
+                        <th scope="col" class="text-center">Qty</th>
+                        <th scope="col" class="text-end">Unit Price</th>
+                        <th scope="col" class="text-end">Discount</th>
+                        <th scope="col" class="text-end pe-3">Line Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in detail.Items)
+                    {
+                        <tr>
+                            <td class="ps-3 text-muted small">@item.ItemCode</td>
+                            <td class="small fw-semibold">@item.ItemName</td>
+                            <td class="text-center small">@item.Quantity</td>
+                            <td class="text-end small">$@item.UnitPrice.ToString("F2")</td>
+                            <td class="text-end small">
+                                @if (item.Discount > 0)
+                                {
+                                    <span class="text-danger">@item.Discount.ToString("F1")%</span>
+                                }
+                                else
+                                {
+                                    <span class="text-muted">—</span>
+                                }
+                            </td>
+                            <td class="text-end small fw-semibold pe-3">
+                                $@item.LineTotal.ToString("F2")
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+                <tfoot class="table-light fw-bold">
+                    <tr>
+                        <td colspan="5" class="text-end ps-3">Grand Total</td>
+                        <td class="text-end pe-3">
+                            @Model.TotalUsd
+                            <br />
+                            <small class="text-muted fw-normal small">@Model.TotalKhr</small>
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+</div>
+
+@* ── Void form (Manager/Admin only, sale not already voided) ─────────────── *@
+@* Requirements: 29.2, 29.8, 29.11 *@
+@if (isManager && !detail.Voided)
+{
+    <div class="card mt-4 border-warning">
+        <div class="card-header bg-warning bg-opacity-10">
+            <h2 class="h6 mb-0 text-warning-emphasis">
+                <i class="bi bi-slash-circle me-1" aria-hidden="true"></i>Void This Sale
+            </h2>
+        </div>
+        <div class="card-body">
+            <p class="text-muted small mb-3">
+                Voiding this sale is irreversible. A reason is required and will be recorded
+                against sale <strong>@detail.InvoiceNo</strong>.
+            </p>
+
+            @* [ValidateAntiForgeryToken] enforced via filter in the page model *@
+            <form method="post"
+                  asp-page-handler="Void"
+                  asp-route-id="@detail.SaleID"
+                  id="void-form"
+                  novalidate>
+
+                @Html.AntiForgeryToken()
+
+                <div class="mb-3">
+                    <label asp-for="VoidReason" class="form-label fw-semibold">
+                        Reason for Voiding <span class="text-danger" aria-hidden="true">*</span>
+                    </label>
+                    <textarea asp-for="VoidReason"
+                              class="form-control"
+                              rows="3"
+                              maxlength="500"
+                              placeholder="Enter reason…"
+                              aria-required="true"
+                              aria-describedby="void-reason-help void-reason-error"></textarea>
+                    <div id="void-reason-help" class="form-text">
+                        Max 500 characters.
+                    </div>
+                    <span asp-validation-for="VoidReason"
+                          id="void-reason-error"
+                          class="text-danger small"></span>
+                </div>
+
+                <div class="d-flex gap-2">
+                    <button type="button"
+                            class="btn btn-outline-secondary"
+                            onclick="history.back()">
+                        Cancel
+                    </button>
+                    <button type="submit"
+                            class="btn btn-danger"
+                            id="void-submit-btn"
+                            aria-label="Confirm void sale @detail.InvoiceNo">
+                        <i class="bi bi-slash-circle me-1" aria-hidden="true"></i>Void Sale
+                    </button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+}
+
+@section Styles {
+    <style>
+        @@media print {
+            .navbar, footer, .btn, form[id="void-form"],
+            a[asp-page="/Sale/Index"] { display: none !important; }
+            .card { border: 1px solid #dee2e6 !important; }
+
+            /* Show all details when printing — override layout's 80-mm constraint
+               so the full sale detail page renders at the browser's default paper size. */
+            @@page { size: auto; margin: 10mm; }
+        }
+    </style>
+}
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    @if (isManager && !detail.Voided)
+    {
+        <script>
+            // Confirm dialog before submitting the void form
+            document.getElementById('void-submit-btn')?.addEventListener('click', function (e) {
+                if (!confirm('Are you sure you want to void this sale? This action cannot be undone.')) {
+                    e.preventDefault();
+                }
+            });
+        </script>
+    }
+}

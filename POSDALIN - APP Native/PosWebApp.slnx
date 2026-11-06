@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="PosWebApp.Tests/PosWebApp.Tests.csproj" />
+  <Project Path="PosWebApp/PosWebApp.csproj" />
+</Solution>

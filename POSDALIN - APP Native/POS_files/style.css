@@ -1,0 +1,1347 @@
+@charset "utf-8";
+/* CSS Document */
+
+body{
+	background-color: #ebebeb;
+	
+}
+h1{
+    line-height: 1.2;
+    font-weight: 300;
+	font-size:24px;		
+}
+h2{
+    font-weight: 300;
+	font-size:24px;	
+}
+h2.crtypto-h2 {
+    font-size:20px;
+}
+h3{
+font-weight:400;
+font-size:23.5px;	
+}
+a:hover{
+	text-decoration:none;
+}
+.site_wrapper .container{
+	/*width:960px;*/
+	width:95%;
+	padding:0;
+}
+/* Header */
+#header{
+	background:#fff;
+}
+#header .container-fluid{
+	width:100%;
+	height:30px;
+}
+.header-top-left{
+	margin-top: 5px;
+}
+.header-top-left a{
+    color: #333;
+    text-decoration: none;
+    font-size: 16px;	
+}
+.header-top-right .logo{
+	margin-top:8px;
+}	
+.header-top-right .nav{
+	margin-top:15px;
+	float:right;
+}
+.header-top-right .nav li a{
+	padding-top:0;
+}
+.header-top-right .nav li.dropdown a{
+	padding-top:10px;
+	padding-bottom:10px;
+	margin-top: -10px
+}
+.header-top-right .nav li ul.dropdown-menu{
+	width:100%;
+}
+.header-top-right .nav li ul.dropdown-menu li a{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align:right;
+}
+.header-top-right .nav li a:hover{
+	background:none;
+	color:#333;
+}
+.header-top-right .nav li a:active, .header-top-right .nav li.dropdown a:focus{
+	background:#333;
+	color:#fff;
+	}
+.header-top-right .nav ul.dropdown-menu li.first a{
+	border-bottom:1px solid #ccc;
+}
+.header-top-right .nav ul.dropdown-menu li.first a:hover{
+	background:#ccc;
+	color:#2f7bbf;
+}
+.header-top-right .nav ul.dropdown-menu li.logout a:hover{
+	background:#2f7bbf;
+	color:#2f7bbf;
+	}
+.header-box ul li a{
+	text-align:center;
+	/*background:#2f7bbf;*/
+	
+    padding: 10px;
+    border-radius: 2px;	
+    height:48px;
+    color:white;
+}
+.header-box ul li a:hover{
+	color:Green;		
+}
+.header-box ul li.active a{
+	color:#fff;
+
+}
+.header-box ul li span.box-text{
+    font-size: small;
+    margin-top: 10px;
+    float: left;
+    text-align: center;
+	color:#fff;
+	width: 100%;
+}
+.header-box ul li a span.icon .icon-svg{
+	fill: #fff;
+}
+.header-box .nav{
+	margin-top:20px;
+	margin-bottom:20px;
+	padding:0;
+}
+.header-box .nav li{
+    /*width: 6.60%;*/
+	width:110px;
+    margin-right: 10px;
+    padding-right: 0;
+}
+/* Header */
+/* Overview */
+.site_wrapper .main-conent{
+	margin:0px 0 20px 0;
+}
+.main-content .black-box{
+    background: #474747;
+    width: 100%;
+    padding: 22px 15px;	
+}
+.main-content .black-box .black-box-left h2{
+    margin: 0;
+    color: #fff;
+    font-size: 23px;	
+}
+.main-content .black-box .clock-icon{
+    color: #fff;
+    font-size: 22px;
+    margin-top: 6px;	
+}
+.main-content .status-box{
+    border-bottom: 1px solid #dedede;	
+}
+.main-content .status-box .status-box-left{
+    background: #fff;
+    padding-top: 10px;
+    padding-bottom: 10px;	
+}
+/*.main-content .status-box .status-box-right{
+	background-color: rgba(0,0,0,0.05843);	
+    border-left: 1px solid #dedede;
+	min-height:254px;
+}*/
+.main-content .status-box:after, .site_wrapper .main-content .subs-box:after{
+	content: '';
+    width: 33.333333%;
+    height: 100%;
+    right: 0;
+    top: 0;
+    position: absolute;
+    display: block;
+    z-index: -1;	
+	background: #f1f1f1;	
+}
+
+.main-content .status-box .status-box-right .text-center{
+	padding-top:30%;	
+}
+.site_wrapper p{
+	line-height:27px;
+}
+.site_wrapper .main-content .advance-box{
+	background:#fff;
+}
+.site_wrapper .main-content .advance-box .advance-btn{
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #dedede;	
+}
+.site_wrapper .main-content .advance-box .advance-btn a{
+	padding-right:20px;
+}
+.site_wrapper .main-content .advance-box .advance-btn a:hover{
+	cursor:pointer;
+	text-decoration:none;
+	color:#333;
+}
+.site_wrapper .main-content .advance-box .adv-box{
+
+	padding-bottom:20px;
+}
+.site_wrapper .main-content .summary-box{
+	padding-bottom:30px;
+	margin-top:20px;
+}
+.site_wrapper .main-content .summary-box h3{
+	margin-bottom:30px;
+}
+.site_wrapper .main-content .summary-box .lock-icon{
+	font-size: 20px;
+    color: #2f7bbf;	
+}
+.site_wrapper .main-content .summary-box  span a{
+	font-size:15px;
+}
+.site_wrapper .main-content .advance-box.summary-box span{
+	width:100%;
+	float:left;
+	margin:5px 0;
+
+}
+.site_wrapper .main-content .summary-box  span a:hover{
+	text-decoration:none;
+	color:#ff7900;
+}
+.site_wrapper .main-content .subs-box{
+	padding-bottom:0;
+	margin-top:20px;
+}
+.site_wrapper .main-content .subs-box .subs-box-left{
+	padding-bottom:20px;
+}
+.site_wrapper .main-content .subs-box .subs-box-left h3{
+	margin-bottom:20px;
+	}
+/*.site_wrapper .main-content .subs-box .subs-box-right{
+    background-color: rgba(0,0,0,0.05843);
+    border-left: 1px solid #dedede;
+    min-height: 106px;	
+}	*/
+.site_wrapper .main-content .advance-box.subs-box:after{
+	content: '';
+    width: 33.333333%;
+    height: 100%;
+    right: 0;
+    top: 0;
+    position: absolute;
+    display: block;
+    z-index: 0;	
+	background: #f1f1f1;	
+}
+.site_wrapper .main-content .subs-box .subs-box-right .text-center{
+	margin-top:35px;
+}
+/* Overview */
+/* Crypto */
+.crypto-main h1.crtypto-h1{
+	margin-bottom:0;
+}
+.crypto-main h2.crtypto-h2{
+    margin-top: 0;
+    #margin-bottom: 50px;
+    color: #7c7c7c;
+    font-weight: 300;	
+}
+.crypto-main .crypto-ssl .crypto-ssl-left span{
+    color: #7c7c7c;
+    font-size: 13px;	
+}
+
+.main-content .container .row .status-box-right{
+	z-index:100;	
+}
+.main-content .status-box .crypto-ssl-right .text-center{
+	padding-top: 17%;
+    padding-left: 33%;	
+}
+.main-content .status-box .crypto-ssl-right .text-center select{
+	width: 50%;	
+}
+.main-content .status-box .status-box-left{
+    border: 1px solid #dedede;
+    border-bottom: 0;	
+}
+.site_wrapper .main-content .advance-box {
+    background: #fff;
+    border: 1px solid #dedede;
+    border-top: 0;
+}
+.site_wrapper .main-content kbd{
+	background-color: #2f7bbf;
+	font-size: 68%;
+    font-weight: 300;
+    margin-right: 5px;		
+}
+.site_wrapper .main-content pre{
+    background-color: #dedede;
+    border: 1px solid #d2d2d2;
+    font-family: monaco, courier, monospace;
+	margin-top:10px;	
+}
+.site_wrapper .main-content .advance-box .border-bottom{
+    border-bottom: 1px solid #dedede;
+    margin-top: 20px;	
+}
+.site_wrapper .main-content .content-margin{
+	margin-top:20px;
+}
+.main-content .crypto-hsts .crypto-ssl-right .text-center{
+	padding-top: 16%;
+    padding-left: 5%;	
+}
+.main-content .crypto-auth .crypto-ssl-right .text-center{
+	padding-top: 16%;
+    padding-left: 5%;	
+}
+.main-content .crypto-tls .crypto-ssl-right .text-center{
+	padding-top: 16%;
+    padding-left: 0;	
+}
+.main-content .crypto-origin-white-bg{
+	background:#fff;
+	border: 1px solid #dedede;
+	border-top:0;
+}
+.main-content .crypto-origin-gray-bg{
+    background: #dedede;
+    padding-top: 5px;	
+}
+.main-content .crypto-origin-lightgray-bg{
+    background: #fafafa;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #dedede;	
+}
+.main-content .origin-pagination {
+	padding:10px 0;
+}
+.main-content .origin-pagination ul{
+	list-style:none;
+	padding: 0;
+    padding-left: 15px;	
+}
+.main-content .origin-pagination ul li{
+	float:left;
+    margin: 0 10px;	
+}
+.main-content .crypto-origin.status-box .crypto-ssl-right .text-center{
+	padding-left:8%;
+}
+.main-content .crypto-origin.status-box .crypto-ssl-right .text-center .disable-btn{
+	margin-top:10px;
+}
+.main-content .text-center .btn-primary, button.btn-primary{
+	background-color: #2F7BBF;
+    border-color: #2869a2;
+    color: #FFf;
+	border-radius: 5px;
+	border: none;
+    box-shadow: 0 0 0;
+    background-image: none;	
+}
+.main-content .text-center .btn-primary:hover{
+	background-color: #2869a2;
+    border-color: #215686;
+    color: #FFF;
+	border-radius: 5px;
+	background-position: 0 0;
+}
+/* Crypto */
+/* Firewall */
+.main-content.firewall-main .status-box.polish .crypto-ssl-right .text-center{
+    padding-top: 20%;
+    padding-left: 10%;	
+}
+
+.main-content.firewall-main .crypto-ssl-right .text-center select{
+    width: 66%;
+}
+.firewall-main .ip-firewall-web ul.nav{
+	border:none;
+}
+.firewall-main .ip-firewall-web ul.nav li{
+	padding:0;
+	border-radius: 0;
+}
+.firewall-main .ip-firewall-web ul.nav li a{
+	color:#2f7bbf;
+	background:#fff;
+	padding: 24px 0;
+	text-align: center;
+	margin:0;
+	border-radius: 0;
+	border:none;
+}
+.firewall-main .ip-firewall-web ul.nav li a:hover{
+    background-color: #f6f6f6;
+    color: #2f7bbf;
+	border:none;
+}
+.firewall-main .ip-firewall-web ul.nav li.active a{
+    text-align: center;
+    background-color: #2f7bbf;
+    color: #FFF;
+    padding: 24px 0;	
+	}
+.firewall-main .ip-firewall-web ul.nav li.active a:after{
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    border-top: 15px solid #2f7bbf;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    margin-left: -15px;	
+}	
+.firewall-main .ip-firewall-web .ip-firewall:hover{
+	text-decoration:none;
+}	
+.firewall-main .ip-firewall-web .web-firewall:hover{
+	background-color: #f6f6f6;
+    color: #2f7bbf;
+}
+.firewall-main form .form-inline .ip-add{
+    width: 47.7%;	
+}
+.firewall-main  form .form-inline .block-dropdown{
+ 	 width: 10.5%;
+	}
+.firewall-main  form .form-inline .web-dropdown{
+ 	#width: 15%;	
+	}	
+.firewall-main  form .form-inline{
+	margin-bottom:0;
+}
+.firewall-main .crypto-origin-gray-bg{
+	padding:0;
+}	
+.firewall-main .crypto-origin-gray-bg a{
+	color: #1a1a1a;
+	padding: 10px 5px;	
+}
+.firewall-main .crypto-origin-gray-bg a:hover{
+    background-color: #d1d1d1;	
+}
+.firewall-main #help_access ul li{
+	padding:5px 0;
+}
+.main-content.firewall-main .ddos-pro .crypto-ssl-right .text-center{
+	padding-left:0;
+	margin-left:0;
+}
+.main-content.firewall-main .browser .crypto-ssl-right .text-center{
+	padding-top: 25%;
+    margin-left: 0;	
+}
+.main-content.firewall-main .web-app-firewall.crypto-ssl-right .text-center{
+	padding-left:0;
+	margin-left:0;
+}
+
+/* Firewall */
+/* Speed */
+.main-content.speed-main .status-box .crypto-ssl-right .text-center{
+	text-align:left;
+}
+.main-content .checkbox label{
+	font-size:16px;
+}
+
+.site_wrapper .main-content .beta kbd{
+	background: #FF7900;	
+}
+.main-content .status-box.rocket-loader-main .crypto-ssl-right .text-center{
+    padding-top: 5%;
+    padding-left: 30%;	
+}
+.main-content .status-box.rocket-loader-main ul li{
+	padding-left:5px;
+}
+.main-content code{
+    padding: 4px 7px;
+    font-size: 90%;
+    color: #bd2527;
+    background-color: #f9f2f4;
+    border-radius: 2px;
+    background-color: #dedede;
+    border: 1px solid #d2d2d2;	
+}
+.main-content ul li{
+	padding:5px 0;
+}
+
+.main-content .status-box.rocket-loader-main .sub_domain_form  .text-center{
+	padding-left:0;
+	margin-left:20%;
+}
+.domain_form .form-group.row{
+    padding: 10px 40px;
+	text-align:left;
+	margin-bottom:0;	
+}
+.domain_form .form-group.subdomain, .domain_form .form-group.domain-path{
+	border-bottom: 1px solid #dedede;	
+}
+.domain_form .form-group.subdomain select{
+	width:80%;
+}
+.domain_form .form-group.domain-path select{
+	width:60%;
+}
+/* Speed */
+/* Caching */
+
+
+.main-content .status-box .purge-left .text-center{
+    #padding-top: 26%;
+    #padding-left: 20%;
+}
+.main-content .status-box .purge-left .text-center .dropdown-toggle{
+	#border-radius: 0;
+	border-radius: 0px 5px 5px 1px;
+}
+#purge_popup .modal-header, #purge_popup .modal-footer{
+	border:none;
+}
+#purge_popup .modal-header{
+	padding-bottom:0;
+}
+.main-content.caching .caching-box .crypto-ssl-right .text-center{
+	padding-top:12%;
+}
+.main-content.caching .status-box.polish .crypto-ssl-right .text-center form .radio{
+	margin:15px 0;
+	}
+.main-content .status-box.polish.browser-cache-box .crypto-ssl-right .text-center{
+	padding-top:20%;
+}	
+.main-content .status-box.polish.online-box .crypto-ssl-right .text-center{
+	padding-left:30%;
+}
+
+/* Caching */
+/* Page Rule */
+.main-content .status-box.page-rule-box .crypto-ssl-right .text-center{
+	margin-top:30px;
+}
+/* Page Rule */
+
+.main-content.caching .caching-box.ipv6-box .crypto-ssl-right .text-center{
+	padding-top: 14%;
+	padding-left: 34%;
+}
+/* Traffic */
+.main-content.traffic-main .search-box-traffic{
+    width: 80%;
+    float: left;
+    margin-right: 5px;
+	margin-bottom:0;	
+}
+.main-content.traffic-main .crypto-origin-gray-bg a:hover{
+	background:none;
+}
+/* Traffic */
+/* Customize */
+.main-content.customize-main .status-box.polish .crypto-ssl-right .text-center{
+    padding-top: 17%;	
+	}
+/* Customize */
+/* APPS */
+.main-content.apps-main .apps-inner{
+    padding: 30px 40px 40px;
+    background: #fff;
+    width: 100%;
+    float: left;
+    border-radius: 10px;
+    box-shadow: rgba(0,0,0,.05) 0 0 10px;
+	#padding-top:100px;
+}
+.main-content.apps-main .apps-inner .apps-box{
+	padding-top:20px;
+}
+.main-content.apps-main .apps-inner .middle-content-box{
+	margin-left:8%;
+}
+.main-content.apps-main .apps-inner .middle-content-box h4{
+    float: left;
+    margin-right: 20px;
+    margin-top: 0;	
+}
+.main-content.apps-main .apps-inner .success{
+	background:#78C012 ;
+}
+.site_wrapper .main-content.apps-main{
+    margin: 40px 0 50px 0;	
+}
+/* APPS */
+/* DNS */
+.main-content.dns-main .dns-box .status-box-left ul{
+	padding:0;
+	margin:0;
+	list-style:none;
+}
+.main-content.dns-main .dns-box .status-box-left ul li i{
+    margin-right: 10px;
+    font-size: 16px;
+    color: #FF7900;
+	float:left;
+}
+.main-content.dns-main .dns-box .status-box-left ul li{
+	color: #7c7c7c;	
+}
+.main-content.dns-main form .form-inline .ip-add{
+	width:31%;
+}
+.main-content.dns-main .crypto-origin-lightgray-bg{
+	padding:0;
+	border-left: 2px solid #9bca3e;
+}
+.main-content.dns-main .crypto-origin-lightgray-bg input{
+	line-height: 1.5;
+    padding: 0.73333rem;
+    vertical-align: middle;
+    background: none;
+    border: none;
+	padding: 15px 5px;
+	width:100%;
+}
+.main-content.dns-main .crypto-origin-lightgray-bg input:hover, .main-content.dns-main .crypto-origin-lightgray-bg a.auto-select:hover{
+    cursor: text;
+    outline: 1px dotted #a3a3a3;
+    outline-offset: -5px;	
+}
+.main-content.dns-main .crypto-origin-lightgray-bg a{
+	margin-top:10px;
+	clear:#000;
+}
+.main-content.dns-main .crypto-origin-lightgray-bg a.text{
+	font-weight:100;
+	color:#9bca3e;
+	margin-top:15px;
+}
+.main-content.dns-main .crypto-origin-lightgray-bg a.auto-select{
+	margin-top:0;
+	}
+.main-content.dns-main .crypto-origin-lightgray-bg a select{
+	background: none;
+    border: none;
+    box-shadow: 0 0 0;
+	padding:0;
+	height:50px;
+}
+.main-content.dns-main .crypto-origin-lightgray-bg a .glyphicon-remove{
+    background-color: #ccc;
+    border-color: #bababa;
+    color: #333;
+    padding: 7px;
+}	
+.cf-proxied, .cf-unproxied, .cf-unproxiable {
+    background: transparent url('https://www.cloudflare.com/a/static/nexp=b15764d/assets/icons-seee324dde5.png') no-repeat;
+    cursor: pointer;
+    overflow: hidden;
+    padding: 0;
+    text-indent: 200%;
+    height: 34px;
+    width: 55px;
+    background-position: 0 -82px;
+    display: inline-block;
+    vertical-align: middle;
+}
+.cf-unproxied {
+    background-position: 0 -150px;
+    height: 34px;
+    width: 55px;
+}
+.main-content.dns-main .crypto-origin-lightgray-bg.ns-box {
+    padding: 0;
+    border-left: 2px solid #9545e5;
+	border-bottom:0;
+}
+.main-content.dns-main .crypto-origin-lightgray-bg.ns-box .ns-content{
+    padding: 10px 0;
+    width: 100%;
+    float: left;	
+}
+.main-content.dns-main .crypto-origin-lightgray-bg.ns-box .first-ns-content{
+     border-bottom: 1px solid #dedede; 
+}
+.main-content.dns-main .crypto-origin-lightgray-bg.ns-box .ns-content .first-col{
+	color: #9545e5;
+}
+.main-content.dns-main .status-box.CNAME-box .crypto-ssl-right .text-center{
+	padding-top:30%;
+}
+.main-content.dns-main .crypto-origin-gray-bg span{
+	padding: 10px 5px;	
+}
+.main-content.dns-main .crypto-origin-lightgray-bg.dns-ip-box{
+	border-bottom:0;
+}
+/* DNS */
+
+/* Analytic */
+.crypto-main.analytic-main h2.crtypto-h2{
+	font-size:22px;
+}
+.crypto-main.analytic-main .heading-right{
+	margin-top:30px;
+	padding-left:0;
+}
+.crypto-main.analytic-main .ip-firewall-web ul.nav li a{
+    border: 1px solid #dedede;	
+	border-left:0;
+	border-bottom: 2px solid #dedede;
+	#height: 80px;
+	}
+.crypto-main.analytic-main .ip-firewall-web ul.nav li.active a, .nav-tabs>li.active>a{
+	text-align: center;
+    background: #fff;
+    color: #2f7bbf;
+    padding: 23px 0;
+	border-bottom: 2px solid transparent !important;
+    border-top: 2px solid #2f7bbf;	
+	border-right: 1px solid #dedede;
+}
+.crypto-main.analytic-main .ip-firewall-web ul.nav li:first-child a{
+	border-left: 1px solid #dedede;	
+}
+.crypto-main.analytic-main .ip-firewall-web ul.nav li.active a:after{
+	display:none;
+}
+.crypto-main.analytic-main .tab-boxes{
+	background:#fff;
+    border: 1px solid #dedede;
+    border-top: 0;	
+	}
+.crypto-main.analytic-main .tab-boxes .tab-box-row{
+	border-top: 1px solid #dedede;	
+	border-bottom: 1px solid #dedede;	
+}
+.crypto-main.analytic-main .tab-boxes .tab-box-row .box-content{
+	padding:25px;
+}
+.crypto-main.analytic-main .tab-boxes .tab-box-row .box-border-right{
+	border-right: 1px solid #dedede;	
+}
+.crypto-main.analytic-main .tab-boxes .tab-box-row .box-content{
+	color: #7c7c7c;
+    font-size: 12px;	
+}
+.crypto-main.analytic-main .tab-boxes .tab-box-row .box-content h5{
+	color:#000;
+}
+.crypto-main.analytic-main .tab-boxes .tab-heading{
+	margin:30px 0;
+}
+.crypto-main.analytic-main .graph-box{
+	margin:10px 0;
+}
+.morris-hover{position:absolute;z-index:1000}.morris-hover.morris-default-style{border-radius:10px;padding:6px;color:#666;background:rgba(255,255,255,0.8);border:solid 2px rgba(230,230,230,0.8);font-family:sans-serif;font-size:12px;text-align:center}.morris-hover.morris-default-style .morris-hover-row-label{font-weight:bold;margin:0.25em 0}
+.morris-hover.morris-default-style .morris-hover-point{white-space:nowrap;margin:0.1em 0}
+
+
+.crypto-main.analytic-main .crypto-ssl .status-box-left .small-font{
+	color: #7c7c7c;
+    font-size: 12px;	
+}	
+.crypto-main.analytic-main .crypto-ssl .content-margin.graph-box-circle{
+	padding-left:30%;
+}
+.crypto-main.analytic-main .crypto-ssl .content-analytic-box.content-margin{
+	text-align:center;
+	min-height:150px;
+	padding-top:15%;
+}
+.crypto-main.analytic-main .heading-header{
+	border-bottom: 1px solid #dedede;
+	padding-bottom:15px;
+}
+.crypto-main.analytic-main .status-box .status-box-left{
+border: 1px solid #dedede;	
+	}
+.crypto-main.analytic-main .col-md-4.status-box{
+	width:30%;
+	margin-right:5%;
+
+}
+.crypto-main.analytic-main .col-md-4.status-box.content-margin-right{
+	margin-right:0;
+}
+.geo_box_right .nav{
+	border:none;
+}
+.geo_box_right .nav li.active a{
+	color:#000;
+	font-weight:bold;
+	background:none;
+	border:none;
+	padding: 23px 0;
+	text-align:right;
+}
+.geo_box_right .nav li a{
+	border:none;
+	padding: 23px 0;
+	text-align:right;
+}
+.geo_box_right .nav li a:hover{
+	background:none;
+	border:none;
+	}
+.crypto-main.analytic-main .status-box .status-box-left.contury_box{
+	border-bottom:0;
+}
+.crypto-main.analytic-main .status_share_boxes{
+	background: #2f7bbf;
+    color: #FFF;
+    float: left;
+    width: 100%;
+    margin: 1rem 0 0;
+    padding: 70px 50px;
+    min-height: 300px;
+}
+.crypto-main.analytic-main .status_share_boxes svg{
+	fill: #fff;
+}
+.crypto-main.analytic-main .status_share_boxes .twitter{
+	margin: 30px 0 0 50px;
+}
+.main-content .status_share ul li{
+	padding:0;
+}
+.crypto-main.analytic-main .status_share ul{
+	border:none;
+}
+.crypto-main.analytic-main .status_share ul li a{
+	font-size:15px;
+	background-color: #2869a2;
+    color: #dedede;
+    flex: 1 1 auto;
+    -webkit-flex: 1 1 auto;
+	padding: 15px 0;
+	text-align:center;
+	border-radius:0;
+	margin:0;
+	border-left: 1px solid #235B8E;
+    border-right: 1px solid #235B8E;
+}
+.crypto-main.analytic-main .status_share ul li a:hover{
+	background: #2f7bbf;
+	border:none;
+	border-radius:0;
+	color:#fff;	
+	padding: 16px 0;
+}
+.crypto-main.analytic-main .status_share ul li a.active, .crypto-main.analytic-main .status_share  .nav-tabs>li.active>a{
+	background: #2f7bbf;
+	border:none;
+	border-radius:0;
+	color:#fff;
+	padding: 15px 0;
+}
+
+/* Analytic */
+/* Account */
+.account-main form .form-row{
+	border-bottom: 1px solid #dedede;
+   
+	}
+.account-main form .form-row label{
+	font-weight:100;
+}
+.account-main form .form-row .ac_label_left, .account-main form .form-row .ac_gray_bg{
+	padding:12px 15px;
+}
+.account-main form .form-row .ac_gray_bg{
+	background:#f1f1f1;
+	min-height: 85px;
+}
+.account-main form .form-row .ac_gray_bg div{
+	margin-top:15px;
+}
+.main-content.account-main .status-box .status-box-left.form_box{
+	padding-top:0;
+	padding-bottom:0;
+}
+.main-content.account-main .api_btn{
+	border:0;
+	margin-left:10px;
+	border-radius: 0;
+}
+.main-content.account-main .crypto-origin-lightgray-bg.white_bg{
+	background:#fff;
+}
+.main-content.account-main .crypto-origin-lightgray-bg.white_bg:hover{
+background:#f1f1f1;	
+}
+.main-content.account-main .crypto-origin-gray-bg span{
+	padding: 10px 5px;
+}
+.main-content.account-main .ip-firewall-web ul.nav li a{
+    border-right: 1px solid #dedede;	
+	#font-size: 20px;
+}
+/* Account */
+/* Footer */
+.site_wrapper #footer{
+	background:#fff;
+	padding: 20px 0 50px 0;
+    width: 100%;
+    float: left;	
+}
+.site_wrapper #footer ul{
+	list-style:none;
+	padding:0;
+	margin:0;
+}
+.site_wrapper #footer ul li a:hover{
+	text-decoration:none;
+	color:#333;
+}
+.site_wrapper #footer .footer-box{
+	width:20%;
+}
+
+/* Footer */
+#toggle-menu ,#close{
+	display: none;
+	cursor: pointer;
+	float:right;
+	padding: 10px 9px 5px;
+	position: absolute;
+	right: 15px;
+	border-radius: 5px;
+	background-color: #2F7BBF;
+		-webkit-transition:margin-top 0.4s ease;
+	-moz-transition: margin-top 0.4s ease;
+	-o-transition: margin-top 0.4s ease;
+	-ms-transition: margin-top 0.4s ease;
+	transition: margin-top 0.4s ease;
+}
+#close{
+	top: 25px;
+	right: 25px;
+	background-color: transparent;
+}
+#toggle-menu div {
+	position: relative;
+	padding: 0;
+	display: block;
+	width: 34px;
+	height: 28px;
+	margin: 0 auto;
+	float:right
+}
+#close div {
+	position: relative;
+	padding: 0;
+	display: block;
+	width: 34px;
+	height: 28px;
+}
+#toggle-menu span {
+	display: block;
+	width: 34px;
+	height: 3px;
+	top: 0;
+	left: 0;
+	background: #fff;
+	position: absolute;
+	-webkit-transition: -webkit-transform 0.5s ease-in-out, top 0.25s ease-in-out 0.5s, opacity 0.25s ease-in-out 0.5s;
+	-moz-transition: -moz-transform 0.5s ease-in-out, top 0.25s ease-in-out 0.5s, opacity 0.25s ease-in-out 0.5s;
+	transition: transform 0.5s ease-in-out, top 0.25s ease-in-out 0.5s, opacity 0.25s ease-in-out 0.5s;
+	-webkit-transform-origin: center;
+	-moz-transform-origin: center;
+	transform-origin: center;
+}
+#close span {
+	display: block;
+	width: 34px;
+	height: 3px;
+	top: 0;
+	left: 0;
+	background: #fff;
+	position: absolute;
+	-webkit-transition: -webkit-transform 0.5s ease-in-out, top 0.25s ease-in-out 0.5s, opacity 0.25s ease-in-out 0.5s;
+	-moz-transition: -moz-transform 0.5s ease-in-out, top 0.25s ease-in-out 0.5s, opacity 0.25s ease-in-out 0.5s;
+	transition: transform 0.5s ease-in-out, top 0.25s ease-in-out 0.5s, opacity 0.25s ease-in-out 0.5s;
+	-webkit-transform-origin: center;
+	-moz-transform-origin: center;
+	transform-origin: center;
+}
+#toggle-menu span.top {
+	top: 0px;
+}
+#toggle-menu span.middle {
+	top: 10px;
+}
+#toggle-menu span.bottom {
+	top: 20px;
+}
+#close span.top {
+	top: 10px;
+	-webkit-transform: rotate(135deg);
+	-moz-transform: rotate(135deg);
+	transform: rotate(135deg);
+}
+#close span.middle {
+		top: 10px;
+		opacity: 0;
+	-webkit-transform: rotate(135deg);
+	-moz-transform: rotate(135deg);
+	transform: rotate(135deg);
+}
+#close span.bottom {
+	top: 11px;
+	-webkit-transform: rotate(225deg);
+	-moz-transform: rotate(225deg);
+	transform: rotate(225deg);
+}
+
+#toggle-menu.menu-is-active span {
+	-webkit-transition: -webkit-transform 0.5s ease-in-out 0.3s, top 0.25s ease-in-out, opacity 0.25s ease-in-out;
+	-moz-transition: -moz-transform 0.5s ease-in-out 0.3s, top 0.25s ease-in-out, opacity 0.25s ease-in-out;
+	transition: transform 0.5s ease-in-out 0.3s, top 0.25s ease-in-out, opacity 0.25s ease-in-out;
+}
+#toggle-menu.menu-is-active span.top, #toggle-menu.menu-is-active span.middle {
+	top: 10px;
+	-webkit-transform: rotate(135deg);
+	-moz-transform: rotate(135deg);
+	transform: rotate(135deg);
+}
+#toggle-menu.menu-is-active span.middle {
+	opacity: 0;
+}
+#toggle-menu.menu-is-active span.bottom {
+	top: 10px;
+	-webkit-transform: rotate(225deg);
+	-moz-transform: rotate(225deg);
+	transform: rotate(225deg);
+}
+.toggle-menu, .header-box .nav li.mob-menu-li{
+	display:none;
+}
+
+.site_wrapper .container .tab-content.col-md-12{
+	padding:0;
+}
+
+.showOnMobile{
+display:none;
+}
+
+
+
+
+
+@media only screen and (max-width: 993px) {
+
+#header .container-fluid{
+	width:100%;
+	height:50px;
+}
+.site_wrapper .container {
+    width: 100%;
+    padding: 0;
+}
+#navbar {
+	background: #333;
+	display: block;
+	height: 100%;
+	min-height: 100%;
+	overflow: auto;
+	position: fixed;
+	left: -20em;
+	font-size: 15px;
+	top: 0;
+	width: 20em;
+	z-index: 2000;
+	margin: 0;
+	padding: 50px 0px;
+	transition: left 0.3s ease-in-out 0s;
+	-webkit-transition: left 0.3s ease-in-out 0s;
+	-moz-transition: left 0.3s ease-in-out 0s;
+	-o-transition: left 0.3s ease-in-out 0s;
+}
+.nav-expanded #navbar{
+  left: 0;
+}
+body.nav-expanded {
+  margin-left: 0em;
+  transition: right 0.4s ease-in-out 0s;
+  -webkit-transition: right 0.4s ease-in-out 0s;
+  -moz-transition: right 0.4s ease-in-out 0s;
+  -o-transition: right 0.4s ease-in-out 0s;
+}
+.nav-expanded #toggle-menu {
+	position: fixed;
+	left: 0;
+	width: 350px;
+	top: 0;
+	z-index: 99999;
+}	
+
+.top-menu-right{
+	display:none;
+}
+.header-box .nav li{
+	width:50%;
+	margin-right:0;
+	padding:0 15px;
+}
+.header-box .nav li.mob-menu-li{
+	width:100%;
+	padding:15px;
+	float:left;
+}
+.header-box .nav li.mob-menu-li a, .header-box .nav li.mob-menu-li a:hover{
+	background:none;
+	color:#fff;
+	text-align:left;
+	font-size:16px;
+}
+.header-box ul li span.box-text{
+	color:#fff;
+}
+.small-devices{
+	padding:15px;
+}
+
+.site_wrapper .header-top-right{
+    width: 75%;
+}
+.crypto-main h1.crtypto-h1{
+	font-size:30px;
+}
+.crypto-main h2.crtypto-h2{
+	font-size:25px;
+}
+.header-top-right .logo{
+	text-align:center;
+}
+}
+@media screen and (max-width: 992px) 
+{
+    
+#header .container-fluid{
+	width:100%;
+	height:50px;
+}
+
+.hideOnMobile
+{
+display:none;
+}
+
+nav select { display: inline-block; }
+
+.firewall-main .ip-firewall-web ul.nav li a{
+	    padding-left: 10px;
+    padding-right: 10px;
+}
+.site_wrapper .main-content .advance-box .advance-btn-m {
+    #padding-bottom: 50px;
+	line-height: 2;
+	font-size:12px;
+	height:80px;
+}
+
+.alert
+{
+margin-top: 10px;
+}
+
+.main-content.account-main .ip-firewall-web ul.nav li a{
+    padding: 10px;
+	font-size: 14px;
+
+}
+
+.percent25
+{
+	width: 25%;
+}
+
+a.svgbox
+{
+	padding:50px;
+}
+
+
+.showOnMobile{
+display:block;
+}
+
+
+.header-box ul li a {
+    height: 120px;
+    
+    padding:20px;
+}
+
+.main-content .container .row .status-box-right{
+	min-height:70px;
+	width:100%;
+	z-index:100;	
+}
+.main-content .container .row .status-box-right .text-center{
+	padding:0;
+	margin:0;
+	padding-top:20px;
+}
+.main-content .container .row .status-box-right .text-center form .form-control{
+	width:50%;
+	margin:0 auto;
+}
+.main-content .status-box:after, .site_wrapper .main-content .subs-box:after{
+	width: 100%;	
+}
+.site_wrapper #footer .footer-box{
+	width:50%;
+}
+.crypto-main.analytic-main .heading-right{
+	margin-bottom:50px;
+}
+.crypto-main.analytic-main .col-md-4.status-box{
+	float:left;
+}
+.crypto-main.analytic-main .col-md-4.status-box{
+	width:45%;
+}
+#line-example{
+	overflow-y: scroll;
+}
+.main-content.dns-main form .form-inline .ip-add, .main-content.dns-main form .web-dropdown, .main-content.dns-main form .block-dropdown {
+    width: 100%;
+    margin: 10px 0;
+}
+.main-content .status-box.dns-box:after{
+	background:#fff;
+	}
+.main-content .status-box.dns-box .status-box-left form{
+    width: 100%;
+    float: left;
+    padding: 15px 0;	
+}	
+.main-content.dns-main .crypto-origin-lightgray-bg a select{
+	height:auto;
+}
+.main-content.dns-main .status-box.CNAME-box .crypto-ssl-right .text-center{
+	padding:0;
+}
+.main-content .crypto-origin.status-box .crypto-ssl-right .text-center .disable-btn{
+	margin:0;
+}
+.main-content.firewall-main .status-box.polish .crypto-ssl-right .text-center{
+    padding-top: 20px;
+    padding-left: 0%;	
+}
+.firewall-main form .form-inline .ip-add,.firewall-main  form .form-inline .block-dropdown, .firewall-main  form .form-inline .web-dropdown, .firewall-main  form .form-inline .form-control{
+	width:100%;
+	#margin:10px 0;
+}
+.main-content.speed-main .status-box .crypto-ssl-right .text-center{
+	text-align:center;
+}
+.main-content .status-box.polish.browser-cache-box .crypto-ssl-right .text-center{
+	padding:0;
+}
+.main-content .status-box.polish.online-box .crypto-ssl-right .text-center{
+	padding-left:0;
+}
+.main-content.caching .caching-box.ipv6-box .crypto-ssl-right .text-center, .main-content.customize-main .status-box.polish .crypto-ssl-right .text-center{
+	padding:0;
+}
+.main-content.traffic-main .search-box-traffic{
+	width:100%;
+}
+.main-content.apps-main .apps-inner .middle-content-box{
+	margin:30px 0;
+}
+}
+
+
+.btn-success
+{
+    background-image: none;
+    border:none;
+}
+
+
+.btn-info
+{
+    background-image: none;
+    border-color:none;
+}
+
+.balancetext
+{
+    font-size: 20px;
+    font-weight: 100;
+    color:#1e4e79;
+    }
+	
+.text-danger-forced
+{
+	color:red !important;
+	
+	}
+	
+	
+	html input[disabled] {
+    cursor: default;
+	border:none;
+	background:none;
+}
+
+h4
+{
+color:#2f7bbf;
+}
+
+.main-content .status-box .crypto-ssl-right .padding15fix
+{
+	padding-left:15%
+}
+
+label {
+    margin-bottom: 3px !important;
+	padding-top:10px;
+    font-weight: 400 !important;
+}
+
+.space
+{
+	clear:both;
+	height:10px;
+	border:0px;
+}
+
+
+.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
+
+    vertical-align: middle !important;
+}
+
+
+.placeholder
+{
+  color: #aaa;
+}

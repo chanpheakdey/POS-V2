@@ -1,0 +1,138 @@
+@* _CartItemPartial.cshtml
+   Renders a single row in the cart table.
+
+   Model: CartItemViewModel
+     - ItemId              int     — used in form action / AJAX calls
+     - ItemCode            string  — short product code
+     - ItemName            string  — full product name
+     - UnitPriceUsd        string  — pre-formatted unit price in USD
+     - Quantity            int     — current quantity (bound to the number input)
+     - LineTotalUsd        string  — pre-formatted line total in USD (after discount)
+     - Discount            decimal — applied discount percentage (0 = none)
+     - HasDiscount         bool    — true when discount > 0
+     - OriginalLineTotalUsd string — pre-formatted original line total (no discount)
+
+   Requirements: 17.3, 17.4, 17.5, 17.11, 17.12, 28.5, 28.6
+*@
+@using PosWebApp.Models.ViewModels
+@model CartItemViewModel
+
+@{
+    bool isManagerOrAdmin = User.IsInRole("Manager") || User.IsInRole("Admin");
+}
+
+<tr id="cart-row-@Model.ItemId"
+    data-item-id="@Model.ItemId"
+    class="align-middle">
+
+    @* Item Code — Req 17.3 *@
+    <td class="text-muted small text-nowrap">@Model.ItemCode</td>
+
+    @* Item Name — Req 17.3 *@
+    <td class="fw-semibold">@Model.ItemName</td>
+
+    @* Unit Price — Req 17.3 *@
+    <td class="text-end text-nowrap">@Model.UnitPriceUsd</td>
+
+    @* Quantity controls — Req 17.4, 17.12 (AJAX update via cart.js)
+       The form posts to OnPostUpdateAsync; cart.js intercepts with fetch()
+       so the page does not reload. The data-* attributes are read by cart.js. *@
+    <td class="text-center" style="min-width: 140px;">
+        <form method="post"
+              asp-page-handler="Update"
+              asp-route-itemId="@Model.ItemId"
+              class="cart-qty-form d-flex align-items-center justify-content-center gap-1"
+              data-item-id="@Model.ItemId"
+              novalidate>
+            @Html.AntiForgeryToken()
+
+            @* Decrement button *@
+            <button type="button"
+                    class="btn btn-outline-secondary btn-sm cart-qty-dec"
+                    aria-label="Decrease quantity for @Model.ItemName"
+                    title="Decrease quantity">
+                <i class="bi bi-dash" aria-hidden="true"></i>
+            </button>
+
+            @* Quantity input — Tag Helper bound; min=1 enforced client-side *@
+            <input type="number"
+                   id="qty-@Model.ItemId"
+                   name="quantity"
+                   value="@Model.Quantity"
+                   min="1"
+                   max="9999"
+                   class="form-control form-control-sm text-center cart-qty-input"
+                   style="width: 60px;"
+                   aria-label="Quantity for @Model.ItemName"
+                   data-item-id="@Model.ItemId" />
+
+            @* Increment button *@
+            <button type="button"
+                    class="btn btn-outline-secondary btn-sm cart-qty-inc"
+                    aria-label="Increase quantity for @Model.ItemName"
+                    title="Increase quantity">
+                <i class="bi bi-plus" aria-hidden="true"></i>
+            </button>
+        </form>
+    </td>
+
+    @* Line total — Req 17.3, 28.5, 28.6; updated via AJAX without page reload
+       Show strikethrough original price when a discount is applied. *@
+    <td class="text-end text-nowrap fw-semibold"
+        id="line-total-@Model.ItemId">
+        @if (Model.HasDiscount)
+        {
+            @* Requirement 28.5, 28.6 — original price struck through, discounted price highlighted *@
+            <span class="text-muted text-decoration-line-through small d-block"
+                  id="original-line-total-@Model.ItemId"
+                  aria-label="Original price @Model.OriginalLineTotalUsd">
+                @Model.OriginalLineTotalUsd
+            </span>
+            <span class="text-success"
+                  aria-label="Discounted price @Model.LineTotalUsd">
+                @Model.LineTotalUsd
+            </span>
+            <span class="badge bg-success ms-1 small"
+                  title="@Model.Discount.ToString("F1")% discount applied"
+                  aria-label="@Model.Discount.ToString("F1") percent discount">
+                @Model.Discount.ToString("F1")%
+            </span>
+        }
+        else
+        {
+            @Model.LineTotalUsd
+        }
+    </td>
+
+    @* Remove button — Req 17.5; posts to OnPostRemoveAsync *@
+    <td class="text-center">
+        <form method="post"
+              asp-page-handler="Remove"
+              asp-route-itemId="@Model.ItemId"
+              class="d-inline">
+            @Html.AntiForgeryToken()
+            <button type="submit"
+                    class="btn btn-outline-danger btn-sm"
+                    aria-label="Remove @Model.ItemName from cart"
+                    title="Remove item"
+                    onclick="return confirm('Remove @Html.Raw(Model.ItemName.Replace("'", "\\'")) from your cart?');">
+                <i class="bi bi-trash3" aria-hidden="true"></i>
+            </button>
+        </form>
+    </td>
+
+    @* Discount apply button — Req 28.1, 28.2 — visible only to Manager/Admin *@
+    @if (isManagerOrAdmin)
+    {
+        <td class="text-center">
+            <button type="button"
+                    class="btn btn-outline-primary btn-sm apply-discount-row-btn"
+                    data-item-id="@Model.ItemId"
+                    aria-label="Apply discount to @Model.ItemName"
+                    title="Apply discount">
+                <i class="bi bi-percent" aria-hidden="true"></i>
+            </button>
+        </td>
+    }
+
+</tr>

@@ -1,0 +1,209 @@
+@page
+@model PosWebApp.Pages.Sale.SaleIndexModel
+@using X.PagedList.Mvc.Core
+@using X.PagedList
+@{
+    ViewData["Title"] = "Sale History";
+}
+
+@* ──────────────────────────────────────────────────────────────────────────────
+   Sale History — Requirements 9.5, 9.6, 9.7, 9.8, 9.9, 9.10, 9.11, 9.12,
+                              28.6, 29.1, 29.2
+   ────────────────────────────────────────────────────────────────────────── *@
+
+<div class="d-flex align-items-center justify-content-between mb-3 flex-wrap gap-2">
+    <h1 class="h3 mb-0">
+        <i class="bi bi-clock-history me-2" aria-hidden="true"></i>Sale History
+    </h1>
+</div>
+
+@* ── Filter form — Requirements 9.8, 9.9, 9.12 ──────────────────────────── *@
+<form method="get" class="card mb-4" aria-label="Sale history filters">
+    <div class="card-body">
+        <div class="row g-3 align-items-end">
+
+            @* Date range — Requirement 9.9 *@
+            <div class="col-sm-6 col-md-3">
+                <label for="StartDate" class="form-label small fw-semibold">From Date</label>
+                <input type="date"
+                       id="StartDate"
+                       name="StartDate"
+                       class="form-control form-control-sm"
+                       value="@(Model.StartDate?.ToString("yyyy-MM-dd") ?? "")"
+                       aria-label="Start date filter" />
+            </div>
+
+            <div class="col-sm-6 col-md-3">
+                <label for="EndDate" class="form-label small fw-semibold">To Date</label>
+                <input type="date"
+                       id="EndDate"
+                       name="EndDate"
+                       class="form-control form-control-sm"
+                       value="@(Model.EndDate?.ToString("yyyy-MM-dd") ?? "")"
+                       aria-label="End date filter" />
+            </div>
+
+            @* Customer filter — Requirement 9.12 *@
+            <div class="col-sm-6 col-md-3">
+                <label for="CustomerFilter" class="form-label small fw-semibold">Customer</label>
+                <input type="text"
+                       id="CustomerFilter"
+                       name="CustomerFilter"
+                       class="form-control form-control-sm"
+                       value="@Model.CustomerFilter"
+                       placeholder="Search by name…"
+                       aria-label="Customer name filter" />
+            </div>
+
+            <div class="col-sm-6 col-md-3 d-flex gap-2">
+                <button type="submit" class="btn btn-primary btn-sm flex-grow-1">
+                    <i class="bi bi-funnel me-1" aria-hidden="true"></i>Filter
+                </button>
+                <a asp-page="/Sale/Index" class="btn btn-outline-secondary btn-sm">
+                    <i class="bi bi-x-lg" aria-hidden="true"></i>
+                    <span class="visually-hidden">Clear filters</span>
+                </a>
+            </div>
+
+        </div>
+    </div>
+</form>
+
+@* ── Sales table ─────────────────────────────────────────────────────────── *@
+@if (!Model.Sales.Any())
+{
+    <div class="alert alert-info" role="status">
+        <i class="bi bi-info-circle me-2" aria-hidden="true"></i>
+        No sales found for the selected filters.
+    </div>
+}
+else
+{
+    <div class="card">
+        <div class="card-body p-0">
+            <div class="table-responsive">
+                <table class="table table-hover table-sm mb-0 align-middle"
+                       aria-label="Sale history">
+                    <thead class="table-light">
+                        <tr>
+                            <th scope="col" class="ps-3">Sale ID</th>
+                            <th scope="col">Invoice No.</th>
+                            <th scope="col">Date</th>
+                            @* Staff column only visible to Manager/Admin — Requirement 9.11 *@
+                            @if (Model.CanFilterByStaff)
+                            {
+                                <th scope="col">Staff</th>
+                            }
+                            <th scope="col">Customer</th>
+                            <th scope="col" class="text-end">Total (USD)</th>
+                            <th scope="col" class="text-center">Status</th>
+                            <th scope="col" class="pe-3">
+                                <span class="visually-hidden">Actions</span>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var sale in Model.Sales)
+                        {
+                            <tr>
+                                <td class="ps-3 text-muted small">#@sale.SaleID</td>
+                                <td class="fw-semibold small">@sale.InvoiceNo</td>
+                                <td class="small text-nowrap">
+                                    @sale.CreatedDate.ToString("yyyy-MM-dd")
+                                    <br />
+                                    <span class="text-muted">@sale.CreatedDate.ToString("HH:mm")</span>
+                                </td>
+                                @if (Model.CanFilterByStaff)
+                                {
+                                    <td class="small">@sale.StaffUserName</td>
+                                }
+                                <td class="small">
+                                    @if (!string.IsNullOrEmpty(sale.CustomerName))
+                                    {
+                                        @sale.CustomerName
+                                    }
+                                    else
+                                    {
+                                        <span class="text-muted fst-italic">—</span>
+                                    }
+                                </td>
+                                <td class="text-end small fw-semibold">
+                                    $@sale.Total.ToString("F2")
+                                </td>
+                                <td class="text-center">
+                                    @if (sale.Voided)
+                                    {
+                                        @* Req 20.7 — badge has both colour AND text label; aria-label confirms status *@
+                                        <span class="badge bg-danger"
+                                              role="status"
+                                              aria-label="Sale status: Voided">
+                                            <i class="bi bi-slash-circle me-1" aria-hidden="true"></i>VOIDED
+                                        </span>
+                                    }
+                                    else
+                                    {
+                                        <span class="badge bg-success"
+                                              role="status"
+                                              aria-label="Sale status: Active">
+                                            <i class="bi bi-check-circle me-1" aria-hidden="true"></i>Active
+                                        </span>
+                                    }
+                                </td>
+                                <td class="pe-3">
+                                    @* Row link to detail page — Requirement 9.5 *@
+                                    <a asp-page="/Sale/Detail"
+                                       asp-route-id="@sale.SaleID"
+                                       class="btn btn-outline-primary btn-sm"
+                                       aria-label="View details for sale @sale.InvoiceNo">
+                                        <i class="bi bi-eye me-1" aria-hidden="true"></i>View
+                                    </a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        @* ── Summary footer *@
+        <div class="card-footer text-muted small d-flex justify-content-between flex-wrap gap-1">
+            <span>
+                Showing @Model.Sales.FirstItemOnPage–@Model.Sales.LastItemOnPage
+                of @Model.Sales.TotalItemCount sale(s)
+            </span>
+            <span>Page @Model.Sales.PageNumber of @Model.Sales.PageCount</span>
+        </div>
+    </div>
+
+    @* ── X.PagedList pagination — Requirement 9.10 *@
+    @if (Model.Sales.PageCount > 1)
+    {
+        <nav aria-label="Sale history pagination" class="mt-3">
+            @Html.PagedListPager(Model.Sales, pageNum => Url.Page("/Sale/Index", new
+            {
+                PageNumber     = pageNum,
+                StartDate      = Model.StartDate?.ToString("yyyy-MM-dd"),
+                EndDate        = Model.EndDate?.ToString("yyyy-MM-dd"),
+                CustomerFilter = Model.CustomerFilter
+            }), new X.PagedList.Mvc.Core.PagedListRenderOptions
+            {
+                UlElementClasses              = new[] { "pagination", "pagination-sm", "flex-wrap" },
+                LiElementClasses              = new[] { "page-item" },
+                PageClasses                   = new[] { "page-link" },
+                DisplayLinkToFirstPage        = PagedListDisplayMode.IfNeeded,
+                DisplayLinkToLastPage         = PagedListDisplayMode.IfNeeded,
+                DisplayLinkToPreviousPage     = PagedListDisplayMode.Always,
+                DisplayLinkToNextPage         = PagedListDisplayMode.Always,
+                MaximumPageNumbersToDisplay   = 7,
+            })
+        </nav>
+    }
+}
+
+@section Styles {
+    <style>
+        @@media print {
+            .navbar, footer, form, nav[aria-label*="pagination"] { display: none !important; }
+        }
+    </style>
+}

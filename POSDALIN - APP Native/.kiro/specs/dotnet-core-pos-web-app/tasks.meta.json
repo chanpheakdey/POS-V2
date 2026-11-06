@@ -1,0 +1,944 @@
+{
+  "pbtResults": {
+    "5.2 Write property test for cache round-trip integrity (Property 6)": {
+      "status": "passed",
+      "lastRunTimestamp": 1793764395341
+    },
+    "4.2 Write property test for ServiceClient exception wrapping (Property 11)": {
+      "status": "passed",
+      "lastRunTimestamp": 1793764454962
+    },
+    "5.3 Write property test for search relevance (Property 8)": {
+      "status": "passed",
+      "lastRunTimestamp": 1793765137668
+    },
+    "8.5 Write property test for image dimension invariant (Property 9)": {
+      "status": "passed",
+      "lastRunTimestamp": 1793772962815
+    },
+    "6.4 Write property test for discount price invariant (Property 13)": {
+      "status": "passed",
+      "lastRunTimestamp": 1793772963190
+    },
+    "6.2 Write property test for cart quantity accumulation (Property 3)": {
+      "status": "passed",
+      "lastRunTimestamp": 1793774310506
+    },
+    "13.1 Write property test for role-based sale history (Property 7)": {
+      "status": "passed",
+      "lastRunTimestamp": 1793781127779
+    },
+    "20.1 Write property test for role-based authentication (Property 1)": {
+      "status": "passed",
+      "lastRunTimestamp": 1793846542919
+    },
+    "20.2 Write property test for account lockout (Property 2)": {
+      "status": "passed",
+      "lastRunTimestamp": 1793847042563
+    },
+    "17.1 Write property test for receipt completeness (Property 12)": {
+      "status": "passed",
+      "lastRunTimestamp": 1793865144807
+    }
+  },
+  "executionHistory": {
+    "4.1 Create AsmxServiceClient with all IServiceClient methods": [
+      {
+        "executionId": "5e7625cb-4d7c-4be3-adda-56a320e6b675",
+        "chatSessionId": "sess_5de50ebf-2061-4668-acbe-2ee1969ed4cf",
+        "timestamp": 1793756736563
+      },
+      {
+        "executionId": "5e7625cb-4d7c-4be3-adda-56a320e6b675",
+        "chatSessionId": "sess_5de50ebf-2061-4668-acbe-2ee1969ed4cf",
+        "timestamp": 1793756750416
+      },
+      {
+        "executionId": "5e7625cb-4d7c-4be3-adda-56a320e6b675",
+        "chatSessionId": "sess_5de50ebf-2061-4668-acbe-2ee1969ed4cf",
+        "timestamp": 1793759917424
+      }
+    ],
+    "4. Implement Service_Client (AsmxServiceClient) for ASMX backend integration": [
+      {
+        "executionId": "5e7625cb-4d7c-4be3-adda-56a320e6b675",
+        "chatSessionId": "sess_5de50ebf-2061-4668-acbe-2ee1969ed4cf",
+        "timestamp": 1793759917562
+      }
+    ],
+    "3.2 Create Logout Razor Page and navbar staff display": [
+      {
+        "executionId": "5e7625cb-4d7c-4be3-adda-56a320e6b675",
+        "chatSessionId": "sess_5de50ebf-2061-4668-acbe-2ee1969ed4cf",
+        "timestamp": 1793759928105
+      },
+      {
+        "executionId": "5e7625cb-4d7c-4be3-adda-56a320e6b675",
+        "chatSessionId": "sess_5de50ebf-2061-4668-acbe-2ee1969ed4cf",
+        "timestamp": 1793762592121
+      }
+    ],
+    "5.1 Implement ProductCatalogService": [
+      {
+        "executionId": "5e7625cb-4d7c-4be3-adda-56a320e6b675",
+        "chatSessionId": "sess_5de50ebf-2061-4668-acbe-2ee1969ed4cf",
+        "timestamp": 1793759928240
+      },
+      {
+        "executionId": "5e7625cb-4d7c-4be3-adda-56a320e6b675",
+        "chatSessionId": "sess_5de50ebf-2061-4668-acbe-2ee1969ed4cf",
+        "timestamp": 1793762592009
+      }
+    ],
+    "5. Implement Product_Catalog service and Cache_Manager": [
+      {
+        "executionId": "5e7625cb-4d7c-4be3-adda-56a320e6b675",
+        "chatSessionId": "sess_5de50ebf-2061-4668-acbe-2ee1969ed4cf",
+        "timestamp": 1793762592220
+      }
+    ],
+    "5.2 Write property test for cache round-trip integrity (Property 6)": [
+      {
+        "executionId": "5e7625cb-4d7c-4be3-adda-56a320e6b675",
+        "chatSessionId": "sess_5de50ebf-2061-4668-acbe-2ee1969ed4cf",
+        "timestamp": 1793762633037
+      },
+      {
+        "executionId": "f5199715-4325-4389-8491-5da73e35567b",
+        "chatSessionId": "sess_d2f01cac-2417-4179-a2c0-3a04bdc2c9e6",
+        "timestamp": 1793763295220
+      },
+      {
+        "executionId": "f5199715-4325-4389-8491-5da73e35567b",
+        "chatSessionId": "sess_d2f01cac-2417-4179-a2c0-3a04bdc2c9e6",
+        "timestamp": 1793765156545
+      }
+    ],
+    "4.2 Write property test for ServiceClient exception wrapping (Property 11)": [
+      {
+        "executionId": "5e7625cb-4d7c-4be3-adda-56a320e6b675",
+        "chatSessionId": "sess_5de50ebf-2061-4668-acbe-2ee1969ed4cf",
+        "timestamp": 1793762633172
+      },
+      {
+        "executionId": "f5199715-4325-4389-8491-5da73e35567b",
+        "chatSessionId": "sess_d2f01cac-2417-4179-a2c0-3a04bdc2c9e6",
+        "timestamp": 1793763291407
+      },
+      {
+        "executionId": "f5199715-4325-4389-8491-5da73e35567b",
+        "chatSessionId": "sess_d2f01cac-2417-4179-a2c0-3a04bdc2c9e6",
+        "timestamp": 1793765156421
+      }
+    ],
+    "5.3 Write property test for search relevance (Property 8)": [
+      {
+        "executionId": "5e7625cb-4d7c-4be3-adda-56a320e6b675",
+        "chatSessionId": "sess_5de50ebf-2061-4668-acbe-2ee1969ed4cf",
+        "timestamp": 1793762633267
+      },
+      {
+        "executionId": "f5199715-4325-4389-8491-5da73e35567b",
+        "chatSessionId": "sess_d2f01cac-2417-4179-a2c0-3a04bdc2c9e6",
+        "timestamp": 1793763298731
+      },
+      {
+        "executionId": "f5199715-4325-4389-8491-5da73e35567b",
+        "chatSessionId": "sess_d2f01cac-2417-4179-a2c0-3a04bdc2c9e6",
+        "timestamp": 1793765156641
+      }
+    ],
+    "3.1 Implement cookie authentication and Login Razor Page": [
+      {
+        "executionId": "f5199715-4325-4389-8491-5da73e35567b",
+        "chatSessionId": "sess_d2f01cac-2417-4179-a2c0-3a04bdc2c9e6",
+        "timestamp": 1793763123664
+      },
+      {
+        "executionId": "f5199715-4325-4389-8491-5da73e35567b",
+        "chatSessionId": "sess_d2f01cac-2417-4179-a2c0-3a04bdc2c9e6",
+        "timestamp": 1793763132168
+      },
+      {
+        "executionId": "f5199715-4325-4389-8491-5da73e35567b",
+        "chatSessionId": "sess_d2f01cac-2417-4179-a2c0-3a04bdc2c9e6",
+        "timestamp": 1793763266610
+      }
+    ],
+    "3. Implement Identity_Manager — staff authentication via IServiceClient": [
+      {
+        "executionId": "f5199715-4325-4389-8491-5da73e35567b",
+        "chatSessionId": "sess_d2f01cac-2417-4179-a2c0-3a04bdc2c9e6",
+        "timestamp": 1793763266678
+      }
+    ],
+    "6.1 Implement CartService": [
+      {
+        "executionId": "f5199715-4325-4389-8491-5da73e35567b",
+        "chatSessionId": "sess_d2f01cac-2417-4179-a2c0-3a04bdc2c9e6",
+        "timestamp": 1793763302448
+      },
+      {
+        "executionId": "f5199715-4325-4389-8491-5da73e35567b",
+        "chatSessionId": "sess_d2f01cac-2417-4179-a2c0-3a04bdc2c9e6",
+        "timestamp": 1793765150992
+      }
+    ],
+    "6. Implement Cart service and session management": [
+      {
+        "executionId": "f5199715-4325-4389-8491-5da73e35567b",
+        "chatSessionId": "sess_d2f01cac-2417-4179-a2c0-3a04bdc2c9e6",
+        "timestamp": 1793765151133
+      }
+    ],
+    "7. Checkpoint — Ensure all tests pass, ask the user if questions arise.": [
+      {
+        "executionId": "f5199715-4325-4389-8491-5da73e35567b",
+        "chatSessionId": "sess_d2f01cac-2417-4179-a2c0-3a04bdc2c9e6",
+        "timestamp": 1793765161661
+      },
+      {
+        "executionId": "f5199715-4325-4389-8491-5da73e35567b",
+        "chatSessionId": "sess_d2f01cac-2417-4179-a2c0-3a04bdc2c9e6",
+        "timestamp": 1793765266955
+      }
+    ],
+    "8.1 Create _Layout and shared partials": [
+      {
+        "executionId": "f5199715-4325-4389-8491-5da73e35567b",
+        "chatSessionId": "sess_d2f01cac-2417-4179-a2c0-3a04bdc2c9e6",
+        "timestamp": 1793765272071
+      },
+      {
+        "executionId": "f5199715-4325-4389-8491-5da73e35567b",
+        "chatSessionId": "sess_d2f01cac-2417-4179-a2c0-3a04bdc2c9e6",
+        "timestamp": 1793766742052
+      }
+    ],
+    "8.2 Create Home (Index) Razor Page — category grid": [
+      {
+        "executionId": "f5199715-4325-4389-8491-5da73e35567b",
+        "chatSessionId": "sess_d2f01cac-2417-4179-a2c0-3a04bdc2c9e6",
+        "timestamp": 1793765276274
+      },
+      {
+        "executionId": "f5199715-4325-4389-8491-5da73e35567b",
+        "chatSessionId": "sess_d2f01cac-2417-4179-a2c0-3a04bdc2c9e6",
+        "timestamp": 1793766747409
+      }
+    ],
+    "8.3 Create Groups and Items Razor Pages": [
+      {
+        "executionId": "f5199715-4325-4389-8491-5da73e35567b",
+        "chatSessionId": "sess_d2f01cac-2417-4179-a2c0-3a04bdc2c9e6",
+        "timestamp": 1793765280538
+      },
+      {
+        "executionId": "f5199715-4325-4389-8491-5da73e35567b",
+        "chatSessionId": "sess_d2f01cac-2417-4179-a2c0-3a04bdc2c9e6",
+        "timestamp": 1793766747625
+      },
+      {
+        "executionId": "fdfbf3f8-d71f-4cbf-aae5-a3253103b170",
+        "chatSessionId": "sess_bc83f562-f7ea-490d-ab8b-9cb23194255b",
+        "timestamp": 1793771788779
+      },
+      {
+        "executionId": "fdfbf3f8-d71f-4cbf-aae5-a3253103b170",
+        "chatSessionId": "sess_bc83f562-f7ea-490d-ab8b-9cb23194255b",
+        "timestamp": 1793771817730
+      },
+      {
+        "executionId": "fdfbf3f8-d71f-4cbf-aae5-a3253103b170",
+        "chatSessionId": "sess_bc83f562-f7ea-490d-ab8b-9cb23194255b",
+        "timestamp": 1793772157676
+      }
+    ],
+    "8.4 Create ImageTagHelper and Image_Optimizer service": [
+      {
+        "executionId": "f5199715-4325-4389-8491-5da73e35567b",
+        "chatSessionId": "sess_d2f01cac-2417-4179-a2c0-3a04bdc2c9e6",
+        "timestamp": 1793765284792
+      },
+      {
+        "executionId": "f5199715-4325-4389-8491-5da73e35567b",
+        "chatSessionId": "sess_d2f01cac-2417-4179-a2c0-3a04bdc2c9e6",
+        "timestamp": 1793766747532
+      }
+    ],
+    "8. Build home page (category browsing) and shared layout": [
+      {
+        "executionId": "fdfbf3f8-d71f-4cbf-aae5-a3253103b170",
+        "chatSessionId": "sess_bc83f562-f7ea-490d-ab8b-9cb23194255b",
+        "timestamp": 1793772157763
+      }
+    ],
+    "8.5 Write property test for image dimension invariant (Property 9)": [
+      {
+        "executionId": "fdfbf3f8-d71f-4cbf-aae5-a3253103b170",
+        "chatSessionId": "sess_bc83f562-f7ea-490d-ab8b-9cb23194255b",
+        "timestamp": 1793772464385
+      },
+      {
+        "executionId": "fdfbf3f8-d71f-4cbf-aae5-a3253103b170",
+        "chatSessionId": "sess_bc83f562-f7ea-490d-ab8b-9cb23194255b",
+        "timestamp": 1793774324838
+      }
+    ],
+    "6.2 Write property test for cart quantity accumulation (Property 3)": [
+      {
+        "executionId": "fdfbf3f8-d71f-4cbf-aae5-a3253103b170",
+        "chatSessionId": "sess_bc83f562-f7ea-490d-ab8b-9cb23194255b",
+        "timestamp": 1793772468229
+      },
+      {
+        "executionId": "fdfbf3f8-d71f-4cbf-aae5-a3253103b170",
+        "chatSessionId": "sess_bc83f562-f7ea-490d-ab8b-9cb23194255b",
+        "timestamp": 1793774328945
+      }
+    ],
+    "6.3 Write property test for cart total correctness (Property 5)": [
+      {
+        "executionId": "fdfbf3f8-d71f-4cbf-aae5-a3253103b170",
+        "chatSessionId": "sess_bc83f562-f7ea-490d-ab8b-9cb23194255b",
+        "timestamp": 1793772472281
+      },
+      {
+        "executionId": "fdfbf3f8-d71f-4cbf-aae5-a3253103b170",
+        "chatSessionId": "sess_bc83f562-f7ea-490d-ab8b-9cb23194255b",
+        "timestamp": 1793774332938
+      }
+    ],
+    "6.4 Write property test for discount price invariant (Property 13)": [
+      {
+        "executionId": "fdfbf3f8-d71f-4cbf-aae5-a3253103b170",
+        "chatSessionId": "sess_bc83f562-f7ea-490d-ab8b-9cb23194255b",
+        "timestamp": 1793772476326
+      },
+      {
+        "executionId": "fdfbf3f8-d71f-4cbf-aae5-a3253103b170",
+        "chatSessionId": "sess_bc83f562-f7ea-490d-ab8b-9cb23194255b",
+        "timestamp": 1793774337300
+      }
+    ],
+    "6.5 Write unit tests for CartService edge cases": [
+      {
+        "executionId": "fdfbf3f8-d71f-4cbf-aae5-a3253103b170",
+        "chatSessionId": "sess_bc83f562-f7ea-490d-ab8b-9cb23194255b",
+        "timestamp": 1793772480293
+      },
+      {
+        "executionId": "fdfbf3f8-d71f-4cbf-aae5-a3253103b170",
+        "chatSessionId": "sess_bc83f562-f7ea-490d-ab8b-9cb23194255b",
+        "timestamp": 1793775862327
+      }
+    ],
+    "3.3 Write unit tests for authentication": [
+      {
+        "executionId": "fdfbf3f8-d71f-4cbf-aae5-a3253103b170",
+        "chatSessionId": "sess_bc83f562-f7ea-490d-ab8b-9cb23194255b",
+        "timestamp": 1793775867177
+      },
+      {
+        "executionId": "ff591183-1f36-44b2-801c-3fd9876aec4f",
+        "chatSessionId": "sess_5c3821c4-9542-42b0-afd8-7a564ab35782",
+        "timestamp": 1793780672138
+      }
+    ],
+    "9.1 Create _ItemDetailModal partial and AJAX detail handler": [
+      {
+        "executionId": "fdfbf3f8-d71f-4cbf-aae5-a3253103b170",
+        "chatSessionId": "sess_bc83f562-f7ea-490d-ab8b-9cb23194255b",
+        "timestamp": 1793775872007
+      },
+      {
+        "executionId": "ff591183-1f36-44b2-801c-3fd9876aec4f",
+        "chatSessionId": "sess_5c3821c4-9542-42b0-afd8-7a564ab35782",
+        "timestamp": 1793780659119
+      }
+    ],
+    "9.2 Implement Cart AJAX endpoint (`/Cart/Add`)": [
+      {
+        "executionId": "fdfbf3f8-d71f-4cbf-aae5-a3253103b170",
+        "chatSessionId": "sess_bc83f562-f7ea-490d-ab8b-9cb23194255b",
+        "timestamp": 1793775877154
+      },
+      {
+        "executionId": "ff591183-1f36-44b2-801c-3fd9876aec4f",
+        "chatSessionId": "sess_5c3821c4-9542-42b0-afd8-7a564ab35782",
+        "timestamp": 1793780663271
+      }
+    ],
+    "10. Implement SignalR CartHub for real-time badge updates": [
+      {
+        "executionId": "fdfbf3f8-d71f-4cbf-aae5-a3253103b170",
+        "chatSessionId": "sess_bc83f562-f7ea-490d-ab8b-9cb23194255b",
+        "timestamp": 1793775881145
+      },
+      {
+        "executionId": "ff591183-1f36-44b2-801c-3fd9876aec4f",
+        "chatSessionId": "sess_5c3821c4-9542-42b0-afd8-7a564ab35782",
+        "timestamp": 1793780667655
+      }
+    ],
+    "11. Implement Cart View and Cart Management Page": [
+      {
+        "executionId": "fdfbf3f8-d71f-4cbf-aae5-a3253103b170",
+        "chatSessionId": "sess_bc83f562-f7ea-490d-ab8b-9cb23194255b",
+        "timestamp": 1793775885300
+      },
+      {
+        "executionId": "ff591183-1f36-44b2-801c-3fd9876aec4f",
+        "chatSessionId": "sess_5c3821c4-9542-42b0-afd8-7a564ab35782",
+        "timestamp": 1793777553724
+      },
+      {
+        "executionId": "ff591183-1f36-44b2-801c-3fd9876aec4f",
+        "chatSessionId": "sess_5c3821c4-9542-42b0-afd8-7a564ab35782",
+        "timestamp": 1793777561332
+      },
+      {
+        "executionId": "ff591183-1f36-44b2-801c-3fd9876aec4f",
+        "chatSessionId": "sess_5c3821c4-9542-42b0-afd8-7a564ab35782",
+        "timestamp": 1793778142759
+      }
+    ],
+    "12.1 Implement SaleManagerService": [
+      {
+        "executionId": "ff591183-1f36-44b2-801c-3fd9876aec4f",
+        "chatSessionId": "sess_5c3821c4-9542-42b0-afd8-7a564ab35782",
+        "timestamp": 1793778147143
+      },
+      {
+        "executionId": "ff591183-1f36-44b2-801c-3fd9876aec4f",
+        "chatSessionId": "sess_5c3821c4-9542-42b0-afd8-7a564ab35782",
+        "timestamp": 1793779325289
+      }
+    ],
+    "16. Implement Product Search Page": [
+      {
+        "executionId": "ff591183-1f36-44b2-801c-3fd9876aec4f",
+        "chatSessionId": "sess_5c3821c4-9542-42b0-afd8-7a564ab35782",
+        "timestamp": 1793778151181
+      },
+      {
+        "executionId": "ff591183-1f36-44b2-801c-3fd9876aec4f",
+        "chatSessionId": "sess_5c3821c4-9542-42b0-afd8-7a564ab35782",
+        "timestamp": 1793779329295
+      }
+    ],
+    "12.2 Create Checkout Razor Pages": [
+      {
+        "executionId": "ff591183-1f36-44b2-801c-3fd9876aec4f",
+        "chatSessionId": "sess_5c3821c4-9542-42b0-afd8-7a564ab35782",
+        "timestamp": 1793779337267
+      },
+      {
+        "executionId": "ff591183-1f36-44b2-801c-3fd9876aec4f",
+        "chatSessionId": "sess_5c3821c4-9542-42b0-afd8-7a564ab35782",
+        "timestamp": 1793780610756
+      }
+    ],
+    "12. Implement Sale_Manager and Checkout flow": [
+      {
+        "executionId": "ff591183-1f36-44b2-801c-3fd9876aec4f",
+        "chatSessionId": "sess_5c3821c4-9542-42b0-afd8-7a564ab35782",
+        "timestamp": 1793780610883
+      }
+    ],
+    "9. Implement Item Detail Modal and add-to-cart AJAX flow": [
+      {
+        "executionId": "ff591183-1f36-44b2-801c-3fd9876aec4f",
+        "chatSessionId": "sess_5c3821c4-9542-42b0-afd8-7a564ab35782",
+        "timestamp": 1793780663347
+      }
+    ],
+    "12.3 Write unit tests for SaleManagerService": [
+      {
+        "executionId": "ff591183-1f36-44b2-801c-3fd9876aec4f",
+        "chatSessionId": "sess_5c3821c4-9542-42b0-afd8-7a564ab35782",
+        "timestamp": 1793781003689
+      },
+      {
+        "executionId": "ff591183-1f36-44b2-801c-3fd9876aec4f",
+        "chatSessionId": "sess_5c3821c4-9542-42b0-afd8-7a564ab35782",
+        "timestamp": 1793781024070
+      },
+      {
+        "executionId": "ff591183-1f36-44b2-801c-3fd9876aec4f",
+        "chatSessionId": "sess_5c3821c4-9542-42b0-afd8-7a564ab35782",
+        "timestamp": 1793781028185
+      }
+    ],
+    "13.1 Write property test for role-based sale history (Property 7)": [
+      {
+        "executionId": "ff591183-1f36-44b2-801c-3fd9876aec4f",
+        "chatSessionId": "sess_5c3821c4-9542-42b0-afd8-7a564ab35782",
+        "timestamp": 1793781009079
+      },
+      {
+        "executionId": "ff591183-1f36-44b2-801c-3fd9876aec4f",
+        "chatSessionId": "sess_5c3821c4-9542-42b0-afd8-7a564ab35782",
+        "timestamp": 1793781032495
+      },
+      {
+        "executionId": "ff591183-1f36-44b2-801c-3fd9876aec4f",
+        "chatSessionId": "sess_5c3821c4-9542-42b0-afd8-7a564ab35782",
+        "timestamp": 1793781140857
+      }
+    ],
+    "13. Implement property-based test for role-based sale history visibility (Property 7)": [
+      {
+        "executionId": "ff591183-1f36-44b2-801c-3fd9876aec4f",
+        "chatSessionId": "sess_5c3821c4-9542-42b0-afd8-7a564ab35782",
+        "timestamp": 1793781140983
+      }
+    ],
+    "14. Implement Sale History, Sale Detail, and Void Pages": [
+      {
+        "executionId": "ff591183-1f36-44b2-801c-3fd9876aec4f",
+        "chatSessionId": "sess_5c3821c4-9542-42b0-afd8-7a564ab35782",
+        "timestamp": 1793781150015
+      },
+      {
+        "executionId": "ff591183-1f36-44b2-801c-3fd9876aec4f",
+        "chatSessionId": "sess_5c3821c4-9542-42b0-afd8-7a564ab35782",
+        "timestamp": 1793781872462
+      },
+      {
+        "executionId": "ff591183-1f36-44b2-801c-3fd9876aec4f",
+        "chatSessionId": "sess_5c3821c4-9542-42b0-afd8-7a564ab35782",
+        "timestamp": 1793781877378
+      },
+      {
+        "executionId": "ff591183-1f36-44b2-801c-3fd9876aec4f",
+        "chatSessionId": "sess_5c3821c4-9542-42b0-afd8-7a564ab35782",
+        "timestamp": 1793785098289
+      }
+    ],
+    "18. Implement Multi-Language Support (Localization)": [
+      {
+        "executionId": "ff591183-1f36-44b2-801c-3fd9876aec4f",
+        "chatSessionId": "sess_5c3821c4-9542-42b0-afd8-7a564ab35782",
+        "timestamp": 1793781881568
+      },
+      {
+        "executionId": "ff591183-1f36-44b2-801c-3fd9876aec4f",
+        "chatSessionId": "sess_5c3821c4-9542-42b0-afd8-7a564ab35782",
+        "timestamp": 1793785102936
+      }
+    ],
+    "17. Implement Receipt Generation and Printing": [
+      {
+        "executionId": "ff591183-1f36-44b2-801c-3fd9876aec4f",
+        "chatSessionId": "sess_5c3821c4-9542-42b0-afd8-7a564ab35782",
+        "timestamp": 1793785117229
+      },
+      {
+        "executionId": "ff591183-1f36-44b2-801c-3fd9876aec4f",
+        "chatSessionId": "sess_5c3821c4-9542-42b0-afd8-7a564ab35782",
+        "timestamp": 1793785143156
+      },
+      {
+        "executionId": "25afa0ec-02b5-406b-aff4-e63294e3d108",
+        "chatSessionId": "sess_028d090c-3991-47be-b96d-de76e069814f",
+        "timestamp": 1793843968527
+      },
+      {
+        "executionId": "25afa0ec-02b5-406b-aff4-e63294e3d108",
+        "chatSessionId": "sess_028d090c-3991-47be-b96d-de76e069814f",
+        "timestamp": 1793843989371
+      },
+      {
+        "executionId": "25afa0ec-02b5-406b-aff4-e63294e3d108",
+        "chatSessionId": "sess_028d090c-3991-47be-b96d-de76e069814f",
+        "timestamp": 1793844678094
+      }
+    ],
+    "20.1 Write property test for role-based authentication (Property 1)": [
+      {
+        "executionId": "ff591183-1f36-44b2-801c-3fd9876aec4f",
+        "chatSessionId": "sess_5c3821c4-9542-42b0-afd8-7a564ab35782",
+        "timestamp": 1793785121638
+      },
+      {
+        "executionId": "25afa0ec-02b5-406b-aff4-e63294e3d108",
+        "chatSessionId": "sess_028d090c-3991-47be-b96d-de76e069814f",
+        "timestamp": 1793844687209
+      },
+      {
+        "executionId": "25afa0ec-02b5-406b-aff4-e63294e3d108",
+        "chatSessionId": "sess_028d090c-3991-47be-b96d-de76e069814f",
+        "timestamp": 1793844719277
+      },
+      {
+        "executionId": "25afa0ec-02b5-406b-aff4-e63294e3d108",
+        "chatSessionId": "sess_028d090c-3991-47be-b96d-de76e069814f",
+        "timestamp": 1793846614731
+      }
+    ],
+    "20.2 Write property test for account lockout (Property 2)": [
+      {
+        "executionId": "ff591183-1f36-44b2-801c-3fd9876aec4f",
+        "chatSessionId": "sess_5c3821c4-9542-42b0-afd8-7a564ab35782",
+        "timestamp": 1793785126333
+      },
+      {
+        "executionId": "25afa0ec-02b5-406b-aff4-e63294e3d108",
+        "chatSessionId": "sess_028d090c-3991-47be-b96d-de76e069814f",
+        "timestamp": 1793844691770
+      },
+      {
+        "executionId": "25afa0ec-02b5-406b-aff4-e63294e3d108",
+        "chatSessionId": "sess_028d090c-3991-47be-b96d-de76e069814f",
+        "timestamp": 1793844723237
+      },
+      {
+        "executionId": "25afa0ec-02b5-406b-aff4-e63294e3d108",
+        "chatSessionId": "sess_028d090c-3991-47be-b96d-de76e069814f",
+        "timestamp": 1793847057765
+      }
+    ],
+    "15. Checkpoint — Ensure all tests pass, ask the user if questions arise.": [
+      {
+        "executionId": "a5e038f2-d06b-4e00-83cc-800be6f99d55",
+        "chatSessionId": "sess_2f0a1959-0683-455a-81fa-7b2849f96159",
+        "timestamp": 1793843368040
+      },
+      {
+        "executionId": "a5e038f2-d06b-4e00-83cc-800be6f99d55",
+        "chatSessionId": "sess_2f0a1959-0683-455a-81fa-7b2849f96159",
+        "timestamp": 1793843390591
+      }
+    ],
+    "19. Implement Role-Based Authorization, Discounts, and Permissions": [
+      {
+        "executionId": "a5e038f2-d06b-4e00-83cc-800be6f99d55",
+        "chatSessionId": "sess_2f0a1959-0683-455a-81fa-7b2849f96159",
+        "timestamp": 1793843369067
+      },
+      {
+        "executionId": "25afa0ec-02b5-406b-aff4-e63294e3d108",
+        "chatSessionId": "sess_028d090c-3991-47be-b96d-de76e069814f",
+        "timestamp": 1793844715142
+      },
+      {
+        "executionId": "25afa0ec-02b5-406b-aff4-e63294e3d108",
+        "chatSessionId": "sess_028d090c-3991-47be-b96d-de76e069814f",
+        "timestamp": 1793846609748
+      }
+    ],
+    "21.1 Create End-of-Day Report Page": [
+      {
+        "executionId": "a5e038f2-d06b-4e00-83cc-800be6f99d55",
+        "chatSessionId": "sess_2f0a1959-0683-455a-81fa-7b2849f96159",
+        "timestamp": 1793843369210
+      },
+      {
+        "executionId": "25afa0ec-02b5-406b-aff4-e63294e3d108",
+        "chatSessionId": "sess_028d090c-3991-47be-b96d-de76e069814f",
+        "timestamp": 1793847072235
+      },
+      {
+        "executionId": "25afa0ec-02b5-406b-aff4-e63294e3d108",
+        "chatSessionId": "sess_028d090c-3991-47be-b96d-de76e069814f",
+        "timestamp": 1793849283085
+      }
+    ],
+    "21.2 Create Quick Sale Mode Page": [
+      {
+        "executionId": "a5e038f2-d06b-4e00-83cc-800be6f99d55",
+        "chatSessionId": "sess_2f0a1959-0683-455a-81fa-7b2849f96159",
+        "timestamp": 1793843369323
+      },
+      {
+        "executionId": "25afa0ec-02b5-406b-aff4-e63294e3d108",
+        "chatSessionId": "sess_028d090c-3991-47be-b96d-de76e069814f",
+        "timestamp": 1793847076364
+      },
+      {
+        "executionId": "25afa0ec-02b5-406b-aff4-e63294e3d108",
+        "chatSessionId": "sess_028d090c-3991-47be-b96d-de76e069814f",
+        "timestamp": 1793849321938
+      }
+    ],
+    "22. Implement Data Synchronization Background Service": [
+      {
+        "executionId": "a5e038f2-d06b-4e00-83cc-800be6f99d55",
+        "chatSessionId": "sess_2f0a1959-0683-455a-81fa-7b2849f96159",
+        "timestamp": 1793843369399
+      },
+      {
+        "executionId": "25afa0ec-02b5-406b-aff4-e63294e3d108",
+        "chatSessionId": "sess_028d090c-3991-47be-b96d-de76e069814f",
+        "timestamp": 1793847080464
+      },
+      {
+        "executionId": "25afa0ec-02b5-406b-aff4-e63294e3d108",
+        "chatSessionId": "sess_028d090c-3991-47be-b96d-de76e069814f",
+        "timestamp": 1793849353565
+      }
+    ],
+    "23. Implement Configuration Management and IOptions pattern": [
+      {
+        "executionId": "a5e038f2-d06b-4e00-83cc-800be6f99d55",
+        "chatSessionId": "sess_2f0a1959-0683-455a-81fa-7b2849f96159",
+        "timestamp": 1793843369467
+      },
+      {
+        "executionId": "25afa0ec-02b5-406b-aff4-e63294e3d108",
+        "chatSessionId": "sess_028d090c-3991-47be-b96d-de76e069814f",
+        "timestamp": 1793847084713
+      },
+      {
+        "executionId": "25afa0ec-02b5-406b-aff4-e63294e3d108",
+        "chatSessionId": "sess_028d090c-3991-47be-b96d-de76e069814f",
+        "timestamp": 1793849366744
+      }
+    ],
+    "24. Checkpoint — Ensure all tests pass, ask the user if questions arise.": [
+      {
+        "executionId": "a5e038f2-d06b-4e00-83cc-800be6f99d55",
+        "chatSessionId": "sess_2f0a1959-0683-455a-81fa-7b2849f96159",
+        "timestamp": 1793843369534
+      },
+      {
+        "executionId": "25afa0ec-02b5-406b-aff4-e63294e3d108",
+        "chatSessionId": "sess_028d090c-3991-47be-b96d-de76e069814f",
+        "timestamp": 1793849425688
+      }
+    ],
+    "25. Implement Progressive Web App (PWA) Offline Capability": [
+      {
+        "executionId": "a5e038f2-d06b-4e00-83cc-800be6f99d55",
+        "chatSessionId": "sess_2f0a1959-0683-455a-81fa-7b2849f96159",
+        "timestamp": 1793843369608
+      },
+      {
+        "executionId": "2bcab492-b8ca-4c58-a4e6-03eeb21b307b",
+        "chatSessionId": "sess_1218c5c4-fd1c-43aa-9a9a-75b8c3e8ad2d",
+        "timestamp": 1793859581554
+      },
+      {
+        "executionId": "8664aa2f-85ea-4536-b3b1-490cd20777ab",
+        "chatSessionId": "sess_742b4d22-8604-49e5-80f2-54982750dbb8",
+        "timestamp": 1793860273540
+      }
+    ],
+    "26. Implement Security Hardening and Error Handling": [
+      {
+        "executionId": "a5e038f2-d06b-4e00-83cc-800be6f99d55",
+        "chatSessionId": "sess_2f0a1959-0683-455a-81fa-7b2849f96159",
+        "timestamp": 1793843369677
+      },
+      {
+        "executionId": "2bcab492-b8ca-4c58-a4e6-03eeb21b307b",
+        "chatSessionId": "sess_1218c5c4-fd1c-43aa-9a9a-75b8c3e8ad2d",
+        "timestamp": 1793859585152
+      },
+      {
+        "executionId": "8664aa2f-85ea-4536-b3b1-490cd20777ab",
+        "chatSessionId": "sess_742b4d22-8604-49e5-80f2-54982750dbb8",
+        "timestamp": 1793860277002
+      }
+    ],
+    "27. Implement Accessibility Compliance (WCAG 2.1 AA)": [
+      {
+        "executionId": "a5e038f2-d06b-4e00-83cc-800be6f99d55",
+        "chatSessionId": "sess_2f0a1959-0683-455a-81fa-7b2849f96159",
+        "timestamp": 1793843369750
+      },
+      {
+        "executionId": "2bcab492-b8ca-4c58-a4e6-03eeb21b307b",
+        "chatSessionId": "sess_1218c5c4-fd1c-43aa-9a9a-75b8c3e8ad2d",
+        "timestamp": 1793859588851
+      },
+      {
+        "executionId": "8664aa2f-85ea-4536-b3b1-490cd20777ab",
+        "chatSessionId": "sess_742b4d22-8604-49e5-80f2-54982750dbb8",
+        "timestamp": 1793860264818
+      },
+      {
+        "executionId": "8664aa2f-85ea-4536-b3b1-490cd20777ab",
+        "chatSessionId": "sess_742b4d22-8604-49e5-80f2-54982750dbb8",
+        "timestamp": 1793860324015
+      },
+      {
+        "executionId": "8664aa2f-85ea-4536-b3b1-490cd20777ab",
+        "chatSessionId": "sess_742b4d22-8604-49e5-80f2-54982750dbb8",
+        "timestamp": 1793861770766
+      }
+    ],
+    "29. Final Checkpoint — Ensure all tests pass, ask the user if questions arise.": [
+      {
+        "executionId": "a5e038f2-d06b-4e00-83cc-800be6f99d55",
+        "chatSessionId": "sess_2f0a1959-0683-455a-81fa-7b2849f96159",
+        "timestamp": 1793843369816
+      },
+      {
+        "executionId": "a5559114-78eb-4ea9-8d49-9860ae13ffc5",
+        "chatSessionId": "sess_e08675fd-406c-4a6a-83fc-67b8415a93ae",
+        "timestamp": 1793864952973
+      },
+      {
+        "executionId": "878febb3-46f1-493f-b448-eb34e668da78",
+        "chatSessionId": "sess_9b54fabc-8a6a-476c-b44d-1812c2b389ba",
+        "timestamp": 1793869387683
+      },
+      {
+        "executionId": "878febb3-46f1-493f-b448-eb34e668da78",
+        "chatSessionId": "sess_9b54fabc-8a6a-476c-b44d-1812c2b389ba",
+        "timestamp": 1793869410372
+      },
+      {
+        "executionId": "e8ef5ede-ed11-4196-a80f-18a29d0ecd81",
+        "chatSessionId": "sess_9f96badb-eb25-4013-b47b-2dc56af2d43b",
+        "timestamp": 1793928737270
+      },
+      {
+        "executionId": "e8ef5ede-ed11-4196-a80f-18a29d0ecd81",
+        "chatSessionId": "sess_9f96badb-eb25-4013-b47b-2dc56af2d43b",
+        "timestamp": 1793930005562
+      },
+      {
+        "executionId": "e8ef5ede-ed11-4196-a80f-18a29d0ecd81",
+        "chatSessionId": "sess_9f96badb-eb25-4013-b47b-2dc56af2d43b",
+        "timestamp": 1793930101381
+      }
+    ],
+    "28.1 Write end-to-end sale flow integration test": [
+      {
+        "executionId": "25afa0ec-02b5-406b-aff4-e63294e3d108",
+        "chatSessionId": "sess_028d090c-3991-47be-b96d-de76e069814f",
+        "timestamp": 1793844696081
+      },
+      {
+        "executionId": "8664aa2f-85ea-4536-b3b1-490cd20777ab",
+        "chatSessionId": "sess_742b4d22-8604-49e5-80f2-54982750dbb8",
+        "timestamp": 1793861784175
+      },
+      {
+        "executionId": "a5559114-78eb-4ea9-8d49-9860ae13ffc5",
+        "chatSessionId": "sess_e08675fd-406c-4a6a-83fc-67b8415a93ae",
+        "timestamp": 1793865162596
+      },
+      {
+        "executionId": "a5559114-78eb-4ea9-8d49-9860ae13ffc5",
+        "chatSessionId": "sess_e08675fd-406c-4a6a-83fc-67b8415a93ae",
+        "timestamp": 1793866968465
+      }
+    ],
+    "28.2 Write Razor Page rendering tests": [
+      {
+        "executionId": "25afa0ec-02b5-406b-aff4-e63294e3d108",
+        "chatSessionId": "sess_028d090c-3991-47be-b96d-de76e069814f",
+        "timestamp": 1793844700740
+      },
+      {
+        "executionId": "8664aa2f-85ea-4536-b3b1-490cd20777ab",
+        "chatSessionId": "sess_742b4d22-8604-49e5-80f2-54982750dbb8",
+        "timestamp": 1793861788476
+      },
+      {
+        "executionId": "a5559114-78eb-4ea9-8d49-9860ae13ffc5",
+        "chatSessionId": "sess_e08675fd-406c-4a6a-83fc-67b8415a93ae",
+        "timestamp": 1793866972879
+      },
+      {
+        "executionId": "e8ef5ede-ed11-4196-a80f-18a29d0ecd81",
+        "chatSessionId": "sess_9f96badb-eb25-4013-b47b-2dc56af2d43b",
+        "timestamp": 1793928748254
+      },
+      {
+        "executionId": "e8ef5ede-ed11-4196-a80f-18a29d0ecd81",
+        "chatSessionId": "sess_9f96badb-eb25-4013-b47b-2dc56af2d43b",
+        "timestamp": 1793928760103
+      },
+      {
+        "executionId": "e8ef5ede-ed11-4196-a80f-18a29d0ecd81",
+        "chatSessionId": "sess_9f96badb-eb25-4013-b47b-2dc56af2d43b",
+        "timestamp": 1793929997533
+      }
+    ],
+    "28.3 Write ImageOptimizerService unit tests": [
+      {
+        "executionId": "25afa0ec-02b5-406b-aff4-e63294e3d108",
+        "chatSessionId": "sess_028d090c-3991-47be-b96d-de76e069814f",
+        "timestamp": 1793844704802
+      },
+      {
+        "executionId": "8664aa2f-85ea-4536-b3b1-490cd20777ab",
+        "chatSessionId": "sess_742b4d22-8604-49e5-80f2-54982750dbb8",
+        "timestamp": 1793861792913
+      },
+      {
+        "executionId": "a5559114-78eb-4ea9-8d49-9860ae13ffc5",
+        "chatSessionId": "sess_e08675fd-406c-4a6a-83fc-67b8415a93ae",
+        "timestamp": 1793866976595
+      },
+      {
+        "executionId": "e8ef5ede-ed11-4196-a80f-18a29d0ecd81",
+        "chatSessionId": "sess_9f96badb-eb25-4013-b47b-2dc56af2d43b",
+        "timestamp": 1793928748302
+      },
+      {
+        "executionId": "e8ef5ede-ed11-4196-a80f-18a29d0ecd81",
+        "chatSessionId": "sess_9f96badb-eb25-4013-b47b-2dc56af2d43b",
+        "timestamp": 1793928760225
+      },
+      {
+        "executionId": "e8ef5ede-ed11-4196-a80f-18a29d0ecd81",
+        "chatSessionId": "sess_9f96badb-eb25-4013-b47b-2dc56af2d43b",
+        "timestamp": 1793929997432
+      }
+    ],
+    "20. Implement property-based test for role-based authentication (Property 1) and lockout (Property 2)": [
+      {
+        "executionId": "25afa0ec-02b5-406b-aff4-e63294e3d108",
+        "chatSessionId": "sess_028d090c-3991-47be-b96d-de76e069814f",
+        "timestamp": 1793846614841
+      }
+    ],
+    "21. Implement End-of-Day Reporting and Quick Sale Mode": [
+      {
+        "executionId": "25afa0ec-02b5-406b-aff4-e63294e3d108",
+        "chatSessionId": "sess_028d090c-3991-47be-b96d-de76e069814f",
+        "timestamp": 1793849322092
+      }
+    ],
+    "17.1 Write property test for receipt completeness (Property 12)": [
+      {
+        "executionId": "8664aa2f-85ea-4536-b3b1-490cd20777ab",
+        "chatSessionId": "sess_742b4d22-8604-49e5-80f2-54982750dbb8",
+        "timestamp": 1793860296275
+      },
+      {
+        "executionId": "8664aa2f-85ea-4536-b3b1-490cd20777ab",
+        "chatSessionId": "sess_742b4d22-8604-49e5-80f2-54982750dbb8",
+        "timestamp": 1793861779925
+      },
+      {
+        "executionId": "a5559114-78eb-4ea9-8d49-9860ae13ffc5",
+        "chatSessionId": "sess_e08675fd-406c-4a6a-83fc-67b8415a93ae",
+        "timestamp": 1793864980970
+      },
+      {
+        "executionId": "a5559114-78eb-4ea9-8d49-9860ae13ffc5",
+        "chatSessionId": "sess_e08675fd-406c-4a6a-83fc-67b8415a93ae",
+        "timestamp": 1793865158531
+      }
+    ],
+    "28. Write integration and end-to-end tests": [
+      {
+        "executionId": "8664aa2f-85ea-4536-b3b1-490cd20777ab",
+        "chatSessionId": "sess_742b4d22-8604-49e5-80f2-54982750dbb8",
+        "timestamp": 1793860315471
+      },
+      {
+        "executionId": "a5559114-78eb-4ea9-8d49-9860ae13ffc5",
+        "chatSessionId": "sess_e08675fd-406c-4a6a-83fc-67b8415a93ae",
+        "timestamp": 1793866968711
+      }
+    ]
+  }
+}

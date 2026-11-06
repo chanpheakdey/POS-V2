@@ -1,0 +1,174 @@
+﻿Test run for C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\PosWebApp.Tests.dll (.NETCoreApp,Version=v10.0)
+A total of 1 test files matched the specified pattern.
+C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp.Tests\bin\Debug\net10.0\PosWebApp.Tests.dll
+[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.4+50e68bbb8b (64-bit .NET 10.0.13)
+[xUnit.net 00:00:00.48]   Discovering: PosWebApp.Tests
+[xUnit.net 00:00:00.60]   Discovered:  PosWebApp.Tests
+[xUnit.net 00:00:00.62]   Starting:    PosWebApp.Tests
+info: Program[0]
+      [Config] BackendService.BaseUrl=https://backend.example.com/ TimeoutSeconds=30 RetryCount=3
+info: Program[0]
+      [Config] BackendService.BaseUrl=https://backend.example.com/ TimeoutSeconds=30 RetryCount=3
+info: Program[0]
+      [Config] Cache.UseRedis=False CatalogExpiry=60min ImageExpiry=24h
+info: Program[0]
+      [Config] Auth.SessionTimeoutHours=8 MaxFailedAttempts=5 LockoutMinutes=30
+info: Program[0]
+      [Config] Cache.UseRedis=False CatalogExpiry=60min ImageExpiry=24h
+info: Program[0]
+      [Config] Image.MaxConcurrentProcessing=5
+info: Program[0]
+      [Config] Auth.SessionTimeoutHours=8 MaxFailedAttempts=5 LockoutMinutes=30
+info: Program[0]
+      [Config] Image.MaxConcurrentProcessing=5
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Testing
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Testing
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp
+warn: Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware[3]
+      Failed to determine the https port for redirect.
+warn: Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware[3]
+      Failed to determine the https port for redirect.
+info: PosWebApp.Pages.Account.LoginModel[0]
+      User cashier01 logged in successfully with level Staff
+info: Program[0]
+      [Config] BackendService.BaseUrl=https://backend.example.com/ TimeoutSeconds=30 RetryCount=3
+info: Program[0]
+      [Config] Cache.UseRedis=False CatalogExpiry=60min ImageExpiry=24h
+info: Program[0]
+      [Config] Auth.SessionTimeoutHours=8 MaxFailedAttempts=5 LockoutMinutes=30
+info: Program[0]
+      [Config] Image.MaxConcurrentProcessing=5
+info: PosWebApp.Pages.IndexModel[0]
+      Index.OnGetAsync - loading category grid
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Testing
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp
+warn: Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware[3]
+      Failed to determine the https port for redirect.
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+info: PosWebApp.Pages.IndexModel[0]
+      Index.OnGetAsync - loading category grid
+info: Program[0]
+      [Config] BackendService.BaseUrl=https://backend.example.com/ TimeoutSeconds=30 RetryCount=3
+info: Program[0]
+      [Config] Cache.UseRedis=False CatalogExpiry=60min ImageExpiry=24h
+info: Program[0]
+      [Config] Auth.SessionTimeoutHours=8 MaxFailedAttempts=5 LockoutMinutes=30
+info: Program[0]
+      [Config] Image.MaxConcurrentProcessing=5
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Testing
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp
+warn: Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware[3]
+      Failed to determine the https port for redirect.
+info: Program[0]
+      [Config] BackendService.BaseUrl=https://backend.example.com/ TimeoutSeconds=30 RetryCount=3
+info: Program[0]
+      [Config] Cache.UseRedis=False CatalogExpiry=60min ImageExpiry=24h
+info: Program[0]
+      [Config] Auth.SessionTimeoutHours=8 MaxFailedAttempts=5 LockoutMinutes=30
+info: Program[0]
+      [Config] Image.MaxConcurrentProcessing=5
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Testing
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp
+warn: Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware[3]
+      Failed to determine the https port for redirect.
+info: Program[0]
+      [Config] BackendService.BaseUrl=https://backend.example.com/ TimeoutSeconds=30 RetryCount=3
+info: Program[0]
+      [Config] Cache.UseRedis=False CatalogExpiry=60min ImageExpiry=24h
+info: Program[0]
+      [Config] Auth.SessionTimeoutHours=8 MaxFailedAttempts=5 LockoutMinutes=30
+info: Program[0]
+      [Config] Image.MaxConcurrentProcessing=5
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Testing
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp
+warn: Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware[3]
+      Failed to determine the https port for redirect.
+info: Program[0]
+      [Config] BackendService.BaseUrl=https://backend.example.com/ TimeoutSeconds=30 RetryCount=3
+info: Program[0]
+      [Config] Cache.UseRedis=False CatalogExpiry=60min ImageExpiry=24h
+info: Program[0]
+      [Config] Auth.SessionTimeoutHours=8 MaxFailedAttempts=5 LockoutMinutes=30
+info: Program[0]
+      [Config] Image.MaxConcurrentProcessing=5
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Testing
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp
+warn: Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware[3]
+      Failed to determine the https port for redirect.
+info: Program[0]
+      [Config] BackendService.BaseUrl=https://backend.example.com/ TimeoutSeconds=30 RetryCount=3
+info: Program[0]
+      [Config] Cache.UseRedis=False CatalogExpiry=60min ImageExpiry=24h
+info: Program[0]
+      [Config] Auth.SessionTimeoutHours=8 MaxFailedAttempts=5 LockoutMinutes=30
+info: Program[0]
+      [Config] Image.MaxConcurrentProcessing=5
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Testing
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp
+warn: Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware[3]
+      Failed to determine the https port for redirect.
+info: PosWebApp.Pages.IndexModel[0]
+      Index.OnGetAsync - loading category grid
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+[xUnit.net 00:00:02.56]   Finished:    PosWebApp.Tests
+  Passed PosWebApp.Tests.Integration.RazorPageRenderingTests.CartPage_AuthenticatedGet_EmptyCart_RendersEmptyCartMessage [1 s]
+  Passed PosWebApp.Tests.Integration.RazorPageRenderingLegacyTests.CartPage_WhenCartEmpty_RendersEmptyCartMessage [1 s]
+  Passed PosWebApp.Tests.Integration.RazorPageRenderingLegacyTests.LoginPage_Get_RendersUsernameAndPasswordInputFields [9 ms]
+  Passed PosWebApp.Tests.Integration.RazorPageRenderingTests.HomePage_AuthenticatedGet_EmptyCategories_RendersEmptyState [87 ms]
+  Passed PosWebApp.Tests.Integration.RazorPageRenderingTests.CartPage_UnauthenticatedGet_RedirectsToLogin [61 ms]
+  Passed PosWebApp.Tests.Integration.RazorPageRenderingTests.LoginPage_Get_ContainsLoginForm [78 ms]
+  Passed PosWebApp.Tests.Integration.RazorPageRenderingTests.LoginPage_Get_RendersUsernameAndPasswordInputFields [125 ms]
+  Passed PosWebApp.Tests.Integration.RazorPageRenderingTests.HomePage_UnauthenticatedGet_RedirectsToLogin [119 ms]
+  Passed PosWebApp.Tests.Integration.RazorPageRenderingTests.HomePage_AuthenticatedGet_RendersPageWithCategoriesHeader [83 ms]
+
+Test Run Successful.
+Total tests: 9
+     Passed: 9
+ Total time: 3.4717 Seconds

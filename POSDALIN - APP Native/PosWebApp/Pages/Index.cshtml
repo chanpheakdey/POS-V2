@@ -1,0 +1,42 @@
+﻿@page
+@model IndexModel
+@using PosWebApp.Models.ViewModels
+
+@{
+    ViewData["Title"] = "Home";
+}
+
+@* ── Page header ──────────────────────────────────────────────────────────── *@
+<div class="d-flex align-items-center justify-content-between mb-3 flex-wrap gap-2">
+    <h1 class="h4 mb-0 fw-semibold">
+        <i class="bi bi-grid me-2 text-primary" aria-hidden="true"></i>Categories
+    </h1>
+
+    @* Quick Sale button — Requirement 33.1 *@
+    <a asp-page="/QuickSale"
+       class="btn btn-warning fw-semibold"
+       aria-label="Open Quick Sale">
+        <i class="bi bi-lightning-fill me-1" aria-hidden="true"></i>Quick Sale
+    </a>
+</div>
+
+@* ── Category grid — Requirement 3.4, 3.7 (responsive Bootstrap 5 grid) ──── *@
+@if (Model.ViewModel.Categories.Count == 0)
+{
+    <div class="text-center py-5 text-muted">
+        <i class="bi bi-inbox fs-1 d-block mb-2" aria-hidden="true"></i>
+        <p class="mb-0">No categories available at the moment.</p>
+    </div>
+}
+else
+{
+    <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-5 row-cols-xl-6 g-3"
+         role="list" aria-label="Product categories">
+        @foreach (var category in Model.ViewModel.Categories)
+        {
+            <div class="col" role="listitem">
+                <partial name="_ItemCardPartial" model="category" />
+            </div>
+        }
+    </div>
+}

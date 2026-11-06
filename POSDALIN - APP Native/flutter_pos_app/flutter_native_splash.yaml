@@ -1,0 +1,39 @@
+# Flutter Native Splash Configuration
+# This file configures the native splash screen for Android and iOS
+
+flutter_native_splash:
+  # Background color for the splash screen (white background)
+  color: "#FFFFFF"
+  
+  # Splash screen image - using placeholder for now
+  # TODO: Replace with actual POS app logo/icon (1024x1024 recommended)
+  image: assets/images/placeholder.png
+  
+  # Branding mode for Android 12+
+  # Set to light for light theme
+  android_12:
+    # Android 12+ uses the icon + background approach
+    image: assets/images/placeholder.png
+    color: "#FFFFFF"
+    icon_background_color: "#FFFFFF"
+  
+  # iOS configuration
+  ios: true
+  
+  # Android configuration  
+  android: true
+  
+  # Web configuration
+  web: false
+  
+  # Fullscreen mode
+  fullscreen: true
+  
+  # INFO_PLIST_FILES setting (optional for iOS)
+  # Automatically detects the correct Info.plist file
+  
+  # Android gravity - center the splash image
+  android_gravity: center
+  
+  # iOS content mode - center the splash image
+  ios_content_mode: center

@@ -1,0 +1,9 @@
+﻿@using PosWebApp
+@using Microsoft.Extensions.Localization
+@using PosWebApp.Resources
+@namespace PosWebApp.Pages
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@addTagHelper *, PosWebApp
+
+@* Req 13.9 — make IStringLocalizer<SharedResource> available as 'L' in every Razor page *@
+@inject IStringLocalizer<SharedResource> L

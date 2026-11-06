@@ -1,0 +1,184 @@
+@page "/Items/{categoryId:int}/{groupId:int?}"
+@model ItemsModel
+@using PosWebApp.Models.ViewModels
+@{
+    ViewData["Title"] = "Items";
+}
+
+@* ── Breadcrumb (Requirement 4.6 — back navigation) ─────────────────────── *@
+<nav aria-label="breadcrumb" class="mb-3">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a asp-page="/Index">
+                <i class="bi bi-house-door me-1" aria-hidden="true"></i>Home
+            </a>
+        </li>
+        @if (Model.GroupId.HasValue)
+        {
+            <li class="breadcrumb-item">
+                <a asp-page="/Groups" asp-route-categoryId="@Model.CategoryId">Groups</a>
+            </li>
+        }
+        <li class="breadcrumb-item active" aria-current="page">Items</li>
+    </ol>
+</nav>
+
+@* ── Error banner ─────────────────────────────────────────────────────────── *@
+@if (TempData["Error"] is string errorMsg)
+{
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <i class="bi bi-exclamation-triangle-fill me-1" aria-hidden="true"></i>
+        @errorMsg
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
+
+@* ── Empty state ──────────────────────────────────────────────────────────── *@
+@if (!Model.Items.Any())
+{
+    <div class="text-center py-5">
+        <i class="bi bi-box-seam fs-1 text-muted" aria-hidden="true"></i>
+        <p class="mt-2 text-muted">No items found.</p>
+        @if (Model.GroupId.HasValue)
+        {
+            <a asp-page="/Groups" asp-route-categoryId="@Model.CategoryId" class="btn btn-secondary mt-2">
+                <i class="bi bi-arrow-left me-1" aria-hidden="true"></i>Back to Groups
+            </a>
+        }
+        else
+        {
+            <a asp-page="/Index" class="btn btn-secondary mt-2">
+                <i class="bi bi-arrow-left me-1" aria-hidden="true"></i>Back to Categories
+            </a>
+        }
+    </div>
+}
+else
+{
+    @* ── Item grid — Requirements 4.7, 4.8, 4.10 ────────────────────────── *@
+    @* Same responsive column classes as the Groups and Index pages. *@
+    <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-5 row-cols-xl-6 g-3"
+         id="item-grid" role="list" aria-label="Product items">
+
+        @foreach (var item in Model.Items)
+        {
+            <div class="col" role="listitem">
+                @* Requirement 5.1 — clicking an item card opens the item detail modal.
+                   A <button> wrapper prevents the _ItemCardPartial anchor (Href="#") from
+                   acting as a navigation link.  The data-item-id attribute allows JS
+                   (showItemDetail) to pick up the item ID from any child click. *@
+                <button type="button"
+                        class="btn p-0 w-100 border-0 text-start item-card-trigger"
+                        data-item-id="@item.Id"
+                        onclick="showItemDetail(@item.Id)"
+                        aria-label="View details for @item.Name">
+                    <partial name="_ItemCardPartial" model="item" />
+                </button>
+            </div>
+        }
+
+    </div>
+}
+
+@* ── Item detail modal placeholder (populated via AJAX by showItemDetail) ── *@
+@* The _ItemDetailModal partial provides the Bootstrap modal markup and the
+   showItemDetail(itemId) JavaScript function that fetches /Items/Detail/{id}
+   and injects the response into the modal body. *@
+@if (System.IO.File.Exists(System.IO.Path.Combine(
+    System.AppContext.BaseDirectory, "Pages", "Shared", "_ItemDetailModal.cshtml")))
+{
+    @await Html.PartialAsync("_ItemDetailModal")
+}
+else
+{
+    @* Minimal modal scaffold so the page works even before the modal partial is built. *@
+    <div class="modal fade" id="itemDetailModal" tabindex="-1"
+         aria-labelledby="itemDetailModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="itemDetailModalLabel">Item Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="itemDetailModalBody">
+                    <div class="text-center py-4">
+                        <div class="spinner-border text-primary" role="status">
+                            <span class="visually-hidden">Loading…</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+@* Bootstrap toast container — Requirement 6.11, 20.10 (ARIA live for notifications) *@
+<div class="toast-container position-fixed bottom-0 end-0 p-3"
+     id="toast-container"
+     aria-live="polite"
+     aria-atomic="true"></div>
+
+@section Scripts {
+    <script>
+        /**
+         * Opens the item detail modal and fetches content from
+         * /Items/Detail/{itemId} (AJAX handler on Items.cshtml.cs).
+         * Falls back to a warning if the route is not yet implemented.
+         *
+         * Requirement 5.1 — display Bootstrap modal with item details.
+         * Requirement 20.12 — Bootstrap 5 handles focus trap and Escape key.
+         * Requirement 20.10 — modal title updated so screen readers announce new item.
+         */
+        function showItemDetail(itemId) {
+            var modal = document.getElementById('itemDetailModal');
+            if (!modal) {
+                console.warn('itemDetailModal element not found for itemId=' + itemId);
+                return;
+            }
+
+            var body = document.getElementById('itemDetailModalBody');
+            var titleEl = document.getElementById('itemDetailModalLabel');
+            if (body) {
+                // Show spinner while fetching
+                body.innerHTML = '<div class="text-center py-4" role="status">' +
+                    '<div class="spinner-border text-primary" aria-hidden="true"></div>' +
+                    '<p class="visually-hidden">Loading item details\u2026</p></div>';
+            }
+            if (titleEl) {
+                titleEl.textContent = 'Loading\u2026';
+            }
+
+            // Show the modal immediately (Bootstrap 5 API)
+            var bsModal = bootstrap.Modal.getOrCreateInstance(modal);
+            bsModal.show();
+
+            // Fetch item detail partial from server
+            fetch('/Items/Detail/' + itemId, {
+                headers: { 'X-Requested-With': 'XMLHttpRequest' }
+            })
+            .then(function (resp) {
+                if (!resp.ok) throw new Error('HTTP ' + resp.status);
+                return resp.text();
+            })
+            .then(function (html) {
+                if (body) {
+                    body.innerHTML = html;
+                    // Update the modal title with the item name for screen readers (Req 20.10)
+                    var itemNameEl = body.querySelector('h2.fw-bold, h2.h5');
+                    if (itemNameEl && titleEl) {
+                        titleEl.textContent = itemNameEl.textContent.trim();
+                    }
+                }
+            })
+            .catch(function (err) {
+                console.error('Failed to load item detail', err);
+                if (body) {
+                    body.innerHTML = '<div class="alert alert-danger m-3" role="alert">Unable to load item details. Please try again.</div>';
+                }
+                if (titleEl) {
+                    titleEl.textContent = 'Item Details';
+                }
+            });
+        }
+    </script>
+}

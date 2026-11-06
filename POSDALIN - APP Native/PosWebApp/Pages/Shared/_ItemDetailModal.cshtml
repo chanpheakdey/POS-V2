@@ -1,0 +1,292 @@
+@* _ItemDetailModal.cshtml
+   Bootstrap 5 modal partial for displaying full item detail.
+
+   This partial is rendered in two ways:
+     1. As a full-page placeholder embedded in Items.cshtml (model is null).
+     2. As a partial HTML fragment returned by OnGetDetailAsync — the JS in
+        Items.cshtml injects the response HTML into #itemDetailModalBody.
+
+   When rendered by OnGetDetailAsync the model is ItemDetailViewModel and
+   contains all populated fields. The outer modal shell (#itemDetailModal)
+   is always present on the Items page; only the inner body is swapped.
+
+   Requirements: 5.1, 5.2, 5.3, 5.4, 5.5, 5.6, 5.7, 5.8, 5.9, 5.10, 5.11
+*@
+
+@using PosWebApp.Models.ViewModels
+@model ItemDetailViewModel
+
+@{
+    // When rendered as a fragment (AJAX), Model is populated.
+    // When rendered as the page placeholder, Model may be null.
+    var item = Model;
+}
+
+@if (item == null)
+{
+    @* ── Placeholder shell (always present on Items page) ─────────────────── *@
+    @* Only the outer modal wrapper is emitted; the body is filled by AJAX. *@
+    @* Requirement 20.12 — Bootstrap 5 automatically traps focus within the
+       modal and dismisses on Escape key (data-bs-keyboard defaults to true). *@
+    <div class="modal fade" id="itemDetailModal" tabindex="-1"
+         aria-labelledby="itemDetailModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title h5" id="itemDetailModalLabel">Item Details</h2>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                            aria-label="Close dialog"></button>
+                </div>
+                @* aria-live="polite" so content injected by AJAX is announced — Req 20.10 *@
+                <div class="modal-body"
+                     id="itemDetailModalBody"
+                     aria-live="polite"
+                     aria-atomic="false">
+                    @* Spinner shown until AJAX call completes *@
+                    <div class="text-center py-4" role="status">
+                        <div class="spinner-border text-primary" aria-hidden="true"></div>
+                        <p class="visually-hidden">Loading item details…</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+else
+{
+    @* ── Full modal body (returned by OnGetDetailAsync, injected via AJAX) ── *@
+    @* Requirement 5.1 — modal displays ItemName, ItemCode, image, price tiers *@
+    <div class="container-fluid px-0">
+
+        @* ── Item image — Requirement 5.7, 5.8 ─────────────────────────────── *@
+        <div class="text-center mb-3">
+            @if (!string.IsNullOrEmpty(item.ImageUrl))
+            {
+                <img src="@item.ImageUrl"
+                     @(string.IsNullOrEmpty(item.SrcSet) ? "" : $"srcset=\"{item.SrcSet}\"")
+                     sizes="(max-width: 576px) 100vw, (max-width: 992px) 60vw, 400px"
+                     alt="@item.ItemName"
+                     loading="lazy"
+                     class="img-fluid rounded shadow-sm item-detail-img"
+                     style="max-height: 300px; object-fit: contain;"
+                     onerror="this.src='/images/placeholder.png'" />
+            }
+            else
+            {
+                @* Requirement 5.8 — placeholder fallback *@
+                <img src="/images/placeholder.png"
+                     alt="@item.ItemName"
+                     class="img-fluid rounded shadow-sm item-detail-img"
+                     style="max-height: 300px; object-fit: contain;" />
+            }
+        </div>
+
+        @* ── Item identity — Requirement 5.5 ────────────────────────────────── *@
+        <h2 class="h5 fw-bold mb-1">@item.ItemName</h2>
+        <p class="text-muted small mb-3">
+            <i class="bi bi-upc-scan me-1" aria-hidden="true"></i>
+            <span>Code: @item.ItemCode</span>
+        </p>
+
+        @* ── Current cart quantity — Requirement 5.10 ───────────────────────── *@
+        @if (item.CurrentCartQuantity > 0)
+        {
+            <div class="alert alert-success d-flex align-items-center py-2 mb-3" role="status">
+                <i class="bi bi-cart-check-fill me-2 fs-5" aria-hidden="true"></i>
+                <span>
+                    <strong>@item.CurrentCartQuantity</strong>
+                    @(item.CurrentCartQuantity == 1 ? "unit" : "units") already in cart
+                </span>
+            </div>
+        }
+
+        @* ── Price tiers — Requirement 5.5, 5.6 ─────────────────────────────── *@
+        @if (item.PriceTiers.Any())
+        {
+            <h3 class="h6 fw-semibold mb-2">
+                <i class="bi bi-tags me-1" aria-hidden="true"></i>Price Tiers
+            </h3>
+            <div class="table-responsive mb-3">
+                <table class="table table-sm table-bordered table-hover align-middle mb-0"
+                       aria-label="Price tiers for @item.ItemName">
+                    <thead class="table-light">
+                        <tr>
+                            <th scope="col" class="text-center">Qty Range</th>
+                            <th scope="col" class="text-end">USD</th>
+                            <th scope="col" class="text-end">KHR</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var tier in item.PriceTiers)
+                        {
+                            @* Requirement 5.6 — ToQty=0 means "and above" *@
+                            var qtyLabel = tier.ToQty == 0
+                                ? $"{tier.FromQty} and above"
+                                : $"{tier.FromQty} – {tier.ToQty}";
+                            <tr>
+                                <td class="text-center">@qtyLabel</td>
+                                <td class="text-end fw-semibold text-success">@tier.FormattedUsd</td>
+                                <td class="text-end text-secondary">@tier.FormattedKhr</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        }
+        else
+        {
+            <p class="text-muted fst-italic mb-3">No price tiers available.</p>
+        }
+
+        @* ── Quantity controls — Requirement 5.9 ────────────────────────────── *@
+        <div class="mb-3">
+            <label for="itemDetailQty" class="form-label fw-semibold">Quantity to Add</label>
+            <div class="input-group" role="group" aria-label="Quantity selector">
+                @* Current value input *@
+                <input type="number"
+                       id="itemDetailQty"
+                       name="qty"
+                       class="form-control text-center fw-semibold"
+                       value="1"
+                       min="1"
+                       aria-label="Quantity"
+                       style="max-width: 80px;" />
+
+                @* Quick increment buttons (+1, +5, +10, +50) *@
+                <button type="button" class="btn btn-outline-secondary qty-increment"
+                        data-increment="1" aria-label="Add 1">+1</button>
+                <button type="button" class="btn btn-outline-secondary qty-increment"
+                        data-increment="5" aria-label="Add 5">+5</button>
+                <button type="button" class="btn btn-outline-secondary qty-increment"
+                        data-increment="10" aria-label="Add 10">+10</button>
+                <button type="button" class="btn btn-outline-secondary qty-increment"
+                        data-increment="50" aria-label="Add 50">+50</button>
+            </div>
+            <div class="form-text">Click a button to increment, or type a quantity directly.</div>
+        </div>
+
+        @* ── Add to Cart — Requirement 5.9, 6.12 (AJAX POST) ───────────────── *@
+        @* cart.js handles the actual AJAX POST to /Cart/Add and shows a toast   *@
+        <button type="button"
+                class="btn btn-primary w-100"
+                id="itemDetailAddBtn"
+                data-item-id="@item.ItemId"
+                data-item-code="@item.ItemCode"
+                data-item-name="@item.ItemName"
+                data-item-image="@item.ImageUrl"
+                onclick="addToCartFromModal()"
+                aria-label="Add @item.ItemName to cart">
+            <i class="bi bi-cart-plus me-1" aria-hidden="true"></i>Add to Cart
+        </button>
+
+    </div>
+
+    @* ── Quantity increment script (scoped to modal body fragment) ───────────── *@
+    @* Requirement 5.9 — +1, +5, +10, +50 controls update the qty input.         *@
+    <script>
+    (function () {
+        // Wire up increment buttons inside the freshly-injected modal body.
+        document.querySelectorAll('.qty-increment').forEach(function (btn) {
+            btn.addEventListener('click', function () {
+                var input = document.getElementById('itemDetailQty');
+                if (!input) return;
+                var current = parseInt(input.value, 10) || 0;
+                var delta   = parseInt(btn.dataset.increment, 10) || 0;
+                input.value = Math.max(1, current + delta);
+            });
+        });
+    })();
+
+    /**
+     * Reads the quantity input and the data attributes from #itemDetailAddBtn,
+     * then delegates to addToCart() defined in cart.js (Requirement 6.12).
+     *
+     * If cart.js is not yet loaded (e.g., during development) it falls back to
+     * a direct fetch so the modal always works.
+     */
+    function addToCartFromModal() {
+        var btn = document.getElementById('itemDetailAddBtn');
+        var qtyInput = document.getElementById('itemDetailQty');
+        if (!btn || !qtyInput) return;
+
+        var request = {
+            itemId:    parseInt(btn.dataset.itemId, 10),
+            itemCode:  btn.dataset.itemCode  || '',
+            itemName:  btn.dataset.itemName  || '',
+            imageUrl:  btn.dataset.itemImage || '',
+            quantity:  parseInt(qtyInput.value, 10) || 1,
+        };
+
+        // Delegate to cart.js addToCart function when available.
+        if (typeof addToCart === 'function') {
+            addToCart(request);
+            return;
+        }
+
+        // Fallback: bare fetch POST to /Cart/Add with anti-forgery token.
+        var token = document.querySelector('input[name="__RequestVerificationToken"]');
+        fetch('/Cart/Add', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-Requested-With': 'XMLHttpRequest',
+                'RequestVerificationToken': token ? token.value : '',
+            },
+            body: JSON.stringify(request),
+        })
+        .then(function (resp) { return resp.json(); })
+        .then(function (data) {
+            if (data && data.success) {
+                showCartToast(request.itemName, request.quantity);
+            }
+        })
+        .catch(function (err) {
+            console.error('addToCartFromModal failed', err);
+        });
+    }
+
+    /**
+     * Displays a Bootstrap toast confirming the add-to-cart action.
+     * Requirement 6.11 — show Bootstrap toast notification on successful add.
+     *
+     * Falls back to the showAddToCartToast helper in cart.js when present.
+     */
+    function showCartToast(itemName, qty) {
+        if (typeof showAddToCartToast === 'function') {
+            showAddToCartToast(itemName, qty);
+            return;
+        }
+
+        var container = document.getElementById('toast-container');
+        if (!container) {
+            container = document.createElement('div');
+            container.id = 'toast-container';
+            container.className = 'toast-container position-fixed bottom-0 end-0 p-3';
+            container.setAttribute('aria-live', 'polite');
+            container.setAttribute('aria-atomic', 'true');
+            document.body.appendChild(container);
+        }
+
+        var toastId = 'toast-' + Date.now();
+        var toastHtml = '<div id="' + toastId + '" class="toast align-items-center text-bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true">' +
+            '<div class="d-flex">' +
+            '<div class="toast-body">' +
+            '<i class="bi bi-cart-check-fill me-1"></i>' +
+            '<strong>' + qty + ' × ' + itemName + '</strong> added to cart.' +
+            '</div>' +
+            '<button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>' +
+            '</div></div>';
+
+        container.insertAdjacentHTML('beforeend', toastHtml);
+
+        var toastEl = document.getElementById(toastId);
+        if (toastEl && typeof bootstrap !== 'undefined') {
+            var bsToast = new bootstrap.Toast(toastEl, { delay: 3000 });
+            bsToast.show();
+            toastEl.addEventListener('hidden.bs.toast', function () {
+                toastEl.remove();
+            });
+        }
+    }
+    </script>
+}

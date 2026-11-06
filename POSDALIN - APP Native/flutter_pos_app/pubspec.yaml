@@ -1,0 +1,84 @@
+name: pos_app
+description: A Flutter mobile POS application for Android and iOS
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # State management
+  flutter_riverpod: ^2.4.0
+  riverpod_annotation: ^2.3.0
+
+  # Navigation
+  go_router: ^13.0.0
+
+  # Secure storage
+  flutter_secure_storage: ^9.0.0
+
+  # Connectivity
+  connectivity_plus: ^5.0.0
+
+  # Image caching
+  cached_network_image: ^3.3.0
+
+  # File system access
+  path_provider: ^2.1.0
+
+  # HTTP client
+  http: ^1.1.0
+  
+  # HTML parsing
+  html: ^0.15.4
+
+  cupertino_icons: ^1.0.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  # Native splash screen
+  flutter_native_splash: ^2.3.0
+
+  # Mocking
+  mocktail: ^1.0.0
+
+  # Code generation
+  build_runner: ^2.4.6
+  riverpod_generator: ^2.3.0
+
+  # Testing utilities
+  path_provider_platform_interface: ^2.1.0
+  plugin_platform_interface: ^2.1.0
+
+  flutter_lints: ^3.0.0
+
+flutter:
+  uses-material-design: true
+
+  # Pre-bundled catalog data and images
+  assets:
+    - assets/catalog/
+    - assets/catalog/categories.json
+    - assets/catalog/groups/
+    - assets/catalog/items/
+    - assets/catalog/item_details/
+    - assets/catalog/price_tiers/
+    - assets/images/
+    - assets/images/categories/
+    - assets/images/groups/
+    - assets/images/items/
+    - assets/images/placeholder.png
+
+  # Khmer font support for multi-language rendering
+  fonts:
+    - family: NotoSansKhmer
+      fonts:
+        - asset: assets/fonts/NotoSansKhmer-Regular.ttf
+        - asset: assets/fonts/NotoSansKhmer-Bold.ttf
+          weight: 700

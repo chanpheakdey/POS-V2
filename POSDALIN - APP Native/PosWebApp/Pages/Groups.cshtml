@@ -1,0 +1,60 @@
+@page "/Groups/{categoryId:int}"
+@model GroupsModel
+@using PosWebApp.Models.ViewModels
+@{
+    ViewData["Title"] = "Groups";
+}
+
+@* ── Breadcrumb ──────────────────────────────────────────────────────────── *@
+<nav aria-label="breadcrumb" class="mb-3">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a asp-page="/Index">
+                <i class="bi bi-house-door me-1" aria-hidden="true"></i>Home
+            </a>
+        </li>
+        <li class="breadcrumb-item active" aria-current="page">Groups</li>
+    </ol>
+</nav>
+
+@* ── Error banner ─────────────────────────────────────────────────────────── *@
+@if (TempData["Error"] is string errorMsg)
+{
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <i class="bi bi-exclamation-triangle-fill me-1" aria-hidden="true"></i>
+        @errorMsg
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
+
+@* ── Empty state ──────────────────────────────────────────────────────────── *@
+@if (!Model.Groups.Any())
+{
+    <div class="text-center py-5">
+        <i class="bi bi-inbox fs-1 text-muted" aria-hidden="true"></i>
+        <p class="mt-2 text-muted">No groups found for this category.</p>
+        <a asp-page="/Index" class="btn btn-secondary mt-2">
+            <i class="bi bi-arrow-left me-1" aria-hidden="true"></i>Back to Categories
+        </a>
+    </div>
+}
+else
+{
+    @* ── Group grid — Requirements 4.7, 4.8, 4.10 ──────────────────────── *@
+    @* Row uses the same responsive column classes as Index (col-6 → col-xl-2) *@
+    <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-5 row-cols-xl-6 g-3"
+         id="group-grid" role="list" aria-label="Product groups">
+
+        @foreach (var group in Model.Groups)
+        {
+            <div class="col" role="listitem">
+                @* Requirement 4.6 — each card Href points to /Items/{categoryId}/{groupId}.
+                   _ItemCardPartial renders the anchor using Model.Href, so no additional
+                   wrapper link is needed here.
+                *@
+                <partial name="_ItemCardPartial" model="group" />
+            </div>
+        }
+
+    </div>
+}

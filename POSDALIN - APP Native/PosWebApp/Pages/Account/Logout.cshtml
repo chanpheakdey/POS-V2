@@ -1,0 +1,24 @@
+@page
+@model PosWebApp.Pages.Account.LogoutModel
+@{
+    // Minimal page — no navbar needed since the user is now signed out.
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Logging out…</title>
+</head>
+<body>
+    <p>Logging out…</p>
+    <script>
+        // 15.4 — clear any customer-specific data from browser localStorage
+        try { localStorage.clear(); } catch (e) { /* ignore in private mode */ }
+
+        // 15.5 — redirect to the login page
+        window.location.href = '@Url.Page("/Account/Login")';
+    </script>
+</body>
+</html>

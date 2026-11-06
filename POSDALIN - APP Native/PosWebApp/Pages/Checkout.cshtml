@@ -1,0 +1,483 @@
+@page "{handler?}"
+@model PosWebApp.Pages.CheckoutModel
+@{
+    // Determine which view to render based on whether the confirmation handler ran.
+    bool isConfirmation = Model.ConfirmationViewModel.SaleID > 0;
+    ViewData["Title"]   = isConfirmation ? "Order Confirmed" : "Checkout";
+    var vm      = Model.ViewModel;
+    var conf    = Model.ConfirmationViewModel;
+    var khrRate = Model.KhrExchangeRate;
+}
+
+@* ──────────────────────────────────────────────────────────────────────────────
+   Checkout — Requirements 8.1, 8.2, 8.4, 27.1–27.6
+   Confirmation — Requirements 8.7, 8.10, 27.7–27.9, 32.1–32.5
+   ────────────────────────────────────────────────────────────────────────── *@
+
+@if (isConfirmation)
+{
+    @* ════════════════════════════════════════════════════════════════════════
+       CONFIRMATION VIEW — Requirements 8.7, 8.10, 27.7–27.9, 32.1–32.5
+       ════════════════════════════════════════════════════════════════════ *@
+
+    <div class="d-flex align-items-center mb-4 gap-3">
+        <div class="text-success" style="font-size:2.5rem;" aria-hidden="true">
+            <i class="bi bi-check-circle-fill"></i>
+        </div>
+        <div>
+            <h1 class="h3 mb-0">Order Confirmed</h1>
+            <p class="text-muted mb-0">Your sale has been recorded successfully.</p>
+        </div>
+    </div>
+
+    <div class="row g-4">
+
+        @* ── Sale summary card ── *@
+        <div class="col-md-6">
+            <div class="card h-100">
+                <div class="card-header">
+                    <h2 class="h6 mb-0">
+                        <i class="bi bi-receipt me-1" aria-hidden="true"></i>Sale Details
+                    </h2>
+                </div>
+                <div class="card-body">
+                    <dl class="row mb-0">
+                        <dt class="col-5">Sale ID</dt>
+                        <dd class="col-7">#@conf.SaleID</dd>
+
+                        <dt class="col-5">Invoice No.</dt>
+                        <dd class="col-7">@conf.InvoiceNo</dd>
+
+                        <dt class="col-5">Payment</dt>
+                        <dd class="col-7">
+                            @if (conf.PaymentMethod == "Cash")
+                            {
+                                <span><i class="bi bi-cash-coin me-1" aria-hidden="true"></i>Cash</span>
+                            }
+                            else if (conf.PaymentMethod == "Card")
+                            {
+                                <span><i class="bi bi-credit-card me-1" aria-hidden="true"></i>Card</span>
+                            }
+                            else
+                            {
+                                <span><i class="bi bi-three-dots me-1" aria-hidden="true"></i>@conf.PaymentMethod</span>
+                            }
+                        </dd>
+
+                        @if (!string.IsNullOrEmpty(conf.CustomerName))
+                        {
+                            <dt class="col-5">Customer</dt>
+                            <dd class="col-7">@conf.CustomerName</dd>
+                        }
+
+                        <dt class="col-5">Total</dt>
+                        <dd class="col-7">
+                            @conf.TotalUsdText<br />
+                            <small class="text-muted">@conf.TotalKhrText</small>
+                        </dd>
+
+                        @* ── Cash-specific: amount tendered + change — Requirement 27.7 *@
+                        @if (conf.PaymentMethod == "Cash" && conf.AmountTendered.HasValue)
+                        {
+                            <dt class="col-5">Tendered</dt>
+                            <dd class="col-7">$@conf.AmountTendered.Value.ToString("F2")</dd>
+
+                            <dt class="col-5 fw-bold text-success">Change Due</dt>
+                            <dd class="col-7 fw-bold text-success">
+                                @conf.ChangeUsdText<br />
+                                <small class="fw-normal text-muted">@conf.ChangeKhrText</small>
+                            </dd>
+                        }
+
+                        @* ── Card-specific: type + last 4 — Requirement 27.8 *@
+                        @if (conf.PaymentMethod == "Card")
+                        {
+                            @if (!string.IsNullOrEmpty(conf.CardType))
+                            {
+                                <dt class="col-5">Card Type</dt>
+                                <dd class="col-7">@conf.CardType</dd>
+                            }
+                            @if (!string.IsNullOrEmpty(conf.CardLastFour))
+                            {
+                                <dt class="col-5">Card (Last 4)</dt>
+                                <dd class="col-7">••••&nbsp;@conf.CardLastFour</dd>
+                            }
+                        }
+                    </dl>
+                </div>
+            </div>
+        </div>
+
+        @* ── Items purchased ── *@
+        @if (conf.CartItems.Any())
+        {
+            <div class="col-md-6">
+                <div class="card h-100">
+                    <div class="card-header">
+                        <h2 class="h6 mb-0">
+                            <i class="bi bi-bag me-1" aria-hidden="true"></i>Items
+                        </h2>
+                    </div>
+                    <div class="card-body p-0">
+                        <table class="table table-sm mb-0" aria-label="Purchased items">
+                            <thead class="table-light">
+                                <tr>
+                                    <th scope="col">Item</th>
+                                    <th scope="col" class="text-center">Qty</th>
+                                    <th scope="col" class="text-end">Subtotal</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in conf.CartItems)
+                                {
+                                    <tr>
+                                        <td>
+                                            <div class="small fw-semibold">@item.ItemName</div>
+                                            <div class="small text-muted">@item.ItemCode</div>
+                                        </td>
+                                        <td class="text-center small">@item.Quantity</td>
+                                        <td class="text-end small">@item.LineTotalUsd</td>
+                                    </tr>
+                                }
+                            </tbody>
+                            <tfoot class="table-light fw-bold">
+                                <tr>
+                                    <td colspan="2" class="text-end">Total</td>
+                                    <td class="text-end">@conf.TotalUsdText</td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        }
+
+    </div>@* /row *@
+
+    @* ── Actions — print + back to home — Requirements 8.10, 32.5 *@
+    <div class="d-flex gap-3 mt-4 flex-wrap">
+        <button type="button"
+                class="btn btn-outline-secondary"
+                onclick="window.print()"
+                aria-label="Print receipt">
+            <i class="bi bi-printer me-1" aria-hidden="true"></i>Print Receipt
+        </button>
+        <a asp-page="/Index" class="btn btn-primary">
+            <i class="bi bi-house me-1" aria-hidden="true"></i>Back to Home
+        </a>
+        <a asp-page="/Sale/Detail" asp-route-id="@conf.SaleID" class="btn btn-outline-info">
+            <i class="bi bi-eye me-1" aria-hidden="true"></i>View Sale Detail
+        </a>
+    </div>
+}
+else
+{
+    @* ════════════════════════════════════════════════════════════════════════
+       CHECKOUT FORM — Requirements 8.1, 8.2, 8.4, 27.1–27.6
+       ════════════════════════════════════════════════════════════════════ *@
+
+    <h1 class="h3 mb-4">
+        <i class="bi bi-credit-card me-2" aria-hidden="true"></i>Checkout
+    </h1>
+
+    @* Global validation summary *@
+    @if (!ViewData.ModelState.IsValid)
+    {
+        <div class="alert alert-danger" role="alert">
+            <i class="bi bi-exclamation-triangle-fill me-2" aria-hidden="true"></i>
+            <div asp-validation-summary="All" class="mb-0"></div>
+        </div>
+    }
+
+    <div class="row g-4">
+
+        @* ── Left column: payment form ─────────────────────────────────────────── *@
+        <div class="col-lg-7">
+
+            <form method="post" id="checkout-form" novalidate>
+                @Html.AntiForgeryToken()
+
+                @* ── Customer lookup (optional) — Requirement 8.4 *@
+                <div class="card mb-3">
+                    <div class="card-header">
+                        <h2 class="h6 mb-0">
+                            <i class="bi bi-person me-1" aria-hidden="true"></i>
+                            Customer (Optional)
+                        </h2>
+                    </div>
+                    <div class="card-body position-relative">
+                        <label for="customer-search" class="form-label">
+                            Search by name or phone
+                        </label>
+                        <div class="input-group">
+                            <span class="input-group-text">
+                                <i class="bi bi-search" aria-hidden="true"></i>
+                            </span>
+                            <input type="text"
+                                   id="customer-search"
+                                   class="form-control"
+                                   placeholder="Type to search customers…"
+                                   autocomplete="off"
+                                   aria-label="Customer search"
+                                   aria-autocomplete="list"
+                                   aria-controls="customer-suggestions"
+                                   aria-expanded="false" />
+                        </div>
+                        <ul id="customer-suggestions"
+                            class="list-group position-absolute w-100 d-none"
+                            style="top:100%; left:0; z-index:1000;"
+                            role="listbox"
+                            aria-label="Customer suggestions">
+                        </ul>
+                        @* Hidden input carries the selected CustomerID into the form *@
+                        <input type="hidden"
+                               asp-for="Input.CustomerID"
+                               id="customer-id-input" />
+                        <div id="customer-selected-display"
+                             class="form-text text-success d-none mt-2">
+                            <i class="bi bi-check-circle me-1" aria-hidden="true"></i>
+                            <span id="customer-selected-name"></span>
+                            &mdash;
+                            <button type="button"
+                                    class="btn btn-link btn-sm p-0 text-danger"
+                                    id="clear-customer-btn"
+                                    aria-label="Clear selected customer">
+                                Remove
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                @* ── Payment method selection — Requirement 27.1, 27.2, 27.3 *@
+                <div class="card mb-3">
+                    <div class="card-header">
+                        <h2 class="h6 mb-0">
+                            <i class="bi bi-wallet2 me-1" aria-hidden="true"></i>
+                            Payment Method
+                        </h2>
+                    </div>
+                    <div class="card-body">
+                        <span asp-validation-for="Input.PaymentMethod" class="text-danger small d-block mb-2"></span>
+
+                        @* Radio buttons for payment method *@
+                        <div class="d-flex gap-3 flex-wrap mb-3"
+                             role="radiogroup"
+                             aria-label="Payment method">
+
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input"
+                                       type="radio"
+                                       name="Input.PaymentMethod"
+                                       id="pm-cash"
+                                       value="Cash"
+                                       @(Model.Input.PaymentMethod == "Cash" ? "checked" : "")
+                                       data-pm="Cash" />
+                                <label class="form-check-label fw-semibold" for="pm-cash">
+                                    <i class="bi bi-cash-coin me-1" aria-hidden="true"></i>Cash
+                                </label>
+                            </div>
+
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input"
+                                       type="radio"
+                                       name="Input.PaymentMethod"
+                                       id="pm-card"
+                                       value="Card"
+                                       @(Model.Input.PaymentMethod == "Card" ? "checked" : "")
+                                       data-pm="Card" />
+                                <label class="form-check-label fw-semibold" for="pm-card">
+                                    <i class="bi bi-credit-card me-1" aria-hidden="true"></i>Card
+                                </label>
+                            </div>
+
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input"
+                                       type="radio"
+                                       name="Input.PaymentMethod"
+                                       id="pm-other"
+                                       value="Other"
+                                       @(Model.Input.PaymentMethod == "Other" ? "checked" : "")
+                                       data-pm="Other" />
+                                <label class="form-check-label fw-semibold" for="pm-other">
+                                    <i class="bi bi-three-dots me-1" aria-hidden="true"></i>Other
+                                </label>
+                            </div>
+                        </div>
+
+                        @* ── Cash fields — Requirements 27.4, 27.5 *@
+                        <div id="pm-fields-cash" class="pm-fields">
+                            <div class="mb-2">
+                                <label asp-for="Input.AmountTendered" class="form-label">
+                                    Amount Tendered (USD)
+                                </label>
+                                <div class="input-group">
+                                    <span class="input-group-text">$</span>
+                                    <input asp-for="Input.AmountTendered"
+                                           type="number"
+                                           step="0.01"
+                                           min="0"
+                                           class="form-control"
+                                           id="amount-tendered-input"
+                                           placeholder="0.00"
+                                           aria-label="Amount tendered in USD"
+                                           aria-describedby="change-display" />
+                                </div>
+                                <span asp-validation-for="Input.AmountTendered" class="text-danger small"></span>
+                            </div>
+
+                            @* Live change calculation — Requirement 27.5 *@
+                            <div id="change-display"
+                                 class="alert alert-info py-2 mb-0 d-none"
+                                 role="status"
+                                 aria-live="polite">
+                                <strong>Change due:</strong>
+                                <span id="change-usd" class="ms-1">$0.00</span>
+                                <span class="text-muted small ms-2" id="change-khr">0&#x17DB;</span>
+                            </div>
+                            <div id="change-warning"
+                                 class="alert alert-warning py-2 mb-0 d-none"
+                                 role="alert">
+                                <i class="bi bi-exclamation-triangle me-1" aria-hidden="true"></i>
+                                Amount tendered is less than the order total.
+                            </div>
+                        </div>
+
+                        @* ── Card fields — Requirement 27.6 *@
+                        <div id="pm-fields-card" class="pm-fields d-none">
+                            <div class="row g-3">
+                                <div class="col-sm-6">
+                                    <label asp-for="Input.CardType" class="form-label">
+                                        Card Type
+                                    </label>
+                                    <select asp-for="Input.CardType" class="form-select">
+                                        <option value="">— Select —</option>
+                                        <option value="Visa">Visa</option>
+                                        <option value="Mastercard">Mastercard</option>
+                                        <option value="Other">Other</option>
+                                    </select>
+                                    <span asp-validation-for="Input.CardType" class="text-danger small"></span>
+                                </div>
+                                <div class="col-sm-6">
+                                    <label asp-for="Input.CardLastFour" class="form-label">
+                                        Last 4 Digits
+                                    </label>
+                                    <input asp-for="Input.CardLastFour"
+                                           type="text"
+                                           maxlength="4"
+                                           inputmode="numeric"
+                                           pattern="\d{4}"
+                                           class="form-control"
+                                           placeholder="1234"
+                                           aria-label="Last 4 digits of card" />
+                                    <span asp-validation-for="Input.CardLastFour" class="text-danger small"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        @* Other — no extra fields *@
+                        <div id="pm-fields-other" class="pm-fields d-none">
+                            <p class="text-muted small mb-0">
+                                No additional information required for this payment method.
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+
+                @* ── Submit *@
+                <div class="d-flex justify-content-between align-items-center">
+                    <a asp-page="/Cart" class="btn btn-outline-secondary">
+                        <i class="bi bi-arrow-left me-1" aria-hidden="true"></i>Back to Cart
+                    </a>
+                    <button type="submit"
+                            class="btn btn-success btn-lg"
+                            id="place-order-btn">
+                        <i class="bi bi-bag-check me-1" aria-hidden="true"></i>
+                        Place Order
+                    </button>
+                </div>
+            </form>
+
+        </div>@* /col-lg-7 *@
+
+        @* ── Right column: order summary ─────────────────────────────────────── *@
+        <div class="col-lg-5">
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="h6 mb-0">
+                        <i class="bi bi-receipt me-1" aria-hidden="true"></i>
+                        Order Summary
+                    </h2>
+                </div>
+                <div class="card-body p-0">
+                    <table class="table table-sm mb-0" aria-label="Order summary">
+                        <thead class="table-light">
+                            <tr>
+                                <th scope="col">Item</th>
+                                <th scope="col" class="text-center">Qty</th>
+                                <th scope="col" class="text-end">Subtotal</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in vm.CartItems)
+                            {
+                                <tr>
+                                    <td>
+                                        <div class="fw-semibold small">@item.ItemName</div>
+                                        <div class="text-muted small">@item.ItemCode &bull; @item.UnitPriceUsd</div>
+                                    </td>
+                                    <td class="text-center small">@item.Quantity</td>
+                                    <td class="text-end small">@item.LineTotalUsd</td>
+                                </tr>
+                            }
+                        </tbody>
+                        <tfoot class="table-light fw-bold">
+                            <tr>
+                                <td colspan="2" class="text-end">Total</td>
+                                <td class="text-end">
+                                    @vm.TotalUsdText<br />
+                                    <small class="text-muted fw-normal">@vm.TotalKhrText</small>
+                                </td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+        </div>@* /col-lg-5 *@
+
+    </div>@* /row *@
+}
+
+@* ── Print styles — only applies during window.print() — Requirement 8.10 *@
+@section Styles {
+    <style>
+        @@media print {
+            .navbar, footer, .btn, nav, #customer-search,
+            #checkout-form .card-header { display: none !important; }
+            .card { border: 1px solid #dee2e6 !important; }
+
+            @if (isConfirmation)
+            {
+                /* On the confirmation page, set 80-mm paper for receipt printing */
+                @:@@page { size: 80mm auto; margin: 4mm; }
+            }
+        }
+    </style>
+}
+
+@section Scripts {
+    @if (!isConfirmation)
+    {
+        @* Pass server values to checkout.js — must use InvariantCulture for decimals *@
+        <script>
+            window.__checkout = {
+                total:             @vm.TotalAmount.ToString(System.Globalization.CultureInfo.InvariantCulture),
+                khrRate:           @khrRate.ToString(System.Globalization.CultureInfo.InvariantCulture),
+                customerSearchUrl: '@Html.Raw(Url.Page("/Checkout", "SearchCustomers"))',
+                initialMethod:     '@Html.Raw(System.Text.Encodings.Web.JavaScriptEncoder.Default.Encode(Model.Input.PaymentMethod ?? "Cash"))'
+            };
+        </script>
+        <script src="~/js/checkout.js" asp-append-version="true"></script>
+        <partial name="_ValidationScriptsPartial" />
+    }
+}

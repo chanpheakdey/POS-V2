@@ -1,0 +1,466 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!--
+    Microsoft ResX Schema Version 2.0
+    https://docs.microsoft.com/en-us/dotnet/framework/resources/creating-resource-files-for-desktop-apps
+  -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+
+  <!-- ── Navigation ── -->
+  <data name="Nav_AppName" xml:space="preserve">
+    <value>PosWebApp</value>
+  </data>
+  <data name="Nav_Categories" xml:space="preserve">
+    <value>Categories</value>
+  </data>
+  <data name="Nav_Search" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="Nav_Cart" xml:space="preserve">
+    <value>Cart</value>
+  </data>
+  <data name="Nav_Logout" xml:space="preserve">
+    <value>Logout</value>
+  </data>
+  <data name="Nav_SelectLanguage" xml:space="preserve">
+    <value>Select language</value>
+  </data>
+  <data name="Nav_SearchPlaceholder" xml:space="preserve">
+    <value>Search items…</value>
+  </data>
+  <data name="Nav_ToggleNavigation" xml:space="preserve">
+    <value>Toggle navigation</value>
+  </data>
+
+  <!-- ── Authentication ── -->
+  <data name="Login_Title" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="Login_UserName" xml:space="preserve">
+    <value>Username</value>
+  </data>
+  <data name="Login_Password" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="Login_Submit" xml:space="preserve">
+    <value>Log in</value>
+  </data>
+  <data name="Login_RememberMe" xml:space="preserve">
+    <value>Remember me</value>
+  </data>
+  <data name="Login_InvalidCredentials" xml:space="preserve">
+    <value>Invalid username or password.</value>
+  </data>
+  <data name="Login_AccountLocked" xml:space="preserve">
+    <value>Your user account has been locked! Please contact IT</value>
+  </data>
+
+  <!-- ── Home / Categories ── -->
+  <data name="Home_Title" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="Home_Categories" xml:space="preserve">
+    <value>Categories</value>
+  </data>
+  <data name="Home_NoCategories" xml:space="preserve">
+    <value>No categories available.</value>
+  </data>
+
+  <!-- ── Groups ── -->
+  <data name="Groups_Title" xml:space="preserve">
+    <value>Groups</value>
+  </data>
+  <data name="Groups_NoGroups" xml:space="preserve">
+    <value>No groups available.</value>
+  </data>
+  <data name="Groups_BackToCategories" xml:space="preserve">
+    <value>Back to Categories</value>
+  </data>
+
+  <!-- ── Items ── -->
+  <data name="Items_Title" xml:space="preserve">
+    <value>Items</value>
+  </data>
+  <data name="Items_NoItems" xml:space="preserve">
+    <value>No items available.</value>
+  </data>
+  <data name="Items_BackToGroups" xml:space="preserve">
+    <value>Back to Groups</value>
+  </data>
+  <data name="Items_BackToCategories" xml:space="preserve">
+    <value>Back to Categories</value>
+  </data>
+  <data name="Items_AddToCart" xml:space="preserve">
+    <value>Add to Cart</value>
+  </data>
+  <data name="Items_ViewDetail" xml:space="preserve">
+    <value>View Details</value>
+  </data>
+  <data name="Items_Price" xml:space="preserve">
+    <value>Price</value>
+  </data>
+  <data name="Items_Stock" xml:space="preserve">
+    <value>Stock</value>
+  </data>
+  <data name="Items_Code" xml:space="preserve">
+    <value>Code</value>
+  </data>
+  <data name="Items_Unit" xml:space="preserve">
+    <value>Unit</value>
+  </data>
+
+  <!-- ── Cart ── -->
+  <data name="Cart_Title" xml:space="preserve">
+    <value>Cart</value>
+  </data>
+  <data name="Cart_Empty" xml:space="preserve">
+    <value>Your cart is empty.</value>
+  </data>
+  <data name="Cart_BrowseItems" xml:space="preserve">
+    <value>Browse items</value>
+  </data>
+  <data name="Cart_ItemName" xml:space="preserve">
+    <value>Item</value>
+  </data>
+  <data name="Cart_Quantity" xml:space="preserve">
+    <value>Qty</value>
+  </data>
+  <data name="Cart_UnitPrice" xml:space="preserve">
+    <value>Unit Price</value>
+  </data>
+  <data name="Cart_Total" xml:space="preserve">
+    <value>Total</value>
+  </data>
+  <data name="Cart_GrandTotal" xml:space="preserve">
+    <value>Grand Total</value>
+  </data>
+  <data name="Cart_Remove" xml:space="preserve">
+    <value>Remove</value>
+  </data>
+  <data name="Cart_Clear" xml:space="preserve">
+    <value>Clear Cart</value>
+  </data>
+  <data name="Cart_Checkout" xml:space="preserve">
+    <value>Proceed to Checkout</value>
+  </data>
+  <data name="Cart_UpdateQuantity" xml:space="preserve">
+    <value>Update Quantity</value>
+  </data>
+  <data name="Cart_Items" xml:space="preserve">
+    <value>items</value>
+  </data>
+
+  <!-- ── Checkout ── -->
+  <data name="Checkout_Title" xml:space="preserve">
+    <value>Checkout</value>
+  </data>
+  <data name="Checkout_PaymentMethod" xml:space="preserve">
+    <value>Payment Method</value>
+  </data>
+  <data name="Checkout_Cash" xml:space="preserve">
+    <value>Cash</value>
+  </data>
+  <data name="Checkout_Card" xml:space="preserve">
+    <value>Card</value>
+  </data>
+  <data name="Checkout_Other" xml:space="preserve">
+    <value>Other</value>
+  </data>
+  <data name="Checkout_AmountTendered" xml:space="preserve">
+    <value>Amount Tendered</value>
+  </data>
+  <data name="Checkout_Change" xml:space="preserve">
+    <value>Change</value>
+  </data>
+  <data name="Checkout_Customer" xml:space="preserve">
+    <value>Customer</value>
+  </data>
+  <data name="Checkout_PlaceOrder" xml:space="preserve">
+    <value>Place Order</value>
+  </data>
+  <data name="Checkout_Confirmation_Title" xml:space="preserve">
+    <value>Order Confirmed</value>
+  </data>
+  <data name="Checkout_SaleId" xml:space="preserve">
+    <value>Sale ID</value>
+  </data>
+  <data name="Checkout_InvoiceNo" xml:space="preserve">
+    <value>Invoice No.</value>
+  </data>
+  <data name="Checkout_PrintReceipt" xml:space="preserve">
+    <value>Print Receipt</value>
+  </data>
+  <data name="Checkout_NewSale" xml:space="preserve">
+    <value>New Sale</value>
+  </data>
+
+  <!-- ── Search ── -->
+  <data name="Search_Title" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="Search_Results" xml:space="preserve">
+    <value>Search Results</value>
+  </data>
+  <data name="Search_NoResults" xml:space="preserve">
+    <value>No items found.</value>
+  </data>
+  <data name="Search_Placeholder" xml:space="preserve">
+    <value>Search items…</value>
+  </data>
+
+  <!-- ── Sale History ── -->
+  <data name="Sales_Title" xml:space="preserve">
+    <value>Sale History</value>
+  </data>
+  <data name="Sales_SaleId" xml:space="preserve">
+    <value>Sale ID</value>
+  </data>
+  <data name="Sales_InvoiceNo" xml:space="preserve">
+    <value>Invoice No.</value>
+  </data>
+  <data name="Sales_Date" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="Sales_Staff" xml:space="preserve">
+    <value>Staff</value>
+  </data>
+  <data name="Sales_Customer" xml:space="preserve">
+    <value>Customer</value>
+  </data>
+  <data name="Sales_Total" xml:space="preserve">
+    <value>Total</value>
+  </data>
+  <data name="Sales_Status" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="Sales_Voided" xml:space="preserve">
+    <value>VOIDED</value>
+  </data>
+  <data name="Sales_ViewDetail" xml:space="preserve">
+    <value>View</value>
+  </data>
+  <data name="Sales_NoSales" xml:space="preserve">
+    <value>No sales found.</value>
+  </data>
+  <data name="Sales_Void" xml:space="preserve">
+    <value>Void Sale</value>
+  </data>
+  <data name="Sales_VoidReason" xml:space="preserve">
+    <value>Reason for voiding</value>
+  </data>
+  <data name="Sales_BackToList" xml:space="preserve">
+    <value>Back to Sales</value>
+  </data>
+
+  <!-- ── Reports ── -->
+  <data name="Reports_EndOfDay" xml:space="preserve">
+    <value>End-of-Day Report</value>
+  </data>
+  <data name="Reports_TotalSales" xml:space="preserve">
+    <value>Total Sales</value>
+  </data>
+  <data name="Reports_TotalRevenue" xml:space="preserve">
+    <value>Total Revenue</value>
+  </data>
+  <data name="Reports_DateRange" xml:space="preserve">
+    <value>Date Range</value>
+  </data>
+  <data name="Reports_ExportPdf" xml:space="preserve">
+    <value>Export PDF</value>
+  </data>
+  <data name="Reports_ExportExcel" xml:space="preserve">
+    <value>Export Excel</value>
+  </data>
+
+  <!-- ── Common / Shared ── -->
+  <data name="Common_Save" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="Common_Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="Common_Confirm" xml:space="preserve">
+    <value>Confirm</value>
+  </data>
+  <data name="Common_Delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="Common_Edit" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="Common_Back" xml:space="preserve">
+    <value>Back</value>
+  </data>
+  <data name="Common_Search" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="Common_Loading" xml:space="preserve">
+    <value>Loading…</value>
+  </data>
+  <data name="Common_Error" xml:space="preserve">
+    <value>An error occurred. Please try again.</value>
+  </data>
+  <data name="Common_Yes" xml:space="preserve">
+    <value>Yes</value>
+  </data>
+  <data name="Common_No" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="Common_Close" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="Common_Actions" xml:space="preserve">
+    <value>Actions</value>
+  </data>
+  <data name="Common_Required" xml:space="preserve">
+    <value>This field is required.</value>
+  </data>
+  <data name="Common_SelectAll" xml:space="preserve">
+    <value>Select All</value>
+  </data>
+  <data name="Common_Print" xml:space="preserve">
+    <value>Print</value>
+  </data>
+  <data name="Common_Reprint" xml:space="preserve">
+    <value>Reprint</value>
+  </data>
+  <data name="Common_Page" xml:space="preserve">
+    <value>Page</value>
+  </data>
+  <data name="Common_Of" xml:space="preserve">
+    <value>of</value>
+  </data>
+  <data name="Common_Items" xml:space="preserve">
+    <value>items</value>
+  </data>
+
+  <!-- ── Currency (Req 13.8) ── -->
+  <data name="Currency_USD" xml:space="preserve">
+    <value>USD ($)</value>
+  </data>
+  <data name="Currency_KHR" xml:space="preserve">
+    <value>KHR (៛)</value>
+  </data>
+  <data name="Currency_ExchangeRate" xml:space="preserve">
+    <value>Exchange Rate</value>
+  </data>
+
+  <!-- ── Logout confirmation (Req 15.8) ── -->
+  <data name="Logout_ConfirmTitle" xml:space="preserve">
+    <value>Confirm Logout</value>
+  </data>
+  <data name="Logout_ConfirmMessage" xml:space="preserve">
+    <value>Your cart currently has items. Logging out will clear the cart.</value>
+  </data>
+  <data name="Logout_ConfirmYes" xml:space="preserve">
+    <value>Log out</value>
+  </data>
+  <data name="Logout_ConfirmNo" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+
+  <!-- ── Item Detail Modal ── -->
+  <data name="ItemDetail_Title" xml:space="preserve">
+    <value>Item Details</value>
+  </data>
+  <data name="ItemDetail_AddToCart" xml:space="preserve">
+    <value>Add to Cart</value>
+  </data>
+  <data name="ItemDetail_Quantity" xml:space="preserve">
+    <value>Quantity</value>
+  </data>
+  <data name="ItemDetail_SelectUnit" xml:space="preserve">
+    <value>Select Unit</value>
+  </data>
+
+  <!-- ── Discount (Req 28.x) ── -->
+  <data name="Discount_Apply" xml:space="preserve">
+    <value>Apply Discount</value>
+  </data>
+  <data name="Discount_Percentage" xml:space="preserve">
+    <value>Percentage (%)</value>
+  </data>
+  <data name="Discount_FixedAmount" xml:space="preserve">
+    <value>Fixed Amount ($)</value>
+  </data>
+  <data name="Discount_AuthPassword" xml:space="preserve">
+    <value>Authorization Password</value>
+  </data>
+
+  <!-- ── Quick Sale ── -->
+  <data name="QuickSale_Title" xml:space="preserve">
+    <value>Quick Sale</value>
+  </data>
+  <data name="QuickSale_ScanBarcode" xml:space="preserve">
+    <value>Scan or enter barcode…</value>
+  </data>
+
+  <!-- ── Offline / PWA (Req 11.x) ── -->
+  <data name="Offline_Message" xml:space="preserve">
+    <value>No internet connection. Sale will be queued for processing when online.</value>
+  </data>
+  <data name="Offline_Status" xml:space="preserve">
+    <value>Offline</value>
+  </data>
+  <data name="Online_Status" xml:space="preserve">
+    <value>Online</value>
+  </data>
+
+</root>

@@ -1,0 +1,178 @@
+{
+  "version": 2,
+  "dgSpecHash": "WMz7CZerwVU=",
+  "success": true,
+  "projectFilePath": "C:\\Other\\POSDALIN - APP Native\\POSDALIN - APP Native\\PosWebApp\\PosWebApp.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\chanpheakdey.vong\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
+    "C:\\Users\\chanpheakdey.vong\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",
+    "C:\\Users\\chanpheakdey.vong\\.nuget\\packages\\closedxml\\0.102.3\\closedxml.0.102.3.nupkg.sha512",
+    "C:\\Users\\chanpheakdey.vong\\.nuget\\packages\\documentformat.openxml\\2.16.0\\documentformat.openxml.2.16.0.nupkg.sha512",
+    "C:\\Users\\chanpheakdey.vong\\.nuget\\packages\\excelnumberformat\\1.1.0\\excelnumberformat.1.1.0.nupkg.sha512",
+    "C:\\Users\\chanpheakdey.vong\\.nuget\\packages\\irony.netcore\\1.0.11\\irony.netcore.1.0.11.nupkg.sha512",
+    "C:\\Users\\chanpheakdey.vong\\.nuget\\packages\\microsoft.aspnetcore.identity\\2.2.0\\microsoft.aspnetcore.identity.2.2.0.nupkg.sha512",
+    "C:\\Users\\chanpheakdey.vong\\.nuget\\packages\\microsoft.aspnetcore.signalr\\1.1.0\\microsoft.aspnetcore.signalr.1.1.0.nupkg.sha512",
+    "C:\\Users\\chanpheakdey.vong\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
+    "C:\\Users\\chanpheakdey.vong\\.nuget\\packages\\microsoft.data.sqlclient\\5.2.2\\microsoft.data.sqlclient.5.2.2.nupkg.sha512",
+    "C:\\Users\\chanpheakdey.vong\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\5.2.0\\microsoft.data.sqlclient.sni.runtime.5.2.0.nupkg.sha512",
+    "C:\\Users\\chanpheakdey.vong\\.nuget\\packages\\microsoft.identity.client\\4.61.3\\microsoft.identity.client.4.61.3.nupkg.sha512",
+    "C:\\Users\\chanpheakdey.vong\\.nuget\\packages\\microsoft.identity.client.extensions.msal\\4.61.3\\microsoft.identity.client.extensions.msal.4.61.3.nupkg.sha512",
+    "C:\\Users\\chanpheakdey.vong\\.nuget\\packages\\microsoft.identitymodel.abstractions\\6.35.0\\microsoft.identitymodel.abstractions.6.35.0.nupkg.sha512",
+    "C:\\Users\\chanpheakdey.vong\\.nuget\\packages\\microsoft.identitymodel.jsonwebtokens\\6.35.0\\microsoft.identitymodel.jsonwebtokens.6.35.0.nupkg.sha512",
+    "C:\\Users\\chanpheakdey.vong\\.nuget\\packages\\microsoft.identitymodel.logging\\6.35.0\\microsoft.identitymodel.logging.6.35.0.nupkg.sha512",
+    "C:\\Users\\chanpheakdey.vong\\.nuget\\packages\\microsoft.identitymodel.protocols\\6.35.0\\microsoft.identitymodel.protocols.6.35.0.nupkg.sha512",
+    "C:\\Users\\chanpheakdey.vong\\.nuget\\packages\\microsoft.identitymodel.protocols.openidconnect\\6.35.0\\microsoft.identitymodel.protocols.openidconnect.6.35.0.nupkg.sha512",
+    "C:\\Users\\chanpheakdey.vong\\.nuget\\packages\\microsoft.identitymodel.tokens\\6.35.0\\microsoft.identitymodel.tokens.6.35.0.nupkg.sha512",
+    "C:\\Users\\chanpheakdey.vong\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\chanpheakdey.vong\\.nuget\\packages\\microsoft.sqlserver.server\\1.0.0\\microsoft.sqlserver.server.1.0.0.nupkg.sha512",
+    "C:\\Users\\chanpheakdey.vong\\.nuget\\packages\\netstandard.library\\1.6.1\\netstandard.library.1.6.1.nupkg.sha512",
+    "C:\\Users\\chanpheakdey.vong\\.nuget\\packages\\polly\\8.5.2\\polly.8.5.2.nupkg.sha512",
+    "C:\\Users\\chanpheakdey.vong\\.nuget\\packages\\polly.core\\8.5.2\\polly.core.8.5.2.nupkg.sha512",
+    "C:\\Users\\chanpheakdey.vong\\.nuget\\packages\\sixlabors.fonts\\1.0.0\\sixlabors.fonts.1.0.0.nupkg.sha512",
+    "C:\\Users\\chanpheakdey.vong\\.nuget\\packages\\sixlabors.imagesharp\\3.1.7\\sixlabors.imagesharp.3.1.7.nupkg.sha512",
+    "C:\\Users\\chanpheakdey.vong\\.nuget\\packages\\system.clientmodel\\1.0.0\\system.clientmodel.1.0.0.nupkg.sha512",
+    "C:\\Users\\chanpheakdey.vong\\.nuget\\packages\\system.configuration.configurationmanager\\8.0.0\\system.configuration.configurationmanager.8.0.0.nupkg.sha512",
+    "C:\\Users\\chanpheakdey.vong\\.nuget\\packages\\system.identitymodel.tokens.jwt\\6.35.0\\system.identitymodel.tokens.jwt.6.35.0.nupkg.sha512",
+    "C:\\Users\\chanpheakdey.vong\\.nuget\\packages\\system.io.packaging\\6.0.0\\system.io.packaging.6.0.0.nupkg.sha512",
+    "C:\\Users\\chanpheakdey.vong\\.nuget\\packages\\system.memory.data\\1.0.2\\system.memory.data.1.0.2.nupkg.sha512",
+    "C:\\Users\\chanpheakdey.vong\\.nuget\\packages\\system.runtime.caching\\8.0.0\\system.runtime.caching.8.0.0.nupkg.sha512",
+    "C:\\Users\\chanpheakdey.vong\\.nuget\\packages\\system.security.cryptography.protecteddata\\8.0.0\\system.security.cryptography.protecteddata.8.0.0.nupkg.sha512",
+    "C:\\Users\\chanpheakdey.vong\\.nuget\\packages\\x.pagedlist\\10.6.0\\x.pagedlist.10.6.0.nupkg.sha512",
+    "C:\\Users\\chanpheakdey.vong\\.nuget\\packages\\x.pagedlist.mvc.core\\10.6.0\\x.pagedlist.mvc.core.10.6.0.nupkg.sha512",
+    "C:\\Users\\chanpheakdey.vong\\.nuget\\packages\\xlparser\\1.5.2\\xlparser.1.5.2.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1510",
+      "level": "Warning",
+      "message": "PackageReference Microsoft.AspNetCore.Identity will not be pruned. Consider removing this package from your dependencies, as it is likely unnecessary.",
+      "projectPath": "C:\\Other\\POSDALIN - APP Native\\POSDALIN - APP Native\\PosWebApp\\PosWebApp.csproj",
+      "warningLevel": 1,
+      "filePath": "C:\\Other\\POSDALIN - APP Native\\POSDALIN - APP Native\\PosWebApp\\PosWebApp.csproj",
+      "libraryId": "Microsoft.AspNetCore.Identity",
+      "targetGraphs": [
+        "net10.0"
+      ]
+    },
+    {
+      "code": "NU1510",
+      "level": "Warning",
+      "message": "PackageReference Microsoft.AspNetCore.SignalR will not be pruned. Consider removing this package from your dependencies, as it is likely unnecessary.",
+      "projectPath": "C:\\Other\\POSDALIN - APP Native\\POSDALIN - APP Native\\PosWebApp\\PosWebApp.csproj",
+      "warningLevel": 1,
+      "filePath": "C:\\Other\\POSDALIN - APP Native\\POSDALIN - APP Native\\PosWebApp\\PosWebApp.csproj",
+      "libraryId": "Microsoft.AspNetCore.SignalR",
+      "targetGraphs": [
+        "net10.0"
+      ]
+    },
+    {
+      "code": "NU1902",
+      "level": "Warning",
+      "message": "Package 'SixLabors.ImageSharp' 3.1.7 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-gwg2-r3hj-4w44",
+      "projectPath": "C:\\Other\\POSDALIN - APP Native\\POSDALIN - APP Native\\PosWebApp\\PosWebApp.csproj",
+      "warningLevel": 1,
+      "filePath": "C:\\Other\\POSDALIN - APP Native\\POSDALIN - APP Native\\PosWebApp\\PosWebApp.csproj",
+      "libraryId": "SixLabors.ImageSharp",
+      "targetGraphs": [
+        "net10.0"
+      ]
+    },
+    {
+      "code": "NU1903",
+      "level": "Warning",
+      "message": "Package 'SixLabors.ImageSharp' 3.1.7 has a known high severity vulnerability, https://github.com/advisories/GHSA-j3p4-wp97-rph4",
+      "projectPath": "C:\\Other\\POSDALIN - APP Native\\POSDALIN - APP Native\\PosWebApp\\PosWebApp.csproj",
+      "warningLevel": 1,
+      "filePath": "C:\\Other\\POSDALIN - APP Native\\POSDALIN - APP Native\\PosWebApp\\PosWebApp.csproj",
+      "libraryId": "SixLabors.ImageSharp",
+      "targetGraphs": [
+        "net10.0"
+      ]
+    },
+    {
+      "code": "NU1903",
+      "level": "Warning",
+      "message": "Package 'SixLabors.ImageSharp' 3.1.7 has a known high severity vulnerability, https://github.com/advisories/GHSA-j9gm-c75j-xc9q",
+      "projectPath": "C:\\Other\\POSDALIN - APP Native\\POSDALIN - APP Native\\PosWebApp\\PosWebApp.csproj",
+      "warningLevel": 1,
+      "filePath": "C:\\Other\\POSDALIN - APP Native\\POSDALIN - APP Native\\PosWebApp\\PosWebApp.csproj",
+      "libraryId": "SixLabors.ImageSharp",
+      "targetGraphs": [
+        "net10.0"
+      ]
+    },
+    {
+      "code": "NU1903",
+      "level": "Warning",
+      "message": "Package 'SixLabors.ImageSharp' 3.1.7 has a known high severity vulnerability, https://github.com/advisories/GHSA-jjfr-hcj7-qf5w",
+      "projectPath": "C:\\Other\\POSDALIN - APP Native\\POSDALIN - APP Native\\PosWebApp\\PosWebApp.csproj",
+      "warningLevel": 1,
+      "filePath": "C:\\Other\\POSDALIN - APP Native\\POSDALIN - APP Native\\PosWebApp\\PosWebApp.csproj",
+      "libraryId": "SixLabors.ImageSharp",
+      "targetGraphs": [
+        "net10.0"
+      ]
+    },
+    {
+      "code": "NU1902",
+      "level": "Warning",
+      "message": "Package 'SixLabors.ImageSharp' 3.1.7 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-rxmq-m78w-7wmc",
+      "projectPath": "C:\\Other\\POSDALIN - APP Native\\POSDALIN - APP Native\\PosWebApp\\PosWebApp.csproj",
+      "warningLevel": 1,
+      "filePath": "C:\\Other\\POSDALIN - APP Native\\POSDALIN - APP Native\\PosWebApp\\PosWebApp.csproj",
+      "libraryId": "SixLabors.ImageSharp",
+      "targetGraphs": [
+        "net10.0"
+      ]
+    },
+    {
+      "code": "NU1903",
+      "level": "Warning",
+      "message": "Package 'SixLabors.ImageSharp' 3.1.7 has a known high severity vulnerability, https://github.com/advisories/GHSA-v76p-62qx-wwq2",
+      "projectPath": "C:\\Other\\POSDALIN - APP Native\\POSDALIN - APP Native\\PosWebApp\\PosWebApp.csproj",
+      "warningLevel": 1,
+      "filePath": "C:\\Other\\POSDALIN - APP Native\\POSDALIN - APP Native\\PosWebApp\\PosWebApp.csproj",
+      "libraryId": "SixLabors.ImageSharp",
+      "targetGraphs": [
+        "net10.0"
+      ]
+    },
+    {
+      "code": "NU1902",
+      "level": "Warning",
+      "message": "Package 'SixLabors.ImageSharp' 3.1.7 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-wmxv-xphr-5c9g",
+      "projectPath": "C:\\Other\\POSDALIN - APP Native\\POSDALIN - APP Native\\PosWebApp\\PosWebApp.csproj",
+      "warningLevel": 1,
+      "filePath": "C:\\Other\\POSDALIN - APP Native\\POSDALIN - APP Native\\PosWebApp\\PosWebApp.csproj",
+      "libraryId": "SixLabors.ImageSharp",
+      "targetGraphs": [
+        "net10.0"
+      ]
+    },
+    {
+      "code": "NU1903",
+      "level": "Warning",
+      "message": "Package 'System.IO.Packaging' 6.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-f32c-w444-8ppv",
+      "projectPath": "C:\\Other\\POSDALIN - APP Native\\POSDALIN - APP Native\\PosWebApp\\PosWebApp.csproj",
+      "warningLevel": 1,
+      "filePath": "C:\\Other\\POSDALIN - APP Native\\POSDALIN - APP Native\\PosWebApp\\PosWebApp.csproj",
+      "libraryId": "System.IO.Packaging",
+      "targetGraphs": [
+        "net10.0"
+      ]
+    },
+    {
+      "code": "NU1903",
+      "level": "Warning",
+      "message": "Package 'System.IO.Packaging' 6.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-qj66-m88j-hmgj",
+      "projectPath": "C:\\Other\\POSDALIN - APP Native\\POSDALIN - APP Native\\PosWebApp\\PosWebApp.csproj",
+      "warningLevel": 1,
+      "filePath": "C:\\Other\\POSDALIN - APP Native\\POSDALIN - APP Native\\PosWebApp\\PosWebApp.csproj",
+      "libraryId": "System.IO.Packaging",
+      "targetGraphs": [
+        "net10.0"
+      ]
+    }
+  ]
+}

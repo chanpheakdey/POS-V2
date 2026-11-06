@@ -1,0 +1,261 @@
+@using System.Globalization
+@using PosWebApp.Infrastructure
+@using PosWebApp.Models.ViewModels
+
+@{
+    // Read Current_Cart from session to drive the cart badge (Req 17.9).
+    var cart = Context.Session.GetObject<CartState>(SessionKeys.Cart);
+    var cartItemCount = cart?.ItemCount ?? 0;
+    var cartHasItems = cartItemCount > 0;
+
+    // Req 1.11 — authenticated staff member's name from the FullName claim.
+    var staffName = User.FindFirst("FullName")?.Value
+                    ?? User.Identity?.Name
+                    ?? string.Empty;
+
+    // Language selector — current culture for the active-state indicator.
+    var currentCulture = CultureInfo.CurrentUICulture.Name;   // e.g. "en-US" or "km-KH"
+}
+
+@* Requirement 20.4 — ARIA landmark nav; 14.8 — Bootstrap navbar with collapse *@
+<nav class="navbar navbar-expand-sm navbar-light bg-white border-bottom box-shadow"
+     aria-label="Main navigation">
+    <div class="container-fluid px-3 px-md-4">
+
+        <a class="navbar-brand fw-semibold" asp-area="" asp-page="/Index">
+            <i class="bi bi-shop me-1" aria-hidden="true"></i>PosWebApp
+        </a>
+
+        @* Mobile hamburger toggle *@
+        <button class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarMain"
+                aria-controls="navbarMain"
+                aria-expanded="false"
+                aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarMain">
+            @* ── Primary navigation links ─────────────────────────────────── *@
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="" asp-page="/Index">
+                        <i class="bi bi-grid me-1" aria-hidden="true"></i>Categories
+                    </a>
+                </li>
+                @if (User.IsInRole("Manager") || User.IsInRole("Admin"))
+                {
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-page="/Reports/EndOfDay">
+                            <i class="bi bi-calendar2-check me-1" aria-hidden="true"></i>EOD Report
+                        </a>
+                    </li>
+                }
+            </ul>
+
+            @* ── Search form (Req 10.1, 10.10) — visible for authenticated users ── *@
+            @if (User.Identity?.IsAuthenticated == true)
+            {
+                <form method="get"
+                      asp-page="/Search"
+                      class="d-flex me-sm-2 position-relative"
+                      role="search"
+                      aria-label="Product search"
+                      id="navbar-search-form">
+                    <div class="input-group input-group-sm">
+                        <input type="search"
+                               id="navbar-search-input"
+                               name="q"
+                               class="form-control"
+                               placeholder="Search items…"
+                               aria-label="Search items"
+                               aria-autocomplete="list"
+                               aria-controls="search-autocomplete-dropdown"
+                               aria-expanded="false"
+                               autocomplete="off"
+                               minlength="2"
+                               maxlength="100" />
+                        <button class="btn btn-outline-primary" type="submit" aria-label="Submit search">
+                            <i class="bi bi-search" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                    @* Autocomplete dropdown — populated by search.js *@
+                    <div id="search-autocomplete-dropdown"
+                         class="position-absolute top-100 start-0 w-100 bg-white border rounded shadow-sm z-3 d-none"
+                         aria-hidden="true"
+                         role="listbox">
+                    </div>
+                </form>
+            }
+
+            @* ── Right-side controls (auth-only) ─────────────────────────── *@
+            @if (User.Identity?.IsAuthenticated == true)
+            {
+                <ul class="navbar-nav align-items-sm-center gap-sm-1">
+
+                    @* Req 1.11 — staff name display *@
+                    <li class="nav-item">
+                        <span class="navbar-text text-dark fw-semibold px-2">
+                            <i class="bi bi-person-circle me-1" aria-hidden="true"></i>@staffName
+                        </span>
+                    </li>
+
+                    @* Cart icon + badge from session (Req 17.9) *@
+                    <li class="nav-item">
+                        <a class="nav-link text-dark position-relative px-2"
+                           asp-page="/Cart"
+                           aria-label="Cart, @cartItemCount item@(cartItemCount == 1 ? "" : "s")">
+                            <i class="bi bi-cart3 fs-5" aria-hidden="true"></i>
+                            @if (cartItemCount > 0)
+                            {
+                                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+                                      id="cart-badge"
+                                      data-cart-count="@cartItemCount"
+                                      aria-hidden="true">
+                                    @cartItemCount
+                                </span>
+                            }
+                            else
+                            {
+                                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary visually-hidden"
+                                      id="cart-badge"
+                                      data-cart-count="0"
+                                      aria-hidden="true"></span>
+                            }
+                        </a>
+                    </li>
+
+                    @* Language selector — POSTs to /Culture/Set (Req 13.x) *@
+                    <li class="nav-item dropdown">
+                        <button class="btn btn-outline-secondary btn-sm dropdown-toggle"
+                                type="button"
+                                data-bs-toggle="dropdown"
+                                aria-expanded="false"
+                                aria-label="Select language">
+                            <i class="bi bi-translate me-1" aria-hidden="true"></i>
+                            @(currentCulture.StartsWith("km") ? "ខ្មែរ" : "EN")
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li>
+                                <form method="post" asp-page="/Culture/Set" id="lang-en-form">
+                                    <input type="hidden" name="culture" value="en-US" />
+                                    <input type="hidden" name="returnUrl"
+                                           value="@Context.Request.Path@Context.Request.QueryString" />
+                                    <button type="submit"
+                                            class="dropdown-item @(currentCulture == "en-US" ? "active" : "")"
+                                            aria-current="@(currentCulture == "en-US" ? "true" : "false")">
+                                        English
+                                    </button>
+                                </form>
+                            </li>
+                            <li>
+                                <form method="post" asp-page="/Culture/Set" id="lang-km-form">
+                                    <input type="hidden" name="culture" value="km-KH" />
+                                    <input type="hidden" name="returnUrl"
+                                           value="@Context.Request.Path@Context.Request.QueryString" />
+                                    <button type="submit"
+                                            class="dropdown-item @(currentCulture == "km-KH" ? "active" : "")"
+                                            aria-current="@(currentCulture == "km-KH" ? "true" : "false")">
+                                        ភាសាខ្មែរ
+                                    </button>
+                                </form>
+                            </li>
+                        </ul>
+                    </li>
+
+                    @* Req 15.1 — logout button in nav bar (POST + anti-forgery, Req 15.7) *@
+                    <li class="nav-item">
+                        <form method="post" asp-page="/Account/Logout" id="logout-form" class="d-inline">
+                            <button type="submit"
+                                    class="btn btn-outline-danger btn-sm ms-sm-1"
+                                    id="logout-button"
+                                    aria-label="Log out">
+                                <i class="bi bi-box-arrow-right me-1" aria-hidden="true"></i>Logout
+                            </button>
+                        </form>
+                    </li>
+
+                </ul>
+            }
+        </div>
+    </div>
+</nav>
+
+@if (User.Identity?.IsAuthenticated == true)
+{
+    @* Req 15.8 — confirmation modal before logout when cart has items *@
+    if (cartHasItems)
+    {
+        <div class="modal fade"
+             id="logoutConfirmModal"
+             tabindex="-1"
+             aria-labelledby="logoutConfirmLabel"
+             aria-modal="true"
+             role="dialog"
+             data-bs-backdrop="static">
+            @* Note: data-bs-keyboard is NOT set to false so Escape key can dismiss
+               the modal, satisfying WCAG 2.1 Req 20.12. The backdrop is still static
+               so accidental outside-click does not dismiss (UX choice). *@
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="logoutConfirmLabel">
+                            <i class="bi bi-exclamation-triangle text-warning me-1" aria-hidden="true"></i>
+                            Confirm Logout
+                        </h5>
+                        <button type="button"
+                                class="btn-close"
+                                data-bs-dismiss="modal"
+                                aria-label="Close dialog"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>
+                            Your cart currently has
+                            <strong>@cartItemCount</strong>
+                            item@(cartItemCount == 1 ? "" : "s"). Logging out will clear the cart.
+                        </p>
+                        <p class="text-muted mb-0">Are you sure you want to log out?</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button"
+                                class="btn btn-secondary"
+                                data-bs-dismiss="modal">Cancel</button>
+                        <button type="button"
+                                class="btn btn-danger"
+                                id="logout-confirm-btn">
+                            <i class="bi bi-box-arrow-right me-1" aria-hidden="true"></i>Log out
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+
+    <script>
+        (function () {
+            var logoutForm = document.getElementById('logout-form');
+            if (!logoutForm) return;
+
+            // No modal rendered when cart is empty — let form submit normally.
+            var modalEl = document.getElementById('logoutConfirmModal');
+            if (!modalEl) return;
+
+            var modal = bootstrap.Modal.getOrCreateInstance(modalEl);
+
+            // Intercept submit, show confirmation modal first.
+            logoutForm.addEventListener('submit', function (e) {
+                e.preventDefault();
+                modal.show();
+            });
+
+            // "Log out" inside modal submits the form.
+            // HTMLFormElement.submit() does not fire 'submit' so no loop risk.
+            document.getElementById('logout-confirm-btn').addEventListener('click', function () {
+                modal.hide();
+                logoutForm.submit();
+            });
+        })();
+    </script>
+}

@@ -1,0 +1,467 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!--
+    Microsoft ResX Schema Version 2.0
+    Khmer (km-KH) translations for SharedResource.
+    Falls back to SharedResource.en-US.resx when a key is absent (Req 13.10).
+  -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+
+  <!-- ── Navigation ── -->
+  <data name="Nav_AppName" xml:space="preserve">
+    <value>PosWebApp</value>
+  </data>
+  <data name="Nav_Categories" xml:space="preserve">
+    <value>ប្រភេទ</value>
+  </data>
+  <data name="Nav_Search" xml:space="preserve">
+    <value>ស្វែងរក</value>
+  </data>
+  <data name="Nav_Cart" xml:space="preserve">
+    <value>កន្ត្រក</value>
+  </data>
+  <data name="Nav_Logout" xml:space="preserve">
+    <value>ចាកចេញ</value>
+  </data>
+  <data name="Nav_SelectLanguage" xml:space="preserve">
+    <value>ជ្រើសរើសភាសា</value>
+  </data>
+  <data name="Nav_SearchPlaceholder" xml:space="preserve">
+    <value>ស្វែងរកទំនិញ…</value>
+  </data>
+  <data name="Nav_ToggleNavigation" xml:space="preserve">
+    <value>បើក/បិទមេនុ</value>
+  </data>
+
+  <!-- ── Authentication ── -->
+  <data name="Login_Title" xml:space="preserve">
+    <value>ចូលប្រើប្រាស់</value>
+  </data>
+  <data name="Login_UserName" xml:space="preserve">
+    <value>ឈ្មោះអ្នកប្រើ</value>
+  </data>
+  <data name="Login_Password" xml:space="preserve">
+    <value>ពាក្យសម្ងាត់</value>
+  </data>
+  <data name="Login_Submit" xml:space="preserve">
+    <value>ចូល</value>
+  </data>
+  <data name="Login_RememberMe" xml:space="preserve">
+    <value>ចងចាំខ្ញុំ</value>
+  </data>
+  <data name="Login_InvalidCredentials" xml:space="preserve">
+    <value>ឈ្មោះអ្នកប្រើ ឬ ពាក្យសម្ងាត់មិនត្រឹមត្រូវ។</value>
+  </data>
+  <data name="Login_AccountLocked" xml:space="preserve">
+    <value>គណនីរបស់អ្នកត្រូវបានចាក់សោ! សូមទាក់ទង IT</value>
+  </data>
+
+  <!-- ── Home / Categories ── -->
+  <data name="Home_Title" xml:space="preserve">
+    <value>ទំព័រដើម</value>
+  </data>
+  <data name="Home_Categories" xml:space="preserve">
+    <value>ប្រភេទ</value>
+  </data>
+  <data name="Home_NoCategories" xml:space="preserve">
+    <value>មិនមានប្រភេទ។</value>
+  </data>
+
+  <!-- ── Groups ── -->
+  <data name="Groups_Title" xml:space="preserve">
+    <value>ក្រុម</value>
+  </data>
+  <data name="Groups_NoGroups" xml:space="preserve">
+    <value>មិនមានក្រុម។</value>
+  </data>
+  <data name="Groups_BackToCategories" xml:space="preserve">
+    <value>ត្រឡប់ទៅប្រភេទ</value>
+  </data>
+
+  <!-- ── Items ── -->
+  <data name="Items_Title" xml:space="preserve">
+    <value>ទំនិញ</value>
+  </data>
+  <data name="Items_NoItems" xml:space="preserve">
+    <value>មិនមានទំនិញ។</value>
+  </data>
+  <data name="Items_BackToGroups" xml:space="preserve">
+    <value>ត្រឡប់ទៅក្រុម</value>
+  </data>
+  <data name="Items_BackToCategories" xml:space="preserve">
+    <value>ត្រឡប់ទៅប្រភេទ</value>
+  </data>
+  <data name="Items_AddToCart" xml:space="preserve">
+    <value>បន្ថែមទៅកន្ត្រក</value>
+  </data>
+  <data name="Items_ViewDetail" xml:space="preserve">
+    <value>មើលលម្អិត</value>
+  </data>
+  <data name="Items_Price" xml:space="preserve">
+    <value>តម្លៃ</value>
+  </data>
+  <data name="Items_Stock" xml:space="preserve">
+    <value>ស្ដុក</value>
+  </data>
+  <data name="Items_Code" xml:space="preserve">
+    <value>កូដ</value>
+  </data>
+  <data name="Items_Unit" xml:space="preserve">
+    <value>គ្រឿង</value>
+  </data>
+
+  <!-- ── Cart ── -->
+  <data name="Cart_Title" xml:space="preserve">
+    <value>កន្ត្រក</value>
+  </data>
+  <data name="Cart_Empty" xml:space="preserve">
+    <value>កន្ត្រករបស់អ្នកទទេ។</value>
+  </data>
+  <data name="Cart_BrowseItems" xml:space="preserve">
+    <value>រកមើលទំនិញ</value>
+  </data>
+  <data name="Cart_ItemName" xml:space="preserve">
+    <value>ទំនិញ</value>
+  </data>
+  <data name="Cart_Quantity" xml:space="preserve">
+    <value>ចំនួន</value>
+  </data>
+  <data name="Cart_UnitPrice" xml:space="preserve">
+    <value>តម្លៃក្នុងមួយ</value>
+  </data>
+  <data name="Cart_Total" xml:space="preserve">
+    <value>សរុប</value>
+  </data>
+  <data name="Cart_GrandTotal" xml:space="preserve">
+    <value>សរុបទាំងអស់</value>
+  </data>
+  <data name="Cart_Remove" xml:space="preserve">
+    <value>លុប</value>
+  </data>
+  <data name="Cart_Clear" xml:space="preserve">
+    <value>សម្អាតកន្ត្រក</value>
+  </data>
+  <data name="Cart_Checkout" xml:space="preserve">
+    <value>បន្តទៅការបង់ប្រាក់</value>
+  </data>
+  <data name="Cart_UpdateQuantity" xml:space="preserve">
+    <value>ធ្វើបច្ចុប្បន្នភាពចំនួន</value>
+  </data>
+  <data name="Cart_Items" xml:space="preserve">
+    <value>ទំនិញ</value>
+  </data>
+
+  <!-- ── Checkout ── -->
+  <data name="Checkout_Title" xml:space="preserve">
+    <value>ការបង់ប្រាក់</value>
+  </data>
+  <data name="Checkout_PaymentMethod" xml:space="preserve">
+    <value>វិធីបង់ប្រាក់</value>
+  </data>
+  <data name="Checkout_Cash" xml:space="preserve">
+    <value>សាច់ប្រាក់</value>
+  </data>
+  <data name="Checkout_Card" xml:space="preserve">
+    <value>កាត</value>
+  </data>
+  <data name="Checkout_Other" xml:space="preserve">
+    <value>ផ្សេងទៀត</value>
+  </data>
+  <data name="Checkout_AmountTendered" xml:space="preserve">
+    <value>ប្រាក់ដែលបានផ្ដល់</value>
+  </data>
+  <data name="Checkout_Change" xml:space="preserve">
+    <value>ប្រាក់អាប់</value>
+  </data>
+  <data name="Checkout_Customer" xml:space="preserve">
+    <value>អតិថិជន</value>
+  </data>
+  <data name="Checkout_PlaceOrder" xml:space="preserve">
+    <value>ដាក់ការបញ្ជាទិញ</value>
+  </data>
+  <data name="Checkout_Confirmation_Title" xml:space="preserve">
+    <value>ការបញ្ជាទិញបានបញ្ជាក់</value>
+  </data>
+  <data name="Checkout_SaleId" xml:space="preserve">
+    <value>លេខលក់</value>
+  </data>
+  <data name="Checkout_InvoiceNo" xml:space="preserve">
+    <value>លេខវិក្កយបត្រ</value>
+  </data>
+  <data name="Checkout_PrintReceipt" xml:space="preserve">
+    <value>បោះពុម្ពបង្កាន់ដៃ</value>
+  </data>
+  <data name="Checkout_NewSale" xml:space="preserve">
+    <value>ការលក់ថ្មី</value>
+  </data>
+
+  <!-- ── Search ── -->
+  <data name="Search_Title" xml:space="preserve">
+    <value>ស្វែងរក</value>
+  </data>
+  <data name="Search_Results" xml:space="preserve">
+    <value>លទ្ធផលស្វែងរក</value>
+  </data>
+  <data name="Search_NoResults" xml:space="preserve">
+    <value>រកមិនឃើញទំនិញ។</value>
+  </data>
+  <data name="Search_Placeholder" xml:space="preserve">
+    <value>ស្វែងរកទំនិញ…</value>
+  </data>
+
+  <!-- ── Sale History ── -->
+  <data name="Sales_Title" xml:space="preserve">
+    <value>ប្រវត្តិការលក់</value>
+  </data>
+  <data name="Sales_SaleId" xml:space="preserve">
+    <value>លេខលក់</value>
+  </data>
+  <data name="Sales_InvoiceNo" xml:space="preserve">
+    <value>លេខវិក្កយបត្រ</value>
+  </data>
+  <data name="Sales_Date" xml:space="preserve">
+    <value>កាលបរិច្ឆេទ</value>
+  </data>
+  <data name="Sales_Staff" xml:space="preserve">
+    <value>បុគ្គលិក</value>
+  </data>
+  <data name="Sales_Customer" xml:space="preserve">
+    <value>អតិថិជន</value>
+  </data>
+  <data name="Sales_Total" xml:space="preserve">
+    <value>សរុប</value>
+  </data>
+  <data name="Sales_Status" xml:space="preserve">
+    <value>ស្ថានភាព</value>
+  </data>
+  <data name="Sales_Voided" xml:space="preserve">
+    <value>បានលុបចោល</value>
+  </data>
+  <data name="Sales_ViewDetail" xml:space="preserve">
+    <value>មើល</value>
+  </data>
+  <data name="Sales_NoSales" xml:space="preserve">
+    <value>រកមិនឃើញការលក់។</value>
+  </data>
+  <data name="Sales_Void" xml:space="preserve">
+    <value>លុបចោលការលក់</value>
+  </data>
+  <data name="Sales_VoidReason" xml:space="preserve">
+    <value>មូលហេតុនៃការលុបចោល</value>
+  </data>
+  <data name="Sales_BackToList" xml:space="preserve">
+    <value>ត្រឡប់ទៅបញ្ជីការលក់</value>
+  </data>
+
+  <!-- ── Reports ── -->
+  <data name="Reports_EndOfDay" xml:space="preserve">
+    <value>របាយការណ៍បិទថ្ងៃ</value>
+  </data>
+  <data name="Reports_TotalSales" xml:space="preserve">
+    <value>ការលក់សរុប</value>
+  </data>
+  <data name="Reports_TotalRevenue" xml:space="preserve">
+    <value>ចំណូលសរុប</value>
+  </data>
+  <data name="Reports_DateRange" xml:space="preserve">
+    <value>ចន្លោះពេល</value>
+  </data>
+  <data name="Reports_ExportPdf" xml:space="preserve">
+    <value>នាំចេញ PDF</value>
+  </data>
+  <data name="Reports_ExportExcel" xml:space="preserve">
+    <value>នាំចេញ Excel</value>
+  </data>
+
+  <!-- ── Common / Shared ── -->
+  <data name="Common_Save" xml:space="preserve">
+    <value>រក្សាទុក</value>
+  </data>
+  <data name="Common_Cancel" xml:space="preserve">
+    <value>បោះបង់</value>
+  </data>
+  <data name="Common_Confirm" xml:space="preserve">
+    <value>បញ្ជាក់</value>
+  </data>
+  <data name="Common_Delete" xml:space="preserve">
+    <value>លុប</value>
+  </data>
+  <data name="Common_Edit" xml:space="preserve">
+    <value>កែប្រែ</value>
+  </data>
+  <data name="Common_Back" xml:space="preserve">
+    <value>ត្រឡប់</value>
+  </data>
+  <data name="Common_Search" xml:space="preserve">
+    <value>ស្វែងរក</value>
+  </data>
+  <data name="Common_Loading" xml:space="preserve">
+    <value>កំពុងផ្ទុក…</value>
+  </data>
+  <data name="Common_Error" xml:space="preserve">
+    <value>មានបញ្ហា។ សូមព្យាយាមម្ដងទៀត។</value>
+  </data>
+  <data name="Common_Yes" xml:space="preserve">
+    <value>បាទ/ចាស</value>
+  </data>
+  <data name="Common_No" xml:space="preserve">
+    <value>ទេ</value>
+  </data>
+  <data name="Common_Close" xml:space="preserve">
+    <value>បិទ</value>
+  </data>
+  <data name="Common_Actions" xml:space="preserve">
+    <value>សកម្មភាព</value>
+  </data>
+  <data name="Common_Required" xml:space="preserve">
+    <value>ចាំបាច់បំពេញវាល។</value>
+  </data>
+  <data name="Common_SelectAll" xml:space="preserve">
+    <value>ជ្រើសរើសទាំងអស់</value>
+  </data>
+  <data name="Common_Print" xml:space="preserve">
+    <value>បោះពុម្ព</value>
+  </data>
+  <data name="Common_Reprint" xml:space="preserve">
+    <value>បោះពុម្ពម្ដងទៀត</value>
+  </data>
+  <data name="Common_Page" xml:space="preserve">
+    <value>ទំព័រ</value>
+  </data>
+  <data name="Common_Of" xml:space="preserve">
+    <value>នៃ</value>
+  </data>
+  <data name="Common_Items" xml:space="preserve">
+    <value>ទំនិញ</value>
+  </data>
+
+  <!-- ── Currency (Req 13.8) ── -->
+  <data name="Currency_USD" xml:space="preserve">
+    <value>ដុល្លារ ($)</value>
+  </data>
+  <data name="Currency_KHR" xml:space="preserve">
+    <value>រៀល (៛)</value>
+  </data>
+  <data name="Currency_ExchangeRate" xml:space="preserve">
+    <value>អត្រាប្ដូរប្រាក់</value>
+  </data>
+
+  <!-- ── Logout confirmation (Req 15.8) ── -->
+  <data name="Logout_ConfirmTitle" xml:space="preserve">
+    <value>បញ្ជាក់ការចាកចេញ</value>
+  </data>
+  <data name="Logout_ConfirmMessage" xml:space="preserve">
+    <value>កន្ត្រករបស់អ្នកមានទំនិញ។ ការចាកចេញនឹងសម្អាតកន្ត្រក។</value>
+  </data>
+  <data name="Logout_ConfirmYes" xml:space="preserve">
+    <value>ចាកចេញ</value>
+  </data>
+  <data name="Logout_ConfirmNo" xml:space="preserve">
+    <value>បោះបង់</value>
+  </data>
+
+  <!-- ── Item Detail Modal ── -->
+  <data name="ItemDetail_Title" xml:space="preserve">
+    <value>លម្អិតទំនិញ</value>
+  </data>
+  <data name="ItemDetail_AddToCart" xml:space="preserve">
+    <value>បន្ថែមទៅកន្ត្រក</value>
+  </data>
+  <data name="ItemDetail_Quantity" xml:space="preserve">
+    <value>ចំនួន</value>
+  </data>
+  <data name="ItemDetail_SelectUnit" xml:space="preserve">
+    <value>ជ្រើសរើសគ្រឿង</value>
+  </data>
+
+  <!-- ── Discount (Req 28.x) ── -->
+  <data name="Discount_Apply" xml:space="preserve">
+    <value>អនុវត្តការបញ្ចុះតម្លៃ</value>
+  </data>
+  <data name="Discount_Percentage" xml:space="preserve">
+    <value>ភាគរយ (%)</value>
+  </data>
+  <data name="Discount_FixedAmount" xml:space="preserve">
+    <value>ចំនួនថេរ ($)</value>
+  </data>
+  <data name="Discount_AuthPassword" xml:space="preserve">
+    <value>ពាក្យសម្ងាត់អនុញ្ញាត</value>
+  </data>
+
+  <!-- ── Quick Sale ── -->
+  <data name="QuickSale_Title" xml:space="preserve">
+    <value>ការលក់រហ័ស</value>
+  </data>
+  <data name="QuickSale_ScanBarcode" xml:space="preserve">
+    <value>ស្កែន ឬ បញ្ចូលបាកូដ…</value>
+  </data>
+
+  <!-- ── Offline / PWA (Req 11.x) ── -->
+  <data name="Offline_Message" xml:space="preserve">
+    <value>គ្មានការភ្ជាប់អ៊ីនធឺណិត។ ការលក់នឹងត្រូវបានដំណើរការពេលមានអ៊ីនធឺណិត។</value>
+  </data>
+  <data name="Offline_Status" xml:space="preserve">
+    <value>គ្មានអ៊ីនធឺណិត</value>
+  </data>
+  <data name="Online_Status" xml:space="preserve">
+    <value>មានអ៊ីនធឺណិត</value>
+  </data>
+
+</root>
