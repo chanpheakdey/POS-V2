@@ -11,5 +11,5 @@ public sealed class PaymentOptions
     /// <summary>
     /// KHR units per 1 USD. Defaults to 4100.
     /// </summary>
-    public decimal KhrExchangeRate { get; set; } = 4100m;
+    public double KhrExchangeRate { get; set; } = 4100;
 }

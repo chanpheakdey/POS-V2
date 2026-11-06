@@ -12,109 +12,109 @@ build_property.EntryPointFilePath =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = PosWebApp
 build_property.RootNamespace = PosWebApp
-build_property.ProjectDir = C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp\
+build_property.ProjectDir = C:\Other\POSV2\POS-V2\POSDALIN - APP Native\PosWebApp\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 10.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Other\POSDALIN - APP Native\POSDALIN - APP Native\PosWebApp
+build_property.MSBuildProjectDirectory = C:\Other\POSV2\POS-V2\POSDALIN - APP Native\PosWebApp
 build_property._RazorSourceGeneratorDebug = 
 build_property.EffectiveAnalysisLevelStyle = 10.0
 build_property.EnableCodeStyleSeverity = 
 
-[C:/Other/POSDALIN - APP Native/POSDALIN - APP Native/PosWebApp/Pages/Account/Login.cshtml]
+[C:/Other/POSV2/POS-V2/POSDALIN - APP Native/PosWebApp/Pages/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Other/POSDALIN - APP Native/POSDALIN - APP Native/PosWebApp/Pages/Account/Logout.cshtml]
+[C:/Other/POSV2/POS-V2/POSDALIN - APP Native/PosWebApp/Pages/Account/Logout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFxMb2dvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Other/POSDALIN - APP Native/POSDALIN - APP Native/PosWebApp/Pages/Cart.cshtml]
+[C:/Other/POSV2/POS-V2/POSDALIN - APP Native/PosWebApp/Pages/Cart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2FydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Other/POSDALIN - APP Native/POSDALIN - APP Native/PosWebApp/Pages/Checkout.cshtml]
+[C:/Other/POSV2/POS-V2/POSDALIN - APP Native/PosWebApp/Pages/Checkout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2hlY2tvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Other/POSDALIN - APP Native/POSDALIN - APP Native/PosWebApp/Pages/Culture/Set.cshtml]
+[C:/Other/POSV2/POS-V2/POSDALIN - APP Native/PosWebApp/Pages/Culture/Set.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3VsdHVyZVxTZXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Other/POSDALIN - APP Native/POSDALIN - APP Native/PosWebApp/Pages/Error.cshtml]
+[C:/Other/POSV2/POS-V2/POSDALIN - APP Native/PosWebApp/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Other/POSDALIN - APP Native/POSDALIN - APP Native/PosWebApp/Pages/Groups.cshtml]
+[C:/Other/POSV2/POS-V2/POSDALIN - APP Native/PosWebApp/Pages/Groups.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcR3JvdXBzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Other/POSDALIN - APP Native/POSDALIN - APP Native/PosWebApp/Pages/Index.cshtml]
+[C:/Other/POSV2/POS-V2/POSDALIN - APP Native/PosWebApp/Pages/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Other/POSDALIN - APP Native/POSDALIN - APP Native/PosWebApp/Pages/Items.cshtml]
+[C:/Other/POSV2/POS-V2/POSDALIN - APP Native/PosWebApp/Pages/Items.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSXRlbXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Other/POSDALIN - APP Native/POSDALIN - APP Native/PosWebApp/Pages/Privacy.cshtml]
+[C:/Other/POSV2/POS-V2/POSDALIN - APP Native/PosWebApp/Pages/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJpdmFjeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Other/POSDALIN - APP Native/POSDALIN - APP Native/PosWebApp/Pages/QuickSale.cshtml]
+[C:/Other/POSV2/POS-V2/POSDALIN - APP Native/PosWebApp/Pages/QuickSale.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUXVpY2tTYWxlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Other/POSDALIN - APP Native/POSDALIN - APP Native/PosWebApp/Pages/Reports/EndOfDay.cshtml]
+[C:/Other/POSV2/POS-V2/POSDALIN - APP Native/PosWebApp/Pages/Reports/EndOfDay.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVwb3J0c1xFbmRPZkRheS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Other/POSDALIN - APP Native/POSDALIN - APP Native/PosWebApp/Pages/Sale/Detail.cshtml]
+[C:/Other/POSV2/POS-V2/POSDALIN - APP Native/PosWebApp/Pages/Sale/Detail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2FsZVxEZXRhaWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Other/POSDALIN - APP Native/POSDALIN - APP Native/PosWebApp/Pages/Sale/Index.cshtml]
+[C:/Other/POSV2/POS-V2/POSDALIN - APP Native/PosWebApp/Pages/Sale/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2FsZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Other/POSDALIN - APP Native/POSDALIN - APP Native/PosWebApp/Pages/Search.cshtml]
+[C:/Other/POSV2/POS-V2/POSDALIN - APP Native/PosWebApp/Pages/Search.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2VhcmNoLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Other/POSDALIN - APP Native/POSDALIN - APP Native/PosWebApp/Pages/Shared/_CartItemPartial.cshtml]
+[C:/Other/POSV2/POS-V2/POSDALIN - APP Native/PosWebApp/Pages/Shared/_CartItemPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9DYXJ0SXRlbVBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Other/POSDALIN - APP Native/POSDALIN - APP Native/PosWebApp/Pages/Shared/_ItemCardPartial.cshtml]
+[C:/Other/POSV2/POS-V2/POSDALIN - APP Native/PosWebApp/Pages/Shared/_ItemCardPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9JdGVtQ2FyZFBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Other/POSDALIN - APP Native/POSDALIN - APP Native/PosWebApp/Pages/Shared/_ItemDetailModal.cshtml]
+[C:/Other/POSV2/POS-V2/POSDALIN - APP Native/PosWebApp/Pages/Shared/_ItemDetailModal.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9JdGVtRGV0YWlsTW9kYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Other/POSDALIN - APP Native/POSDALIN - APP Native/PosWebApp/Pages/Shared/_NavbarPartial.cshtml]
+[C:/Other/POSV2/POS-V2/POSDALIN - APP Native/PosWebApp/Pages/Shared/_NavbarPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9OYXZiYXJQYXJ0aWFsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Other/POSDALIN - APP Native/POSDALIN - APP Native/PosWebApp/Pages/Shared/_Receipt.cshtml]
+[C:/Other/POSV2/POS-V2/POSDALIN - APP Native/PosWebApp/Pages/Shared/_Receipt.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9SZWNlaXB0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Other/POSDALIN - APP Native/POSDALIN - APP Native/PosWebApp/Pages/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Other/POSV2/POS-V2/POSDALIN - APP Native/PosWebApp/Pages/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Other/POSDALIN - APP Native/POSDALIN - APP Native/PosWebApp/Pages/_ViewImports.cshtml]
+[C:/Other/POSV2/POS-V2/POSDALIN - APP Native/PosWebApp/Pages/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Other/POSDALIN - APP Native/POSDALIN - APP Native/PosWebApp/Pages/_ViewStart.cshtml]
+[C:/Other/POSV2/POS-V2/POSDALIN - APP Native/PosWebApp/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Other/POSDALIN - APP Native/POSDALIN - APP Native/PosWebApp/Pages/Shared/_Layout.cshtml]
+[C:/Other/POSV2/POS-V2/POSDALIN - APP Native/PosWebApp/Pages/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-5bkaohp5by

@@ -33,7 +33,7 @@ public class CheckoutInputModel
     /// Requirement 27.4
     /// </summary>
     [Range(0.01, double.MaxValue, ErrorMessage = "Amount tendered must be greater than zero.")]
-    public decimal? AmountTendered { get; set; }
+    public double? AmountTendered { get; set; }
 
     // ── Card fields ──────────────────────────────────────────────────────────
 
@@ -73,7 +73,7 @@ public class CheckoutViewModel
     public string TotalKhrText { get; set; } = "0៛";
 
     /// <summary>Raw decimal total for change-calculation logic in the view.</summary>
-    public decimal TotalAmount { get; set; }
+    public double TotalAmount { get; set; }
 
     /// <summary><see langword="true"/> when the cart is empty (redirect to cart should occur).</summary>
     public bool IsEmpty => !CartItems.Any();
@@ -105,12 +105,12 @@ public class CheckoutConfirmationViewModel
     public string TotalKhrText { get; set; } = "0៛";
 
     /// <summary>Raw decimal total.</summary>
-    public decimal TotalAmount { get; set; }
+    public double TotalAmount { get; set; }
 
-    // ── Cash-specific ────────────────────────────────────────────────────────
+    // ── Cash-specific ───────────────────────────────────────� �\ � � �\ � � �\ � � �\ � � �\ � � �\ � � �\ � � �\ � � �\ � � �\ � � �\ � � �\ � � �\ � � �\ � � �\ � � �\ � � �\ � � �\ � � �\ � � �\ � � �\ � � �\ � � �\ � � �\ � � �\ � � �\ � � �\ � � �\ � � �\ � � �\ � */
 
-    /// <summary>Amount tendered (Cash only). Null for non-cash methods.</summary>
-    public decimal? AmountTendered { get; set; }
+    /// <summary>Raw amount tendered by the customer (Cash only).</summary>
+    public double? AmountTendered { get; set; }
 
     /// <summary>Pre-formatted change due string (Cash only).</summary>
     public string? ChangeUsdText { get; set; }
@@ -150,8 +150,8 @@ public record CheckoutTempData(
     int SaleID,
     string InvoiceNo,
     string PaymentMethod,
-    decimal TotalAmount,
-    decimal? AmountTendered,
+    double TotalAmount,
+    double? AmountTendered,
     string? CardType,
     string? CardLastFour,
     string? CustomerName,

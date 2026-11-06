@@ -10,7 +10,7 @@ public record SaleListItemDto(
     DateTime CreatedDate,
     string StaffUserName,
     string? CustomerName,
-    decimal Total,
+    double Total,
     bool Voided);
 
 /// <summary>Full sale detail including line items, returned by getSaleDetail endpoint.</summary>
@@ -20,7 +20,7 @@ public record SaleDetailDto(
     DateTime CreatedDate,
     string StaffUserName,
     string? CustomerName,
-    decimal Total,
+    double Total,
     string PaymentMethod,
     IReadOnlyList<SaleItemDto> Items,
     bool Voided = false,
@@ -35,9 +35,9 @@ public record SaleItemDto(
     string ItemCode,
     string ItemName,
     int Quantity,
-    decimal UnitPrice,
-    decimal Discount,
-    decimal LineTotal);
+    double UnitPrice,
+    double Discount,
+    double LineTotal);
 
 /// <summary>Customer lookup result returned by SearchCustomers endpoint.</summary>
 public record CustomerDto(int CustomerID, string CustomerName, string? Phone);
@@ -55,8 +55,8 @@ public record CreateSaleRequest(
 public record CreateSaleItemRequest(
     int ItemID,
     int Quantity,
-    decimal UnitPrice,
-    decimal Discount);
+    double UnitPrice,
+    double Discount);
 
 // ── Pagination wrapper ────────────────────────────────────────────────────────
 

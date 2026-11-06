@@ -39,7 +39,7 @@ public sealed class CartService : ICartService
     }
 
     /// <inheritdoc/>
-    public decimal CalculateTotal(ISession session)
+    public double CalculateTotal(ISession session)
     {
         return GetCart(session).Total;
     }
@@ -140,7 +140,7 @@ public sealed class CartService : ICartService
     public CartState ApplyDiscount(
         ISession session,
         int itemId,
-        decimal discountPercent,
+        double discountPercent,
         string discountType,
         int authorizingUserId)
     {
@@ -160,7 +160,7 @@ public sealed class CartService : ICartService
     internal static CartState ApplyDiscountPureImpl(
         CartState state,
         int itemId,
-        decimal discountPercent,
+        double discountPercent,
         string discountType,
         int authorizingUserId)
     {

@@ -51,7 +51,7 @@ public class QuickSaleModel : PageModel
     public string TotalKhrText { get; private set; } = "0៛";
 
     /// <summary>KHR exchange rate exposed for client-side formatting.</summary>
-    public decimal KhrExchangeRate => _paymentOptions.KhrExchangeRate;
+    public double KhrExchangeRate => _paymentOptions.KhrExchangeRate;
 
     /// <summary>Brief status message shown after a scan attempt.</summary>
     public string? ScanMessage { get; private set; }

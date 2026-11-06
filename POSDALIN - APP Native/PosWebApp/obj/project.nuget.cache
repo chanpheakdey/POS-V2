@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "WMz7CZerwVU=",
+  "dgSpecHash": "FqVpPQkFMyw=",
   "success": true,
-  "projectFilePath": "C:\\Other\\POSDALIN - APP Native\\POSDALIN - APP Native\\PosWebApp\\PosWebApp.csproj",
+  "projectFilePath": "C:\\Other\\POSV2\\POS-V2\\POSDALIN - APP Native\\PosWebApp\\PosWebApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\chanpheakdey.vong\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\chanpheakdey.vong\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",
@@ -46,9 +46,9 @@
       "code": "NU1510",
       "level": "Warning",
       "message": "PackageReference Microsoft.AspNetCore.Identity will not be pruned. Consider removing this package from your dependencies, as it is likely unnecessary.",
-      "projectPath": "C:\\Other\\POSDALIN - APP Native\\POSDALIN - APP Native\\PosWebApp\\PosWebApp.csproj",
+      "projectPath": "C:\\Other\\POSV2\\POS-V2\\POSDALIN - APP Native\\PosWebApp\\PosWebApp.csproj",
       "warningLevel": 1,
-      "filePath": "C:\\Other\\POSDALIN - APP Native\\POSDALIN - APP Native\\PosWebApp\\PosWebApp.csproj",
+      "filePath": "C:\\Other\\POSV2\\POS-V2\\POSDALIN - APP Native\\PosWebApp\\PosWebApp.csproj",
       "libraryId": "Microsoft.AspNetCore.Identity",
       "targetGraphs": [
         "net10.0"
@@ -58,9 +58,9 @@
       "code": "NU1510",
       "level": "Warning",
       "message": "PackageReference Microsoft.AspNetCore.SignalR will not be pruned. Consider removing this package from your dependencies, as it is likely unnecessary.",
-      "projectPath": "C:\\Other\\POSDALIN - APP Native\\POSDALIN - APP Native\\PosWebApp\\PosWebApp.csproj",
+      "projectPath": "C:\\Other\\POSV2\\POS-V2\\POSDALIN - APP Native\\PosWebApp\\PosWebApp.csproj",
       "warningLevel": 1,
-      "filePath": "C:\\Other\\POSDALIN - APP Native\\POSDALIN - APP Native\\PosWebApp\\PosWebApp.csproj",
+      "filePath": "C:\\Other\\POSV2\\POS-V2\\POSDALIN - APP Native\\PosWebApp\\PosWebApp.csproj",
       "libraryId": "Microsoft.AspNetCore.SignalR",
       "targetGraphs": [
         "net10.0"
@@ -70,9 +70,9 @@
       "code": "NU1902",
       "level": "Warning",
       "message": "Package 'SixLabors.ImageSharp' 3.1.7 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-gwg2-r3hj-4w44",
-      "projectPath": "C:\\Other\\POSDALIN - APP Native\\POSDALIN - APP Native\\PosWebApp\\PosWebApp.csproj",
+      "projectPath": "C:\\Other\\POSV2\\POS-V2\\POSDALIN - APP Native\\PosWebApp\\PosWebApp.csproj",
       "warningLevel": 1,
-      "filePath": "C:\\Other\\POSDALIN - APP Native\\POSDALIN - APP Native\\PosWebApp\\PosWebApp.csproj",
+      "filePath": "C:\\Other\\POSV2\\POS-V2\\POSDALIN - APP Native\\PosWebApp\\PosWebApp.csproj",
       "libraryId": "SixLabors.ImageSharp",
       "targetGraphs": [
         "net10.0"
@@ -82,9 +82,9 @@
       "code": "NU1903",
       "level": "Warning",
       "message": "Package 'SixLabors.ImageSharp' 3.1.7 has a known high severity vulnerability, https://github.com/advisories/GHSA-j3p4-wp97-rph4",
-      "projectPath": "C:\\Other\\POSDALIN - APP Native\\POSDALIN - APP Native\\PosWebApp\\PosWebApp.csproj",
+      "projectPath": "C:\\Other\\POSV2\\POS-V2\\POSDALIN - APP Native\\PosWebApp\\PosWebApp.csproj",
       "warningLevel": 1,
-      "filePath": "C:\\Other\\POSDALIN - APP Native\\POSDALIN - APP Native\\PosWebApp\\PosWebApp.csproj",
+      "filePath": "C:\\Other\\POSV2\\POS-V2\\POSDALIN - APP Native\\PosWebApp\\PosWebApp.csproj",
       "libraryId": "SixLabors.ImageSharp",
       "targetGraphs": [
         "net10.0"
@@ -94,9 +94,9 @@
       "code": "NU1903",
       "level": "Warning",
       "message": "Package 'SixLabors.ImageSharp' 3.1.7 has a known high severity vulnerability, https://github.com/advisories/GHSA-j9gm-c75j-xc9q",
-      "projectPath": "C:\\Other\\POSDALIN - APP Native\\POSDALIN - APP Native\\PosWebApp\\PosWebApp.csproj",
+      "projectPath": "C:\\Other\\POSV2\\POS-V2\\POSDALIN - APP Native\\PosWebApp\\PosWebApp.csproj",
       "warningLevel": 1,
-      "filePath": "C:\\Other\\POSDALIN - APP Native\\POSDALIN - APP Native\\PosWebApp\\PosWebApp.csproj",
+      "filePath": "C:\\Other\\POSV2\\POS-V2\\POSDALIN - APP Native\\PosWebApp\\PosWebApp.csproj",
       "libraryId": "SixLabors.ImageSharp",
       "targetGraphs": [
         "net10.0"
@@ -106,9 +106,9 @@
       "code": "NU1903",
       "level": "Warning",
       "message": "Package 'SixLabors.ImageSharp' 3.1.7 has a known high severity vulnerability, https://github.com/advisories/GHSA-jjfr-hcj7-qf5w",
-      "projectPath": "C:\\Other\\POSDALIN - APP Native\\POSDALIN - APP Native\\PosWebApp\\PosWebApp.csproj",
+      "projectPath": "C:\\Other\\POSV2\\POS-V2\\POSDALIN - APP Native\\PosWebApp\\PosWebApp.csproj",
       "warningLevel": 1,
-      "filePath": "C:\\Other\\POSDALIN - APP Native\\POSDALIN - APP Native\\PosWebApp\\PosWebApp.csproj",
+      "filePath": "C:\\Other\\POSV2\\POS-V2\\POSDALIN - APP Native\\PosWebApp\\PosWebApp.csproj",
       "libraryId": "SixLabors.ImageSharp",
       "targetGraphs": [
         "net10.0"
@@ -118,9 +118,9 @@
       "code": "NU1902",
       "level": "Warning",
       "message": "Package 'SixLabors.ImageSharp' 3.1.7 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-rxmq-m78w-7wmc",
-      "projectPath": "C:\\Other\\POSDALIN - APP Native\\POSDALIN - APP Native\\PosWebApp\\PosWebApp.csproj",
+      "projectPath": "C:\\Other\\POSV2\\POS-V2\\POSDALIN - APP Native\\PosWebApp\\PosWebApp.csproj",
       "warningLevel": 1,
-      "filePath": "C:\\Other\\POSDALIN - APP Native\\POSDALIN - APP Native\\PosWebApp\\PosWebApp.csproj",
+      "filePath": "C:\\Other\\POSV2\\POS-V2\\POSDALIN - APP Native\\PosWebApp\\PosWebApp.csproj",
       "libraryId": "SixLabors.ImageSharp",
       "targetGraphs": [
         "net10.0"
@@ -130,9 +130,9 @@
       "code": "NU1903",
       "level": "Warning",
       "message": "Package 'SixLabors.ImageSharp' 3.1.7 has a known high severity vulnerability, https://github.com/advisories/GHSA-v76p-62qx-wwq2",
-      "projectPath": "C:\\Other\\POSDALIN - APP Native\\POSDALIN - APP Native\\PosWebApp\\PosWebApp.csproj",
+      "projectPath": "C:\\Other\\POSV2\\POS-V2\\POSDALIN - APP Native\\PosWebApp\\PosWebApp.csproj",
       "warningLevel": 1,
-      "filePath": "C:\\Other\\POSDALIN - APP Native\\POSDALIN - APP Native\\PosWebApp\\PosWebApp.csproj",
+      "filePath": "C:\\Other\\POSV2\\POS-V2\\POSDALIN - APP Native\\PosWebApp\\PosWebApp.csproj",
       "libraryId": "SixLabors.ImageSharp",
       "targetGraphs": [
         "net10.0"
@@ -142,9 +142,9 @@
       "code": "NU1902",
       "level": "Warning",
       "message": "Package 'SixLabors.ImageSharp' 3.1.7 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-wmxv-xphr-5c9g",
-      "projectPath": "C:\\Other\\POSDALIN - APP Native\\POSDALIN - APP Native\\PosWebApp\\PosWebApp.csproj",
+      "projectPath": "C:\\Other\\POSV2\\POS-V2\\POSDALIN - APP Native\\PosWebApp\\PosWebApp.csproj",
       "warningLevel": 1,
-      "filePath": "C:\\Other\\POSDALIN - APP Native\\POSDALIN - APP Native\\PosWebApp\\PosWebApp.csproj",
+      "filePath": "C:\\Other\\POSV2\\POS-V2\\POSDALIN - APP Native\\PosWebApp\\PosWebApp.csproj",
       "libraryId": "SixLabors.ImageSharp",
       "targetGraphs": [
         "net10.0"
@@ -154,9 +154,9 @@
       "code": "NU1903",
       "level": "Warning",
       "message": "Package 'System.IO.Packaging' 6.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-f32c-w444-8ppv",
-      "projectPath": "C:\\Other\\POSDALIN - APP Native\\POSDALIN - APP Native\\PosWebApp\\PosWebApp.csproj",
+      "projectPath": "C:\\Other\\POSV2\\POS-V2\\POSDALIN - APP Native\\PosWebApp\\PosWebApp.csproj",
       "warningLevel": 1,
-      "filePath": "C:\\Other\\POSDALIN - APP Native\\POSDALIN - APP Native\\PosWebApp\\PosWebApp.csproj",
+      "filePath": "C:\\Other\\POSV2\\POS-V2\\POSDALIN - APP Native\\PosWebApp\\PosWebApp.csproj",
       "libraryId": "System.IO.Packaging",
       "targetGraphs": [
         "net10.0"
@@ -166,9 +166,9 @@
       "code": "NU1903",
       "level": "Warning",
       "message": "Package 'System.IO.Packaging' 6.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-qj66-m88j-hmgj",
-      "projectPath": "C:\\Other\\POSDALIN - APP Native\\POSDALIN - APP Native\\PosWebApp\\PosWebApp.csproj",
+      "projectPath": "C:\\Other\\POSV2\\POS-V2\\POSDALIN - APP Native\\PosWebApp\\PosWebApp.csproj",
       "warningLevel": 1,
-      "filePath": "C:\\Other\\POSDALIN - APP Native\\POSDALIN - APP Native\\PosWebApp\\PosWebApp.csproj",
+      "filePath": "C:\\Other\\POSV2\\POS-V2\\POSDALIN - APP Native\\PosWebApp\\PosWebApp.csproj",
       "libraryId": "System.IO.Packaging",
       "targetGraphs": [
         "net10.0"

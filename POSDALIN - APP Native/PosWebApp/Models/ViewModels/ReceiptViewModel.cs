@@ -42,7 +42,7 @@ public class ReceiptViewModel
     // ── Totals ─────────────────────────────────────────────────────────────────
 
     /// <summary>Subtotal (before any fees/taxes — same as grand total in this system).</summary>
-    public decimal Subtotal { get; set; }
+    public double Subtotal { get; set; }
 
     /// <summary>Grand total in USD as a pre-formatted string, e.g. "$45.00".</summary>
     public string TotalUsd { get; set; } = "$0.00";
@@ -63,17 +63,17 @@ public class ReceiptLineItem
     public int Quantity { get; set; }
 
     /// <summary>Unit price in USD.</summary>
-    public decimal UnitPrice { get; set; }
+    public double UnitPrice { get; set; }
 
     /// <summary>Line total (Quantity × UnitPrice − Discount) in USD.</summary>
-    public decimal LineTotal { get; set; }
+    public double LineTotal { get; set; }
 
     /// <summary>Applied discount percentage (0 = none).</summary>
-    public decimal Discount { get; set; }
+    public double Discount { get; set; }
 
     /// <summary>Original line total before discount (Quantity × UnitPrice).</summary>
-    public decimal OriginalLineTotal => UnitPrice * Quantity;
+    public double OriginalLineTotal => UnitPrice * Quantity;
 
     /// <summary>True when a non-zero discount was applied.</summary>
-    public bool HasDiscount => Discount > 0m;
+    public bool HasDiscount => Discount > 0d;
 }

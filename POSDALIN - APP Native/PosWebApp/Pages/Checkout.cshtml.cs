@@ -72,12 +72,9 @@ public class CheckoutModel : PageModel
     public CheckoutInputModel Input { get; set; } = new();
 
     /// <summary>Exposes the KHR exchange rate to the view for client-side change calculation.</summary>
-    public decimal KhrExchangeRate => _paymentOptions.KhrExchangeRate;
+    public double KhrExchangeRate => _paymentOptions.KhrExchangeRate;
 
-    // â”€â”€ GET â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-
-    /// <summary>
-    /// Loads the current cart from session and builds <see cref="ViewModel"/>.
+    // â”€â”€ GET â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â” €\ â ” €\ â ” €\ â ” €\ â ” €\ â ” €\ â ” €\ â ” €\ â ” €\ â ” €\ â ” €\ â ” €\ â ” €\ â ” €\ â ” €\ â ” €\ â ” €\ â ” €\ â ” €\ â ” €\ â ” €\ â ” €\ â ” €\ â ” €\ â ” €\ â ” €\ â ” €\ â ” €\ â ” €\ â ” €\ â */
     /// Redirects to <c>/Cart</c> when the cart is empty.
     ///
     /// Requirements: 8.1, 8.2
@@ -291,7 +288,7 @@ public class CheckoutModel : PageModel
 
         if (Input.PaymentMethod == "Cash")
         {
-            if (Input.AmountTendered is null or <= 0m)
+            if (Input.AmountTendered is null or <= 0d)
             {
                 ModelState.AddModelError(
                     nameof(Input.AmountTendered),

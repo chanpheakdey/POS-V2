@@ -57,7 +57,7 @@ public class CartModel : PageModel
     /// Exposes the configured KHR exchange rate to the Razor view so that
     /// cart.js can perform client-side KHR calculations after AJAX updates.
     /// </summary>
-    public decimal KhrExchangeRate => _paymentOptions.KhrExchangeRate;
+    public double KhrExchangeRate => _paymentOptions.KhrExchangeRate;
 
     /// <summary>Bound model for AJAX add-to-cart. Requirement 6.12</summary>
     [BindProperty]
@@ -163,7 +163,7 @@ public class CartModel : PageModel
                 badgeCount    = cart.ItemCount,
                 removed       = updated is null,
                 newQty        = updated?.Quantity ?? 0,
-                lineTotal     = updated?.LineTotal ?? 0m,
+                lineTotal     = updated?.LineTotal ?? 0,
                 lineTotalUsd,
                 grandTotalUsd = totalUsd,
                 grandTotalKhr = totalKhr,

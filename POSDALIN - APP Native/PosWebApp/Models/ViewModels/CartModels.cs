@@ -14,22 +14,22 @@ public record CartItem(
     string ItemName,
     string ImageUrl,
     int Quantity,
-    decimal UnitPrice,
+    double UnitPrice,
     int PriceTierId,
-    decimal Discount = 0m,
+    double Discount = 0,
     string DiscountType = "Percentage",
     int AuthorizingUserId = 0)
 {
     /// <summary>
     /// Line total after discount: UnitPrice × (1 − Discount/100) × Quantity.
     /// </summary>
-    public decimal LineTotal => (UnitPrice * (1 - Discount / 100)) * Quantity;
+    public double LineTotal => (UnitPrice * (1 - Discount / 100)) * Quantity;
 
     /// <summary>Original line total before any discount (UnitPrice × Quantity).</summary>
-    public decimal OriginalLineTotal => UnitPrice * Quantity;
+    public double OriginalLineTotal => UnitPrice * Quantity;
 
     /// <summary>True when a discount greater than zero has been applied.</summary>
-    public bool HasDiscount => Discount > 0m;
+    public bool HasDiscount => Discount > 0;
 }
 
 /// <summary>
@@ -38,7 +38,7 @@ public record CartItem(
 public record CartState(List<CartItem> Items)
 {
     /// <summary>Sum of all item line totals.</summary>
-    public decimal Total => Items.Sum(i => i.LineTotal);
+    public double Total => Items.Sum(i => i.LineTotal);
 
     /// <summary>Total number of individual units across all cart entries.</summary>
     public int ItemCount => Items.Sum(i => i.Quantity);
@@ -78,10 +78,10 @@ public class CartItemViewModel
     // ── Discount display (Requirements 28.5, 28.6) ─────────────────────────
 
     /// <summary>Applied discount percentage (0 = no discount).</summary>
-    public decimal Discount { get; set; }
+    public double Discount { get; set; }
 
     /// <summary>True when a non-zero discount is applied.</summary>
-    public bool HasDiscount => Discount > 0m;
+    public bool HasDiscount => Discount > 0;
 
     /// <summary>Original line total before discount, formatted as USD string.</summary>
     public string OriginalLineTotalUsd { get; set; } = "";
@@ -115,7 +115,7 @@ public class ApplyDiscountRequest
     public int ItemId { get; set; }
 
     /// <summary>Discount percentage, 0–100.</summary>
-    public decimal DiscountPercent { get; set; }
+    public double DiscountPercent { get; set; }
 
     /// <summary>"Percentage" or "Fixed".</summary>
     public string DiscountType { get; set; } = "Percentage";

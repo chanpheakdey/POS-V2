@@ -12,7 +12,7 @@ public record ItemDto(
     string ItemCode,
     string ItemName,
     string ImageUrl,
-    decimal Price,
+    double Price,
     int CategoryID,
     int GroupID);
 

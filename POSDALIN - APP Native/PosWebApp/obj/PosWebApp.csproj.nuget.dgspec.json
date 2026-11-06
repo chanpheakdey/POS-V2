@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Other\\POSDALIN - APP Native\\POSDALIN - APP Native\\PosWebApp\\PosWebApp.csproj": {}
+    "C:\\Other\\POSV2\\POS-V2\\POSDALIN - APP Native\\PosWebApp\\PosWebApp.csproj": {}
   },
   "projects": {
-    "C:\\Other\\POSDALIN - APP Native\\POSDALIN - APP Native\\PosWebApp\\PosWebApp.csproj": {
+    "C:\\Other\\POSV2\\POS-V2\\POSDALIN - APP Native\\PosWebApp\\PosWebApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Other\\POSDALIN - APP Native\\POSDALIN - APP Native\\PosWebApp\\PosWebApp.csproj",
+        "projectUniqueName": "C:\\Other\\POSV2\\POS-V2\\POSDALIN - APP Native\\PosWebApp\\PosWebApp.csproj",
         "projectName": "PosWebApp",
-        "projectPath": "C:\\Other\\POSDALIN - APP Native\\POSDALIN - APP Native\\PosWebApp\\PosWebApp.csproj",
+        "projectPath": "C:\\Other\\POSV2\\POS-V2\\POSDALIN - APP Native\\PosWebApp\\PosWebApp.csproj",
         "packagesPath": "C:\\Users\\chanpheakdey.vong\\.nuget\\packages\\",
-        "outputPath": "C:\\Other\\POSDALIN - APP Native\\POSDALIN - APP Native\\PosWebApp\\obj\\",
+        "outputPath": "C:\\Other\\POSV2\\POS-V2\\POSDALIN - APP Native\\PosWebApp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

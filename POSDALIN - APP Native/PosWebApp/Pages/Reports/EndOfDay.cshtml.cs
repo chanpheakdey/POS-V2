@@ -54,7 +54,7 @@ public class EndOfDayModel : PageModel
     public int TotalSalesCount { get; private set; }
 
     /// <summary>Sum of Total for non-voided sales. Requirement 31.4</summary>
-    public decimal TotalRevenue { get; private set; }
+    public double TotalRevenue { get; private set; }
 
     /// <summary>Formatted total revenue USD. Requirement 31.5</summary>
     public string TotalRevenueUsd { get; private set; } = "$0.00";
@@ -78,7 +78,7 @@ public class EndOfDayModel : PageModel
     /// <summary>
     /// KHR exchange rate exposed to the Razor view for per-row currency formatting.
     /// </summary>
-    public decimal ExchangeRate => _paymentOptions.KhrExchangeRate;
+    public double ExchangeRate => _paymentOptions.KhrExchangeRate;
 
     // ── GET handler ───────────────────────────────────────────────────────────
 
@@ -306,6 +306,6 @@ public class EndOfDayModel : PageModel
 public record StaffBreakdownRow(
     string StaffUserName,
     int    SaleCount,
-    decimal Revenue,
+    double Revenue,
     string RevenueUsd,
     string RevenueKhr);

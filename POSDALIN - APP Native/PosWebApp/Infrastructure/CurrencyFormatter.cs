@@ -17,7 +17,7 @@ public static class CurrencyFormatter
     ///   <item><description><c>khr</c> — integer (rounded) with <c>៛</c> suffix, e.g. <c>51,250៛</c></description></item>
     /// </list>
     /// </returns>
-    public static (string usd, string khr) Format(decimal amount, decimal exchangeRate)
+    public static (string usd, string khr) Format(double amount, double exchangeRate)
     {
         var usd = $"${amount:F2}";
 

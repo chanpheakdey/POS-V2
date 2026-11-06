@@ -314,7 +314,7 @@ public class SqlServiceClient : IServiceClient
                 CreatedDate: reader.GetDateTime("CreatedDate"),
                 StaffUserName: reader.GetStringOrNull("StaffUserName"),
                 CustomerName: reader.GetStringOrNull("CustomerName"),
-                Total: reader.GetDecimal("Total"),
+                Total: reader.GetDouble("Total"),
                 PaymentMethod: reader.GetStringOrNull("PaymentMethod") ?? "Cash",
                 Items: new List<SaleItemDto>(),
                 Voided: reader.GetBoolOrNull("Voided") ?? false,
@@ -525,7 +525,7 @@ public class SqlServiceClient : IServiceClient
         ItemCode: r.GetStringOrNull("ItemCode") ?? "",
         ItemName: r.GetStringOrNull("ItemName") ?? "",
         ImageUrl: r.GetStringOrNull("ImageUrl") ?? "",
-        Price: r.GetDecimalOrNull("Price") ?? 0m,
+        Price: r.GetDoubleOrNull("Price") ?? 0,
         CategoryID: r.GetInt32OrNull("CategoryID") ?? 0,
         GroupID: r.GetInt32OrNull("GroupID") ?? 0);
 
@@ -534,7 +534,7 @@ public class SqlServiceClient : IServiceClient
         ItemID: r.GetInt32("ItemID"),
         FromQty: r.GetInt32OrNull("FromQty") ?? 0,
         ToQty: r.GetInt32OrNull("ToQty") ?? 0,
-        Price: r.GetDecimalOrNull("Price") ?? 0m,
+        Price: r.GetDoubleOrNull("Price") ?? 0,
         Currency: r.GetStringOrNull("Currency") ?? "USD");
 
     private static SaleListItemDto MapSaleListItem(SqlDataReader r) => new(
@@ -543,7 +543,7 @@ public class SqlServiceClient : IServiceClient
         CreatedDate: r.GetDateTime("CreatedDate"),
         StaffUserName: r.GetStringOrNull("StaffUserName") ?? "",
         CustomerName: r.GetStringOrNull("CustomerName"),
-        Total: r.GetDecimalOrNull("Total") ?? 0m,
+        Total: r.GetDoubleOrNull("Total") ?? 0,
         Voided: r.GetBoolOrNull("Voided") ?? false);
 
     private static SaleItemDto MapSaleItem(SqlDataReader r) => new(
@@ -552,16 +552,16 @@ public class SqlServiceClient : IServiceClient
         ItemCode: r.GetStringOrNull("ItemCode") ?? "",
         ItemName: r.GetStringOrNull("ItemName") ?? "",
         Quantity: r.GetInt32("Quantity"),
-        UnitPrice: r.GetDecimalOrNull("UnitPrice") ?? 0m,
-        Discount: r.GetDecimalOrNull("Discount") ?? 0m,
-        LineTotal: r.GetDecimalOrNull("LineTotal") ?? 0m);
+        UnitPrice: r.GetDoubleOrNull("UnitPrice") ?? 0,
+        Discount: r.GetDoubleOrNull("Discount") ?? 0,
+        LineTotal: r.GetDoubleOrNull("LineTotal") ?? 0);
 
     private static ProductCatalogDto MapProductCatalog(SqlDataReader r) => new(
         ItemID: r.GetInt32("ItemID"),
         ItemCode: r.GetStringOrNull("ItemCode") ?? "",
         ItemName: r.GetStringOrNull("ItemName") ?? "",
         ImageUrl: r.GetStringOrNull("ImageUrl") ?? "",
-        Price: r.GetDecimalOrNull("Price") ?? 0m,
+        Price: r.GetDoubleOrNull("Price") ?? 0,
         Currency: r.GetStringOrNull("Currency") ?? "USD",
         GroupID: r.GetInt32OrNull("GroupID") ?? 0,
         GroupName: r.GetStringOrNull("GroupName") ?? "",
@@ -595,7 +595,9 @@ internal static class SqlReaderExtensions
     public static decimal? GetDecimalOrNull(this SqlDataReader r, string name)
         => r.GetOrdinal(name) is int i && i >= 0 && !r.IsDBNull(i) ? r.GetDecimal(i) : null;
 
-    public static DateTime GetDateTime(this SqlDataReader r, string name)
+	public static double? GetDoubleOrNull(this SqlDataReader r, string name)
+	=> r.GetOrdinal(name) is int i && i >= 0 && !r.IsDBNull(i) ? r.GetDouble(i) : null;
+	public static DateTime GetDateTime(this SqlDataReader r, string name)
         => r.GetDateTime(r.GetOrdinal(name));
 
     public static DateTime? GetNullableDateTime(this SqlDataReader r, string name)

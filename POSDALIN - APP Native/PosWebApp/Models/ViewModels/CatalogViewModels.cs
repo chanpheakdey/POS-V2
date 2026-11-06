@@ -100,7 +100,7 @@ public class ItemCardViewModel
     public int? CartQty { get; set; }
 
     /// <summary>Unit price — only relevant for <see cref="ItemCardType.Item"/> cards.</summary>
-    public decimal Price { get; set; }
+    public double Price { get; set; }
 
     /// <summary>What kind of entity this card represents.</summary>
     public ItemCardType CardType { get; set; } = ItemCardType.Item;
@@ -124,7 +124,7 @@ public class PriceTierViewModel
     public int ToQty { get; set; }
 
     /// <summary>Price in USD for this tier.</summary>
-    public decimal Price { get; set; }
+    public double Price { get; set; }
 
     /// <summary>Pre-formatted USD string, e.g. <c>$12.50</c>.</summary>
     public string FormattedUsd { get; set; } = "";

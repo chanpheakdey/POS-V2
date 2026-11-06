@@ -1,3 +1,4 @@
+using DocumentFormat.OpenXml.Wordprocessing;
 using PosWebApp.Models.DTOs;
 using PosWebApp.Models.ViewModels;
 
@@ -42,7 +43,7 @@ public interface ICartService
     Task ClearCartAsync(ISession session, string userId);
 
     /// <summary>Returns the grand total of all line items in the current cart.</summary>
-    decimal CalculateTotal(ISession session);
+    double CalculateTotal(ISession session);
 
     /// <summary>Returns the total number of individual units across all cart entries.</summary>
     int GetItemCount(ISession session);
@@ -57,14 +58,14 @@ public interface ICartService
     /// <param name="discountPercent">Percentage discount 0–100 (requirement 28.3).</param>
     /// <param name="discountType">Either "Percentage" or "Fixed" (requirement 28.4).</param>
     /// <param name="authorizingUserId">UserID of the manager/admin who approved discounts > 20% (requirement 28.4).</param>
-    CartState ApplyDiscount(ISession session, int itemId, decimal discountPercent,
+    CartState ApplyDiscount(ISession session, int itemId, double discountPercent,
         string discountType, int authorizingUserId);
 
     /// <summary>
     /// Pure (no I/O) version of the discount logic intended for unit testing.
     /// Validates the range and returns the updated <see cref="CartState"/>.
     /// </summary>
-    static CartState ApplyDiscountPure(CartState state, int itemId, decimal discountPercent,
+    static CartState ApplyDiscountPure(CartState state, int itemId, double discountPercent,
         string discountType, int authorizingUserId)
         => CartService.ApplyDiscountPureImpl(state, itemId, discountPercent, discountType, authorizingUserId);
 
