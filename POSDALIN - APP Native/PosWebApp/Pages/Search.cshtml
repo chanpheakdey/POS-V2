@@ -148,7 +148,7 @@
             var bsModal = bootstrap.Modal.getOrCreateInstance(modal);
             bsModal.show();
 
-            fetch('/Items/Detail/' + itemId, {
+            fetch('/Search?handler=Detail&itemId=' + itemId, {
                 headers: { 'X-Requested-With': 'XMLHttpRequest' }
             })
             .then(function (resp) {

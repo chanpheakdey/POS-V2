@@ -1,0 +1,318 @@
+@page
+@model CatalogModel
+@using PosWebApp.Models.ViewModels
+@{
+    ViewData["Title"] = "Catalog";
+}
+
+<style>
+    /* Layout container */
+    .catalog-container {
+        display: flex;
+        gap: 1rem;
+        min-height: 60vh;
+    }
+
+    /* Category sidebar (left) */
+    .category-sidebar {
+        width: 300px;
+        flex-shrink: 0;
+        border-right: 1px solid #dee2e6;
+        padding-right: 1rem;
+        max-height: calc(100vh - 50px);
+        overflow-y: auto;
+    }
+
+    .category-item {
+        display: block;
+        padding: 0.75rem 1rem;
+        margin-bottom: 0.5rem;
+        border-radius: 0.375rem;
+        text-decoration: none;
+        color: #495057;
+        background: #f8f9fa;
+        border: 1px solid #dee2e6;
+        transition: all 0.2s;
+        cursor: pointer;
+        font-weight: 500;
+    }
+
+    .category-item:hover {
+        background: #e9ecef;
+        color: #212529;
+        border-color: #adb5bd;
+    }
+
+    .category-item.active {
+        background: #0d6efd;
+        color: #fff;
+        border-color: #0d6efd;
+        font-weight: 600;
+    }
+
+    /* Items area */
+    .items-area {
+        flex: 1;
+        min-width: 0;
+            max-height: calc(100vh - 50px);
+    overflow-y: auto;
+    }
+
+    /* Group section styling */
+    .group-section {
+        margin-bottom: 1.5rem;
+        border: 1px solid #dee2e6;
+        border-radius: 0.375rem;
+        overflow: hidden;
+    }
+
+    .group-header {
+        cursor: pointer;
+        padding: 1rem;
+        background: linear-gradient(to right, #0d6efd, #0a58ca);
+        color: white;
+        border: none;
+        width: 100%;
+        text-align: left;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: background 0.2s;
+    }
+
+    .group-header:hover {
+        background: linear-gradient(to right, #0a58ca, #084298);
+    }
+
+    .group-header.collapsed {
+        background: #f8f9fa;
+        color: #212529;
+        border-bottom: 1px solid #dee2e6;
+    }
+
+    .group-header.collapsed:hover {
+        background: #e9ecef;
+    }
+
+    .group-header-title {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin: 0;
+    }
+
+    .group-collapse-icon {
+        transition: transform 0.3s;
+        font-size: 1.2rem;
+    }
+
+    .group-header.collapsed .group-collapse-icon {
+        transform: rotate(-90deg);
+    }
+
+    .group-body {
+        padding: 1.5rem;
+        background: #fff;
+    }
+
+    .group-item-count {
+        font-size: 0.875rem;
+        opacity: 0.9;
+        font-weight: normal;
+    }
+
+    /* Responsive adjustments */
+    @@media (max-width: 768px) {
+        .catalog-container {
+            flex-direction: column;
+        }
+        
+        .category-sidebar {
+            width: 100%;
+            border-right: none;
+            border-bottom: 1px solid #dee2e6;
+            padding-right: 0;
+            padding-bottom: 1rem;
+            max-height: none;
+            display: flex;
+            overflow-x: auto;
+            gap: 0.5rem;
+        }
+
+        .category-item {
+            margin-bottom: 0;
+            white-space: nowrap;
+        }
+
+        .group-section h2 {
+            font-size: 1.1rem;
+        }
+    }
+</style>
+
+@* ── Main Catalog Layout ────────────────────────────────────────────────── *@
+<div class="catalog-container">
+    @* ── Category Sidebar (Left) ──────────────────────────────────────── *@
+    <aside class="category-sidebar" aria-label="Categories">
+        @foreach (var category in Model.Categories)
+        {
+            <a href="?categoryId=@category.Id"
+               class="category-item @(category.Id == Model.SelectedCategoryId ? "active" : "")"
+               aria-current="@(category.Id == Model.SelectedCategoryId ? "page" : "false")">
+                <i class="bi bi-tag me-2" aria-hidden="true"></i>@category.Name
+            </a>
+        }
+    </aside>
+
+    @* ── Items Area with Group Headers ────────────────────────────────── *@
+    <div class="items-area">
+        @if (Model.SelectedCategoryId == 0)
+        {
+            <div class="text-center py-5 text-muted">
+                <i class="bi bi-grid-3x3-gap fs-1 d-block mb-2" aria-hidden="true"></i>
+                <p class="mb-0">Select a category to browse items.</p>
+            </div>
+        }
+        else if (!Model.ItemGroups.Any())
+        {
+            <div class="text-center py-5 text-muted">
+                <i class="bi bi-inbox fs-1 d-block mb-2" aria-hidden="true"></i>
+                <p class="mb-0">No items available in this category.</p>
+            </div>
+        }
+        else
+        {
+            @* Display items grouped by group name with collapsible sections *@
+            var groupIndex = 0;
+            @foreach (var itemGroup in Model.ItemGroups)
+            {
+                var collapseId = $"groupCollapse{groupIndex}";
+                var itemCount = itemGroup.Items.Count;
+                groupIndex++;
+                
+                @* Group section with collapse *@
+                <div class="group-section">
+                    <button class="group-header"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#@collapseId"
+                            aria-expanded="true"
+                            aria-controls="@collapseId">
+                        <div class="group-header-title">
+                            <i class="bi bi-folder2-open" aria-hidden="true"></i>
+                            <span>@itemGroup.GroupName</span>
+                            <span class="group-item-count">(@itemCount items)</span>
+                        </div>
+                        <i class="bi bi-chevron-down group-collapse-icon" aria-hidden="true"></i>
+                    </button>
+                    
+                    @* Collapsible items grid *@
+                    <div class="collapse show" id="@collapseId">
+                        <div class="group-body">
+                            <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-5 g-3"
+                                 role="list" 
+                                 aria-label="Items in @itemGroup.GroupName">
+                                @foreach (var item in itemGroup.Items)
+                                {
+                                    <div class="col" role="listitem">
+                                        <button type="button"
+                                                class="btn p-0 w-100 border-0 text-start item-card-trigger"
+                                                data-item-id="@item.Id"
+                                                onclick="showItemDetail(@item.Id)"
+                                                aria-label="View details for @item.Name">
+                                            <partial name="_ItemCardPartial" model="item" />
+                                        </button>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        }
+    </div>
+</div>
+
+@* ── Item Detail Modal ──────────────────────────────────────────────────── *@
+<div class="modal fade" id="itemDetailModal" tabindex="-1"
+     aria-labelledby="itemDetailModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="itemDetailModalLabel">Item Details</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" id="itemDetailModalBody">
+                <div class="text-center py-4">
+                    <div class="spinner-border text-primary" role="status">
+                        <span class="visually-hidden">Loading…</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@* Bootstrap toast container *@
+<div class="toast-container position-fixed bottom-0 end-0 p-3"
+     id="toast-container"
+     aria-live="polite"
+     aria-atomic="true"></div>
+
+@section Scripts {
+    <script>
+        /**
+         * Opens the item detail modal and fetches content from
+         * /Catalog?handler=Detail&itemId={itemId}
+         */
+        function showItemDetail(itemId) {
+            var modal = document.getElementById('itemDetailModal');
+            if (!modal) {
+                console.warn('itemDetailModal element not found for itemId=' + itemId);
+                return;
+            }
+
+            var body = document.getElementById('itemDetailModalBody');
+            var titleEl = document.getElementById('itemDetailModalLabel');
+            if (body) {
+                body.innerHTML = '<div class="text-center py-4" role="status">' +
+                    '<div class="spinner-border text-primary" aria-hidden="true"></div>' +
+                    '<p class="visually-hidden">Loading item details\u2026</p></div>';
+            }
+            if (titleEl) {
+                titleEl.textContent = 'Loading\u2026';
+            }
+
+            var bsModal = bootstrap.Modal.getOrCreateInstance(modal);
+            bsModal.show();
+
+            fetch('/Catalog?handler=Detail&itemId=' + itemId, {
+                headers: { 'X-Requested-With': 'XMLHttpRequest' }
+            })
+            .then(function (resp) {
+                if (!resp.ok) throw new Error('HTTP ' + resp.status);
+                return resp.text();
+            })
+            .then(function (html) {
+                if (body) {
+                    body.innerHTML = html;
+                    var itemNameEl = body.querySelector('h2.fw-bold, h2.h5');
+                    if (itemNameEl && titleEl) {
+                        titleEl.textContent = itemNameEl.textContent.trim();
+                    }
+                }
+            })
+            .catch(function (err) {
+                console.error('Failed to load item detail', err);
+                if (body) {
+                    body.innerHTML = '<div class="alert alert-danger m-3" role="alert">Unable to load item details. Please try again.</div>';
+                }
+                if (titleEl) {
+                    titleEl.textContent = 'Item Details';
+                }
+            });
+        }
+    </script>
+}

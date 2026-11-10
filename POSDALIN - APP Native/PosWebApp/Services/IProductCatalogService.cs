@@ -53,6 +53,12 @@ public interface IProductCatalogService
     Task<IReadOnlyList<ItemDto>> SearchItemsAsync(string query, int page, int pageSize);
 
     /// <summary>
+    /// Returns the complete product catalog with category, group, and item
+    /// information. This is the single source of cached product data.
+    /// </summary>
+    Task<IReadOnlyList<ProductCatalogDto>> GetAllProductsAsync();
+
+    /// <summary>
     /// Evicts all cached catalog entries (categories, groups, items, item
     /// details, and price tiers).
     /// </summary>

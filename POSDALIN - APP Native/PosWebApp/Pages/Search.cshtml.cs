@@ -20,6 +20,8 @@ public class SearchModel : PageModel
 {
     private readonly IProductCatalogService _catalog;
     private readonly ICartService _cart;
+    private readonly IImageOptimizerService _imageOptimizer;
+    private readonly PaymentOptions _paymentOptions;
     private readonly ILogger<SearchModel> _logger;
     private readonly CatalogOptions _catalogOptions;
     private readonly IStringLocalizer<SharedResource> _localizer;
@@ -33,12 +35,16 @@ public class SearchModel : PageModel
     public SearchModel(
         IProductCatalogService catalog,
         ICartService cart,
+        IImageOptimizerService imageOptimizer,
+        IOptions<PaymentOptions> paymentOptions,
         IOptions<CatalogOptions> catalogOptions,
         ILogger<SearchModel> logger,
         IStringLocalizer<SharedResource> localizer)
     {
         _catalog        = catalog;
         _cart           = cart;
+        _imageOptimizer = imageOptimizer;
+        _paymentOptions = paymentOptions.Value;
         _catalogOptions = catalogOptions.Value;
         _logger         = logger;
         _localizer      = localizer;
@@ -166,6 +172,80 @@ public class SearchModel : PageModel
         {
             _logger.LogError(ex, "Autocomplete failed for query={Query}", q);
             return new JsonResult(Array.Empty<object>());
+        }
+    }
+
+    // ── AJAX Handler for Item Detail ─────────────────────────────────────────
+
+    /// <summary>
+    /// Returns the item detail modal partial as HTML fragment.
+    /// Route: GET /Search?handler=Detail&itemId={itemId}
+    /// </summary>
+    public async Task<IActionResult> OnGetDetailAsync(int itemId)
+    {
+        try
+        {
+            var detailTask = _catalog.GetItemDetailAsync(itemId);
+            var tiersTask = _catalog.GetPriceTiersAsync(itemId);
+            await Task.WhenAll(detailTask, tiersTask);
+
+            var detail = await detailTask;
+            var tiers = await tiersTask;
+
+            var exchangeRate = _paymentOptions.KhrExchangeRate;
+
+            var tierViewModels = tiers
+                .OrderBy(t => t.FromQty)
+                .Select(t =>
+                {
+                    var (usd, khr) = CurrencyFormatter.Format(t.Price, exchangeRate);
+                    return new PriceTierViewModel
+                    {
+                        Id = t.ID,
+                        FromQty = t.FromQty,
+                        ToQty = t.ToQty,
+                        Price = t.Price,
+                        FormattedUsd = usd,
+                        FormattedKhr = khr,
+                    };
+                })
+                .ToList();
+
+            // Build image URL from ItemID if empty
+            var imageUrl = string.IsNullOrWhiteSpace(detail.ImageUrl)
+                ? $"/Uploads/Small/{detail.ItemID}.jpg"
+                : detail.ImageUrl;
+
+            var srcSet = _imageOptimizer.BuildSrcSet(imageUrl, new[]
+            {
+                (400, 300),
+                (600, 450),
+                (800, 600),
+            });
+
+            var cartState = _cart.GetCart(HttpContext.Session);
+            var cartQty = cartState.Items
+                .FirstOrDefault(ci => ci.ItemId == itemId)
+                ?.Quantity ?? 0;
+
+            var viewModel = new ItemDetailViewModel
+            {
+                ItemId = detail.ItemID,
+                ItemCode = detail.ItemCode,
+                ItemName = detail.ItemName,
+                ImageUrl = imageUrl,
+                SrcSet = srcSet,
+                PriceTiers = tierViewModels,
+                CurrentCartQuantity = cartQty,
+            };
+
+            return Partial("_ItemDetailModal", viewModel);
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Failed to load item detail for itemId={ItemId}", itemId);
+            return StatusCode(StatusCodes.Status500InternalServerError,
+                "Unable to load item details. Please try again.");
         }
     }
 

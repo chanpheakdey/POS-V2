@@ -51,7 +51,12 @@
 
         @* Product image with lazy loading — Req 20.1 (alt text), 3.9 (lazy) *@
         <div class="item-card__img-wrapper position-relative">
-            <img src="@Model.ImageUrl"
+            @{
+                // Construct image URL from ItemID: Uploads/Small/{ItemID}.jpg
+                var imgSrc = $"/Uploads/Small/{Model.Id}.jpg";
+
+            }
+            <img src="@imgSrc"
                  alt="@altText"
                  loading="lazy"
                  class="card-img-top item-card__img object-fit-cover"

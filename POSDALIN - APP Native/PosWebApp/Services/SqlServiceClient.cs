@@ -144,7 +144,7 @@ public class SqlServiceClient : IServiceClient
             await conn.OpenAsync();
 
             // First result set: item detail
-            using var cmd = CreateCommand(conn, "GetItemDetail", _commandTimeout);
+            using var cmd = CreateCommand(conn, "SP_GetItemDetail", _commandTimeout);
             cmd.Parameters.AddWithValue("@ItemID", itemId);
 
             await using var reader = await cmd.ExecuteReaderAsync();
@@ -197,18 +197,22 @@ public class SqlServiceClient : IServiceClient
 
         try
         {
-            await using var conn = new SqlConnection(_connectionString);
-            await conn.OpenAsync();
-            using var cmd = CreateCommand(conn, "SearchItems", _commandTimeout);
-            cmd.Parameters.AddWithValue("@keyword", keyword);
-            cmd.Parameters.AddWithValue("@page", page);
-            cmd.Parameters.AddWithValue("@pageSize", pageSize);
+            // Filter from cached catalog instead of separate database call
+            var products = await GetAllProductsAsync();
+            
+            var filtered = string.IsNullOrWhiteSpace(keyword)
+                ? products
+                : products.Where(p => 
+                    (p.ItemName?.Contains(keyword, StringComparison.OrdinalIgnoreCase) ?? false) ||
+                    (p.ItemCode?.Contains(keyword, StringComparison.OrdinalIgnoreCase) ?? false));
 
-            await using var reader = await cmd.ExecuteReaderAsync();
-            var list = new List<ItemDto>();
-            while (await reader.ReadAsync())
-                list.Add(MapItem(reader));
-            return list;
+            var paged = filtered
+                .Skip((page - 1) * pageSize)
+                .Take(pageSize)
+                .Select(p => new ItemDto(p.ItemID, p.ItemCode, p.ItemName, p.ImageUrl, p.Price, p.CategoryID, p.GroupID))
+                .ToList();
+
+            return paged;
         }
         catch (SqlException ex) { throw WrapSql(ex, "Failed to search items"); }
         catch (Exception ex) when (ex is not ServiceException) { throw Wrap(ex, "Failed to search items"); }
@@ -463,7 +467,7 @@ public class SqlServiceClient : IServiceClient
 
     private async Task<List<PriceTierDto>> GetItemUnitsInternalAsync(SqlConnection conn, int itemId)
     {
-        using var cmd = CreateCommand(conn, "GetItemUnit", _commandTimeout);
+        using var cmd = CreateCommand(conn, "Sp_getItemUnit", _commandTimeout);
         cmd.Parameters.AddWithValue("@ItemID", itemId);
 
         await using var reader = await cmd.ExecuteReaderAsync();

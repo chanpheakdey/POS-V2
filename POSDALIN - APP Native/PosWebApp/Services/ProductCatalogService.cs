@@ -74,6 +74,14 @@ public class ProductCatalogService : IProductCatalogService
         return products;
     }
 
+    /// <summary>
+    /// Public method to get all products (exposes the cached full product list).
+    /// </summary>
+    public async Task<IReadOnlyList<ProductCatalogDto>> GetAllProductsAsync()
+    {
+        return await GetOrFetchAllProductsAsync();
+    }
+
     // ════════════════════════════════════════════════════════════════════════
     //  Categories (derived from cached full product list)
     // ════════════════════════════════════════════════════════════════════════
@@ -148,7 +156,7 @@ public class ProductCatalogService : IProductCatalogService
     }
 
     // ════════════════════════════════════════════════════════════════════════
-    //  Search (not cached - dynamic and paginated)
+    //  Search (filters from cached product list)
     // ════════════════════════════════════════════════════════════════════════
 
     public async Task<IReadOnlyList<ItemDto>> SearchItemsAsync(string query, int page, int pageSize)
@@ -156,8 +164,30 @@ public class ProductCatalogService : IProductCatalogService
         if (string.IsNullOrWhiteSpace(query) || query.Trim().Length < MinSearchLength)
             return Array.Empty<ItemDto>();
 
+        _logger.LogInformation("SearchItemsAsync - query: {Query}, page: {Page}, pageSize: {PageSize}", 
+            query, page, pageSize);
+
+        // Get all products from cache
+        var products = await GetOrFetchAllProductsAsync();
+        
         var effectivePageSize = pageSize > 0 ? pageSize : _defaultPageSize;
-        return await _serviceClient.SearchItemsAsync(query.Trim(), page, effectivePageSize);
+        var searchTerm = query.Trim();
+
+        // Filter by ItemName or ItemCode (case-insensitive)
+        var filtered = products
+            .Where(p => 
+                (p.ItemName?.Contains(searchTerm, StringComparison.OrdinalIgnoreCase) ?? false) ||
+                (p.ItemCode?.Contains(searchTerm, StringComparison.OrdinalIgnoreCase) ?? false))
+            .Skip((page - 1) * effectivePageSize)
+            .Take(effectivePageSize)
+            .Select(p => new ItemDto(
+                p.ItemID, p.ItemCode, p.ItemName, p.ImageUrl, p.Price, p.CategoryID, p.GroupID))
+            .ToList();
+
+        _logger.LogInformation("SearchItemsAsync - found {Count} results for query: {Query}", 
+            filtered.Count, query);
+
+        return filtered;
     }
 
     public static IReadOnlyList<ItemDto> SearchPure(IReadOnlyList<ItemDto> items, string query)
