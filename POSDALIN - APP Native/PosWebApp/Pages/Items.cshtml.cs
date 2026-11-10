@@ -193,6 +193,12 @@ public class ItemsModel : PageModel
                 (800, 600),
             });
 
+            // Proxy the primary image src through the /Images route so the browser
+            // never tries to reach the internal backend URL directly.
+            var proxiedImageUrl = string.IsNullOrWhiteSpace(detail.ImageUrl)
+                ? string.Empty
+                : $"/Images/{Uri.EscapeDataString(detail.ImageUrl)}?w=400&h=300";
+
             // Requirement 5.10 — read current cart quantity from session.
             var cartState    = _cart.GetCart(HttpContext.Session);
             var cartQty      = cartState.Items
@@ -205,7 +211,7 @@ public class ItemsModel : PageModel
                 ItemId               = detail.ItemID,
                 ItemCode             = detail.ItemCode,
                 ItemName             = detail.ItemName,
-                ImageUrl             = detail.ImageUrl,
+                ImageUrl             = proxiedImageUrl,
                 SrcSet               = srcSet,
                 PriceTiers           = tierViewModels,
                 CurrentCartQuantity  = cartQty,

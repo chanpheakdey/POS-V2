@@ -294,7 +294,6 @@ C:\Other\POSV2\POS-V2\POSDALIN - APP Native\PosWebApp\obj\Debug\net10.0\rjsmcsht
 C:\Other\POSV2\POS-V2\POSDALIN - APP Native\PosWebApp\obj\Debug\net10.0\scopedcss\Pages\Shared\_Layout.cshtml.rz.scp.css
 C:\Other\POSV2\POS-V2\POSDALIN - APP Native\PosWebApp\obj\Debug\net10.0\scopedcss\bundle\PosWebApp.styles.css
 C:\Other\POSV2\POS-V2\POSDALIN - APP Native\PosWebApp\obj\Debug\net10.0\scopedcss\projectbundle\PosWebApp.bundle.scp.css
-C:\Other\POSV2\POS-V2\POSDALIN - APP Native\PosWebApp\obj\Debug\net10.0\compressed\ib0beeb7k9-{0}-kfye0xda1k-kfye0xda1k.gz
 C:\Other\POSV2\POS-V2\POSDALIN - APP Native\PosWebApp\obj\Debug\net10.0\compressed\lbg69rggdu-{0}-61n19gt1b8-61n19gt1b8.gz
 C:\Other\POSV2\POS-V2\POSDALIN - APP Native\PosWebApp\obj\Debug\net10.0\compressed\48xpwlj67y-{0}-4ik7uy8afa-4ik7uy8afa.gz
 C:\Other\POSV2\POS-V2\POSDALIN - APP Native\PosWebApp\obj\Debug\net10.0\compressed\w1kula4tf2-{0}-fem842q6ta-fem842q6ta.gz
@@ -538,3 +537,6 @@ D:\Github\POS-V2\POSDALIN - APP Native\PosWebApp\obj\Debug\net10.0\PosWebApp.pdb
 D:\Github\POS-V2\POSDALIN - APP Native\PosWebApp\obj\Debug\net10.0\PosWebApp.genruntimeconfig.cache
 D:\Github\POS-V2\POSDALIN - APP Native\PosWebApp\obj\Debug\net10.0\ref\PosWebApp.dll
 D:\Github\POS-V2\POSDALIN - APP Native\PosWebApp\obj\Debug\net10.0\compressed\ib0beeb7k9-{0}-wjs2wetexe-wjs2wetexe.gz
+C:\Other\POSV2\POS-V2\POSDALIN - APP Native\PosWebApp\obj\Debug\net10.0\compressed\ib0beeb7k9-{0}-wjs2wetexe-wjs2wetexe.gz
+C:\Other\POSV2\POS-V2\POSDALIN - APP Native\PosWebApp\obj\Debug\net10.0\en-US\PosWebApp.resources.cs
+C:\Other\POSV2\POS-V2\POSDALIN - APP Native\PosWebApp\obj\Debug\net10.0\km-KH\PosWebApp.resources.cs

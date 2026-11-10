@@ -140,7 +140,28 @@ public class ProductCatalogService : IProductCatalogService
         _logger.LogInformation("GetItemDetailAsync - itemId: {ItemId}", itemId);
         return await GetOrSetAsync(
             CacheKeys.ItemDetail(itemId),
-            () => _serviceClient.GetItemDetailAsync(itemId));
+            async () =>
+            {
+                var detail = await _serviceClient.GetItemDetailAsync(itemId);
+
+                // SP_GetItemDetail may not include ImageUrl in its result set.
+                // The catalog cache (Sp_getSaleItem_Client2) is the authoritative
+                // source for ImageUrl, so fill it in from there when missing.
+                if (string.IsNullOrWhiteSpace(detail.ImageUrl))
+                {
+                    var products = await GetOrFetchAllProductsAsync();
+                    var catalogEntry = products.FirstOrDefault(p => p.ItemID == itemId);
+                    if (catalogEntry is not null && !string.IsNullOrWhiteSpace(catalogEntry.ImageUrl))
+                    {
+                        _logger.LogDebug(
+                            "GetItemDetailAsync - patching ImageUrl for itemId {ItemId} from catalog cache",
+                            itemId);
+                        detail = detail with { ImageUrl = catalogEntry.ImageUrl };
+                    }
+                }
+
+                return detail;
+            });
     }
 
     // ════════════════════════════════════════════════════════════════════════

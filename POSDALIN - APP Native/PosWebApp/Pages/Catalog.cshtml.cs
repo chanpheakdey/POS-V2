@@ -193,6 +193,10 @@ public class CatalogModel : PageModel
                 (800, 600),
             });
 
+            // Proxy the primary src through the /Images route so the browser
+            // never tries to reach the internal backend URL directly.
+            var proxiedImageUrl = $"/Images/{Uri.EscapeDataString(imageUrl)}?w=400&h=300";
+
             var cartState = _cart.GetCart(HttpContext.Session);
             var cartQty = cartState.Items
                 .FirstOrDefault(ci => ci.ItemId == itemId)
@@ -203,7 +207,7 @@ public class CatalogModel : PageModel
                 ItemId = detail.ItemID,
                 ItemCode = detail.ItemCode,
                 ItemName = detail.ItemName,
-                ImageUrl = imageUrl,
+                ImageUrl = proxiedImageUrl,
                 SrcSet = srcSet,
                 PriceTiers = tierViewModels,
                 CurrentCartQuantity = cartQty,

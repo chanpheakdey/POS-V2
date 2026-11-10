@@ -160,6 +160,7 @@ public class SqlServiceClient : IServiceClient
 
             // Second result set: price tiers (if NextResult returns true)
             var tiers = new List<PriceTierDto>();
+            var needSeparateCall = false;
             if (await reader.NextResultAsync())
             {
                 while (await reader.ReadAsync())
@@ -167,9 +168,16 @@ public class SqlServiceClient : IServiceClient
             }
             else
             {
-                // Price tiers might be in a separate call
-                tiers.AddRange(await GetItemUnitsInternalAsync(conn, itemId));
+                // Price tiers are not in this result set; must fetch via a separate call.
+                // Close the reader first — a second command cannot execute on the same
+                // connection while a DataReader is still open.
+                needSeparateCall = true;
             }
+
+            await reader.DisposeAsync();
+
+            if (needSeparateCall)
+                tiers.AddRange(await GetItemUnitsInternalAsync(conn, itemId));
 
             return detail with { PriceTiers = tiers };
         }
