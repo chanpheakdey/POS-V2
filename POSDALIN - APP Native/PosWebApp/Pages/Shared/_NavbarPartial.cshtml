@@ -127,6 +127,21 @@
                         </a>
                     </li>
 
+                    @* Cart summary: "{count} items = {total}" updated live by cart.js *@
+                    @{
+                        var cart2 = Context.Session.GetObject<CartState>(SessionKeys.Cart);
+                        var cartTotal = cart2?.Total ?? 0d;
+                        var summaryText = cartItemCount > 0
+                            ? $"{cartItemCount} item{(cartItemCount == 1 ? "" : "s")} = ${cartTotal:F2}"
+                            : "";
+                        var summaryCss = cartItemCount == 0 ? "visually-hidden" : "";
+                    }
+                    <li class="nav-item d-flex align-items-center">
+                        <span id="cart-summary"
+                              class="navbar-text small fw-semibold text-success px-1 @summaryCss"
+                              aria-live="polite">@summaryText</span>
+                    </li>
+
                     @* Language selector — POSTs to /Culture/Set (Req 13.x) *@
                     <li class="nav-item dropdown">
                         <button class="btn btn-outline-secondary btn-sm dropdown-toggle"

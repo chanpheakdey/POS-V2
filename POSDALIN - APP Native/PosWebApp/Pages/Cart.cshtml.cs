@@ -108,12 +108,15 @@ public class CartModel : PageModel
             var item  = await _cart.AddItemAsync(HttpContext.Session, AddInput, tiers, userId);
 
             var cart = _cart.GetCart(HttpContext.Session);
+            var rate = _paymentOptions.KhrExchangeRate;
+            var (totalUsd, _) = CurrencyFormatter.Format(cart.Total, rate);
 
             return new JsonResult(new
             {
                 success    = true,
                 newQty     = item.Quantity,
                 badgeCount = cart.ItemCount,
+                totalUsd,
             });
         }
         catch (Exception ex)

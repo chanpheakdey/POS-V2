@@ -158,6 +158,7 @@
             .then(function (html) {
                 if (body) {
                     body.innerHTML = html;
+                    wireQtyButtons(body);
                     // Update the modal title for screen readers (Req 20.10)
                     var itemNameEl = body.querySelector('h2.fw-bold, h2.h5');
                     if (itemNameEl && titleEl) {
@@ -174,6 +175,178 @@
                     titleEl.textContent = 'Item Details';
                 }
             });
+        }
+        /**
+         * Wires the +1/+5/+10/+50 qty increment buttons inside a container,
+         * keeps the live total display updated, and handles manual tier locking
+         * via clickable rows in the price tier table.
+         * Must be called after AJAX injection because innerHTML does not execute scripts.
+         */
+        function wireQtyButtons(container) {
+            var input = container.querySelector('#itemDetailQty');
+            if (!input) return;
+
+            var section = container.querySelector('#itemDetailQtySection');
+            var tiers = [];
+            try { tiers = JSON.parse((section && section.dataset.tiers) || '[]'); } catch (e) {}
+
+            var lockedPrice = null;
+
+            var tierRows = container.querySelectorAll('.tier-row');
+            tierRows.forEach(function (row) {
+                function selectRow() {
+                    var alreadySelected = row.classList.contains('table-warning');
+                    tierRows.forEach(function (r) {
+                        r.classList.remove('table-warning');
+                        r.querySelector('.tier-check').textContent = '';
+                        r.setAttribute('aria-pressed', 'false');
+                    });
+                    if (alreadySelected) {
+                        lockedPrice = null;
+                        if (section) section.dataset.lockedTierId = '';
+                    } else {
+                        row.classList.add('table-warning');
+                        row.querySelector('.tier-check').textContent = '✓';
+                        row.setAttribute('aria-pressed', 'true');
+                        lockedPrice = parseFloat(row.dataset.tierPrice) || null;
+                        if (section) section.dataset.lockedTierId = row.dataset.tierId || '';
+                    }
+                    updateTotal();
+                }
+                row.addEventListener('click', selectRow);
+                row.addEventListener('keydown', function (e) {
+                    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); selectRow(); }
+                });
+            });
+
+            function unitPriceFor(qty) {
+                if (lockedPrice !== null) return lockedPrice;
+                var price = 0;
+                for (var i = 0; i < tiers.length; i++) {
+                    var t = tiers[i];
+                    if (qty >= t.FromQty && (t.ToQty === 0 || qty <= t.ToQty)) {
+                        price = t.Price;
+                        break;
+                    }
+                }
+                if (price === 0 && tiers.length > 0) price = tiers[tiers.length - 1].Price;
+                return price;
+            }
+
+            function updateTotal() {
+                var qty   = parseInt(input.value, 10) || 1;
+                var price = unitPriceFor(qty);
+                var total = qty * price;
+                var el    = document.getElementById('itemDetailTotalValue');
+                if (el) {
+                    el.textContent = total > 0
+                        ? '$' + total.toFixed(2) + ' (' + qty + ' \u00d7 $' + price.toFixed(2) + (lockedPrice !== null ? ' \uD83D\uDD12' : '') + ')'
+                        : '\u2014';
+                }
+            }
+
+            container.querySelectorAll('.qty-increment').forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                    var current = parseInt(input.value, 10) || 0;
+                    var delta   = parseInt(btn.dataset.increment, 10) || 0;
+                    input.value = Math.max(1, current + delta);
+                    updateTotal();
+                });
+            });
+
+            // ── add-to-cart button ───────────────────────────────────────────
+            var addBtn = container.querySelector('.btn-add-to-cart-modal');
+            if (addBtn) {
+                addBtn.addEventListener('click', function () {
+                    addToCartFromModal();
+                });
+            }
+
+            input.addEventListener('input', updateTotal);
+            updateTotal();
+        }
+
+        function addToCartFromModal() {
+            var btn      = document.getElementById('itemDetailAddBtn');
+            var qtyInput = document.getElementById('itemDetailQty');
+            if (!btn || !qtyInput) return;
+
+            var itemId   = parseInt(btn.dataset.itemId, 10);
+            var itemCode = btn.dataset.itemCode  || '';
+            var itemName = btn.dataset.itemName  || '';
+            var imageUrl = btn.dataset.itemImage || '';
+            var qty      = parseInt(qtyInput.value, 10) || 1;
+
+            function closeModal() {
+                var modalEl = document.getElementById('itemDetailModal');
+                if (modalEl && typeof bootstrap !== 'undefined') {
+                    bootstrap.Modal.getOrCreateInstance(modalEl).hide();
+                }
+            }
+
+            if (typeof window.addToCart === 'function') {
+                window.addToCart(itemId, itemCode, itemName, imageUrl, qty)
+                    .then(function (data) { if (data && data.success) closeModal(); });
+                return;
+            }
+
+            var token = document.querySelector('input[name="__RequestVerificationToken"]');
+            var body = new URLSearchParams({
+                '__RequestVerificationToken': token ? token.value : '',
+                'AddInput.ItemId':   String(itemId),
+                'AddInput.ItemCode': itemCode,
+                'AddInput.ItemName': itemName,
+                'AddInput.ImageUrl': imageUrl,
+                'AddInput.Quantity': String(qty),
+            });
+            fetch('/Cart?handler=Add', {
+                method:  'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body:    body.toString(),
+            })
+            .then(function (resp) {
+                if (!resp.ok) throw new Error('HTTP ' + resp.status);
+                return resp.json();
+            })
+            .then(function (data) {
+                if (data && data.success) {
+                    if (typeof updateCartBadge === 'function') updateCartBadge(data.badgeCount);
+                    if (typeof updateCartSummary === 'function') updateCartSummary(data.badgeCount, data.totalUsd);
+                    closeModal();
+                } else {
+                    showCartToast((data && data.error) || 'Could not add item.', 'danger');
+                }
+            })
+            .catch(function (err) { console.error('addToCartFromModal failed', err); });
+        }
+
+        function showCartToast(itemName, qty) {
+            if (typeof showAddToCartToast === 'function') {
+                showAddToCartToast(itemName, qty);
+                return;
+            }
+            var c = document.getElementById('toast-container');
+            if (!c) {
+                c = document.createElement('div');
+                c.id = 'toast-container';
+                c.className = 'toast-container position-fixed bottom-0 end-0 p-3';
+                c.setAttribute('aria-live', 'polite');
+                c.setAttribute('aria-atomic', 'true');
+                document.body.appendChild(c);
+            }
+            var id = 'toast-' + Date.now();
+            c.insertAdjacentHTML('beforeend',
+                '<div id="' + id + '" class="toast align-items-center text-bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true">' +
+                '<div class="d-flex"><div class="toast-body">' +
+                '<i class="bi bi-cart-check-fill me-1"></i>' +
+                '<strong>' + qty + ' \u00d7 ' + itemName + '</strong> added to cart.' +
+                '</div><button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button></div></div>');
+            var el = document.getElementById(id);
+            if (el && typeof bootstrap !== 'undefined') {
+                var t = new bootstrap.Toast(el, { delay: 3000 });
+                t.show();
+                el.addEventListener('hidden.bs.toast', function () { el.remove(); });
+            }
         }
     </script>
 }

@@ -56,6 +56,29 @@
         }
     }
 
+    /**
+     * Updates the navbar cart summary text: "{count} items = {totalUsd}".
+     * Pass totalUsd as a pre-formatted string (e.g. "$12.50") or null to keep
+     * the existing total value.
+     * @param {number} count
+     * @param {string|null} [totalUsd]
+     */
+    function updateCartSummary(count, totalUsd) {
+        var el = document.getElementById('cart-summary');
+        if (!el) return;
+        if (count > 0) {
+            var total = totalUsd || el.dataset.lastTotal || '';
+            if (totalUsd) el.dataset.lastTotal = totalUsd;
+            el.textContent = count + ' item' + (count === 1 ? '' : 's') + ' = ' + total;
+            el.classList.remove('visually-hidden');
+        } else {
+            el.textContent = '';
+            el.classList.add('visually-hidden');
+        }
+    }
+    // Expose so page-level scripts can call it directly
+    window.updateCartSummary = updateCartSummary;
+
     // ── Toast helper (Requirement 6.11) ───────────────────────────────────────
 
     /**
@@ -97,6 +120,32 @@
     window.addToCart = async function (itemId, itemCode, itemName, imageUrl, qty) {
         qty = qty || 1;
 
+        // ── Optimistic update — reflect the add immediately, before the round-trip ──
+        var badge = document.getElementById('cart-badge');
+        var prevCount = badge ? parseInt(badge.dataset.cartCount || '0', 10) : 0;
+        var optimisticCount = prevCount + qty;
+
+        // Try to read a client-side total estimate from the modal or the last known total.
+        var summaryEl = document.getElementById('cart-summary');
+        var prevTotalUsd = summaryEl ? (summaryEl.dataset.lastTotal || '') : '';
+
+        // Parse the previous raw total value (strip '$' and commas)
+        var prevTotal = parseFloat((prevTotalUsd || '0').replace(/[^0-9.]/g, '')) || 0;
+
+        // Read the unit price from the modal total display if available:
+        // #itemDetailTotalValue shows "$X.XX (N × $P.PP)" — extract unit price P
+        var optimisticTotal = prevTotal;
+        var totalEl = document.getElementById('itemDetailTotalValue');
+        if (totalEl) {
+            // Format: "$12.50 (2 × $6.25 🔒)" — grab the first dollar amount = line total
+            var match = totalEl.textContent.match(/\$([\d,.]+)/);
+            if (match) optimisticTotal = prevTotal + parseFloat(match[1].replace(',', ''));
+        }
+        var optimisticTotalUsd = optimisticTotal > 0 ? '$' + optimisticTotal.toFixed(2) : prevTotalUsd;
+
+        updateCartBadge(optimisticCount);
+        updateCartSummary(optimisticCount, optimisticTotalUsd || null);
+
         var body = new URLSearchParams({
             '__RequestVerificationToken': getAntiForgeryToken(),
             'AddInput.ItemId':    String(itemId),
@@ -116,14 +165,22 @@
             var data = await resp.json();
 
             if (data.success) {
+                // Correct with authoritative server values
                 updateCartBadge(data.badgeCount);
+                updateCartSummary(data.badgeCount, data.totalUsd);
                 showCartToast('"' + itemName + '" added to cart. Qty: ' + data.newQty);
             } else {
+                // Roll back optimistic update
+                updateCartBadge(prevCount);
+                updateCartSummary(prevCount, prevTotalUsd || null);
                 showCartToast(data.error || 'Could not add item to cart.', 'danger');
             }
 
             return data;
         } catch (err) {
+            // Roll back optimistic update on network error
+            updateCartBadge(prevCount);
+            updateCartSummary(prevCount, prevTotalUsd || null);
             console.error('[cart.js] addToCart error:', err);
             showCartToast('Network error. Please try again.', 'danger');
             return null;
@@ -157,6 +214,7 @@
 
             if (data.success) {
                 updateCartBadge(data.badgeCount);
+                updateCartSummary(data.badgeCount, data.grandTotalUsd);
 
                 if (data.removed) {
                     // Remove the row from the DOM.
@@ -210,6 +268,7 @@
 
             if (data.success) {
                 updateCartBadge(data.badgeCount);
+                updateCartSummary(data.badgeCount, data.grandTotalUsd);
                 var row = document.getElementById('cart-row-' + itemId);
                 if (row) row.remove();
                 refreshGrandTotal();

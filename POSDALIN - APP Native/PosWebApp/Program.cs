@@ -211,9 +211,9 @@ app.UseStaticFiles();
 app.UseRouting();
 app.UseRateLimiter();
 app.UseRequestLocalization();
+app.UseSession();           // must precede auth so session is populated when page handlers run
 app.UseAuthentication();
 app.UseAuthorization();
-app.UseSession();
 app.UseResponseCompression();
 
 app.MapRazorPages();

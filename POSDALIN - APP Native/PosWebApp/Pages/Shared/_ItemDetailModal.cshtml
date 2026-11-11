@@ -60,25 +60,25 @@ else
 
         @* ── Item image — Requirement 5.7, 5.8 ─────────────────────────────── *@
         <div class="text-center mb-3">
-            @if (!string.IsNullOrEmpty(item.ImageUrl))
-            {
-                <img src="@item.ImageUrl"
-                     @(string.IsNullOrEmpty(item.SrcSet) ? "" : $"srcset=\"{item.SrcSet}\"")
-                     sizes="(max-width: 576px) 100vw, (max-width: 992px) 60vw, 400px"
-                     alt="@item.ItemName"
-                     loading="lazy"
-                     class="img-fluid rounded shadow-sm item-detail-img"
-                     style="max-height: 300px; object-fit: contain;"
-                     onerror="this.onerror=null;this.src='/images/placeholder.png'" />
+
+             @{
+                // Construct image URL from ItemID: Uploads/Small/{ItemID}.jpg
+                var imgSrc = $"/Uploads/Small/{item.ItemId}.jpg";
+
             }
-            else
-            {
-                @* Requirement 5.8 — placeholder fallback *@
-                <img src="/images/placeholder.png"
-                     alt="@item.ItemName"
-                     class="img-fluid rounded shadow-sm item-detail-img"
-                     style="max-height: 300px; object-fit: contain;" />
-            }
+
+        
+            <img src="@imgSrc"
+                 sizes="(max-width: 576px) 100vw, (max-width: 992px) 60vw, 400px"
+                 alt="@item.ItemName"
+                 loading="lazy"
+                 style="max-height: 300px; object-fit: contain;"
+                 class="card-img-top item-card__img object-fit-cover"
+                 onerror="this.src='/images/placeholder.png'" />
+
+      
+         
+         
         </div>
 
         @* ── Item identity — Requirement 5.5 ────────────────────────────────── *@
@@ -105,12 +105,15 @@ else
         {
             <h3 class="h6 fw-semibold mb-2">
                 <i class="bi bi-tags me-1" aria-hidden="true"></i>Price Tiers
+                <span class="text-muted fw-normal small ms-1">(click a row to lock that price)</span>
             </h3>
             <div class="table-responsive mb-3">
                 <table class="table table-sm table-bordered table-hover align-middle mb-0"
+                       id="priceTierTable"
                        aria-label="Price tiers for @item.ItemName">
                     <thead class="table-light">
                         <tr>
+                            <th scope="col" class="text-center" style="width:2rem;"></th>
                             <th scope="col" class="text-center">Qty Range</th>
                             <th scope="col" class="text-end">USD</th>
                             <th scope="col" class="text-end">KHR</th>
@@ -123,7 +126,15 @@ else
                             var qtyLabel = tier.ToQty == 0
                                 ? $"{tier.FromQty} and above"
                                 : $"{tier.FromQty} – {tier.ToQty}";
-                            <tr>
+                            <tr class="tier-row"
+                                data-tier-price="@tier.Price.ToString("F4", System.Globalization.CultureInfo.InvariantCulture)"
+                                data-tier-id="@tier.Id"
+                                style="cursor:pointer;"
+                                role="button"
+                                tabindex="0"
+                                aria-pressed="false"
+                                title="Click to lock price at @tier.FormattedUsd">
+                                <td class="text-center tier-check text-success fw-bold" aria-hidden="true"></td>
                                 <td class="text-center">@qtyLabel</td>
                                 <td class="text-end fw-semibold text-success">@tier.FormattedUsd</td>
                                 <td class="text-end text-secondary">@tier.FormattedKhr</td>
@@ -139,7 +150,12 @@ else
         }
 
         @* ── Quantity controls — Requirement 5.9 ────────────────────────────── *@
-        <div class="mb-3">
+        @{
+            // Serialise tier breakpoints as JSON for the client-side total calculator.
+            var tiersJson = System.Text.Json.JsonSerializer.Serialize(
+                item.PriceTiers.Select(t => new { t.FromQty, t.ToQty, t.Price }));
+        }
+        <div class="mb-3" id="itemDetailQtySection" data-tiers="@tiersJson">
             <label for="itemDetailQty" class="form-label fw-semibold">Quantity to Add</label>
             <div class="input-group" role="group" aria-label="Quantity selector">
                 @* Current value input *@
@@ -165,128 +181,31 @@ else
             <div class="form-text">Click a button to increment, or type a quantity directly.</div>
         </div>
 
+        @* ── Live total display ──────────────────────────────────────────────── *@
+        <div id="itemDetailTotal" class="alert alert-primary d-flex justify-content-between align-items-center py-2 mb-3" role="status" aria-live="polite">
+            <span class="fw-semibold">
+                <i class="bi bi-calculator me-1" aria-hidden="true"></i>Total
+            </span>
+            <span id="itemDetailTotalValue" class="fs-5 fw-bold">—</span>
+        </div>
+
         @* ── Add to Cart — Requirement 5.9, 6.12 (AJAX POST) ───────────────── *@
-        @* cart.js handles the actual AJAX POST to /Cart/Add and shows a toast   *@
+        @* addToCartFromModal is defined in the parent page's <script> block and  *@
+        @* wired via wireQtyButtons() after AJAX injection.                       *@
         <button type="button"
-                class="btn btn-primary w-100"
+                class="btn btn-primary w-100 btn-add-to-cart-modal"
                 id="itemDetailAddBtn"
                 data-item-id="@item.ItemId"
                 data-item-code="@item.ItemCode"
                 data-item-name="@item.ItemName"
                 data-item-image="@item.ImageUrl"
-                onclick="addToCartFromModal()"
                 aria-label="Add @item.ItemName to cart">
             <i class="bi bi-cart-plus me-1" aria-hidden="true"></i>Add to Cart
         </button>
 
     </div>
 
-    @* ── Quantity increment script (scoped to modal body fragment) ───────────── *@
-    @* Requirement 5.9 — +1, +5, +10, +50 controls update the qty input.         *@
-    <script>
-    (function () {
-        // Wire up increment buttons inside the freshly-injected modal body.
-        document.querySelectorAll('.qty-increment').forEach(function (btn) {
-            btn.addEventListener('click', function () {
-                var input = document.getElementById('itemDetailQty');
-                if (!input) return;
-                var current = parseInt(input.value, 10) || 0;
-                var delta   = parseInt(btn.dataset.increment, 10) || 0;
-                input.value = Math.max(1, current + delta);
-            });
-        });
-    })();
-
-    /**
-     * Reads the quantity input and the data attributes from #itemDetailAddBtn,
-     * then delegates to addToCart() defined in cart.js (Requirement 6.12).
-     *
-     * If cart.js is not yet loaded (e.g., during development) it falls back to
-     * a direct fetch so the modal always works.
-     */
-    function addToCartFromModal() {
-        var btn = document.getElementById('itemDetailAddBtn');
-        var qtyInput = document.getElementById('itemDetailQty');
-        if (!btn || !qtyInput) return;
-
-        var request = {
-            itemId:    parseInt(btn.dataset.itemId, 10),
-            itemCode:  btn.dataset.itemCode  || '',
-            itemName:  btn.dataset.itemName  || '',
-            imageUrl:  btn.dataset.itemImage || '',
-            quantity:  parseInt(qtyInput.value, 10) || 1,
-        };
-
-        // Delegate to cart.js addToCart function when available.
-        if (typeof addToCart === 'function') {
-            addToCart(request);
-            return;
-        }
-
-        // Fallback: bare fetch POST to /Cart/Add with anti-forgery token.
-        var token = document.querySelector('input[name="__RequestVerificationToken"]');
-        fetch('/Cart/Add', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'X-Requested-With': 'XMLHttpRequest',
-                'RequestVerificationToken': token ? token.value : '',
-            },
-            body: JSON.stringify(request),
-        })
-        .then(function (resp) { return resp.json(); })
-        .then(function (data) {
-            if (data && data.success) {
-                showCartToast(request.itemName, request.quantity);
-            }
-        })
-        .catch(function (err) {
-            console.error('addToCartFromModal failed', err);
-        });
-    }
-
-    /**
-     * Displays a Bootstrap toast confirming the add-to-cart action.
-     * Requirement 6.11 — show Bootstrap toast notification on successful add.
-     *
-     * Falls back to the showAddToCartToast helper in cart.js when present.
-     */
-    function showCartToast(itemName, qty) {
-        if (typeof showAddToCartToast === 'function') {
-            showAddToCartToast(itemName, qty);
-            return;
-        }
-
-        var container = document.getElementById('toast-container');
-        if (!container) {
-            container = document.createElement('div');
-            container.id = 'toast-container';
-            container.className = 'toast-container position-fixed bottom-0 end-0 p-3';
-            container.setAttribute('aria-live', 'polite');
-            container.setAttribute('aria-atomic', 'true');
-            document.body.appendChild(container);
-        }
-
-        var toastId = 'toast-' + Date.now();
-        var toastHtml = '<div id="' + toastId + '" class="toast align-items-center text-bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true">' +
-            '<div class="d-flex">' +
-            '<div class="toast-body">' +
-            '<i class="bi bi-cart-check-fill me-1"></i>' +
-            '<strong>' + qty + ' × ' + itemName + '</strong> added to cart.' +
-            '</div>' +
-            '<button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>' +
-            '</div></div>';
-
-        container.insertAdjacentHTML('beforeend', toastHtml);
-
-        var toastEl = document.getElementById(toastId);
-        if (toastEl && typeof bootstrap !== 'undefined') {
-            var bsToast = new bootstrap.Toast(toastEl, { delay: 3000 });
-            bsToast.show();
-            toastEl.addEventListener('hidden.bs.toast', function () {
-                toastEl.remove();
-            });
-        }
-    }
-    </script>
+    @* All JS (wireQtyButtons, addToCartFromModal, showCartToast) lives in the   *@
+    @* parent page's <script> block so it is executed on page load, not inside   *@
+    @* innerHTML which browsers intentionally do not execute.                    *@
 }

@@ -123,6 +123,8 @@
             crossorigin="anonymous"></script>
 
     <script src="~/js/site.js" asp-append-version="true"></script>
+    @* cart.js loaded globally — provides window.addToCart, badge and summary updates on all pages *@
+    <script src="~/js/cart.js" asp-append-version="true"></script>
     @* Req 10.9 — search autocomplete (loaded on all pages so navbar search works everywhere) *@
     <script src="~/js/search.js" asp-append-version="true"></script>
 

@@ -42,7 +42,7 @@ else
                 @* Requirement 17.11 — render each row via _CartItemPartial *@
                 @foreach (var item in Model.ViewModel.Items)
                 {
-                    await Html.PartialAsync("_CartItemPartial", item);
+                    @await Html.PartialAsync("_CartItemPartial", item)
                 }
             </tbody>
             <tfoot class="table-light fw-bold">
@@ -214,8 +214,7 @@ else
         window.__khrRate = @khrRate.ToString(System.Globalization.CultureInfo.InvariantCulture);
         window.__isManagerOrAdmin = @(isManagerOrAdmin ? "true" : "false");
     </script>
-    @* Requirement 17.12 — AJAX quantity updates via cart.js *@
-    <script src="~/js/cart.js" asp-append-version="true"></script>
+    @* Requirement 17.12 — AJAX quantity updates via cart.js (loaded globally by _Layout) *@
     @* Requirement 28 — Discount logic *@
     @if (isManagerOrAdmin)
     {
