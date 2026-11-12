@@ -211,29 +211,54 @@ public sealed class CartService : ICartService
 
         if (idx >= 0)
         {
-            // Item exists — accumulate quantity and re-resolve price tier.
-            var existing    = items[idx];
-            var newQty      = existing.Quantity + request.Quantity;
-            var tier        = PriceTierResolver.Resolve(newQty, tiers);
-            items[idx]      = existing with
+            // Item exists — accumulate quantity and re-resolve price.
+            var existing = items[idx];
+            var newQty   = existing.Quantity + request.Quantity;
+            double unitPrice;
+            int tierId;
+            if (request.UnitPriceOverride > 0)
+            {
+                // Manual fee override — keep the override price, tier ID unchanged
+                unitPrice = request.UnitPriceOverride;
+                tierId    = existing.PriceTierId;
+            }
+            else
+            {
+                var tier  = PriceTierResolver.Resolve(newQty, tiers);
+                unitPrice = tier.Price;
+                tierId    = tier.ID;
+            }
+            items[idx] = existing with
             {
                 Quantity    = newQty,
-                UnitPrice   = tier.Price,
-                PriceTierId = tier.ID,
+                UnitPrice   = unitPrice,
+                PriceTierId = tierId,
             };
         }
         else
         {
-            // New item — resolve price tier for the requested quantity.
-            var tier = PriceTierResolver.Resolve(request.Quantity, tiers);
+            // New item — resolve price tier or use override.
+            double unitPrice;
+            int tierId;
+            if (request.UnitPriceOverride > 0)
+            {
+                unitPrice = request.UnitPriceOverride;
+                tierId    = 0; // no tier selected
+            }
+            else
+            {
+                var tier  = PriceTierResolver.Resolve(request.Quantity, tiers);
+                unitPrice = tier.Price;
+                tierId    = tier.ID;
+            }
             items.Add(new CartItem(
-                ItemId:     request.ItemId,
-                ItemCode:   request.ItemCode,
-                ItemName:   request.ItemName,
-                ImageUrl:   request.ImageUrl,
-                Quantity:   request.Quantity,
-                UnitPrice:  tier.Price,
-                PriceTierId: tier.ID));
+                ItemId:      request.ItemId,
+                ItemCode:    request.ItemCode,
+                ItemName:    request.ItemName,
+                ImageUrl:    request.ImageUrl,
+                Quantity:    request.Quantity,
+                UnitPrice:   unitPrice,
+                PriceTierId: tierId));
         }
 
         return new CartState(items);

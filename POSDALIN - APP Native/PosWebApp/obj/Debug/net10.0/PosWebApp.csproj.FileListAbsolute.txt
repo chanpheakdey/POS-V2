@@ -536,5 +536,5 @@ D:\Github\POS-V2\POSDALIN - APP Native\PosWebApp\obj\Debug\net10.0\PosWebApp.gen
 D:\Github\POS-V2\POSDALIN - APP Native\PosWebApp\obj\Debug\net10.0\ref\PosWebApp.dll
 D:\Github\POS-V2\POSDALIN - APP Native\PosWebApp\obj\Debug\net10.0\compressed\ib0beeb7k9-{0}-wjs2wetexe-wjs2wetexe.gz
 C:\Other\POSV2\POS-V2\POSDALIN - APP Native\PosWebApp\obj\Debug\net10.0\compressed\ib0beeb7k9-{0}-wjs2wetexe-wjs2wetexe.gz
+C:\Other\POSV2\POS-V2\POSDALIN - APP Native\PosWebApp\obj\Debug\net10.0\compressed\48xpwlj67y-{0}-rf9or2o3ca-rf9or2o3ca.gz
 C:\Other\POSV2\POS-V2\POSDALIN - APP Native\PosWebApp\obj\Debug\net10.0\staticwebassets.upToDateCheck.txt
-C:\Other\POSV2\POS-V2\POSDALIN - APP Native\PosWebApp\obj\Debug\net10.0\compressed\48xpwlj67y-{0}-ee8qhzj9rg-ee8qhzj9rg.gz

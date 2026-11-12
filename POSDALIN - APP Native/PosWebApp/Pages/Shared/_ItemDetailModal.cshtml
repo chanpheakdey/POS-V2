@@ -181,6 +181,30 @@ else
             <div class="form-text">Click a button to increment, or type a quantity directly.</div>
         </div>
 
+        @* ── Fee / unit price override ───────────────────────────────────────── *@
+        <div class="mb-3">
+            <label for="itemDetailFee" class="form-label fw-semibold">
+                <i class="bi bi-pencil-square me-1" aria-hidden="true"></i>Unit Price Override (USD)
+            </label>
+            <div class="input-group">
+                <span class="input-group-text">$</span>
+                <input type="number"
+                       id="itemDetailFee"
+                       class="form-control"
+                       step="0.01"
+                       min="0"
+                       placeholder="Leave blank to use tier price"
+                       aria-label="Unit price override" />
+                <button type="button"
+                        class="btn btn-outline-secondary"
+                        id="itemDetailFeeClear"
+                        title="Clear override — revert to tier price">
+                    <i class="bi bi-x-lg" aria-hidden="true"></i>
+                </button>
+            </div>
+            <div class="form-text">Enter a custom unit price to override the tier. Click × to clear.</div>
+        </div>
+
         @* ── Live total display ──────────────────────────────────────────────── *@
         <div id="itemDetailTotal" class="alert alert-primary d-flex justify-content-between align-items-center py-2 mb-3" role="status" aria-live="polite">
             <span class="fw-semibold">

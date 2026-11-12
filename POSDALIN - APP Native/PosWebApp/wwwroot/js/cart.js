@@ -117,27 +117,24 @@
      * @param {number} qty
      * @returns {Promise<{success:boolean, newQty:number, badgeCount:number}|null>}
      */
-    window.addToCart = async function (itemId, itemCode, itemName, imageUrl, qty) {
+    window.addToCart = async function (itemId, itemCode, itemName, imageUrl, qty, unitPrice) {
         qty = qty || 1;
+        unitPrice = (unitPrice && unitPrice > 0) ? unitPrice : 0;
 
-        // ── Optimistic update — reflect the add immediately, before the round-trip ──
+        // ── Optimistic update ────────────────────────────────────────────────
+        // badge.dataset.cartCount stores total quantity (ItemCount = sum of all units)
         var badge = document.getElementById('cart-badge');
         var prevCount = badge ? parseInt(badge.dataset.cartCount || '0', 10) : 0;
         var optimisticCount = prevCount + qty;
 
-        // Try to read a client-side total estimate from the modal or the last known total.
         var summaryEl = document.getElementById('cart-summary');
         var prevTotalUsd = summaryEl ? (summaryEl.dataset.lastTotal || '') : '';
-
-        // Parse the previous raw total value (strip '$' and commas)
         var prevTotal = parseFloat((prevTotalUsd || '0').replace(/[^0-9.]/g, '')) || 0;
 
-        // Read the unit price from the modal total display if available:
-        // #itemDetailTotalValue shows "$X.XX (N × $P.PP)" — extract unit price P
+        // Read line total from modal display: "$X.XX (N × $P.PP)"
         var optimisticTotal = prevTotal;
         var totalEl = document.getElementById('itemDetailTotalValue');
         if (totalEl) {
-            // Format: "$12.50 (2 × $6.25 🔒)" — grab the first dollar amount = line total
             var match = totalEl.textContent.match(/\$([\d,.]+)/);
             if (match) optimisticTotal = prevTotal + parseFloat(match[1].replace(',', ''));
         }
@@ -154,6 +151,7 @@
             'AddInput.ImageUrl':  imageUrl   || '',
             'AddInput.Quantity':  String(qty),
         });
+        if (unitPrice > 0) body.set('AddInput.UnitPriceOverride', String(unitPrice));
 
         try {
             var resp = await fetch('/Cart?handler=Add', {
@@ -165,12 +163,10 @@
             var data = await resp.json();
 
             if (data.success) {
-                // Correct with authoritative server values
                 updateCartBadge(data.badgeCount);
                 updateCartSummary(data.badgeCount, data.totalUsd);
                 showCartToast('"' + itemName + '" added to cart. Qty: ' + data.newQty);
             } else {
-                // Roll back optimistic update
                 updateCartBadge(prevCount);
                 updateCartSummary(prevCount, prevTotalUsd || null);
                 showCartToast(data.error || 'Could not add item to cart.', 'danger');
@@ -178,7 +174,6 @@
 
             return data;
         } catch (err) {
-            // Roll back optimistic update on network error
             updateCartBadge(prevCount);
             updateCartSummary(prevCount, prevTotalUsd || null);
             console.error('[cart.js] addToCart error:', err);

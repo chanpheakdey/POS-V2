@@ -19,4 +19,10 @@ public class AddToCartRequest
 
     /// <summary>Number of units to add. Must be at least 1.</summary>
     public int Quantity { get; set; } = 1;
+
+    /// <summary>
+    /// Optional unit price override (e.g. entered manually in the item detail modal).
+    /// When greater than zero this price is used instead of the tier-resolved price.
+    /// </summary>
+    public double UnitPriceOverride { get; set; } = 0;
 }

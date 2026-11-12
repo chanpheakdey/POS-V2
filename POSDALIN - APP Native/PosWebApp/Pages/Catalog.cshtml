@@ -322,7 +322,9 @@
          * Must be called after AJAX injection because innerHTML does not execute scripts.
          */
         function wireQtyButtons(container) {
-            var input = container.querySelector('#itemDetailQty');
+            var input    = container.querySelector('#itemDetailQty');
+            var feeInput = container.querySelector('#itemDetailFee');
+            var feeClear = container.querySelector('#itemDetailFeeClear');
             if (!input) return;
 
             var section = container.querySelector('#itemDetailQtySection');
@@ -349,6 +351,7 @@
                         row.setAttribute('aria-pressed', 'true');
                         lockedPrice = parseFloat(row.dataset.tierPrice) || null;
                         if (section) section.dataset.lockedTierId = row.dataset.tierId || '';
+                        if (feeInput) feeInput.value = lockedPrice !== null ? lockedPrice.toFixed(2) : '';
                     }
                     updateTotal();
                 }
@@ -358,15 +361,16 @@
                 });
             });
 
-            function unitPriceFor(qty) {
+            function effectivePrice(qty) {
+                if (feeInput) {
+                    var feeVal = parseFloat(feeInput.value);
+                    if (!isNaN(feeVal) && feeVal > 0) return feeVal;
+                }
                 if (lockedPrice !== null) return lockedPrice;
                 var price = 0;
                 for (var i = 0; i < tiers.length; i++) {
                     var t = tiers[i];
-                    if (qty >= t.FromQty && (t.ToQty === 0 || qty <= t.ToQty)) {
-                        price = t.Price;
-                        break;
-                    }
+                    if (qty >= t.FromQty && (t.ToQty === 0 || qty <= t.ToQty)) { price = t.Price; break; }
                 }
                 if (price === 0 && tiers.length > 0) price = tiers[tiers.length - 1].Price;
                 return price;
@@ -374,12 +378,14 @@
 
             function updateTotal() {
                 var qty   = parseInt(input.value, 10) || 1;
-                var price = unitPriceFor(qty);
+                var price = effectivePrice(qty);
                 var total = qty * price;
-                var el    = document.getElementById('itemDetailTotalValue');
+                var feeOverride = feeInput && parseFloat(feeInput.value) > 0;
+                var locked = feeOverride || lockedPrice !== null;
+                var el = document.getElementById('itemDetailTotalValue');
                 if (el) {
                     el.textContent = total > 0
-                        ? '$' + total.toFixed(2) + ' (' + qty + ' \u00d7 $' + price.toFixed(2) + (lockedPrice !== null ? ' \uD83D\uDD12' : '') + ')'
+                        ? '$' + total.toFixed(2) + ' (' + qty + ' \u00d7 $' + price.toFixed(2) + (locked ? ' \uD83D\uDD12' : '') + ')'
                         : '\u2014';
                 }
             }
@@ -393,12 +399,30 @@
                 });
             });
 
-            // ── add-to-cart button ───────────────────────────────────────────
+            if (feeInput) {
+                feeInput.addEventListener('input', function () {
+                    if (feeInput.value !== '') {
+                        tierRows.forEach(function (r) {
+                            r.classList.remove('table-warning');
+                            r.querySelector('.tier-check').textContent = '';
+                            r.setAttribute('aria-pressed', 'false');
+                        });
+                        lockedPrice = null;
+                        if (section) section.dataset.lockedTierId = '';
+                    }
+                    updateTotal();
+                });
+            }
+            if (feeClear) {
+                feeClear.addEventListener('click', function () {
+                    if (feeInput) feeInput.value = '';
+                    updateTotal();
+                });
+            }
+
             var addBtn = container.querySelector('.btn-add-to-cart-modal');
             if (addBtn) {
-                addBtn.addEventListener('click', function () {
-                    addToCartFromModal();
-                });
+                addBtn.addEventListener('click', function () { addToCartFromModal(); });
             }
 
             input.addEventListener('input', updateTotal);
@@ -408,13 +432,16 @@
         function addToCartFromModal() {
             var btn      = document.getElementById('itemDetailAddBtn');
             var qtyInput = document.getElementById('itemDetailQty');
+            var feeInput = document.getElementById('itemDetailFee');
             if (!btn || !qtyInput) return;
 
-            var itemId   = parseInt(btn.dataset.itemId, 10);
-            var itemCode = btn.dataset.itemCode  || '';
-            var itemName = btn.dataset.itemName  || '';
-            var imageUrl = btn.dataset.itemImage || '';
-            var qty      = parseInt(qtyInput.value, 10) || 1;
+            var itemId      = parseInt(btn.dataset.itemId, 10);
+            var itemCode    = btn.dataset.itemCode  || '';
+            var itemName    = btn.dataset.itemName  || '';
+            var imageUrl    = btn.dataset.itemImage || '';
+            var qty         = parseInt(qtyInput.value, 10) || 1;
+            var feeOverride = feeInput ? parseFloat(feeInput.value) : NaN;
+            var unitPrice   = (!isNaN(feeOverride) && feeOverride > 0) ? feeOverride : 0;
 
             function closeModal() {
                 var modalEl = document.getElementById('itemDetailModal');
@@ -424,19 +451,20 @@
             }
 
             if (typeof window.addToCart === 'function') {
-                window.addToCart(itemId, itemCode, itemName, imageUrl, qty)
+                window.addToCart(itemId, itemCode, itemName, imageUrl, qty, unitPrice)
                     .then(function (data) { if (data && data.success) closeModal(); });
                 return;
             }
 
             var token = document.querySelector('input[name="__RequestVerificationToken"]');
             var body = new URLSearchParams({
-                '__RequestVerificationToken': token ? token.value : '',
-                'AddInput.ItemId':   String(itemId),
-                'AddInput.ItemCode': itemCode,
-                'AddInput.ItemName': itemName,
-                'AddInput.ImageUrl': imageUrl,
-                'AddInput.Quantity': String(qty),
+                '__RequestVerificationToken':  token ? token.value : '',
+                'AddInput.ItemId':             String(itemId),
+                'AddInput.ItemCode':           itemCode,
+                'AddInput.ItemName':           itemName,
+                'AddInput.ImageUrl':           imageUrl,
+                'AddInput.Quantity':           String(qty),
+                'AddInput.UnitPriceOverride':  unitPrice > 0 ? String(unitPrice) : '',
             });
             fetch('/Cart?handler=Add', {
                 method:  'POST',
@@ -449,8 +477,7 @@
             })
             .then(function (data) {
                 if (data && data.success) {
-                    if (typeof updateCartBadge === 'function') updateCartBadge(data.badgeCount);
-                    if (typeof updateCartSummary === 'function') updateCartSummary(data.badgeCount, data.totalUsd);
+                    if (typeof window.updateCartSummary === 'function') window.updateCartSummary(data.badgeCount, data.totalUsd);
                     closeModal();
                 } else {
                     showCartToast((data && data.error) || 'Could not add item.', 'danger');
