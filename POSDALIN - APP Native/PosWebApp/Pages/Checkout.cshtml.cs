@@ -74,7 +74,7 @@ public class CheckoutModel : PageModel
     /// <summary>Exposes the KHR exchange rate to the view for client-side change calculation.</summary>
     public double KhrExchangeRate => _paymentOptions.KhrExchangeRate;
 
-    // â”€â”€ GET â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â” €\ â ” €\ â ” €\ â ” €\ â ” €\ â ” €\ â ” €\ â ” €\ â ” €\ â ” €\ â ” €\ â ” €\ â ” €\ â ” €\ â ” €\ â ” €\ â ” €\ â ” €\ â ” €\ â ” €\ â ” €\ â ” €\ â ” €\ â ” €\ â ” €\ â ” €\ â ” €\ â ” €\ â ” €\ â ” €\ â */
+    // â”€â”€ GET â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ï¿½ ï¿½\ ï¿½ ï¿½ ï¿½\ ï¿½ ï¿½ ï¿½\ ï¿½ ï¿½ ï¿½\ ï¿½ ï¿½ ï¿½\ ï¿½ ï¿½ ï¿½\ ï¿½ ï¿½ ï¿½\ ï¿½ ï¿½ ï¿½\ ï¿½ ï¿½ ï¿½\ ï¿½ ï¿½ ï¿½\ ï¿½ ï¿½ ï¿½\ ï¿½ ï¿½ ï¿½\ ï¿½ ï¿½ ï¿½\ ï¿½ ï¿½ ï¿½\ ï¿½ ï¿½ ï¿½\ ï¿½ ï¿½ ï¿½\ ï¿½ ï¿½ ï¿½\ ï¿½ ï¿½ ï¿½\ ï¿½ ï¿½ ï¿½\ ï¿½ ï¿½ ï¿½\ ï¿½ ï¿½ ï¿½\ ï¿½ ï¿½ ï¿½\ ï¿½ ï¿½ ï¿½\ ï¿½ ï¿½ ï¿½\ ï¿½ ï¿½ ï¿½\ ï¿½ ï¿½ ï¿½\ ï¿½ ï¿½ ï¿½\ ï¿½ ï¿½ ï¿½\ ï¿½ ï¿½ ï¿½\ ï¿½ ï¿½ ï¿½\ ï¿½ */
     /// Redirects to <c>/Cart</c> when the cart is empty.
     ///
     /// Requirements: 8.1, 8.2
@@ -288,17 +288,21 @@ public class CheckoutModel : PageModel
 
         if (Input.PaymentMethod == "Cash")
         {
-            if (Input.AmountTendered is null or <= 0d)
+            var tenderedUsd = (Input.AmountTendered ?? 0d)
+                            + (Input.AmountTenderedKhr ?? 0d) / _paymentOptions.KhrExchangeRate;
+
+            if (tenderedUsd <= 0d)
             {
                 ModelState.AddModelError(
                     nameof(Input.AmountTendered),
-                    "Please enter the amount tendered.");
+                    "Please enter the amount tendered in USD or KHR.");
             }
-            else if (Input.AmountTendered < total)
+            else if (tenderedUsd < total)
             {
+                var shortUsd = total - tenderedUsd;
                 ModelState.AddModelError(
                     nameof(Input.AmountTendered),
-                    $"Amount tendered (${Input.AmountTendered:F2}) must be at least the order total (${total:F2}).");
+                    $"Total tendered (${tenderedUsd:F2}) is ${shortUsd:F2} short of the order total (${total:F2}).");
             }
         }
         else if (Input.PaymentMethod == "Card")
@@ -332,15 +336,16 @@ public class CheckoutModel : PageModel
     private void StoreTempData(SaleResult result, CheckoutViewModel snapshot)
     {
         var data = new CheckoutTempData(
-            SaleID:        result.SaleID,
-            InvoiceNo:     result.InvoiceNo,
-            PaymentMethod: Input.PaymentMethod,
-            TotalAmount:   snapshot.TotalAmount,
-            AmountTendered: Input.PaymentMethod == "Cash" ? Input.AmountTendered : null,
-            CardType:       Input.PaymentMethod == "Card" ? Input.CardType : null,
-            CardLastFour:   Input.PaymentMethod == "Card" ? Input.CardLastFour : null,
-            CustomerName:   null, // resolved by name if needed â€” not available at this point without extra lookup
-            CartItems:      snapshot.CartItems);
+            SaleID:              result.SaleID,
+            InvoiceNo:           result.InvoiceNo,
+            PaymentMethod:       Input.PaymentMethod,
+            TotalAmount:         snapshot.TotalAmount,
+            AmountTendered:      Input.PaymentMethod == "Cash" ? Input.AmountTendered    : null,
+            AmountTenderedKhr:   Input.PaymentMethod == "Cash" ? Input.AmountTenderedKhr : null,
+            CardType:            Input.PaymentMethod == "Card" ? Input.CardType          : null,
+            CardLastFour:        Input.PaymentMethod == "Card" ? Input.CardLastFour      : null,
+            CustomerName:        null,
+            CartItems:           snapshot.CartItems);
 
         TempData[TempDataKey] = JsonSerializer.Serialize(data);
     }
@@ -357,27 +362,43 @@ public class CheckoutModel : PageModel
 
         string? changeUsd = null;
         string? changeKhr = null;
-        if (data.PaymentMethod == "Cash" && data.AmountTendered.HasValue)
+        if (data.PaymentMethod == "Cash")
         {
-            var change = data.AmountTendered.Value - data.TotalAmount;
-            (changeUsd, changeKhr) = CurrencyFormatter.Format(change, rate);
+            // Total tendered normalised to USD
+            var tenderedUsd = (data.AmountTendered ?? 0d)
+                            + (data.AmountTenderedKhr ?? 0d) / rate;
+
+            if (tenderedUsd > 0)
+            {
+                var totalChange = tenderedUsd - data.TotalAmount;
+
+                // Rule: return whole USD dollars first, then the remainder as KHR.
+                // e.g. change = $4.50 â†’ give $4 USD + 0.50Ã—rate KHR
+                var changeUsdWhole  = Math.Floor(totalChange);          // whole USD dollars
+                var changeKhrAmount = Math.Round((totalChange - changeUsdWhole) * rate,
+                                                 MidpointRounding.AwayFromZero);
+
+                changeUsd = $"${changeUsdWhole:F0}";
+                changeKhr = $"{changeKhrAmount:#,0}áŸ›";
+            }
         }
 
         return new CheckoutConfirmationViewModel
         {
-            SaleID         = data.SaleID,
-            InvoiceNo      = data.InvoiceNo,
-            PaymentMethod  = data.PaymentMethod,
-            TotalUsdText   = totalUsd,
-            TotalKhrText   = totalKhr,
-            TotalAmount    = data.TotalAmount,
-            AmountTendered = data.AmountTendered,
-            ChangeUsdText  = changeUsd,
-            ChangeKhrText  = changeKhr,
-            CardType       = data.CardType,
-            CardLastFour   = data.CardLastFour,
-            CustomerName   = data.CustomerName,
-            CartItems      = data.CartItems,
+            SaleID            = data.SaleID,
+            InvoiceNo         = data.InvoiceNo,
+            PaymentMethod     = data.PaymentMethod,
+            TotalUsdText      = totalUsd,
+            TotalKhrText      = totalKhr,
+            TotalAmount       = data.TotalAmount,
+            AmountTendered    = data.AmountTendered,
+            AmountTenderedKhr = data.AmountTenderedKhr,
+            ChangeUsdText     = changeUsd,
+            ChangeKhrText     = changeKhr,
+            CardType          = data.CardType,
+            CardLastFour      = data.CardLastFour,
+            CustomerName      = data.CustomerName,
+            CartItems         = data.CartItems,
         };
     }
 }

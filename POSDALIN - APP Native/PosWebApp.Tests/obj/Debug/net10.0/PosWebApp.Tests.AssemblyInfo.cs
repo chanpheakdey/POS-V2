@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PosWebApp.Tests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c58ab84c677d8ade82afd578ea9354f1226f934c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+16df04da03ff5feba618cbee6aeb2b399b49fc30")]
 [assembly: System.Reflection.AssemblyProductAttribute("PosWebApp.Tests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PosWebApp.Tests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -22,7 +22,6 @@
     const fieldsCash      = document.getElementById('pm-fields-cash');
     const fieldsCard      = document.getElementById('pm-fields-card');
     const fieldsOther     = document.getElementById('pm-fields-other');
-    const amountInput     = document.getElementById('amount-tendered-input');
 
     function showPaymentFields(method) {
         const map = {
@@ -56,10 +55,15 @@
 
     // ── Live change calculation ────────────────────────────────────────────────
 
-    const changeDisplay  = document.getElementById('change-display');
-    const changeWarning  = document.getElementById('change-warning');
-    const changeUsdSpan  = document.getElementById('change-usd');
-    const changeKhrSpan  = document.getElementById('change-khr');
+    const changeDisplay    = document.getElementById('change-display');
+    const changeWarning    = document.getElementById('change-warning');
+    const changeShortfall  = document.getElementById('change-shortfall');
+    const changeUsdSpan    = document.getElementById('change-usd');
+    const changeKhrSpan    = document.getElementById('change-khr');
+    const amountUsdInput   = document.getElementById('amount-tendered-usd');
+    const amountKhrInput   = document.getElementById('amount-tendered-khr');
+    // Backward-compat alias used by showPaymentFields
+    const amountInput      = amountUsdInput;
 
     function hideChangeDisplay() {
         if (changeDisplay) changeDisplay.classList.add('d-none');
@@ -76,31 +80,52 @@
     }
 
     function updateChangeDisplay() {
-        if (!amountInput || !changeDisplay || !changeWarning) return;
+        if (!changeDisplay || !changeWarning) return;
 
-        const tendered = parseFloat(amountInput.value);
-        if (isNaN(tendered) || tendered <= 0) {
+        const usd = parseFloat((amountUsdInput && amountUsdInput.value) || '0') || 0;
+        const khr = parseFloat((amountKhrInput && amountKhrInput.value) || '0') || 0;
+
+        // Nothing entered yet — hide everything
+        if (usd <= 0 && khr <= 0) {
             hideChangeDisplay();
             return;
         }
 
-        const change = tendered - TOTAL;
-        if (change < 0) {
-            changeDisplay.classList.add('d-none');
+        const tenderedUsd = usd + (khr / KHR_RATE);
+        const totalChange = tenderedUsd - TOTAL;
+
+        // Always show the change table once any amount is entered
+        changeDisplay.classList.remove('d-none');
+
+        if (totalChange < 0) {
+            // Not enough — show how much is still needed
             changeWarning.classList.remove('d-none');
+            const shortfall    = -totalChange;                           // positive amount short
+            const shortUsdWhole = Math.floor(shortfall);
+            const shortKhr      = Math.round((shortfall - shortUsdWhole) * KHR_RATE);
+            if (changeShortfall) {
+                changeShortfall.textContent = '$' + shortfall.toFixed(2)
+                    + ' ($' + shortUsdWhole + ' + ' + shortKhr.toLocaleString() + '៛)';
+            }
+            if (changeUsdSpan) changeUsdSpan.textContent = '$0';
+            if (changeKhrSpan) changeKhrSpan.textContent = '0៛';
         } else {
+            // Sufficient — calculate split change
             changeWarning.classList.add('d-none');
-            changeDisplay.classList.remove('d-none');
-            if (changeUsdSpan) changeUsdSpan.textContent = formatUsd(change);
-            if (changeKhrSpan) changeKhrSpan.textContent = formatKhr(change);
+
+            // Rule: return whole USD dollars first, then remainder as KHR
+            const changeUsdWhole     = Math.floor(totalChange);
+            const changeKhrRemainder = Math.round((totalChange - changeUsdWhole) * KHR_RATE);
+
+            if (changeUsdSpan) changeUsdSpan.textContent = '$' + changeUsdWhole.toFixed(0);
+            if (changeKhrSpan) changeKhrSpan.textContent = changeKhrRemainder.toLocaleString() + '៛';
         }
     }
 
-    if (amountInput) {
-        amountInput.addEventListener('input', updateChangeDisplay);
-        // Run once on load in case the field has a model-bound value after a re-render.
-        updateChangeDisplay();
-    }
+    if (amountUsdInput) amountUsdInput.addEventListener('input', updateChangeDisplay);
+    if (amountKhrInput) amountKhrInput.addEventListener('input', updateChangeDisplay);
+    // Run once on load in case fields have model-bound values after a re-render.
+    updateChangeDisplay();
 
     // ── Customer autocomplete (AJAX) — Requirement 8.4 ────────────────────────
 

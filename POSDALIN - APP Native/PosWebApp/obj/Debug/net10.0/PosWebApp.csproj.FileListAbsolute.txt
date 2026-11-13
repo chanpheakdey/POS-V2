@@ -295,7 +295,6 @@ C:\Other\POSV2\POS-V2\POSDALIN - APP Native\PosWebApp\obj\Debug\net10.0\scopedcs
 C:\Other\POSV2\POS-V2\POSDALIN - APP Native\PosWebApp\obj\Debug\net10.0\scopedcss\bundle\PosWebApp.styles.css
 C:\Other\POSV2\POS-V2\POSDALIN - APP Native\PosWebApp\obj\Debug\net10.0\scopedcss\projectbundle\PosWebApp.bundle.scp.css
 C:\Other\POSV2\POS-V2\POSDALIN - APP Native\PosWebApp\obj\Debug\net10.0\compressed\lbg69rggdu-{0}-61n19gt1b8-61n19gt1b8.gz
-C:\Other\POSV2\POS-V2\POSDALIN - APP Native\PosWebApp\obj\Debug\net10.0\compressed\w1kula4tf2-{0}-fem842q6ta-fem842q6ta.gz
 C:\Other\POSV2\POS-V2\POSDALIN - APP Native\PosWebApp\obj\Debug\net10.0\compressed\mdlnuhf95s-{0}-bjetb7qn89-bjetb7qn89.gz
 C:\Other\POSV2\POS-V2\POSDALIN - APP Native\PosWebApp\obj\Debug\net10.0\compressed\otuozy9guc-{0}-xikqnzati6-xikqnzati6.gz
 C:\Other\POSV2\POS-V2\POSDALIN - APP Native\PosWebApp\obj\Debug\net10.0\compressed\v4k3ihunhn-{0}-23agtd5ddn-23agtd5ddn.gz
@@ -538,3 +537,6 @@ D:\Github\POS-V2\POSDALIN - APP Native\PosWebApp\obj\Debug\net10.0\compressed\ib
 C:\Other\POSV2\POS-V2\POSDALIN - APP Native\PosWebApp\obj\Debug\net10.0\compressed\ib0beeb7k9-{0}-wjs2wetexe-wjs2wetexe.gz
 C:\Other\POSV2\POS-V2\POSDALIN - APP Native\PosWebApp\obj\Debug\net10.0\compressed\48xpwlj67y-{0}-rf9or2o3ca-rf9or2o3ca.gz
 C:\Other\POSV2\POS-V2\POSDALIN - APP Native\PosWebApp\obj\Debug\net10.0\staticwebassets.upToDateCheck.txt
+C:\Other\POSV2\POS-V2\POSDALIN - APP Native\PosWebApp\obj\Debug\net10.0\compressed\w1kula4tf2-{0}-tark0zs0px-tark0zs0px.gz
+C:\Other\POSV2\POS-V2\POSDALIN - APP Native\PosWebApp\obj\Debug\net10.0\en-US\PosWebApp.resources.cs
+C:\Other\POSV2\POS-V2\POSDALIN - APP Native\PosWebApp\obj\Debug\net10.0\km-KH\PosWebApp.resources.cs

@@ -29,11 +29,17 @@ public class CheckoutInputModel
     // ── Cash fields ──────────────────────────────────────────────────────────
 
     /// <summary>
-    /// Amount tendered by the customer. Required when PaymentMethod is "Cash".
+    /// Amount tendered by the customer in USD. Optional when KHR covers the total.
     /// Requirement 27.4
     /// </summary>
-    [Range(0.01, double.MaxValue, ErrorMessage = "Amount tendered must be greater than zero.")]
+    [Range(0, double.MaxValue, ErrorMessage = "USD amount must be zero or greater.")]
     public double? AmountTendered { get; set; }
+
+    /// <summary>
+    /// Amount tendered by the customer in KHR. Optional when USD covers the total.
+    /// </summary>
+    [Range(0, double.MaxValue, ErrorMessage = "KHR amount must be zero or greater.")]
+    public double? AmountTenderedKhr { get; set; }
 
     // ── Card fields ──────────────────────────────────────────────────────────
 
@@ -109,13 +115,16 @@ public class CheckoutConfirmationViewModel
 
     // ── Cash-specific ───────────────────────────────────────� �\ � � �\ � � �\ � � �\ � � �\ � � �\ � � �\ � � �\ � � �\ � � �\ � � �\ � � �\ � � �\ � � �\ � � �\ � � �\ � � �\ � � �\ � � �\ � � �\ � � �\ � � �\ � � �\ � � �\ � � �\ � � �\ � � �\ � � �\ � � �\ � � �\ � */
 
-    /// <summary>Raw amount tendered by the customer (Cash only).</summary>
+    /// <summary>Raw amount tendered by the customer in USD (Cash only).</summary>
     public double? AmountTendered { get; set; }
 
-    /// <summary>Pre-formatted change due string (Cash only).</summary>
+    /// <summary>Raw amount tendered by the customer in KHR (Cash only).</summary>
+    public double? AmountTenderedKhr { get; set; }
+
+    /// <summary>Pre-formatted change due in whole USD (Cash only). e.g. "$4.00"</summary>
     public string? ChangeUsdText { get; set; }
 
-    /// <summary>Pre-formatted change due in KHR (Cash only).</summary>
+    /// <summary>Change due remainder in KHR (Cash only). e.g. "2,050៛"</summary>
     public string? ChangeKhrText { get; set; }
 
     // ── Card-specific ────────────────────────────────────────────────────────
@@ -152,6 +161,7 @@ public record CheckoutTempData(
     string PaymentMethod,
     double TotalAmount,
     double? AmountTendered,
+    double? AmountTenderedKhr,
     string? CardType,
     string? CardLastFour,
     string? CustomerName,

@@ -77,16 +77,25 @@
                         </dd>
 
                         @* ── Cash-specific: amount tendered + change — Requirement 27.7 *@
-                        @if (conf.PaymentMethod == "Cash" && conf.AmountTendered.HasValue)
+                        @if (conf.PaymentMethod == "Cash")
                         {
-                            <dt class="col-5">Tendered</dt>
-                            <dd class="col-7">$@conf.AmountTendered.Value.ToString("F2")</dd>
-
-                            <dt class="col-5 fw-bold text-success">Change Due</dt>
-                            <dd class="col-7 fw-bold text-success">
-                                @conf.ChangeUsdText<br />
-                                <small class="fw-normal text-muted">@conf.ChangeKhrText</small>
-                            </dd>
+                            @if (conf.AmountTendered is > 0)
+                            {
+                                <dt class="col-5">Tendered (USD)</dt>
+                                <dd class="col-7">$@conf.AmountTendered.Value.ToString("F2")</dd>
+                            }
+                            @if (conf.AmountTenderedKhr is > 0)
+                            {
+                                <dt class="col-5">Tendered (KHR)</dt>
+                                <dd class="col-7">@conf.AmountTenderedKhr.Value.ToString("N0")៛</dd>
+                            }
+                            @if (conf.ChangeUsdText is not null)
+                            {
+                                <dt class="col-5 fw-bold text-success">Change (USD)</dt>
+                                <dd class="col-7 fw-bold text-success">@conf.ChangeUsdText</dd>
+                                <dt class="col-5 fw-bold text-success">Change (KHR)</dt>
+                                <dd class="col-7 fw-bold text-success">@conf.ChangeKhrText</dd>
+                            }
                         }
 
                         @* ── Card-specific: type + last 4 — Requirement 27.8 *@
@@ -306,39 +315,76 @@ else
 
                         @* ── Cash fields — Requirements 27.4, 27.5 *@
                         <div id="pm-fields-cash" class="pm-fields">
+
+                            @* USD tendered *@
                             <div class="mb-2">
-                                <label asp-for="Input.AmountTendered" class="form-label">
-                                    Amount Tendered (USD)
+                                <label asp-for="Input.AmountTendered" class="form-label fw-semibold">
+                                    <i class="bi bi-currency-dollar me-1" aria-hidden="true"></i>Amount Tendered (USD)
                                 </label>
                                 <div class="input-group">
                                     <span class="input-group-text">$</span>
-                                    <input asp-for="Input.AmountTendered"
+                                    <input name="Input.AmountTendered"
                                            type="number"
                                            step="0.01"
                                            min="0"
                                            class="form-control"
-                                           id="amount-tendered-input"
+                                           id="amount-tendered-usd"
+                                           value="@Model.Input.AmountTendered"
                                            placeholder="0.00"
-                                           aria-label="Amount tendered in USD"
-                                           aria-describedby="change-display" />
+                                           aria-label="Amount tendered in USD" />
                                 </div>
                                 <span asp-validation-for="Input.AmountTendered" class="text-danger small"></span>
                             </div>
 
+                            @* KHR tendered *@
+                            <div class="mb-3">
+                                <label asp-for="Input.AmountTenderedKhr" class="form-label fw-semibold">
+                                    <i class="bi bi-cash me-1" aria-hidden="true"></i>Amount Tendered (KHR)
+                                </label>
+                                <div class="input-group">
+                                    <span class="input-group-text">៛</span>
+                                    <input name="Input.AmountTenderedKhr"
+                                           type="number"
+                                           step="100"
+                                           min="0"
+                                           class="form-control"
+                                           id="amount-tendered-khr"
+                                           value="@Model.Input.AmountTenderedKhr"
+                                           placeholder="0"
+                                           aria-label="Amount tendered in KHR" />
+                                </div>
+                                <span asp-validation-for="Input.AmountTenderedKhr" class="text-danger small"></span>
+                            </div>
+
                             @* Live change calculation — Requirement 27.5 *@
                             <div id="change-display"
-                                 class="alert alert-info py-2 mb-0 d-none"
+                                 class="d-none mb-2"
                                  role="status"
                                  aria-live="polite">
-                                <strong>Change due:</strong>
-                                <span id="change-usd" class="ms-1">$0.00</span>
-                                <span class="text-muted small ms-2" id="change-khr">0&#x17DB;</span>
+                                <table class="table table-sm table-bordered mb-0">
+                                    <thead class="table-light">
+                                        <tr>
+                                            <th></th>
+                                            <th class="text-end">USD</th>
+                                            <th class="text-end">KHR</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="table-success">
+                                            <td class="fw-semibold">
+                                                <i class="bi bi-arrow-return-left me-1" aria-hidden="true"></i>Change Due
+                                            </td>
+                                            <td class="text-end fw-bold" id="change-usd">$0</td>
+                                            <td class="text-end fw-bold" id="change-khr">0៛</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
                             <div id="change-warning"
                                  class="alert alert-warning py-2 mb-0 d-none"
                                  role="alert">
                                 <i class="bi bi-exclamation-triangle me-1" aria-hidden="true"></i>
-                                Amount tendered is less than the order total.
+                                Short by: <span id="change-shortfall"></span>
                             </div>
                         </div>
 

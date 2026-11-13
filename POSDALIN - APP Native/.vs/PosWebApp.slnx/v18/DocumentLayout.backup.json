@@ -3,6 +3,18 @@
   "WorkspaceRootPath": "C:\\Other\\POSV2\\POS-V2\\POSDALIN - APP Native\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{BE09B754-3288-ACFA-07DE-52360D27B246}|PosWebApp\\PosWebApp.csproj|c:\\other\\posv2\\pos-v2\\posdalin - app native\\poswebapp\\pages\\checkout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BE09B754-3288-ACFA-07DE-52360D27B246}|PosWebApp\\PosWebApp.csproj|solutionrelative:poswebapp\\pages\\checkout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BE09B754-3288-ACFA-07DE-52360D27B246}|PosWebApp\\PosWebApp.csproj|c:\\other\\posv2\\pos-v2\\posdalin - app native\\poswebapp\\wwwroot\\js\\checkout.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{BE09B754-3288-ACFA-07DE-52360D27B246}|PosWebApp\\PosWebApp.csproj|solutionrelative:poswebapp\\wwwroot\\js\\checkout.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BE09B754-3288-ACFA-07DE-52360D27B246}|PosWebApp\\PosWebApp.csproj|c:\\other\\posv2\\pos-v2\\posdalin - app native\\poswebapp\\pages\\checkout.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BE09B754-3288-ACFA-07DE-52360D27B246}|PosWebApp\\PosWebApp.csproj|solutionrelative:poswebapp\\pages\\checkout.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{BE09B754-3288-ACFA-07DE-52360D27B246}|PosWebApp\\PosWebApp.csproj|c:\\other\\posv2\\pos-v2\\posdalin - app native\\poswebapp\\services\\sqlserviceclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BE09B754-3288-ACFA-07DE-52360D27B246}|PosWebApp\\PosWebApp.csproj|solutionrelative:poswebapp\\services\\sqlserviceclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -33,10 +45,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{BE09B754-3288-ACFA-07DE-52360D27B246}|PosWebApp\\PosWebApp.csproj|c:\\other\\posv2\\pos-v2\\posdalin - app native\\poswebapp\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
       "RelativeMoniker": "D:0:0:{BE09B754-3288-ACFA-07DE-52360D27B246}|PosWebApp\\PosWebApp.csproj|solutionrelative:poswebapp\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BE09B754-3288-ACFA-07DE-52360D27B246}|PosWebApp\\PosWebApp.csproj|c:\\other\\posv2\\pos-v2\\posdalin - app native\\poswebapp\\pages\\checkout.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BE09B754-3288-ACFA-07DE-52360D27B246}|PosWebApp\\PosWebApp.csproj|solutionrelative:poswebapp\\pages\\checkout.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BE09B754-3288-ACFA-07DE-52360D27B246}|PosWebApp\\PosWebApp.csproj|c:\\other\\posv2\\pos-v2\\posdalin - app native\\poswebapp\\pages\\cart.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -78,7 +86,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 11,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -95,6 +103,32 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "checkout.js",
+              "DocumentMoniker": "C:\\Other\\POSV2\\POS-V2\\POSDALIN - APP Native\\PosWebApp\\wwwroot\\js\\checkout.js",
+              "RelativeDocumentMoniker": "PosWebApp\\wwwroot\\js\\checkout.js",
+              "ToolTip": "C:\\Other\\POSV2\\POS-V2\\POSDALIN - APP Native\\PosWebApp\\wwwroot\\js\\checkout.js",
+              "RelativeToolTip": "PosWebApp\\wwwroot\\js\\checkout.js",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAAADwAAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2026-11-13T04:23:21.488Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Checkout.cshtml",
+              "DocumentMoniker": "C:\\Other\\POSV2\\POS-V2\\POSDALIN - APP Native\\PosWebApp\\Pages\\Checkout.cshtml",
+              "RelativeDocumentMoniker": "PosWebApp\\Pages\\Checkout.cshtml",
+              "ToolTip": "C:\\Other\\POSV2\\POS-V2\\POSDALIN - APP Native\\PosWebApp\\Pages\\Checkout.cshtml",
+              "RelativeToolTip": "PosWebApp\\Pages\\Checkout.cshtml",
+              "ViewState": "AgIAAGYBAAAAAAAAAAAcwHYBAABXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-11-13T04:22:25.759Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "_ItemDetailModal.cshtml",
               "DocumentMoniker": "C:\\Other\\POSV2\\POS-V2\\POSDALIN - APP Native\\PosWebApp\\Pages\\Shared\\_ItemDetailModal.cshtml",
               "RelativeDocumentMoniker": "PosWebApp\\Pages\\Shared\\_ItemDetailModal.cshtml",
@@ -106,7 +140,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "_ItemCardPartial.cshtml",
               "DocumentMoniker": "C:\\Other\\POSV2\\POS-V2\\POSDALIN - APP Native\\PosWebApp\\Pages\\Shared\\_ItemCardPartial.cshtml",
               "RelativeDocumentMoniker": "PosWebApp\\Pages\\Shared\\_ItemCardPartial.cshtml",
@@ -118,7 +152,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 9,
               "Title": "Search.cshtml.cs",
               "DocumentMoniker": "C:\\Other\\POSV2\\POS-V2\\POSDALIN - APP Native\\PosWebApp\\Pages\\Search.cshtml.cs",
               "RelativeDocumentMoniker": "PosWebApp\\Pages\\Search.cshtml.cs",
@@ -130,7 +164,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 8,
               "Title": "Search.cshtml",
               "DocumentMoniker": "C:\\Other\\POSV2\\POS-V2\\POSDALIN - APP Native\\PosWebApp\\Pages\\Search.cshtml",
               "RelativeDocumentMoniker": "PosWebApp\\Pages\\Search.cshtml",
@@ -142,7 +176,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 10,
               "Title": "site.css",
               "DocumentMoniker": "C:\\Other\\POSV2\\POS-V2\\POSDALIN - APP Native\\PosWebApp\\wwwroot\\css\\site.css",
               "RelativeDocumentMoniker": "PosWebApp\\wwwroot\\css\\site.css",
@@ -154,7 +188,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 7,
               "Title": "Catalog.cshtml.cs",
               "DocumentMoniker": "C:\\Other\\POSV2\\POS-V2\\POSDALIN - APP Native\\PosWebApp\\Pages\\Catalog.cshtml.cs",
               "RelativeDocumentMoniker": "PosWebApp\\Pages\\Catalog.cshtml.cs",
@@ -166,7 +200,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "Catalog.cshtml",
               "DocumentMoniker": "C:\\Other\\POSV2\\POS-V2\\POSDALIN - APP Native\\PosWebApp\\Pages\\Catalog.cshtml",
               "RelativeDocumentMoniker": "PosWebApp\\Pages\\Catalog.cshtml",
@@ -178,32 +212,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 2,
               "Title": "Checkout.cshtml.cs",
               "DocumentMoniker": "C:\\Other\\POSV2\\POS-V2\\POSDALIN - APP Native\\PosWebApp\\Pages\\Checkout.cshtml.cs",
               "RelativeDocumentMoniker": "PosWebApp\\Pages\\Checkout.cshtml.cs",
               "ToolTip": "C:\\Other\\POSV2\\POS-V2\\POSDALIN - APP Native\\PosWebApp\\Pages\\Checkout.cshtml.cs",
               "RelativeToolTip": "PosWebApp\\Pages\\Checkout.cshtml.cs",
-              "ViewState": "AgIAAGUBAAAAAAAAAAAhwG0BAAAlAAAAAAAAAA==",
+              "ViewState": "AgIAAGUBAAAAAAAAAIA1wHEBAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-06T09:36:38.935Z"
+              "WhenOpened": "2026-11-06T09:36:38.935Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "SqlServiceClient.cs",
               "DocumentMoniker": "C:\\Other\\POSV2\\POS-V2\\POSDALIN - APP Native\\PosWebApp\\Services\\SqlServiceClient.cs",
               "RelativeDocumentMoniker": "PosWebApp\\Services\\SqlServiceClient.cs",
               "ToolTip": "C:\\Other\\POSV2\\POS-V2\\POSDALIN - APP Native\\PosWebApp\\Services\\SqlServiceClient.cs",
               "RelativeToolTip": "PosWebApp\\Services\\SqlServiceClient.cs",
-              "ViewState": "AgIAAIoBAAAAAAAAAAAmwJcBAAALAAAAAAAAAA==",
+              "ViewState": "AgIAAIoBAAAAAAAAAAAmwJoBAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-11-06T09:32:52.844Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 11,
               "Title": "Cart.cshtml.cs",
               "DocumentMoniker": "C:\\Other\\POSV2\\POS-V2\\POSDALIN - APP Native\\PosWebApp\\Pages\\Cart.cshtml.cs",
               "RelativeDocumentMoniker": "PosWebApp\\Pages\\Cart.cshtml.cs",
@@ -215,7 +250,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 14,
               "Title": "ICartService.cs",
               "DocumentMoniker": "C:\\Other\\POSV2\\POS-V2\\POSDALIN - APP Native\\PosWebApp\\Services\\ICartService.cs",
               "RelativeDocumentMoniker": "PosWebApp\\Services\\ICartService.cs",
@@ -227,7 +262,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 16,
               "Title": "ProductCatalogService.cs",
               "DocumentMoniker": "C:\\Other\\POSV2\\POS-V2\\POSDALIN - APP Native\\PosWebApp\\Services\\ProductCatalogService.cs",
               "RelativeDocumentMoniker": "PosWebApp\\Services\\ProductCatalogService.cs",
@@ -239,7 +274,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 12,
               "Title": "CartModels.cs",
               "DocumentMoniker": "C:\\Other\\POSV2\\POS-V2\\POSDALIN - APP Native\\PosWebApp\\Models\\ViewModels\\CartModels.cs",
               "RelativeDocumentMoniker": "PosWebApp\\Models\\ViewModels\\CartModels.cs",
@@ -251,7 +286,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 13,
               "Title": "CartService.cs",
               "DocumentMoniker": "C:\\Other\\POSV2\\POS-V2\\POSDALIN - APP Native\\PosWebApp\\Services\\CartService.cs",
               "RelativeDocumentMoniker": "PosWebApp\\Services\\CartService.cs",
@@ -263,7 +298,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 15,
               "Title": "Items.cshtml.cs",
               "DocumentMoniker": "C:\\Other\\POSV2\\POS-V2\\POSDALIN - APP Native\\PosWebApp\\Pages\\Items.cshtml.cs",
               "RelativeDocumentMoniker": "PosWebApp\\Pages\\Items.cshtml.cs",
@@ -275,7 +310,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 17,
               "Title": "CatalogDtos.cs",
               "DocumentMoniker": "C:\\Other\\POSV2\\POS-V2\\POSDALIN - APP Native\\PosWebApp\\Models\\DTOs\\CatalogDtos.cs",
               "RelativeDocumentMoniker": "PosWebApp\\Models\\DTOs\\CatalogDtos.cs",
@@ -287,7 +322,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 18,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Other\\POSV2\\POS-V2\\POSDALIN - APP Native\\PosWebApp\\Program.cs",
               "RelativeDocumentMoniker": "PosWebApp\\Program.cs",
